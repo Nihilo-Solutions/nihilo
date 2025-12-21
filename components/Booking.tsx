@@ -47,13 +47,14 @@ const Booking: React.FC = () => {
               <h3 className="text-2xl font-bold text-white mb-4">Discovery Call</h3>
               <p className="text-zinc-500 text-sm mb-10 mono">ESTABLISHING_ENCRYPTED_LINK...</p>
               
-              <a 
-                href="https://outlook.office365.com/owa/calendar/NihiloSolutions@nihilosolutions.com/bookings/" 
-                target="_blank" 
+              <a
+                href="https://outlook.office.com/bookwithme/user/877aaee8ef8b40ea9cd47fbc815c5caf@nihilosolutions.com/meetingtype/tLdY115gFUGcOPNLj0oscA2?anonymous&ep=mLinkFromTile"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center space-x-4 w-full py-6 bg-white text-black font-black uppercase text-xs tracking-[0.3em] hover:bg-zinc-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)]"
+                aria-label="Book Consultation - opens in new tab"
               >
-                <span>Initialize Meeting</span>
+                <span>Book Consultation</span>
                 <ArrowRight size={16} />
               </a>
               
