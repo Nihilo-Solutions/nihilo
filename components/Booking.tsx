@@ -48,7 +48,7 @@ const Booking: React.FC = () => {
               <p className="text-zinc-500 text-sm mb-10 mono">ESTABLISHING_ENCRYPTED_LINK...</p>
               
               <a
-                href="https://outlook.office.com/bookwithme/user/877aaee8ef8b40ea9cd47fbc815c5caf@nihilosolutions.com/meetingtype/tLdY115gFUGcOPNLj0oscA2?anonymous&ep=mLinkFromTile"
+                href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center space-x-4 w-full py-6 bg-white text-black font-black uppercase text-xs tracking-[0.3em] hover:bg-zinc-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)]"
