@@ -11,12 +11,13 @@ const ProfileCard: React.FC<{
   return (
     <div className="border border-white/10 p-8 rounded-lg bg-[#0a0a0a]">
       <div className="flex items-start space-x-6">
-        <div className="w-20 h-20 flex items-center justify-center rounded-md border border-white/10 bg-transparent text-white/80 text-lg font-bold">
+        <div className="w-20 h-20 overflow-hidden rounded-md border border-white/10 bg-transparent">
           <img
             src={`${import.meta.env.BASE_URL || '/'}headshots/${initials}.jpg`}
             onError={(e) => { (e.currentTarget as HTMLImageElement).src = `${import.meta.env.BASE_URL || '/'}headshots/placeholder.svg`; }}
             alt={alt ?? `${name} - ${title} at Nihilo`}
-            className="w-20 h-20 rounded-md object-cover"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: '50% 20%' }}
           />
         </div>
 
