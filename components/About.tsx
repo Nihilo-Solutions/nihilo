@@ -1,34 +1,63 @@
 import React from 'react';
 
-const About: React.FC = () => {
+const ProfileCard: React.FC<{
+  initials: string;
+  name: string;
+  title: string;
+  bio: string;
+  domains: string[];
+}> = ({ initials, name, title, bio, domains }) => {
   return (
-    <section id="about" className="py-32 bg-zinc-950 border-t border-zinc-900">
-      <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tighter uppercase italic">About Nihilo</h2>
-          <p className="text-zinc-400 text-lg mb-8 font-light leading-relaxed">
-            Nihilo is a principals-led engineering studio specializing in AI systems,
-            cloud automation, and secure, scalable architectures. We partner with
-            product teams to design pragmatic, production-ready solutions that
-            balance performance, cost, and long-term operability.
-          </p>
+    <div className="border border-white/10 p-8 rounded-lg bg-[#0a0a0a]">
+      <div className="flex items-start space-x-6">
+        <div className="w-20 h-20 flex items-center justify-center rounded-md border border-white/10 bg-transparent text-white/80 text-lg font-bold">
+          {initials}
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <div className="glass-panel p-6 rounded-lg">
-              <h3 className="text-sm mono uppercase tracking-widest text-zinc-400 mb-3">Our Focus</h3>
-              <p className="text-zinc-300 text-sm">LLMs & RAG, automation, and cloud-native engineering.</p>
-            </div>
-
-            <div className="glass-panel p-6 rounded-lg">
-              <h3 className="text-sm mono uppercase tracking-widest text-zinc-400 mb-3">How We Work</h3>
-              <p className="text-zinc-300 text-sm">Small cross-functional teams, short iterations, and clear SLAs.</p>
-            </div>
-
-            <div className="glass-panel p-6 rounded-lg">
-              <h3 className="text-sm mono uppercase tracking-widest text-zinc-400 mb-3">Contact</h3>
-              <p className="text-zinc-300 text-sm">Request an audit or schedule a discovery call via the Book Call CTA.</p>
-            </div>
+        <div className="flex-1">
+          <h3 className="text-2xl md:text-3xl font-bold text-white">{name}</h3>
+          <div className="text-xs font-mono uppercase tracking-widest text-zinc-400 mt-2">{title}</div>
+          <div className="border-t border-white/5 mt-4 pt-4">
+            <p className="text-zinc-400 text-sm leading-relaxed">{bio}</p>
           </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-4 mt-6">
+        {domains.map((d) => (
+          <div key={d} className="border border-white/10 p-3 rounded-md flex items-center gap-3">
+            <span className="w-2 h-2 rounded-full bg-white/20" />
+            <span className="text-xs font-mono uppercase tracking-wider text-zinc-300">{d}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const About: React.FC = () => {
+  const sam = {
+    initials: 'SO',
+    name: 'Sam Oakes',
+    title: 'Founder / AI Strategy',
+    bio: 'Focused on bridging the AI adoption gap — aligning product strategy, technical feasibility, and organizational change to deliver measurable outcomes.',
+    domains: ['AI Strategy', 'Workflow Automation', 'Cognitive Computing', 'Growth Engineering'],
+  };
+
+  const vance = {
+    initials: 'AV',
+    name: 'A. Vance',
+    title: 'Principal Engineer / Technical Architecture',
+    bio: 'Focused on the intersection of distributed systems and cognitive computing. Previously led technical strategy for cloud-native modernization across financial and logistics sectors.',
+    domains: ['LLM Operations', 'Azure Architecture', 'System Resiliency', 'RAG Design'],
+  };
+
+  return (
+    <section id="about" className="py-24 bg-[#0a0a0a]">
+      <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <ProfileCard {...sam} />
+          <ProfileCard {...vance} />
         </div>
       </div>
     </section>
