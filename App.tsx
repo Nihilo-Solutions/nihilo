@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import About from './components/About';
 import Booking from './components/Booking';
 // ChatAssistant removed — chat/Gemini features are not required for deployment
 import { Mail, Github, Linkedin, MapPin, Globe, Server, ArrowRight } from 'lucide-react';
@@ -75,6 +76,7 @@ const App: React.FC = () => {
       <Navbar />
       <Hero />
       <Services />
+      <About />
       
       {/* Persistent CTA Section pointing to Booking */}
       <section className="py-32 bg-zinc-950 border-t border-zinc-900">
