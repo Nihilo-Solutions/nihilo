@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
           </h1>
           
           <p className="max-w-2xl text-xl text-zinc-400 font-light leading-relaxed mb-16 border-l-2 border-zinc-800 pl-10">
-            Nihilo Solutions designs and deploys custom AI ecosystems and automated workflows on AWS and Azure. We bridge the gap between complex data and actionable enterprise intelligence.
+            Nihilo designs and deploys custom AI ecosystems and automated workflows, building an Enterprise Knowledge Engine with RAG (Retrieval-Augmented Generation) design and LLM operations. We enable cloud-native modernization and Azure AI implementation so data becomes actionable enterprise intelligence.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6">

@@ -6,12 +6,18 @@ const ProfileCard: React.FC<{
   title: string;
   bio: string;
   domains: string[];
-}> = ({ initials, name, title, bio, domains }) => {
+  alt?: string;
+}> = ({ initials, name, title, bio, domains, alt }) => {
   return (
     <div className="border border-white/10 p-8 rounded-lg bg-[#0a0a0a]">
       <div className="flex items-start space-x-6">
         <div className="w-20 h-20 flex items-center justify-center rounded-md border border-white/10 bg-transparent text-white/80 text-lg font-bold">
-          {initials}
+          <img
+            src={`${import.meta.env.BASE_URL || '/'}headshots/${initials}.jpg`}
+            onError={(e) => { (e.currentTarget as HTMLImageElement).src = `${import.meta.env.BASE_URL || '/'}headshots/placeholder.svg`; }}
+            alt={alt ?? `${name} - ${title} at Nihilo`}
+            className="w-20 h-20 rounded-md object-cover"
+          />
         </div>
 
         <div className="flex-1">
@@ -40,7 +46,7 @@ const About: React.FC = () => {
     initials: 'SO',
     name: 'Sam Oakes',
     title: 'Founder / AI Strategy',
-    bio: 'Focused on bridging the AI adoption gap — aligning product strategy, technical feasibility, and organizational change to deliver measurable outcomes.',
+    bio: 'Focused on bridging the AI adoption gap, aligning product strategy, technical feasibility, and organizational change to deliver measurable outcomes.',
     domains: ['AI Strategy', 'Workflow Automation', 'Cognitive Computing', 'Growth Engineering'],
   };
 
@@ -48,7 +54,7 @@ const About: React.FC = () => {
     initials: 'JI',
     name: 'Jake Ice',
     title: 'Co-Founder / Head of Business Operations',
-    bio: 'Leads client acquisition, sales operations, and commercial strategy — managing proposals, partnerships, and financial operations to drive growth.',
+    bio: 'Leads client acquisition, sales operations, and commercial strategy, managing proposals, partnerships, and financial operations to drive growth.',
     domains: ['Client Acquisition', 'Sales Operations', 'Proposals & BD', 'Financial Ops'],
   };
 
@@ -56,7 +62,7 @@ const About: React.FC = () => {
     <section id="about" className="py-24 bg-[#0a0a0a]">
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <ProfileCard {...sam} />
+          <ProfileCard {...sam} alt={"Sam Oakes - AI Strategy Consultant at Nihilo"} />
           <ProfileCard {...vance} />
         </div>
       </div>

@@ -21,11 +21,11 @@ const Footer: React.FC = () => (
             Architecting the future of enterprise automation. Principals-led engineering for AI and Cloud Native environments.
           </p>
           <div className="flex space-x-6">
-            <a href="https://linkedin.com/company/nihilosolutions" target="_blank" rel="noopener" className="text-zinc-600 hover:text-white transition-colors">
-              <Linkedin size={18} />
+            <a href="https://linkedin.com/company/nihilosolutions" target="_blank" rel="noopener" aria-label="Nihilo LinkedIn" className="text-zinc-600 hover:text-white transition-colors">
+              <Linkedin size={18} aria-hidden="false" role="img" />
             </a>
-            <a href="https://github.com/nihilosolutions" target="_blank" rel="noopener" className="text-zinc-600 hover:text-white transition-colors">
-              <Github size={18} />
+            <a href="https://github.com/nihilosolutions" target="_blank" rel="noopener" aria-label="Nihilo GitHub" className="text-zinc-600 hover:text-white transition-colors">
+              <Github size={18} aria-hidden="false" role="img" />
             </a>
           </div>
         </div>
@@ -85,9 +85,9 @@ const App: React.FC = () => {
             <div className="absolute inset-0 grid-bg opacity-10"></div>
             <div className="relative z-10 max-w-3xl mx-auto">
               <Server size={40} className="mx-auto text-zinc-700 mb-8" />
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tighter uppercase italic">Ready to automate?</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tighter uppercase italic">AI Automation Use Cases — Ready to automate?</h2>
               <p className="text-zinc-400 text-lg mb-10 font-light leading-relaxed">
-                Connect directly with our engineering principals to architect your next AI-driven cloud environment.
+                Discover AI Automation Use Cases from RAG-backed knowledge systems to cloud-native modernization. Connect with our engineering principals to architect your next AI-driven Azure or AWS environment.
               </p>
               <a 
                 href="#contact" 
