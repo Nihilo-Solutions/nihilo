@@ -5,7 +5,7 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import About from './components/About';
 import Booking from './components/Booking';
-import ChatAssistant from './components/ChatAssistant';
+// ChatAssistant removed — chat/Gemini features are not required for deployment
 import { Mail, Github, Linkedin, MapPin, Globe, Server, ArrowRight } from 'lucide-react';
 
 const Footer: React.FC = () => (
@@ -103,7 +103,6 @@ const App: React.FC = () => {
 
       <Booking />
       <Footer />
-      <ChatAssistant />
     </div>
   );
 };
