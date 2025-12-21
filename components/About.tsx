@@ -37,19 +37,19 @@ const ProfileCard: React.FC<{
 
 const About: React.FC = () => {
   const sam = {
+    initials: 'SO',
+    name: 'Sam Oakes',
+    title: 'Founder / AI Strategy',
+    bio: 'Focused on bridging the AI adoption gap — aligning product strategy, technical feasibility, and organizational change to deliver measurable outcomes.',
+    domains: ['AI Strategy', 'Workflow Automation', 'Cognitive Computing', 'Growth Engineering'],
+  };
+
+  const vance = {
     initials: 'JI',
     name: 'Jake Ice',
     title: 'Co-Founder / Head of Business Operations',
     bio: 'Leads client acquisition, sales operations, and commercial strategy — managing proposals, partnerships, and financial operations to drive growth.',
     domains: ['Client Acquisition', 'Sales Operations', 'Proposals & BD', 'Financial Ops'],
-  };
-
-  const vance = {
-    initials: 'AV',
-    name: 'A. Vance',
-    title: 'Principal Engineer / Technical Architecture',
-    bio: 'Focused on the intersection of distributed systems and cognitive computing. Previously led technical strategy for cloud-native modernization across financial and logistics sectors.',
-    domains: ['LLM Operations', 'Azure Architecture', 'System Resiliency', 'RAG Design'],
   };
 
   return (
