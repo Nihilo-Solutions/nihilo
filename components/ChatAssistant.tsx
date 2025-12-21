@@ -1,7 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, X, Terminal, Loader2, Minimize2 } from 'lucide-react';
-import { getChatResponse } from '../services/geminiService';
 import { ChatMessage } from '../types';
 
 const ChatAssistant: React.FC = () => {
@@ -39,8 +38,18 @@ const ChatAssistant: React.FC = () => {
         parts: [{ text: msg.content }]
       }));
 
-      const response = await getChatResponse(userMessage, apiHistory);
-      setMessages(prev => [...prev, { role: 'assistant', content: response || "ERR_NULL_RESPONSE" }]);
+      // NOTE: The Gemini SDK is server-only and must not be bundled into the browser.
+      // Use a client-side fallback here so the UI remains functional without a server.
+      let responseText: string | null = null;
+      try {
+        // If you later add a server endpoint, the client can POST to it here.
+        // For now, we provide an offline stub so the UI doesn't crash.
+        responseText = `Offline Assistant: Received \"${userMessage}\" — Gemini integration unavailable in browser.`;
+      } catch (err) {
+        responseText = null;
+      }
+
+      setMessages(prev => [...prev, { role: 'assistant', content: responseText || "ERR_NULL_RESPONSE" }]);
     } catch (error) {
       setMessages(prev => [...prev, { role: 'assistant', content: "ERR_CONNECTION_FAILED" }]);
     } finally {
