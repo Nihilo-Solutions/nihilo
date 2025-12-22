@@ -32,9 +32,11 @@ const Navbar: React.FC = () => {
             <span className="hidden lg:block text-[10px] mono text-zinc-600 uppercase tracking-tighter">
               Availability: ACTIVE
             </span>
-            <a 
-              href="#contact" 
-              className="text-[11px] mono uppercase font-bold tracking-widest text-black bg-white px-6 py-2 rounded-full hover:bg-zinc-200 transition-all"
+            <a
+              href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[11px] mono uppercase font-bold tracking-widest text-white bg-blue-600 px-4 py-2 rounded-full hover:bg-blue-700 transition-all"
             >
               Book Call
             </a>

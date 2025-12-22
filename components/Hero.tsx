@@ -17,28 +17,28 @@ const Hero: React.FC = () => {
             </span>
           </div>
           
-          <h1 className="text-6xl md:text-[clamp(4.5rem,8vw,10rem)] font-bold text-white leading-[0.9] tracking-tighter mb-12">
-            CLOUD-NATIVE <br />
-            <span className="text-zinc-500">INTELLIGENCE.</span>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight mb-6">
+            Zero-to-One Enterprise AI
           </h1>
-          
-          <p className="max-w-2xl text-xl text-zinc-400 font-light leading-relaxed mb-16 border-l-2 border-zinc-800 pl-10">
-            Nihilo designs and deploys custom AI ecosystems and automated workflows, building an Enterprise Knowledge Engine with RAG (Retrieval-Augmented Generation) design and LLM operations. We enable cloud-native modernization and Azure AI implementation so data becomes actionable enterprise intelligence.
+
+          <p className="max-w-2xl text-lg md:text-xl text-zinc-400 font-light leading-relaxed mb-8 border-l-2 border-zinc-800 pl-8">
+            We design, implement and productionize tenant-local RAG pipelines and agentic automation on Azure and AWS — secure, auditable, and engineered for scale.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6">
-            <a 
-              href="#services" 
-              className="group flex items-center justify-center space-x-3 px-10 py-5 bg-white text-black font-bold uppercase text-xs tracking-[0.2em] hover:bg-zinc-200 transition-all"
+          <div className="flex flex-col sm:flex-row gap-4 mt-4">
+            <a
+              href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center space-x-3 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md shadow-sm"
+              aria-label="Book Discovery - opens in new tab"
             >
-              <span>View Solutions</span>
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              <span>Book Discovery</span>
+              <ArrowRight size={16} />
             </a>
-            <a 
-              href="#about" 
-              className="flex items-center justify-center space-x-3 px-10 py-5 border border-zinc-800 bg-zinc-900/40 text-white font-bold uppercase text-xs tracking-[0.2em] hover:bg-zinc-800 transition-all"
-            >
-              <span>Our Expertise</span>
+
+            <a href="#services" className="inline-flex items-center justify-center space-x-3 px-6 py-3 border border-zinc-800 text-zinc-200 rounded-md hover:bg-zinc-900/50">
+              <span>View Services</span>
               <ChevronRight size={16} />
             </a>
           </div>

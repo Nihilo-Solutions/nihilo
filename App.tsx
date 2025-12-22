@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import About from './components/About';
 import Booking from './components/Booking';
+import Security from './components/Security';
 // ChatAssistant removed — chat/Gemini features are not required for deployment
 import { Mail, Github, Linkedin, MapPin, Globe, Server, ArrowRight } from 'lucide-react';
 
@@ -59,11 +60,12 @@ const Footer: React.FC = () => (
         </div>
       </div>
       
-      <div className="pt-12 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center text-zinc-700 text-[10px] mono tracking-widest uppercase">
-        <p>&copy; {new Date().getFullYear()} NIHILO SOLUTIONS INC. // ESTABLISHED MMXXIV.</p>
+        <div className="pt-12 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center text-zinc-700 text-[10px] mono tracking-widest uppercase">
+        <p>&copy; {new Date().getFullYear()} Nihilo Solutions LLC. All rights reserved.</p>
         <div className="flex space-x-8 mt-4 md:mt-0">
-          <a href="#contact" className="hover:text-zinc-400 transition-colors">PRIVACY_PROTOCOL</a>
-          <a href="#contact" className="hover:text-zinc-400 transition-colors">TERMS_OF_ENGAGEMENT</a>
+          <a href="/privacy" className="hover:text-zinc-400 transition-colors">Privacy Policy</a>
+          <a href="/terms" className="hover:text-zinc-400 transition-colors">Terms of Engagement</a>
+          <a href="mailto:nihilo@nihilosolutions.com" className="hover:text-zinc-400 transition-colors">nihilo@nihilosolutions.com</a>
         </div>
       </div>
     </div>
@@ -76,6 +78,7 @@ const App: React.FC = () => {
       <Navbar />
       <Hero />
       <Services />
+      <Security />
       <About />
       
       {/* Persistent CTA Section pointing to Booking */}
@@ -85,7 +88,7 @@ const App: React.FC = () => {
             <div className="absolute inset-0 grid-bg opacity-10"></div>
             <div className="relative z-10 max-w-3xl mx-auto">
               <Server size={40} className="mx-auto text-zinc-700 mb-8" />
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tighter uppercase italic">AI Automation Use Cases — Ready to automate?</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tighter uppercase italic">AI Automation Use Cases Ready to automate?</h2>
               <p className="text-zinc-400 text-lg mb-10 font-light leading-relaxed">
                 Discover AI Automation Use Cases from RAG-backed knowledge systems to cloud-native modernization. Connect with our engineering principals to architect your next AI-driven Azure or AWS environment.
               </p>

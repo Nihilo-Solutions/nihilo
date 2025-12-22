@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Cpu, Zap, Cloud } from 'lucide-react';
 import { SERVICES } from '../constants';
 
 const Services: React.FC = () => {
@@ -16,29 +17,63 @@ const Services: React.FC = () => {
           </p>
         </div>
 
-        <div className="space-y-0">
-          {SERVICES.map((service, index) => (
-            <div 
-              key={service.id}
-              className="group relative py-12 border-b border-zinc-900 flex flex-col md:flex-row items-start md:items-center justify-between hover:bg-zinc-900/30 px-4 transition-all duration-500"
-            >
-              <div className="flex items-center space-x-12 mb-6 md:mb-0">
-                <span className="text-xs mono text-zinc-700">0{index + 1}</span>
-                <h3 className="text-2xl md:text-4xl font-bold text-zinc-400 group-hover:text-white transition-colors duration-500 tracking-tight">
-                  {service.title}
-                </h3>
-              </div>
-              
-              <div className="max-w-md md:text-right">
-                <p className="text-zinc-500 group-hover:text-zinc-300 transition-colors text-sm md:text-base leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-
-              {/* Reveal Line */}
-              <div className="absolute left-0 bottom-0 h-[1px] w-0 bg-white transition-all duration-700 group-hover:w-full"></div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* 1. Enterprise RAG */}
+          <article className="p-8 bg-zinc-900 border border-zinc-800 rounded-lg">
+            <div className="flex items-center space-x-4 mb-4">
+              <Cpu className="text-blue-500" />
+              <h3 className="text-xl font-bold text-white">Enterprise RAG Implementation</h3>
             </div>
-          ))}
+            <div className="text-sm text-zinc-400 space-y-3">
+              <div>
+                <strong className="text-zinc-200">Problem:</strong> Fragmented data, poor retrieval accuracy, uncontrolled hallucinations.
+              </div>
+              <div>
+                <strong className="text-zinc-200">Approach:</strong> Build vectorized indexes, tuning retrieval & prompt templates; controlled context windowing and eval suites.
+              </div>
+              <div>
+                <strong className="text-zinc-200">KPIs:</strong> Precision@K, latency (ms), tokens/call cost.
+              </div>
+            </div>
+          </article>
+
+          {/* 2. Agentic Automation */}
+          <article className="p-8 bg-zinc-900 border border-zinc-800 rounded-lg">
+            <div className="flex items-center space-x-4 mb-4">
+              <Zap className="text-blue-500" />
+              <h3 className="text-xl font-bold text-white">Agentic Process Automation</h3>
+            </div>
+            <div className="text-sm text-zinc-400 space-y-3">
+              <div>
+                <strong className="text-zinc-200">Problem:</strong> Manual workflows, latency in decisioning and incident response.
+              </div>
+              <div>
+                <strong className="text-zinc-200">Approach:</strong> Define agent goals, safety sandboxes, orchestrate agents via serverless event patterns.
+              </div>
+              <div>
+                <strong className="text-zinc-200">KPIs:</strong> Manual steps removed, avg resolution time, throughput.
+              </div>
+            </div>
+          </article>
+
+          {/* 3. Cloud-Native AI Infra */}
+          <article className="p-8 bg-zinc-900 border border-zinc-800 rounded-lg">
+            <div className="flex items-center space-x-4 mb-4">
+              <Cloud className="text-blue-500" />
+              <h3 className="text-xl font-bold text-white">Cloud-Native AI Infrastructure</h3>
+            </div>
+            <div className="text-sm text-zinc-400 space-y-3">
+              <div>
+                <strong className="text-zinc-200">Problem:</strong> Monolithic infra, unpredictable costs, and single-tenant risk.
+              </div>
+              <div>
+                <strong className="text-zinc-200">Approach:</strong> IaC, autoscaling containers, burst serverless patterns, and cost controls.
+              </div>
+              <div>
+                <strong className="text-zinc-200">KPIs:</strong> Cost per throughput, RPO/RTO, deployment lead time.
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>

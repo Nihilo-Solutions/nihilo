@@ -14,6 +14,7 @@ const ProfileCard: React.FC<{
         <div className="w-20 h-20 overflow-hidden rounded-md border border-white/10 bg-transparent">
           <img
             src={`${import.meta.env.BASE_URL || '/'}headshots/${initials}.jpg`}
+            loading="lazy"
             onError={(e) => { (e.currentTarget as HTMLImageElement).src = `${import.meta.env.BASE_URL || '/'}headshots/placeholder.svg`; }}
             alt={alt ?? `${name} - ${title} at Nihilo`}
             className="w-full h-full object-cover"
@@ -62,9 +63,38 @@ const About: React.FC = () => {
   return (
     <section id="about" className="py-24 bg-[#0a0a0a]">
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <ProfileCard {...sam} alt={"Sam Oakes - AI Strategy Consultant at Nihilo"} />
-          <ProfileCard {...vance} />
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2">
+            <ProfileCard {...sam} alt={"Sam Oakes - AI Strategy Consultant at Nihilo"} />
+            <div className="mt-6">
+              <ProfileCard {...vance} />
+            </div>
+          </div>
+
+          <aside className="bg-zinc-900 border border-zinc-800 p-6 rounded-lg">
+            <h3 className="text-white font-bold mb-4">Technical Pedigree</h3>
+            <p className="text-zinc-400 text-sm mb-4">Core competencies and cloud certifications that shape our delivery.</p>
+
+            <div className="mb-4">
+              <h4 className="text-zinc-200 text-xs uppercase tracking-wider mb-2">Core Competencies</h4>
+              <ul className="text-zinc-400 text-sm space-y-2">
+                <li>LLMOps & RAG Architecture</li>
+                <li>Agentic Workflow Orchestration</li>
+                <li>Cloud-native Modernization</li>
+                <li>Secure Tenant Deployments</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-zinc-200 text-xs uppercase tracking-wider mb-2">Cloud Certifications</h4>
+              <div className="grid grid-cols-2 gap-2">
+                <div className="p-2 bg-zinc-800 rounded text-zinc-200 text-xs">AWS Certified</div>
+                <div className="p-2 bg-zinc-800 rounded text-zinc-200 text-xs">Azure Solutions Architect</div>
+                <div className="p-2 bg-zinc-800 rounded text-zinc-200 text-xs">CISSP (where applicable)</div>
+                <div className="p-2 bg-zinc-800 rounded text-zinc-200 text-xs">ISO27001 Ready</div>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
