@@ -24,12 +24,15 @@ const Security: React.FC = () => {
 
             <div className="mt-8">
               <a
-                href="/nihilo-security-whitepaper.pdf"
-                className="inline-flex items-center space-x-3 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md"
-                download
-              >
-                <span>Download Security Whitepaper</span>
-              </a>
+                  href="/nihilo-security-whitepaper.pdf"
+                  className="inline-flex items-center px-5 py-3 font-mono uppercase tracking-[0.1em] text-white rounded-sm border border-blue-400 bg-zinc-800 transition-all duration-300"
+                  style={{ boxShadow: '2px 2px 0 rgba(0,0,0,1)' }}
+                  download
+                >
+                  <span className="mr-2">[</span>
+                  <span>Download Security Whitepaper</span>
+                  <span className="ml-2">]</span>
+                </a>
             </div>
           </div>
 

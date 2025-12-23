@@ -30,15 +30,20 @@ const Hero: React.FC = () => {
               href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center space-x-3 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md shadow-sm"
               aria-label="Book Discovery - opens in new tab"
+              className="relative inline-flex items-center px-6 py-3 font-mono uppercase tracking-[0.1em] text-white rounded-sm border border-blue-400 bg-zinc-800 transition-all duration-300"
+              style={{ boxShadow: '2px 2px 0 rgba(0,0,0,1)' }}
             >
-              <span>Book Discovery</span>
-              <ArrowRight size={16} />
+              <span className="text-blue-400 mr-2">[</span>
+              <span className="flex items-center gap-2">
+                <span>Book Discovery</span>
+                <ArrowRight size={14} />
+              </span>
+              <span className="text-blue-400 ml-2">]</span>
             </a>
 
-            <a href="#services" className="inline-flex items-center justify-center space-x-3 px-6 py-3 border border-zinc-800 text-zinc-200 rounded-md hover:bg-zinc-900/50">
-              <span>View Services</span>
+            <a href="#services" className="inline-flex items-center justify-center space-x-3 px-6 py-3 font-mono uppercase tracking-[0.1em] border border-slate-700 text-zinc-200 rounded-sm bg-transparent hover:bg-white hover:text-black transition-all duration-300">
+              <span className="mr-1">View Services</span>
               <ChevronRight size={16} />
             </a>
           </div>

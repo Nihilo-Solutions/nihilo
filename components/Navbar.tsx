@@ -36,9 +36,11 @@ const Navbar: React.FC = () => {
               href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[11px] mono uppercase font-bold tracking-widest text-white bg-blue-600 px-4 py-2 rounded-full hover:bg-blue-700 transition-all"
+              className="inline-flex items-center px-4 py-2 font-mono uppercase tracking-[0.1em] text-white rounded-sm border border-blue-400 bg-zinc-800 transition-all duration-300"
+              style={{ boxShadow: '2px 2px 0 rgba(0,0,0,1)' }}
             >
-              Book Call
+              <span className="text-blue-400 mr-2">+</span>
+              <span>Book Call</span>
             </a>
           </div>
         </div>
