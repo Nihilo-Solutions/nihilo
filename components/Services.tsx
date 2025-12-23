@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Cpu, Zap, Cloud } from 'lucide-react';
+import { Database, Search, Zap, Wrench, Server, Layers, AlertTriangle, BarChart2 } from 'lucide-react';
 import { SERVICES } from '../constants';
 
 const Services: React.FC = () => {
@@ -21,18 +21,23 @@ const Services: React.FC = () => {
           {/* 1. Enterprise RAG */}
           <article className="p-8 bg-zinc-900 border border-zinc-800 rounded-lg">
             <div className="flex items-center space-x-4 mb-4">
-              <Cpu className="text-blue-500" />
+              <div className="w-10 h-10 flex items-center justify-center rounded-sm bg-zinc-800 border border-blue-400">
+                <Database className="text-blue-400" />
+              </div>
               <h3 className="text-xl font-bold text-white">Enterprise RAG Implementation</h3>
             </div>
             <div className="text-sm text-zinc-400 space-y-3">
-              <div>
-                <strong className="text-zinc-200">Problem:</strong> Fragmented data, poor retrieval accuracy, uncontrolled hallucinations.
+              <div className="flex items-start gap-3">
+                <AlertTriangle className="mt-1 text-zinc-500" size={16} />
+                <div><strong className="text-zinc-200">Problem:</strong> Fragmented data, poor retrieval accuracy, uncontrolled hallucinations.</div>
               </div>
-              <div>
-                <strong className="text-zinc-200">Approach:</strong> Build vectorized indexes, tuning retrieval & prompt templates; controlled context windowing and eval suites.
+              <div className="flex items-start gap-3">
+                <Search className="mt-1 text-zinc-500" size={16} />
+                <div><strong className="text-zinc-200">Approach:</strong> Build vectorized indexes, tuning retrieval & prompt templates; controlled context windowing and eval suites.</div>
               </div>
-              <div>
-                <strong className="text-zinc-200">KPIs:</strong> Precision@K, latency (ms), tokens/call cost.
+              <div className="flex items-start gap-3">
+                <BarChart2 className="mt-1 text-zinc-500" size={16} />
+                <div><strong className="text-zinc-200">KPIs:</strong> Precision@K, latency (ms), tokens/call cost.</div>
               </div>
             </div>
           </article>
@@ -40,18 +45,23 @@ const Services: React.FC = () => {
           {/* 2. Agentic Automation */}
           <article className="p-8 bg-zinc-900 border border-zinc-800 rounded-lg">
             <div className="flex items-center space-x-4 mb-4">
-              <Zap className="text-blue-500" />
+              <div className="w-10 h-10 flex items-center justify-center rounded-sm bg-zinc-800 border border-blue-400">
+                <Zap className="text-blue-400" />
+              </div>
               <h3 className="text-xl font-bold text-white">Agentic Process Automation</h3>
             </div>
             <div className="text-sm text-zinc-400 space-y-3">
-              <div>
-                <strong className="text-zinc-200">Problem:</strong> Manual workflows, latency in decisioning and incident response.
+              <div className="flex items-start gap-3">
+                <AlertTriangle className="mt-1 text-zinc-500" size={16} />
+                <div><strong className="text-zinc-200">Problem:</strong> Manual workflows, latency in decisioning and incident response.</div>
               </div>
-              <div>
-                <strong className="text-zinc-200">Approach:</strong> Define agent goals, safety sandboxes, orchestrate agents via serverless event patterns.
+              <div className="flex items-start gap-3">
+                <Wrench className="mt-1 text-zinc-500" size={16} />
+                <div><strong className="text-zinc-200">Approach:</strong> Define agent goals, safety sandboxes, orchestrate agents via serverless event patterns.</div>
               </div>
-              <div>
-                <strong className="text-zinc-200">KPIs:</strong> Manual steps removed, avg resolution time, throughput.
+              <div className="flex items-start gap-3">
+                <BarChart2 className="mt-1 text-zinc-500" size={16} />
+                <div><strong className="text-zinc-200">KPIs:</strong> Manual steps removed, avg resolution time, throughput.</div>
               </div>
             </div>
           </article>
@@ -59,18 +69,23 @@ const Services: React.FC = () => {
           {/* 3. Cloud-Native AI Infra */}
           <article className="p-8 bg-zinc-900 border border-zinc-800 rounded-lg">
             <div className="flex items-center space-x-4 mb-4">
-              <Cloud className="text-blue-500" />
+              <div className="w-10 h-10 flex items-center justify-center rounded-sm bg-zinc-800 border border-blue-400">
+                <Server className="text-blue-400" />
+              </div>
               <h3 className="text-xl font-bold text-white">Cloud-Native AI Infrastructure</h3>
             </div>
             <div className="text-sm text-zinc-400 space-y-3">
-              <div>
-                <strong className="text-zinc-200">Problem:</strong> Monolithic infra, unpredictable costs, and single-tenant risk.
+              <div className="flex items-start gap-3">
+                <AlertTriangle className="mt-1 text-zinc-500" size={16} />
+                <div><strong className="text-zinc-200">Problem:</strong> Monolithic infra, unpredictable costs, and single-tenant risk.</div>
               </div>
-              <div>
-                <strong className="text-zinc-200">Approach:</strong> IaC, autoscaling containers, burst serverless patterns, and cost controls.
+              <div className="flex items-start gap-3">
+                <Layers className="mt-1 text-zinc-500" size={16} />
+                <div><strong className="text-zinc-200">Approach:</strong> IaC, autoscaling containers, burst serverless patterns, and cost controls.</div>
               </div>
-              <div>
-                <strong className="text-zinc-200">KPIs:</strong> Cost per throughput, RPO/RTO, deployment lead time.
+              <div className="flex items-start gap-3">
+                <BarChart2 className="mt-1 text-zinc-500" size={16} />
+                <div><strong className="text-zinc-200">KPIs:</strong> Cost per throughput, RPO/RTO, deployment lead time.</div>
               </div>
             </div>
           </article>
