@@ -50,21 +50,12 @@ const Hero: React.FC = () => {
         </div>
       </div>
       
-      {/* Bottom status bar */}
+      {/* Bottom status bar (neutral production status) */}
       <div className="absolute bottom-0 w-full border-t border-zinc-900 py-6 px-12 bg-zinc-950/50 backdrop-blur-sm hidden lg:block">
         <div className="max-w-screen-2xl mx-auto flex justify-between items-center text-[10px] mono text-zinc-600">
-          <div className="flex space-x-12">
-            <span className="flex items-center space-x-2">
-              <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
-              <span>AZURE CERTIFIED PARTNER</span>
-            </span>
-            <span className="flex items-center space-x-2">
-              <span className="w-1.5 h-1.5 bg-orange-500 rounded-full shadow-[0_0_8px_rgba(249,115,22,0.5)]"></span>
-              <span>AWS ADVANCED TIER</span>
-            </span>
-          </div>
+          <div />
           <div className="tracking-widest">
-            STABLE_ENGINE_V4.0 // STATUS: OPERATIONAL
+            PRODUCTION-READY // STATUS: OPERATIONAL
           </div>
         </div>
       </div>
