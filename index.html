@@ -1,66 +1,65 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nihilo | Custom AI Solutions & Cloud Automation Consulting</title>
-    <meta name="description" content="Nihilo helps enterprises bridge the AI adoption gap, with custom LLM operations, RAG design and automated risk governance. Schedule strategy session today." />
-    <!-- Open Graph / Social -->
-    <meta property="og:title" content="Nihilo Solutions — Enterprise AI Consulting & Cloud-Native RAG" />
-    <meta property="og:description" content="Nihilo Solutions delivers tenant-local RAG, LLM Ops, and agentic automation on Azure & AWS. Secure, production-grade AI engineering for enterprises." />
-    <meta property="og:image" content="/logo.png" />
+    
+    <title>Nihilo Solutions | Enterprise AI & Cloud-Native RAG</title>
+    <link rel="canonical" href="https://nihilosolutions.com/" />
+    <meta name="description" content="Nihilo Solutions delivers secure, tenant-local RAG, LLM Ops, and agentic automation on Azure & AWS. Zero-Trust AI engineering for the modern enterprise." />
+
+    <meta property="og:title" content="Nihilo Solutions — Enterprise AI Consulting" />
+    <meta property="og:description" content="Custom LLM operations, secure RAG design, and cloud-native automation on AWS and Azure." />
+    <meta property="og:image" content="https://nihilosolutions.com/logo.png" />
+    <meta property="og:url" content="https://nihilosolutions.com/" />
     <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-            background-color: #09090b;
-        }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; background-color: #09090b; }
         .mono { font-family: 'JetBrains Mono', monospace; }
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: #09090b; }
-        ::-webkit-scrollbar-thumb { background: #27272a; }
-        
-        .glass-panel {
-            background: rgba(9, 9, 11, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(39, 39, 42, 0.5);
-        }
-        
         .grid-bg {
             background-image: linear-gradient(to right, #18181b 1px, transparent 1px),
                               linear-gradient(to bottom, #18181b 1px, transparent 1px);
             background-size: 40px 40px;
         }
-
-        @keyframes scan {
-          from { transform: translateY(-100%); }
-          to { transform: translateY(400%); }
+        /* Engineering Button Style (No Generic Pills) */
+        .btn-engineer {
+            font-family: 'JetBrains Mono', monospace;
+            border: 1px solid #27272a;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .btn-engineer:hover {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
         }
     </style>
-<!-- JSON-LD: ProfessionalService -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "@id": "https://nihilo.solutions/#organization",
-      "name": "Nihilo",
-      "url": "https://nihilo.solutions/",
-      "logo": "https://nihilo.solutions/logo.png",
-      "description": "Custom AI consulting, RAG design, LLM operations, and cloud-native modernization for enterprises.",
-      "areaServed": ["AI","Cloud","Automation"],
-      "serviceType": ["AI Consulting","Cloud Modernization","Automation Engineering"]
+      "@id": "https://nihilosolutions.com/#organization",
+      "name": "Nihilo Solutions",
+      "url": "https://nihilosolutions.com/",
+      "logo": "https://nihilosolutions.com/logo.png",
+      "description": "Enterprise AI consulting, secure RAG design, and cloud-native automation on Azure & AWS.",
+      "email": "nihilo@nihilosolutions.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "CT",
+        "addressCountry": "US"
+      }
     }
     </script>
-<!-- Importmap removed: app uses local node_modules and Vite bundling for dependencies -->
 </head>
-<body class="text-zinc-300 antialiased selection:bg-white selection:text-black">
+<body class="text-zinc-300 antialiased selection:bg-blue-500 selection:text-white">
     <div id="root"></div>
-    <!-- Crucial script tag to load the React entry point -->
-    <script type="module" src="index.tsx"></script>
+    <script type="module" src="/src/index.tsx"></script>
 </body>
 </html>
