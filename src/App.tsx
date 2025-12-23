@@ -1,11 +1,11 @@
 
 import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import About from './components/About';
-import Booking from './components/Booking';
-import Security from './components/Security';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import Services from '../components/Services';
+import About from '../components/About';
+import Booking from '../components/Booking';
+import Security from '../components/Security';
 // ChatAssistant removed — chat/Gemini features are not required for deployment
 import { Mail, Github, Linkedin, MapPin, Globe, Server, ArrowRight } from 'lucide-react';
 
