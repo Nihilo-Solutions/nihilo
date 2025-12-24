@@ -49,7 +49,7 @@ const About: React.FC = () => {
   const sam = {
     initials: 'SO',
     name: 'Sam Oakes',
-    title: 'Founder / AI Strategy',
+    title: 'Co-Founder / AI Strategy',
     bio: 'Focused on bridging the AI adoption gap, aligning product strategy, technical feasibility, and organizational change to deliver measurable outcomes.',
     domains: ['AI Strategy', 'Workflow Automation', 'Cognitive Computing', 'Growth Engineering'],
   };
