@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'; // Adjust path if it's in /components
 import Home from './pages/Home';
 import AssessmentPage from './pages/AssessmentPage';
 import SecurityPage from './pages/SecurityPage';
+import NotFound from './pages/NotFound'; // 1. Import your new page
 
 function App() {
   return (
