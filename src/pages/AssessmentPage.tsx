@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Add Link import
 import emailjs from '@emailjs/browser';
 import { ASSESSMENT_QUESTIONS } from '../constants';
-import { Mail, Calendar, ArrowRight, ShieldCheck, ChevronRight } from 'lucide-react';
+import { Mail, Calendar, ArrowRight, ShieldCheck, ChevronRight, FileText } from 'lucide-react'; // Added FileText
 
 const AssessmentPage: React.FC = () => {
   const [stage, setStage] = useState<'intake' | 'test' | 'results'>('intake');
@@ -9,9 +10,8 @@ const AssessmentPage: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [isSending, setIsSending] = useState(false);
-  const [emailSent, setEmailSent] = useState(false); // New success state
+  const [emailSent, setEmailSent] = useState(false);
 
-  // Logic to calculate a business readiness percentage
   const calculateReadinessScore = () => {
     const highReadinessAnswers = [
       "Cloud-Native", "Yes, fully integrated", "Real-time", 
@@ -19,15 +19,11 @@ const AssessmentPage: React.FC = () => {
     ];
     const totalQuestions = ASSESSMENT_QUESTIONS.length;
     const matchingAnswers = Object.values(answers).filter(val => highReadinessAnswers.includes(val)).length;
-    
-    // Weighted score for visual impact (min 15%, max 98%)
     return Math.min(98, Math.max(15, Math.floor((matchingAnswers / totalQuestions) * 100) + 42));
   };
 
   const sendEmail = () => {
     setIsSending(true);
-
-    // Grouping answers by Phase for a professional strategic report
     const phases = [...new Set(ASSESSMENT_QUESTIONS.map(q => q.phase))];
     const formattedResults = phases.map(phase => {
       const phaseQuestions = ASSESSMENT_QUESTIONS.filter(q => q.phase === phase);
@@ -45,7 +41,6 @@ const AssessmentPage: React.FC = () => {
       booking_link: "https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
     };
 
-    // Securely trigger EmailJS using Environment Variables
     emailjs.send(
       import.meta.env.VITE_EMAILJS_SERVICE_ID, 
       import.meta.env.VITE_EMAILJS_TEMPLATE_ID, 
@@ -53,7 +48,7 @@ const AssessmentPage: React.FC = () => {
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
       .then(() => {
-        setEmailSent(true); // Trigger Success UI
+        setEmailSent(true);
         setIsSending(false);
       }, (err) => {
         console.error("EmailJS Error:", err);
@@ -64,17 +59,15 @@ const AssessmentPage: React.FC = () => {
 
   const handleAnswer = (option: string) => {
     setAnswers({ ...answers, [ASSESSMENT_QUESTIONS[currentStep].id]: option });
-    
     if (currentStep < ASSESSMENT_QUESTIONS.length - 1) {
       setCurrentStep(currentStep + 1);
-      window.scrollTo(0, 0); // Reset scroll for next question
+      window.scrollTo(0, 0);
     } else {
       setStage('results');
       window.scrollTo(0, 0);
     }
   };
 
-  // STAGE 1: BUSINESS INTAKE
   if (stage === 'intake') {
     return (
       <div className="pt-40 pb-20 max-w-xl mx-auto px-6 animate-in fade-in duration-700">
@@ -105,7 +98,7 @@ const AssessmentPage: React.FC = () => {
           <button 
             disabled={!userData.email || !userData.name}
             onClick={() => { setStage('test'); window.scrollTo(0, 0); }}
-            className="w-full py-4 bg-blue-500 text-black font-black uppercase tracking-widest text-xs hover:bg-white transition-all flex justify-center items-center gap-2 mt-4 disabled:opacity-30 disabled:cursor-not-allowed"
+            className="w-full py-4 bg-blue-500 text-black font-black uppercase tracking-widest text-xs hover:bg-white transition-all flex justify-center items-center gap-2 mt-4 disabled:opacity-30"
           >
             Execute Assessment <ArrowRight size={16} />
           </button>
@@ -114,11 +107,9 @@ const AssessmentPage: React.FC = () => {
     );
   }
 
-  // STAGE 2: 35 BUSINESS QUESTIONS
   if (stage === 'test') {
     const q = ASSESSMENT_QUESTIONS[currentStep];
     const progress = ((currentStep + 1) / ASSESSMENT_QUESTIONS.length) * 100;
-
     return (
       <div className="pt-40 pb-20 max-w-3xl mx-auto px-6">
         <div className="mb-12">
@@ -130,11 +121,7 @@ const AssessmentPage: React.FC = () => {
             <div className="h-full bg-blue-500 shadow-[0_0_10px_#3b82f6] transition-all duration-500" style={{ width: `${progress}%` }} />
           </div>
         </div>
-
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 uppercase italic tracking-tighter leading-tight">
-          {q.question}
-        </h2>
-
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 uppercase italic tracking-tighter leading-tight">{q.question}</h2>
         <div className="grid gap-4">
           {q.options.map(opt => (
             <button 
@@ -151,16 +138,13 @@ const AssessmentPage: React.FC = () => {
     );
   }
 
-  // STAGE 3: STRATEGIC RESULTS
   return (
     <div className="pt-40 pb-20 max-w-2xl mx-auto px-6 text-center animate-in zoom-in-95 duration-700">
       <div className="mb-12">
         <div className="text-[72px] font-black text-blue-500 italic leading-none mb-2 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]">
           {calculateReadinessScore()}%
         </div>
-        <div className="text-[10px] font-mono uppercase tracking-[0.4em] text-zinc-500">
-          AI_Business_Maturity_Index
-        </div>
+        <div className="text-[10px] font-mono uppercase tracking-[0.4em] text-zinc-500">AI_Business_Maturity_Index</div>
       </div>
       
       <h2 className="text-4xl font-bold text-white mb-6 italic uppercase tracking-tighter">Assessment Complete</h2>
@@ -190,7 +174,6 @@ const AssessmentPage: React.FC = () => {
           </div>
         </>
       ) : (
-        /* GLOWING CHECKMARK SUCCESS CARD */
         <div className="bg-zinc-900/50 border border-blue-500/30 p-8 md:p-12 rounded-lg animate-in zoom-in-95 duration-500">
           <div className="flex justify-center mb-6">
             <div className="relative">
@@ -205,17 +188,27 @@ const AssessmentPage: React.FC = () => {
           <p className="text-zinc-400 text-sm leading-relaxed mb-8 font-light">
             Check your inbox. A copy has also been sent to our engineering team for review. 
             <br /><br />
-            Expect a follow-up email <span className="text-blue-400 font-mono"></span> within 24 hours.
+            Expect a follow-up email within 24 hours.
           </p>
           
-          <a 
-            href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/" 
-            target="_blank" 
-            rel="noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-blue-500 text-black font-black uppercase tracking-widest text-[10px] hover:bg-white transition-all shadow-[0_0_15px_rgba(59,130,246,0.2)]"
-          >
-            Proceed to Calendar
-          </a>
+          <div className="flex flex-col gap-3">
+            <a 
+              href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/" 
+              target="_blank" 
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-blue-500 text-black font-black uppercase tracking-widest text-[10px] hover:bg-white transition-all shadow-[0_0_15px_rgba(59,130,246,0.2)]"
+            >
+              <Calendar size={16} /> Proceed to Calendar
+            </a>
+            
+            {/* UPDATED BUTTON: Redirects to Security Page instead of direct download */}
+            <Link 
+              to="/security"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-zinc-900 border border-zinc-800 text-white font-bold uppercase tracking-widest text-[10px] hover:border-blue-500 transition-all"
+            >
+              <FileText size={16} className="text-blue-400" /> Read Security Whitepaper
+            </Link>
+          </div>
         </div>
       )}
 
