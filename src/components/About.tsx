@@ -1,7 +1,49 @@
 import React from 'react';
 import { Terminal, Shield, Award, Cpu } from 'lucide-react';
 
-// ... (Keep ProfileCard component exactly as you have it)
+// 1. RE-DEFINING PROFILECARD (This was likely missing)
+const ProfileCard: React.FC<{
+  initials: string;
+  name: string;
+  title: string;
+  bio: string;
+  domains: string[];
+  alt?: string;
+}> = ({ initials, name, title, bio, domains, alt }) => {
+  return (
+    <div className="border border-white/10 p-8 rounded-lg bg-[#0a0a0a]">
+      <div className="flex items-start space-x-6">
+        <div className="w-20 h-20 overflow-hidden rounded-md border border-white/10 bg-transparent">
+          <img
+            src={`/headshots/${initials}.jpg`}
+            loading="lazy"
+            onError={(e) => { (e.currentTarget as HTMLImageElement).src = `/headshots/placeholder.svg`; }}
+            alt={alt ?? `${name} - ${title} at Nihilo`}
+            className="w-full h-full object-cover"
+            style={{ objectPosition: '50% 20%' }}
+          />
+        </div>
+
+        <div className="flex-1">
+          <h3 className="text-2xl md:text-3xl font-bold text-white uppercase italic tracking-tighter">{name}</h3>
+          <div className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-400 mt-2">{title}</div>
+          <div className="border-t border-white/5 mt-4 pt-4">
+            <p className="text-zinc-400 text-sm leading-relaxed font-light">{bio}</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-4 mt-6">
+        {domains.map((d) => (
+          <div key={d} className="border border-white/10 p-3 rounded-md flex items-center gap-3 bg-white/5">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_5px_#3b82f6]" />
+            <span className="text-[9px] font-mono uppercase tracking-wider text-zinc-300">{d}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const About: React.FC = () => {
   const sam = {
@@ -13,7 +55,7 @@ const About: React.FC = () => {
   };
 
   const vance = {
-    initials: 'JI',
+    initials: 'JI', // Matches your "Jake Ice" initials
     name: 'Jake Ice',
     title: 'Co-Founder / Head of Business Operations',
     bio: 'Leads client acquisition, sales operations, and commercial strategy, managing proposals, partnerships, and financial operations to drive growth.',
@@ -33,7 +75,7 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          {/* RIGHT: UPDATED TECHNICAL PEDIGREE ASIDE */}
+          {/* RIGHT: UPDATED TECHNICAL PEDIGREE */}
           <aside className="bg-zinc-900/50 border border-zinc-800 p-8 rounded-lg flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3 mb-6">
@@ -45,7 +87,6 @@ const About: React.FC = () => {
                 Core competencies and cloud certifications that shape our delivery.
               </p>
 
-              {/* CORE COMPETENCIES */}
               <div className="mb-10">
                 <h4 className="text-blue-500 text-[9px] font-mono uppercase tracking-[0.3em] mb-4 flex items-center gap-2">
                    <Cpu size={12} /> Core Competencies
@@ -70,7 +111,6 @@ const About: React.FC = () => {
                 </ul>
               </div>
 
-              {/* CLOUD CERTIFICATIONS */}
               <div>
                 <h4 className="text-blue-500 text-[9px] font-mono uppercase tracking-[0.3em] mb-4 flex items-center gap-2">
                   <Award size={12} /> Cloud Certifications
@@ -92,7 +132,6 @@ const About: React.FC = () => {
               </div>
             </div>
 
-            {/* Bottom Status Tag */}
             <div className="mt-8 pt-6 border-t border-zinc-800">
               <span className="text-[8px] font-mono text-zinc-600 uppercase tracking-[0.4em]">
                 Verified Production Standards
