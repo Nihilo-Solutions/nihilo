@@ -205,7 +205,7 @@ const AssessmentPage: React.FC = () => {
           <p className="text-zinc-400 text-sm leading-relaxed mb-8 font-light">
             Check your inbox. A copy has also been sent to our engineering team for review. 
             <br /><br />
-            Expect a follow-up from <span className="text-blue-400 font-mono">help@nihilosolutions.com</span> within 24 hours.
+            Expect a follow-up email <span className="text-blue-400 font-mono"></span> within 24 hours.
           </p>
           
           <a 
