@@ -12,7 +12,7 @@ const SecurityPage: React.FC = () => {
           <div className="animate-in fade-in slide-in-from-left-4 duration-700">
             <Link to="/" className="flex items-center gap-2 text-zinc-500 hover:text-blue-400 transition-colors mb-8 group">
               <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-              <span className="text-[10px] font-mono uppercase tracking-widest">Return to Terminal</span>
+              <span className="text-[10px] font-mono uppercase tracking-widest">Home Page</span>
             </Link>
             
             <div className="inline-flex items-center space-x-3 mb-4 px-3 py-1 border border-blue-500/30 rounded-full bg-blue-500/5">
