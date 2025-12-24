@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Add this for internal navigation
+import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import About from '../components/About';
 import Booking from '../components/Booking';
 import Security from '../components/Security';
 
-// High-end technical icon set
 import { 
   Github, 
   Linkedin, 
@@ -102,13 +101,11 @@ const Footer: React.FC = () => (
 const Home: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-zinc-950 text-zinc-200 selection:bg-blue-500/30">
-      {/* Navbar is now handled in App.tsx globally */}
-      
       <main>
         <Hero />
         <Services />
         
-        {/* Replacement Diagnostic CTA */}
+        {/* Readiness Assessment CTA */}
         <section id="assessment" className="py-24 bg-zinc-950">
           <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center">
              <div className="inline-flex items-center space-x-3 mb-6 px-4 py-2 border border-blue-500/30 rounded-full bg-blue-500/5">
@@ -128,34 +125,6 @@ const Home: React.FC = () => {
 
         <Security />
         <About />
-        
-        {/* CTA Section */}
-        <section id="contact" className="py-32 bg-zinc-950 border-t border-zinc-900">
-          <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
-            <div className="relative border border-zinc-800 bg-zinc-900/10 p-16 md:p-24 text-center overflow-hidden rounded-sm">
-              <div className="absolute inset-0 grid-bg opacity-10"></div>
-              <div className="relative z-10 max-w-3xl mx-auto">
-                <Terminal size={40} strokeWidth={1} className="mx-auto text-zinc-700 mb-8" />
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tighter uppercase italic">
-                  Architecting Your Next Move
-                </h2>
-                <p className="text-zinc-400 text-lg mb-10 font-light leading-relaxed">
-                  From RAG backed knowledge systems to cloud native modernization. Connect with our engineering principals for a technical audit of your AI-driven environment.
-                </p>
-                <a 
-                  href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-4 px-12 py-5 bg-white text-black font-bold uppercase text-xs tracking-[0.2em] hover:bg-zinc-200 transition-all group"
-                >
-                  <span>Request Technical Audit</span>
-                  <ArrowUpRight size={16} strokeWidth={2.5} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <Booking />
       </main>
 
