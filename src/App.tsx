@@ -1,14 +1,16 @@
 import React from 'react';
-// Added BrowserRouter to the import list below
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar'; // Adjust path if it's in /components
 import Home from './pages/Home';
 import AssessmentPage from './pages/AssessmentPage';
 import SecurityPage from './pages/SecurityPage';
 
 function App() {
   return (
-    /* This wrapper is what was missing and causing the error */
     <BrowserRouter>
+      {/* 1. Placing Navbar here makes it global across all pages */}
+      <Navbar /> 
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/assessment" element={<AssessmentPage />} />
