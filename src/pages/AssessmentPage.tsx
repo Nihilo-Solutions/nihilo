@@ -9,7 +9,9 @@ const AssessmentPage: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [isSending, setIsSending] = useState(false);
+  const [emailSent, setEmailSent] = useState(false); // New success state
 
+  // Logic to calculate a business readiness percentage
   const calculateReadinessScore = () => {
     const highReadinessAnswers = [
       "Cloud-Native", "Yes, fully integrated", "Real-time", 
@@ -17,12 +19,15 @@ const AssessmentPage: React.FC = () => {
     ];
     const totalQuestions = ASSESSMENT_QUESTIONS.length;
     const matchingAnswers = Object.values(answers).filter(val => highReadinessAnswers.includes(val)).length;
+    
+    // Weighted score for visual impact (min 15%, max 98%)
     return Math.min(98, Math.max(15, Math.floor((matchingAnswers / totalQuestions) * 100) + 42));
   };
 
   const sendEmail = () => {
     setIsSending(true);
 
+    // Grouping answers by Phase for a professional strategic report
     const phases = [...new Set(ASSESSMENT_QUESTIONS.map(q => q.phase))];
     const formattedResults = phases.map(phase => {
       const phaseQuestions = ASSESSMENT_QUESTIONS.filter(q => q.phase === phase);
@@ -40,7 +45,7 @@ const AssessmentPage: React.FC = () => {
       booking_link: "https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
     };
 
-    // SECURE INJECTION VIA ENV VARIABLES
+    // Securely trigger EmailJS using Environment Variables
     emailjs.send(
       import.meta.env.VITE_EMAILJS_SERVICE_ID, 
       import.meta.env.VITE_EMAILJS_TEMPLATE_ID, 
@@ -48,7 +53,7 @@ const AssessmentPage: React.FC = () => {
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
       .then(() => {
-        alert("Strategic AI Assessment dispatched to " + userData.email);
+        setEmailSent(true); // Trigger Success UI
         setIsSending(false);
       }, (err) => {
         console.error("EmailJS Error:", err);
@@ -62,7 +67,7 @@ const AssessmentPage: React.FC = () => {
     
     if (currentStep < ASSESSMENT_QUESTIONS.length - 1) {
       setCurrentStep(currentStep + 1);
-      window.scrollTo(0, 0); // Reset scroll position for next question
+      window.scrollTo(0, 0); // Reset scroll for next question
     } else {
       setStage('results');
       window.scrollTo(0, 0);
@@ -159,30 +164,63 @@ const AssessmentPage: React.FC = () => {
       </div>
       
       <h2 className="text-4xl font-bold text-white mb-6 italic uppercase tracking-tighter">Assessment Complete</h2>
-      <p className="text-zinc-400 mb-12 leading-relaxed font-light">
-        A comprehensive strategy report for <span className="text-white font-bold">{userData.company}</span> has been compiled and is ready for dispatch.
-      </p>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <button 
-          onClick={sendEmail} 
-          disabled={isSending}
-          className="flex items-center justify-center gap-3 p-5 bg-zinc-900 border border-zinc-800 hover:border-blue-500 text-white font-bold uppercase text-[10px] tracking-[0.3em] transition-all disabled:opacity-50 group"
-        >
-          <Mail size={16} className="group-hover:text-blue-400" /> {isSending ? "Dispatching..." : "Email Full Report"}
-        </button>
-        <a 
-          href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/" 
-          target="_blank" 
-          rel="noreferrer"
-          className="flex items-center justify-center gap-3 p-5 bg-blue-500 text-black font-bold uppercase text-[10px] tracking-[0.3em] hover:bg-white transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)]"
-        >
-          <Calendar size={16} /> Book Principal Consultation
-        </a>
-      </div>
+      {!emailSent ? (
+        <>
+          <p className="text-zinc-400 mb-12 leading-relaxed font-light">
+            A comprehensive strategy report for <span className="text-white font-bold">{userData.company}</span> has been compiled and is ready for dispatch.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <button 
+              onClick={sendEmail} 
+              disabled={isSending}
+              className="flex items-center justify-center gap-3 p-5 bg-zinc-900 border border-zinc-800 hover:border-blue-500 text-white font-bold uppercase text-[10px] tracking-[0.3em] transition-all disabled:opacity-50 group"
+            >
+              <Mail size={16} className="group-hover:text-blue-400" /> {isSending ? "Dispatching..." : "Email Full Report"}
+            </button>
+            <a 
+              href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/" 
+              target="_blank" 
+              rel="noreferrer"
+              className="flex items-center justify-center gap-3 p-5 bg-blue-500 text-black font-bold uppercase text-[10px] tracking-[0.3em] hover:bg-white transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+            >
+              <Calendar size={16} /> Book Principal Consultation
+            </a>
+          </div>
+        </>
+      ) : (
+        /* GLOWING CHECKMARK SUCCESS CARD */
+        <div className="bg-zinc-900/50 border border-blue-500/30 p-8 md:p-12 rounded-lg animate-in zoom-in-95 duration-500">
+          <div className="flex justify-center mb-6">
+            <div className="relative">
+              <div className="absolute inset-0 bg-blue-500 blur-xl opacity-20 animate-pulse"></div>
+              <div className="relative bg-zinc-900 border-2 border-blue-500 rounded-full p-4">
+                <ShieldCheck size={40} className="text-blue-500" />
+              </div>
+            </div>
+          </div>
+          
+          <h3 className="text-xl font-bold text-white uppercase tracking-widest mb-4 italic">Report Dispatched</h3>
+          <p className="text-zinc-400 text-sm leading-relaxed mb-8 font-light">
+            Check your inbox. A copy has also been sent to our engineering team for review. 
+            <br /><br />
+            Expect a follow-up from <span className="text-blue-400 font-mono">help@nihilosolutions.com</span> within 24 hours.
+          </p>
+          
+          <a 
+            href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/" 
+            target="_blank" 
+            rel="noreferrer"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-blue-500 text-black font-black uppercase tracking-widest text-[10px] hover:bg-white transition-all shadow-[0_0_15px_rgba(59,130,246,0.2)]"
+          >
+            Proceed to Calendar
+          </a>
+        </div>
+      )}
 
       <p className="text-[9px] font-mono uppercase tracking-widest text-zinc-700 mt-16">
-        Questions? Contact <span className="text-zinc-500 underline hover:text-white transition-colors cursor-pointer">help@nihilosolutions.com</span>
+        Direct Support: <span className="text-zinc-500 underline hover:text-white transition-colors cursor-pointer">help@nihilosolutions.com</span>
       </p>
     </div>
   );

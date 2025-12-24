@@ -29,9 +29,9 @@ const Security: React.FC = () => {
                   style={{ boxShadow: '2px 2px 0 rgba(0,0,0,1)' }}
                   download
                 >
-                  <span className="mr-2">[</span>
+                  <span className="mr-2"></span>
                   <span>Download Security Whitepaper</span>
-                  <span className="ml-2">]</span>
+                  <span className="ml-2"></span>
                 </a>
             </div>
           </div>
