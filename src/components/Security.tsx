@@ -9,7 +9,7 @@ const Security: React.FC = () => {
           <div>
             <div className="flex items-center space-x-4 mb-4">
               <Shield className="text-blue-500" />
-              <h2 className="text-3xl font-bold text-white">Security‑First Architecture</h2>
+              <h2 className="text-3xl font-bold text-white">Security First Architecture</h2>
             </div>
             <p className="text-zinc-400 mb-6">
               We deploy into your tenant and enforce zero‑trust controls by default. Data residency, BYOK KMS integrations, and enterprise encryption are core to every engagement.

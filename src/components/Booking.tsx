@@ -35,7 +35,7 @@ const Booking: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-bold text-sm">Direct Availability</h4>
-                  <p className="text-zinc-500 text-xs mt-1">Real-time scheduling for current project cycle.</p>
+                  <p className="text-zinc-500 text-xs mt-1">Real time scheduling for current project cycle.</p>
                 </div>
               </div>
             </div>

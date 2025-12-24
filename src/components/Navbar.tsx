@@ -1,6 +1,4 @@
-
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -14,33 +12,49 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'py-4' : 'py-8'}`}>
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
-        <div className={`flex justify-between items-center px-6 py-3 rounded-full border transition-all duration-500 ${isScrolled ? 'glass-panel border-zinc-800' : 'border-transparent'}`}>
-          <div className="flex items-center space-x-12">
+        <div className={`grid grid-cols-3 items-center px-8 py-3 rounded-full border transition-all duration-500 
+          ${isScrolled 
+            ? 'bg-zinc-950/90 backdrop-blur-xl border-zinc-800 shadow-[0_0_30px_rgba(0,0,0,0.5)]' 
+            : 'bg-transparent border-transparent'
+          }`}>
+          
+          {/* Left: Brand */}
+          <div className="flex justify-start">
             <a href="/" className="flex items-center space-x-2 group">
-              <div className="w-2 h-2 bg-white rounded-full group-hover:scale-150 transition-transform"></div>
-              <span className="text-sm font-bold tracking-[0.2em] text-white uppercase italic">Nihilo</span>
+              <div className="w-2 h-2 bg-white rounded-full group-hover:shadow-[0_0_8px_#fff] transition-all duration-500"></div>
+              <span className="text-sm font-black tracking-[0.3em] text-white uppercase italic">Nihilo</span>
             </a>
-            
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#services" className="text-[10px] mono uppercase tracking-widest text-zinc-500 hover:text-white transition-colors">Services</a>
-              <a href="#about" className="text-[10px] mono uppercase tracking-widest text-zinc-500 hover:text-white transition-colors">About</a>
-              <a href="#contact" className="text-[10px] mono uppercase tracking-widest text-zinc-500 hover:text-white transition-colors">Contact</a>
-            </div>
           </div>
 
-          <div className="flex items-center space-x-6">
-            <span className="hidden lg:block text-[10px] mono text-zinc-600 uppercase tracking-tighter">
-              Availability: ACTIVE
-            </span>
+          {/* Center: High-Contrast Navigation */}
+          <div className="hidden md:flex justify-center items-center space-x-24">
+            {['Services', 'About', 'Contact'].map((item) => (
+              <a 
+                key={item}
+                href={`#${item.toLowerCase()}`} 
+                className="relative group text-[11px] font-bold mono uppercase tracking-[0.4em] text-zinc-100 transition-all duration-300"
+              >
+                {/* Glowing Text on Hover */}
+                <span className="group-hover:text-blue-400 group-hover:drop-shadow-[0_0_8px_rgba(96,165,250,0.8)] transition-all duration-300">
+                  {item}
+                </span>
+                
+                {/* Technical Underline Indicator */}
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-blue-500 transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_5px_#3b82f6]"></span>
+              </a>
+            ))}
+          </div>
+
+          {/* Right: CTA */}
+          <div className="flex justify-end items-center">
             <a
               href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 font-mono uppercase tracking-[0.1em] text-white rounded-sm border border-blue-400 bg-zinc-800 transition-all duration-300"
-              style={{ boxShadow: '2px 2px 0 rgba(0,0,0,1)' }}
+              className="inline-flex items-center px-6 py-2 font-mono uppercase tracking-[0.2em] text-white rounded-sm border-2 border-blue-500 bg-zinc-900 transition-all duration-300 hover:bg-blue-500 hover:text-black hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]"
             >
-              <span className="text-blue-400 mr-2">+</span>
-              <span>Book Call</span>
+              <span className="mr-2 font-bold"></span>
+              <span className="text-[10px] font-black">Book Call</span>
             </a>
           </div>
         </div>

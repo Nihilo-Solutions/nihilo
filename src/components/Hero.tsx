@@ -18,11 +18,11 @@ const Hero: React.FC = () => {
           </div>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight mb-6">
-            Zero-to-One Enterprise AI
+            Zero to One Enterprise AI
           </h1>
 
           <p className="max-w-2xl text-lg md:text-xl text-zinc-400 font-light leading-relaxed mb-8 border-l-2 border-zinc-800 pl-8">
-            We design, implement and productionize tenant-local RAG pipelines and agentic automation on Azure and AWS — secure, auditable, and engineered for scale.
+            We design, implement and productionize tenant-local RAG pipelines and agentic automation on Azure and AWS. Secure, auditable, and engineered for scale.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
@@ -34,12 +34,12 @@ const Hero: React.FC = () => {
               className="relative inline-flex items-center px-6 py-3 font-mono uppercase tracking-[0.1em] text-white rounded-sm border border-blue-400 bg-zinc-800 transition-all duration-300"
               style={{ boxShadow: '2px 2px 0 rgba(0,0,0,1)' }}
             >
-              <span className="text-blue-400 mr-2">[</span>
+              <span className="text-blue-400 mr-2"></span>
               <span className="flex items-center gap-2">
                 <span>Book Discovery</span>
                 <ArrowRight size={14} />
               </span>
-              <span className="text-blue-400 ml-2">]</span>
+              <span className="text-blue-400 ml-2"></span>
             </a>
 
             <a href="#services" className="inline-flex items-center justify-center space-x-3 px-6 py-3 font-mono uppercase tracking-[0.1em] border border-slate-700 text-zinc-200 rounded-sm bg-transparent hover:bg-white hover:text-black transition-all duration-300">
@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
         <div className="max-w-screen-2xl mx-auto flex justify-between items-center text-[10px] mono text-zinc-600">
           <div />
           <div className="tracking-widest">
-            PRODUCTION-READY // STATUS: OPERATIONAL
+            PRODUCTION-READY
           </div>
         </div>
       </div>
