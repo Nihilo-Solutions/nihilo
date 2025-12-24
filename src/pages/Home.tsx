@@ -71,7 +71,7 @@ const Footer: React.FC = () => (
           <ul className="space-y-6 text-zinc-500 text-sm font-light">
             <li className="flex items-center space-x-3 group">
               <Hash size={16} strokeWidth={1.5} className="text-zinc-700" />
-              <a href="mailto:support@nihilosolutions.com" className="hover:text-white font-mono transition-colors">eng@nihilosolutions.com</a>
+              <a href="mailto:support@nihilosolutions.com" className="hover:text-white font-mono transition-colors">support@nihilosolutions.com</a>
             </li>
             <li className="flex items-center space-x-3">
               <Activity size={16} strokeWidth={1.5} className="text-zinc-700" />
@@ -79,7 +79,7 @@ const Footer: React.FC = () => (
             </li>
             <li className="flex items-center space-x-3">
               <Terminal size={16} strokeWidth={1.5} className="text-zinc-700" />
-              <span className="font-mono text-[10px] tracking-widest uppercase">Loc: SF_CA_USA</span>
+              <span className="font-mono text-[10px] tracking-widest uppercase">Loc: CT_USA</span>
             </li>
           </ul>
         </div>
