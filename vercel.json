@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/((?!api|_vercel).*)",
+      "source": "/((?!api|_vercel|robots\\.txt|sitemap\\.xml|.*\\.(?:png|jpg|pdf|svg|webp|ico)).*)",
       "destination": "/index.html"
     }
   ]
