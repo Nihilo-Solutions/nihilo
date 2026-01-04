@@ -10,12 +10,12 @@ if (!rootElement) {
   throw new Error("Could not find root element to mount to");
 }
 
-// We only create the root ONCE
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
     <App />
-    <Analytics /> 
+    {/* Debug mode will log events to your browser console */}
+    <Analytics debug={true} /> 
   </React.StrictMode>
 );
