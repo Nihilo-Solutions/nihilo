@@ -1,16 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './styles.css'; // ADD THIS LINE
+import './styles.css'; 
 import App from './App';
+import { Analytics } from '@vercel/analytics/react';
 
 const rootElement = document.getElementById('root');
+
 if (!rootElement) {
   throw new Error("Could not find root element to mount to");
 }
 
+// We only create the root ONCE
 const root = ReactDOM.createRoot(rootElement);
+
 root.render(
   <React.StrictMode>
     <App />
+    <Analytics /> 
   </React.StrictMode>
 );
