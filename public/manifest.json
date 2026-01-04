@@ -14,10 +14,10 @@
       "purpose": "any"
     },
     {
-      "src": "/logo.png",
+      "src": "/logo-maskable.png", 
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "maskable"
     }
   ]
 }

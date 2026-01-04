@@ -1,0 +1,14 @@
+# Nihilo Solutions
+> Secure, tenant-local RAG and LLM Ops consulting for enterprise Azure and AWS environments.
+
+## Core Services
+- [Home](https://nihilosolutions.com/): Overview of Nihilo's mission to enable secure agentic automation.
+- [AI Assessment](https://nihilosolutions.com/assessment): A framework for evaluating enterprise LLM readiness and ROI.
+- [Security Architecture](https://nihilosolutions.com/security): Details on zero-data-retention patterns and tenant-local vector databases.
+
+## Resources
+- [Secure RAG Whitepaper](https://nihilosolutions.com/nihilo_whitepaper.pdf): Technical brief on bypassing public LLM data risks.
+
+## Technical Specifications
+- Focus: Azure OpenAI, AWS Bedrock, Pinecone, Weaviate.
+- Governance: SOC2 compliance patterns, BYOK (Bring Your Own Key) integration.
