@@ -12,7 +12,7 @@ const Security: React.FC = () => {
           <div>
             <div className="flex items-center space-x-4 mb-4">
               <Shield className="text-blue-500" />
-              <h2 className="text-3xl font-bold text-white uppercase italic tracking-tighter">
+              <h2 id="security-first-architecture" className="text-3xl font-bold text-white uppercase italic tracking-tighter">
                 Security First Architecture
               </h2>
             </div>

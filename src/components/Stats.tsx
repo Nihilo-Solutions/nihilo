@@ -10,7 +10,7 @@ const Stats: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div>
             <span className="text-[10px] mono uppercase tracking-[0.4em] text-zinc-600 mb-6 block">02 // Optimization Metrics</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 tracking-tighter">Measurable Operational Gains</h2>
+            <h2 id="measurable-operational-gains" className="text-4xl md:text-5xl font-bold text-white mb-8 tracking-tighter">Measurable Operational Gains</h2>
             <p className="text-zinc-500 text-lg mb-12 leading-relaxed font-light">
               Our engineering approach prioritizes reduction in manual cycle times and significant latency optimization. We don't just build; we optimize for scale and cost-efficiency.
             </p>

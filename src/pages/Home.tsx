@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
+import TableOfContents from '../components/TableOfContents';
 import Services from '../components/Services';
 import About from '../components/About';
 import Booking from '../components/Booking';
@@ -103,6 +104,7 @@ const Home: React.FC = () => {
     <div className="relative min-h-screen bg-zinc-950 text-zinc-200 selection:bg-blue-500/30">
       <main>
         <Hero />
+        <TableOfContents />
         <Services />
         
         {/* Readiness Assessment CTA */}
@@ -112,7 +114,7 @@ const Home: React.FC = () => {
                 <Activity size={14} className="text-blue-400" />
                 <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-blue-400">System Diagnostic Available</span>
              </div>
-             <h2 className="text-4xl font-bold text-white mb-8 italic uppercase tracking-tighter">Ready for AI implementation?</h2>
+             <h2 id="ready-for-ai-implementation" className="text-4xl font-bold text-white mb-8 italic uppercase tracking-tighter">Ready for AI implementation?</h2>
              <Link 
                to="/assessment"
                className="inline-flex items-center space-x-4 px-10 py-4 bg-zinc-900 border border-zinc-800 text-white font-bold uppercase text-[10px] tracking-[0.3em] hover:border-blue-500 transition-all group"

@@ -147,7 +147,7 @@ const AssessmentPage: React.FC = () => {
         <div className="text-[10px] font-mono uppercase tracking-[0.4em] text-zinc-500">AI_Business_Maturity_Index</div>
       </div>
       
-      <h2 className="text-4xl font-bold text-white mb-6 italic uppercase tracking-tighter">Assessment Complete</h2>
+      <h2 id="assessment-complete" className="text-4xl font-bold text-white mb-6 italic uppercase tracking-tighter">Assessment Complete</h2>
       
       {!emailSent ? (
         <>

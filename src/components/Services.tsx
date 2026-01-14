@@ -37,7 +37,7 @@ const Services: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-start mb-24 space-y-8 md:space-y-0">
           <div className="max-w-md">
             <span className="text-[10px] mono uppercase tracking-[0.4em] text-zinc-600 mb-4 block">01 // Capabilities</span>
-            <h2 className="text-4xl font-bold text-white tracking-tighter italic uppercase">Foundational Expertise</h2>
+            <h2 id="foundational-expertise" className="text-4xl font-bold text-white tracking-tighter italic uppercase">Foundational Expertise</h2>
           </div>
           <p className="text-zinc-500 max-w-sm text-sm leading-relaxed mono">
             We operate at the intersection of high-fidelity design and deep system architecture.
@@ -50,70 +50,91 @@ const Services: React.FC = () => {
           {/* 1. Enterprise RAG */}
           <article className="group p-10 bg-zinc-900/40 border border-zinc-900 rounded-2xl hover:bg-zinc-900/60 hover:border-zinc-800 transition-all duration-500">
             <ServiceIcon icon={Database} colorClass="text-blue-400" />
-            <h3 className="text-xl font-bold text-white mb-6 tracking-tight uppercase italic">
+            <h4 id="enterprise-rag-implementation" className="text-xl font-bold text-white mb-6 tracking-tight uppercase italic">
               Enterprise RAG Implementation
-            </h3>
-            
-            <div className="text-[13px] text-zinc-500 space-y-5 font-light">
-              <div className="flex items-start gap-4">
-                <AlertTriangle className="mt-1 text-zinc-700 group-hover:text-blue-500/50 transition-colors" size={16} strokeWidth={1.5} />
-                <div><span className="text-zinc-300 font-mono uppercase text-[10px] tracking-widest block mb-1">Problem:</span> Fragmented data, poor retrieval accuracy, uncontrolled hallucinations.</div>
-              </div>
-              <div className="flex items-start gap-4">
-                <Search className="mt-1 text-zinc-700 group-hover:text-blue-500/50 transition-colors" size={16} strokeWidth={1.5} />
-                <div><span className="text-zinc-300 font-mono uppercase text-[10px] tracking-widest block mb-1">Approach:</span> Build vectorized indexes, tuning retrieval & prompt templates; controlled context windowing.</div>
-              </div>
-              <div className="flex items-start gap-4">
-                <Target className="mt-1 text-zinc-700 group-hover:text-blue-500/50 transition-colors" size={16} strokeWidth={1.5} />
-                <div><span className="text-zinc-300 font-mono uppercase text-[10px] tracking-widest block mb-1">KPIs:</span> Precision@K, latency (ms), tokens/call cost.</div>
-              </div>
-            </div>
+            </h4>
+
+            <p className="text-[13px] text-zinc-500 mb-4 font-light">
+              Organizations scaling LLM features frequently confront fragmented knowledge, unpredictable hallucinations, and regulatory exposure when sensitive information leaves the tenancy. Nihilo solves this with a production-grade enterprise RAG implementation that keeps embeddings, vector indexes, and retrieval logic inside your cloud tenancy (tenant-local RAG). We normalize and redact sensitive fields during ingestion, deploy vector databases in your VPC/VNet, and use hybrid retrieval (semantic + metadata) combined with reranking to reduce hallucination risk while preserving auditability and data residency.
+            </p>
+
+            <h5 className="text-sm text-zinc-300 uppercase tracking-wider mb-2">How we implement it</h5>
+            <ul className="text-zinc-500 text-[13px] mb-4 space-y-2">
+              <li>Secure ingestion pipelines that filter, normalize and redact PII before indexing.</li>
+              <li>Tenant-local vector stores with BYOK KMS integration and strict network controls.</li>
+              <li>Retrieval tuning, prompt templates and reranking to improve factuality.</li>
+            </ul>
+
+            <h5 className="text-sm text-zinc-300 uppercase tracking-wider mb-2">Key benefits & KPIs</h5>
+            <ul className="text-zinc-500 text-[13px] space-y-2">
+              <li>Reduced data exposure: typical deployments show &gt;95% reduction in external data egress.</li>
+              <li>Improved Precision@K by 20–40% through tuned retrieval and reranking.</li>
+              <li>Median retrieval latency &lt;200ms for typical document stores, supporting enterprise SLAs.</li>
+            </ul>
+
+            <p className="mt-4 text-zinc-400 text-sm">
+              Learn more in our <a className="underline text-blue-400" href="/security">Security Whitepaper</a> or start with a technical readiness evaluation via the <a className="underline text-blue-400" href="/assessment">AI Readiness Assessment</a>.
+            </p>
           </article>
 
           {/* 2. Agentic Automation */}
           <article className="group p-10 bg-zinc-900/40 border border-zinc-900 rounded-2xl hover:bg-zinc-900/60 hover:border-zinc-800 transition-all duration-500">
             <ServiceIcon icon={Cpu} colorClass="text-emerald-400" />
-            <h3 className="text-xl font-bold text-white mb-6 tracking-tight uppercase italic">
+            <h4 id="agentic-process-automation" className="text-xl font-bold text-white mb-6 tracking-tight uppercase italic">
               Agentic Process Automation
-            </h3>
-            
-            <div className="text-[13px] text-zinc-500 space-y-5 font-light">
-              <div className="flex items-start gap-4">
-                <AlertTriangle className="mt-1 text-zinc-700 group-hover:text-emerald-500/50 transition-colors" size={16} strokeWidth={1.5} />
-                <div><span className="text-zinc-300 font-mono uppercase text-[10px] tracking-widest block mb-1">Problem:</span> Manual workflows, latency in decisioning and incident response.</div>
-              </div>
-              <div className="flex items-start gap-4">
-                <Wrench className="mt-1 text-zinc-700 group-hover:text-emerald-500/50 transition-colors" size={16} strokeWidth={1.5} />
-                <div><span className="text-zinc-300 font-mono uppercase text-[10px] tracking-widest block mb-1">Approach:</span> Define agent goals, safety sandboxes, orchestrate agents via serverless event patterns.</div>
-              </div>
-              <div className="flex items-start gap-4">
-                <BarChart2 className="mt-1 text-zinc-700 group-hover:text-emerald-500/50 transition-colors" size={16} strokeWidth={1.5} />
-                <div><span className="text-zinc-300 font-mono uppercase text-[10px] tracking-widest block mb-1">KPIs:</span> Manual steps removed, avg resolution time, throughput.</div>
-              </div>
-            </div>
+            </h4>
+
+            <p className="text-[13px] text-zinc-500 mb-4 font-light">
+              Many enterprises struggle with slow, error-prone workflows that rely on manual handoffs and brittle integrations. Nihilo's agentic process automation blends deterministic orchestration with controlled LLM agents to automate multi-step business processes while preserving governance. Agents operate inside policy sandboxes with clear role separation and observable action trails, enabling autonomous behavior for routine tasks and human-in-the-loop control for exceptions.
+            </p>
+
+            <h5 className="text-sm text-zinc-300 uppercase tracking-wider mb-2">How Nihilo delivers agentic automation</h5>
+            <ul className="text-zinc-500 text-[13px] mb-4 space-y-2">
+              <li>Define agent goals and safety constraints using reusable governance templates.</li>
+              <li>Orchestrate agents with event-driven serverless patterns for reliability and idempotency.</li>
+              <li>Integrate with ticketing, CI and observability stacks while enforcing RBAC and separation of duties.</li>
+            </ul>
+
+            <h5 className="text-sm text-zinc-300 uppercase tracking-wider mb-2">Key benefits & KPIs</h5>
+            <ul className="text-zinc-500 text-[13px] space-y-2">
+              <li>Reduce repetitive manual steps by 60–85%, accelerating throughput and reducing error rates.</li>
+              <li>Decrease Mean Time To Resolution (MTTR) by 30–70% through automated triage and remediation.</li>
+              <li>Full auditability: 100% of agent actions are logged, traceable, and replayable for compliance.</li>
+            </ul>
+
+            <p className="mt-4 text-zinc-400 text-sm">
+              See practical examples for <em>agentic automation on Azure</em> and schedule a focused assessment via our <a className="underline text-blue-400" href="/assessment">AI Readiness Assessment</a> or <a className="underline text-blue-400" href="/#contact">book a discovery call</a>.
+            </p>
           </article>
 
           {/* 3. Cloud-Native AI Infra */}
           <article className="group p-10 bg-zinc-900/40 border border-zinc-900 rounded-2xl hover:bg-zinc-900/60 hover:border-zinc-800 transition-all duration-500">
             <ServiceIcon icon={Layers} colorClass="text-purple-400" />
-            <h3 className="text-xl font-bold text-white mb-6 tracking-tight uppercase italic">
+            <h4 id="cloud-native-ai-infrastructure" className="text-xl font-bold text-white mb-6 tracking-tight uppercase italic">
               Cloud-Native AI Infrastructure
-            </h3>
-            
-            <div className="text-[13px] text-zinc-500 space-y-5 font-light">
-              <div className="flex items-start gap-4">
-                <AlertTriangle className="mt-1 text-zinc-700 group-hover:text-purple-500/50 transition-colors" size={16} strokeWidth={1.5} />
-                <div><span className="text-zinc-300 font-mono uppercase text-[10px] tracking-widest block mb-1">Problem:</span> Monolithic infra, unpredictable costs, and single-tenant risk.</div>
-              </div>
-              <div className="flex items-start gap-4">
-                <Zap className="mt-1 text-zinc-700 group-hover:text-purple-500/50 transition-colors" size={16} strokeWidth={1.5} />
-                <div><span className="text-zinc-300 font-mono uppercase text-[10px] tracking-widest block mb-1">Approach:</span> IaC, autoscaling containers, burst serverless patterns, and cost controls.</div>
-              </div>
-              <div className="flex items-start gap-4">
-                <BarChart2 className="mt-1 text-zinc-700 group-hover:text-purple-500/50 transition-colors" size={16} strokeWidth={1.5} />
-                <div><span className="text-zinc-300 font-mono uppercase text-[10px] tracking-widest block mb-1">KPIs:</span> Cost per throughput, RPO/RTO, deployment lead time.</div>
-              </div>
-            </div>
+            </h4>
+
+            <p className="text-[13px] text-zinc-500 mb-4 font-light">
+              Deploying AI at enterprise scale requires infrastructure that balances performance, cost predictability, and security. Nihilo engineers cloud-native AI platforms that treat model workloads as platform services: autoscaling inference clusters, request batching and caching, and telemetry-driven governance. Where compliance demands it, we deploy tenant-local infrastructure with strict network controls and KMS integrations so your inference and embedding pipelines remain under your control.
+            </p>
+
+            <h5 className="text-sm text-zinc-300 uppercase tracking-wider mb-2">Core implementation patterns</h5>
+            <ul className="text-zinc-500 text-[13px] mb-4 space-y-2">
+              <li>IaC modules (Terraform/ARM) with secure-by-default parameterization.</li>
+              <li>Autoscaling inference clusters, batching and model tiering to reduce per-request cost.</li>
+              <li>Telemetry for model drift, A/B evaluation and cost dashboards to enforce governance.</li>
+            </ul>
+
+            <h5 className="text-sm text-zinc-300 uppercase tracking-wider mb-2">Key benefits & KPIs</h5>
+            <ul className="text-zinc-500 text-[13px] space-y-2">
+              <li>Lower inference costs: batching & caching commonly yield 25–50% reduction in per-request spend.</li>
+              <li>Operational resilience: multi-zone failover and autoscaling meet enterprise RTO/RPO targets.</li>
+              <li>Security posture: tenant-local deployments and KMS simplify SOC 2 / ISO 27001 evidence collection.</li>
+            </ul>
+
+            <p className="mt-4 text-zinc-400 text-sm">
+              Read the deployment checklist in our <a className="underline text-blue-400" href="/security">Security Whitepaper</a> or request a platform design review during your <a className="underline text-blue-400" href="/assessment">readiness assessment</a>.
+            </p>
           </article>
         </div>
       </div>

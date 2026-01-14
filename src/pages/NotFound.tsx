@@ -20,7 +20,7 @@ const NotFound: React.FC = () => {
         </h1>
         
         <div className="mb-10">
-          <h2 className="text-2xl font-bold text-white uppercase tracking-[0.3em] mb-4">
+          <h2 id="route-not-found" className="text-2xl font-bold text-white uppercase tracking-[0.3em] mb-4">
             Route_Not_Found
           </h2>
           <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest max-w-md mx-auto leading-relaxed">

@@ -22,7 +22,7 @@ const Diagnostic: React.FC = () => {
       <section className="py-32 bg-zinc-950 flex justify-center px-6">
         <div className="max-w-2xl w-full bg-zinc-900/50 border border-zinc-800 p-12 rounded-2xl text-center">
           <Activity className="text-blue-500 mx-auto mb-6" size={48} />
-          <h2 className="text-3xl font-bold text-white mb-4 italic uppercase">Protocol Complete</h2>
+          <h2 id="protocol-complete" className="text-3xl font-bold text-white mb-4 italic uppercase">Protocol Complete</h2>
           <p className="text-zinc-400 mb-10 font-mono text-xs tracking-widest uppercase">
             Analysis ready. Enter email to receive readiness report & engineering feedback.
           </p>

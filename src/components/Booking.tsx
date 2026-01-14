@@ -12,7 +12,7 @@ const Booking: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div>
             <span className="text-[10px] mono uppercase tracking-[0.4em] text-zinc-600 mb-6 block">03 // Discovery</span>
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter uppercase italic">
+            <h2 id="discovery" className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter uppercase italic">
               Sync with <br />Engineering.
             </h2>
             <p className="text-zinc-500 text-xl font-light leading-relaxed mb-12">
