@@ -15,8 +15,9 @@
     "@mui/material": "^7.3.6",
     "@vercel/analytics": "^1.6.1",
     "lucide-react": "^0.562.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "^16.1.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "react-helmet-async": "^2.0.5",
     "react-router-dom": "^7.11.0",
     "recharts": "^3.6.0"
