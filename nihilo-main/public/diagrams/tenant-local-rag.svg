@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="360" viewBox="0 0 1000 360" role="img" aria-label="Tenant-local RAG architecture diagram">
+  <defs>
+    <style>
+      .bg { fill: #0f172a; }
+      .box { fill: #0ea5a8; stroke:#044e4c; stroke-width:2; rx:8; ry:8; }
+      .box-light { fill:#06b6d4; stroke:#044e4c; stroke-width:2; rx:8; ry:8; }
+      .cylinder { fill: #fde68a; stroke:#b45309; stroke-width:2; }
+      .cloud { fill:#c7f9ff; stroke:#036d6a; stroke-width:2; rx:20; ry:20; }
+      .text { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; fill:#012; font-size:14px; }
+      .title { font-weight:700; font-size:16px; fill:#022; }
+      .label { font-size:12px; fill:#083; }
+      .arrow { stroke:#044e4c; stroke-width:3; fill:none; marker-end:url(#arrowhead); }
+      .dashed { stroke:#666; stroke-width:1.5; fill:none; stroke-dasharray:6 6; }
+      .note { font-size:12px; fill:#083; font-style:italic; }
+      .small { font-size:11px; fill:#012; }
+      .key { fill:#ef4444; stroke:#991b1b; stroke-width:1.5; }
+      .log { fill:#f97316; stroke:#9a3412; stroke-width:1.5; }
+      .secure { fill:#34d399; stroke:#065f46; stroke-width:1.5; }
+    </style>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#044e4c"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="24" y="28" class="title">Tenant-local RAG Architecture (BYOK, audit logs, secure egress)</text>
+
+  <!-- User -->
+  <g transform="translate(40,60)">
+    <rect x="0" y="0" width="120" height="60" class="box-light"/>
+    <text x="60" y="34" text-anchor="middle" class="text">User</text>
+  </g>
+
+  <!-- App -->
+  <g transform="translate(200,50)">
+    <rect x="0" y="0" width="160" height="80" class="box"/>
+    <text x="80" y="44" text-anchor="middle" class="text">App / UI</text>
+  </g>
+
+  <!-- Tenant boundary -->
+  <g>
+    <rect x="390" y="30" width="520" height="280" class="dashed" rx="12" ry="12" />
+    <text x="420" y="28" class="small">Tenant Boundary (isolated compute & data)</text>
+  </g>
+
+  <!-- Orchestrator -->
+  <g transform="translate(420,60)">
+    <rect x="0" y="0" width="220" height="88" class="box"/>
+    <text x="110" y="22" text-anchor="middle" class="text">Orchestrator</text>
+    <text x="110" y="42" text-anchor="middle" class="small">Zero-Trust Policy Enforcement</text>
+    <text x="110" y="62" text-anchor="middle" class="small">Routing, auth, audit</text>
+    <!-- Audit log indicator -->
+    <rect x="190" y="6" width="18" height="18" class="log" rx="3" ry="3"/>
+    <text x="214" y="19" class="small">Audit Logs</text>
+  </g>
+
+  <!-- Vector DB (cylinder) -->
+  <g transform="translate(420,170)">
+    <!-- cylinder -->
+    <ellipse cx="110" cy="0" rx="110" ry="18" class="cylinder"/>
+    <rect x="0" y="0" width="220" height="84" class="cylinder"/>
+    <ellipse cx="110" cy="84" rx="110" ry="18" class="cylinder"/>
+    <text x="110" y="48" text-anchor="middle" class="text">Tenant-isolated Vector DB</text>
+    <text x="110" y="66" text-anchor="middle" class="small">Encrypted (BYOK)</text>
+    <!-- BYOK key icon -->
+    <rect x="6" y="6" width="18" height="12" class="key" rx="2" ry="2"/>
+    <text x="30" y="16" class="small">BYOK</text>
+  </g>
+
+  <!-- LLM (inside boundary) -->
+  <g transform="translate(700,80)">
+    <rect x="0" y="0" width="200" height="120" class="cloud" rx="18" ry="18"/>
+    <text x="100" y="36" text-anchor="middle" class="text">LLM</text>
+    <text x="100" y="56" text-anchor="middle" class="small">Inference Engine</text>
+    <text x="100" y="76" text-anchor="middle" class="note">Data never leaves boundary</text>
+  </g>
+
+  <!-- Arrows/flows -->
+  <!-- User -> App -->
+  <path d="M160 90 L200 90" class="arrow"/>
+  <!-- App -> Orchestrator -->
+  <path d="M360 90 L420 90" class="arrow"/>
+  <!-- Orchestrator -> Vector DB -->
+  <path d="M520 148 L520 170" class="arrow"/>
+  <!-- Orchestrator -> LLM -->
+  <path d="M640 118 L700 118" class="arrow"/>
+  <!-- Vector DB -> LLM (retrieval inside boundary) -->
+  <path d="M540 210 L700 210" class="arrow"/>
+
+  <!-- Secure egress control (small locked arrow out of boundary) -->
+  <g transform="translate(880,40)">
+    <path d="M0 40 L40 40" stroke="#065f46" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+    <rect x="42" y="28" width="18" height="18" class="secure" rx="3" ry="3"/>
+    <text x="66" y="40" class="small">Secure Egress</text>
+    <text x="66" y="56" class="small">(policy controlled)</text>
+  </g>
+
+  <!-- Legends -->
+  <g transform="translate(24,270)">
+    <rect x="0" y="0" width="14" height="10" class="key"/>
+    <text x="24" y="9" class="small">BYOK (Bring Your Own Key)</text>
+
+    <rect x="220" y="0" width="14" height="10" class="log"/>
+    <text x="248" y="9" class="small">Audit logs (append-only)</text>
+
+    <rect x="460" y="0" width="14" height="10" class="secure"/>
+    <text x="486" y="9" class="small">Secure egress gate</text>
+  </g>
+</svg>

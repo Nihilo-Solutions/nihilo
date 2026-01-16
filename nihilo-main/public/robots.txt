@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Directs Google to your sitemap for faster discovery
+Sitemap: https://nihilosolutions.com/sitemap.xml
