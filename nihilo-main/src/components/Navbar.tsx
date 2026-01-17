@@ -36,12 +36,9 @@ const Navbar: React.FC = () => {
               <a 
                 key={item}
                 href={`#${item.toLowerCase()}`} 
-                className="relative group text-[11px] font-bold mono uppercase tracking-[0.4em] text-zinc-100 transition-all duration-300"
+                className="nav-link text-[11px] font-bold mono uppercase tracking-[0.4em]"
               >
-                <span className="group-hover:text-blue-400 group-hover:drop-shadow-[0_0_8px_rgba(96,165,250,0.8)] transition-all duration-300">
-                  {item}
-                </span>
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-blue-500 transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_5px_#3b82f6]"></span>
+                {item}
               </a>
             ))}
           </div>
@@ -52,9 +49,9 @@ const Navbar: React.FC = () => {
               href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center px-4 md:px-6 py-2 font-mono uppercase tracking-[0.1em] md:tracking-[0.2em] text-white rounded-sm border-2 border-blue-500 bg-zinc-900 transition-all duration-300 hover:bg-blue-500 hover:text-black hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+              className="hidden sm:inline-flex btn-cta"
             >
-              <span className="text-[9px] md:text-[10px] font-black">Book Call</span>
+              <span>Book Call</span>
             </a>
             
             {/* Mobile Menu Button */}

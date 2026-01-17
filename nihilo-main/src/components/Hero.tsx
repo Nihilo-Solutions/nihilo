@@ -36,17 +36,15 @@ const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Book Discovery - opens in new tab"
-              className="group relative inline-flex items-center justify-center px-4 md:px-6 py-3 font-mono uppercase tracking-[0.1em] text-sm md:text-base text-white rounded-sm border border-blue-400 bg-zinc-800 hover:bg-blue-500 hover:border-blue-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transition-all duration-300"
+              className="btn-primary"
             >
-              <span className="flex items-center gap-2">
-                <span>Book Discovery</span>
-                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
+              <span>Book Discovery</span>
+              <ArrowRight size={14} />
             </a>
 
-            <a href="#services" className="group inline-flex items-center justify-center space-x-2 md:space-x-3 px-4 md:px-6 py-3 font-mono uppercase tracking-[0.1em] text-sm md:text-base border border-zinc-700 text-zinc-200 rounded-sm bg-transparent hover:border-blue-500 hover:bg-blue-500/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-300">
+            <a href="#services" className="btn-secondary">
               <span>View Services</span>
-              <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+              <ChevronRight size={16} />
             </a>
           </div>
         </div>

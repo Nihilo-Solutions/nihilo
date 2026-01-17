@@ -12,6 +12,123 @@ body {
   color: white;
 }
 
+/* Button hover effects */
+.btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: white;
+  background: #27272a;
+  border: 1px solid #3b82f6;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #3b82f6;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+}
+
+.btn-primary:hover svg {
+  transform: translateX(4px);
+}
+
+.btn-secondary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #e4e4e7;
+  background: transparent;
+  border: 1px solid #52525b;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.15);
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+.btn-secondary:hover svg {
+  transform: translateX(4px);
+}
+
+/* Nav link hover */
+.nav-link {
+  position: relative;
+  color: #f4f4f5;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #3b82f6;
+  box-shadow: 0 0 8px #3b82f6;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #60a5fa;
+  text-shadow: 0 0 12px rgba(96, 165, 250, 0.8);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* CTA button in nav */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: white;
+  background: #18181b;
+  border: 2px solid #3b82f6;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+  background: #3b82f6;
+  color: black;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  transform: scale(1.05);
+}
+
 /* Table of Contents styles (sticky, dark theme) */
 :root {
   --toc-bg: rgba(10,10,10,0.85);
