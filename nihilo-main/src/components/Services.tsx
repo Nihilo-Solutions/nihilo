@@ -31,26 +31,26 @@ const ServiceIcon = ({ icon: Icon, colorClass = "text-blue-400" }) => (
 
 const Services: React.FC = () => {
   return (
-    <section id="services" className="py-32 bg-zinc-950 relative border-t border-zinc-900">
-      <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
+    <section id="services" className="py-16 md:py-32 bg-zinc-950 relative border-t border-zinc-900">
+      <div className="max-w-screen-2xl mx-auto px-4 md:px-6 lg:px-12">
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row justify-between items-start mb-24 space-y-8 md:space-y-0">
+        <div className="flex flex-col md:flex-row justify-between items-start mb-12 md:mb-24 space-y-4 md:space-y-0">
           <div className="max-w-md">
-            <span className="text-[10px] mono uppercase tracking-[0.4em] text-zinc-600 mb-4 block">01 // Capabilities</span>
-            <h2 id="foundational-expertise" className="text-4xl font-bold text-white tracking-tighter italic uppercase">Foundational Expertise</h2>
+            <span className="text-[9px] md:text-[10px] mono uppercase tracking-[0.3em] md:tracking-[0.4em] text-zinc-600 mb-3 md:mb-4 block">01 // Capabilities</span>
+            <h2 id="foundational-expertise" className="text-2xl md:text-4xl font-bold text-white tracking-tighter italic uppercase">Foundational Expertise</h2>
           </div>
-          <p className="text-zinc-500 max-w-sm text-sm leading-relaxed mono">
+          <p className="text-zinc-500 max-w-sm text-xs md:text-sm leading-relaxed mono">
             We operate at the intersection of high-fidelity design and deep system architecture.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           
           {/* 1. Enterprise RAG */}
-          <article className="group p-10 bg-zinc-900/40 border border-zinc-900 rounded-2xl hover:bg-zinc-900/60 hover:border-zinc-800 transition-all duration-500">
+          <article className="group p-6 md:p-10 bg-zinc-900/40 border border-zinc-900 rounded-2xl hover:bg-zinc-900/60 hover:border-zinc-800 transition-all duration-500">
             <ServiceIcon icon={Database} colorClass="text-blue-400" />
-            <h4 id="enterprise-rag-implementation" className="text-xl font-bold text-white mb-6 tracking-tight uppercase italic">
+            <h4 id="enterprise-rag-implementation" className="text-lg md:text-xl font-bold text-white mb-4 md:mb-6 tracking-tight uppercase italic">
               Enterprise RAG Implementation
             </h4>
 
@@ -78,9 +78,9 @@ const Services: React.FC = () => {
           </article>
 
           {/* 2. Agentic Automation */}
-          <article className="group p-10 bg-zinc-900/40 border border-zinc-900 rounded-2xl hover:bg-zinc-900/60 hover:border-zinc-800 transition-all duration-500">
+          <article className="group p-6 md:p-10 bg-zinc-900/40 border border-zinc-900 rounded-2xl hover:bg-zinc-900/60 hover:border-zinc-800 transition-all duration-500">
             <ServiceIcon icon={Cpu} colorClass="text-emerald-400" />
-            <h4 id="agentic-process-automation" className="text-xl font-bold text-white mb-6 tracking-tight uppercase italic">
+            <h4 id="agentic-process-automation" className="text-lg md:text-xl font-bold text-white mb-4 md:mb-6 tracking-tight uppercase italic">
               Agentic Process Automation
             </h4>
 
@@ -108,9 +108,9 @@ const Services: React.FC = () => {
           </article>
 
           {/* 3. Cloud-Native AI Infra */}
-          <article className="group p-10 bg-zinc-900/40 border border-zinc-900 rounded-2xl hover:bg-zinc-900/60 hover:border-zinc-800 transition-all duration-500">
+          <article className="group p-6 md:p-10 bg-zinc-900/40 border border-zinc-900 rounded-2xl hover:bg-zinc-900/60 hover:border-zinc-800 transition-all duration-500">
             <ServiceIcon icon={Layers} colorClass="text-purple-400" />
-            <h4 id="cloud-native-ai-infrastructure" className="text-xl font-bold text-white mb-6 tracking-tight uppercase italic">
+            <h4 id="cloud-native-ai-infrastructure" className="text-lg md:text-xl font-bold text-white mb-4 md:mb-6 tracking-tight uppercase italic">
               Cloud-Native AI Infrastructure
             </h4>
 

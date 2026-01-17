@@ -4,18 +4,18 @@ import { Calendar, Video, ArrowRight } from 'lucide-react';
 
 const Booking: React.FC = () => {
   return (
-    <section id="contact" className="py-32 bg-zinc-950 border-t border-zinc-900 overflow-hidden relative">
+    <section id="contact" className="py-16 md:py-32 bg-zinc-950 border-t border-zinc-900 overflow-hidden relative">
       {/* Background decoration - Wireframe style */}
       <div className="absolute top-0 right-0 w-1/3 h-full border-l border-zinc-900/50 hidden lg:block"></div>
       
-      <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+      <div className="max-w-screen-2xl mx-auto px-4 md:px-6 lg:px-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
           <div>
-            <span className="text-[10px] mono uppercase tracking-[0.4em] text-zinc-600 mb-6 block">03 // Discovery</span>
-            <h2 id="discovery" className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter uppercase italic">
+            <span className="text-[9px] md:text-[10px] mono uppercase tracking-[0.3em] md:tracking-[0.4em] text-zinc-600 mb-4 md:mb-6 block">03 // Discovery</span>
+            <h2 id="discovery" className="text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-6 md:mb-8 tracking-tighter uppercase italic">
               Sync with <br />Engineering.
             </h2>
-            <p className="text-zinc-500 text-xl font-light leading-relaxed mb-12">
+            <p className="text-zinc-500 text-base md:text-xl font-light leading-relaxed mb-8 md:mb-12">
               We operate on a direct-access model. No account managers, no gatekeepers. Book a discovery session directly with the principals to discuss your cloud automation or AI roadmap via Microsoft Teams.
             </p>
             
@@ -42,10 +42,10 @@ const Booking: React.FC = () => {
           </div>
 
           <div className="relative">
-            <div className="absolute -inset-4 border border-zinc-800 rounded-lg pointer-events-none"></div>
-            <div className="bg-zinc-900 p-10 md:p-16 border border-zinc-700 text-center">
-              <h3 className="text-2xl font-bold text-white mb-4">Discovery Call</h3>
-              <p className="text-zinc-500 text-sm mb-10 mono">ESTABLISHING_ENCRYPTED_LINK...</p>
+            <div className="absolute -inset-2 md:-inset-4 border border-zinc-800 rounded-lg pointer-events-none"></div>
+            <div className="bg-zinc-900 p-6 md:p-10 lg:p-16 border border-zinc-700 text-center">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Discovery Call</h3>
+              <p className="text-zinc-500 text-xs md:text-sm mb-6 md:mb-10 mono">ESTABLISHING_ENCRYPTED_LINK...</p>
               
               <a
                 href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"

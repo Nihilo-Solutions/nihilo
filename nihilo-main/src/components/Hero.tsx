@@ -14,29 +14,29 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 grid-bg opacity-30"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-zinc-950/80"></div>
       
-      <div className="relative max-w-screen-2xl mx-auto px-6 lg:px-12 w-full pt-32">
+      <div className="relative max-w-screen-2xl mx-auto px-4 md:px-6 lg:px-12 w-full pt-24 md:pt-32">
         <div className="max-w-5xl">
-          <div className="mb-10 flex items-center space-x-4">
-            <span className="text-[11px] mono uppercase tracking-[0.4em] text-zinc-500 bg-zinc-900/50 px-3 py-1 border border-zinc-800 rounded">
+          <div className="mb-6 md:mb-10 flex items-center">
+            <span className="text-[9px] md:text-[11px] mono uppercase tracking-[0.2em] md:tracking-[0.4em] text-zinc-500 bg-zinc-900/50 px-2 md:px-3 py-1 border border-zinc-800 rounded">
               System Architecture & AI Engineering
             </span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight tracking-tight mb-4 md:mb-6">
             Zero to One Enterprise AI
           </h1>
 
-          <p className="max-w-2xl text-lg md:text-xl text-zinc-400 font-light leading-relaxed mb-8 border-l-2 border-zinc-800 pl-8">
+          <p className="max-w-2xl text-base md:text-lg lg:text-xl text-zinc-400 font-light leading-relaxed mb-6 md:mb-8 border-l-2 border-zinc-800 pl-4 md:pl-8">
             We design, implement and productionize tenant-local RAG pipelines and agentic automation on Azure and AWS. Secure, auditable, and engineered for scale.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mt-4">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mt-4">
             <a
               href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Book Discovery - opens in new tab"
-              className="group relative inline-flex items-center px-6 py-3 font-mono uppercase tracking-[0.1em] text-white rounded-sm border border-blue-400 bg-zinc-800 hover:bg-blue-500 hover:border-blue-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transition-all duration-300"
+              className="group relative inline-flex items-center justify-center px-4 md:px-6 py-3 font-mono uppercase tracking-[0.1em] text-sm md:text-base text-white rounded-sm border border-blue-400 bg-zinc-800 hover:bg-blue-500 hover:border-blue-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transition-all duration-300"
             >
               <span className="flex items-center gap-2">
                 <span>Book Discovery</span>
@@ -44,8 +44,8 @@ const Hero: React.FC = () => {
               </span>
             </a>
 
-            <a href="#services" className="group inline-flex items-center justify-center space-x-3 px-6 py-3 font-mono uppercase tracking-[0.1em] border border-zinc-700 text-zinc-200 rounded-sm bg-transparent hover:border-blue-500 hover:bg-blue-500/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-300">
-              <span className="mr-1">View Services</span>
+            <a href="#services" className="group inline-flex items-center justify-center space-x-2 md:space-x-3 px-4 md:px-6 py-3 font-mono uppercase tracking-[0.1em] text-sm md:text-base border border-zinc-700 text-zinc-200 rounded-sm bg-transparent hover:border-blue-500 hover:bg-blue-500/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-300">
+              <span>View Services</span>
               <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
             </a>
           </div>
