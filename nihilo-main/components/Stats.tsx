@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { PERFORMANCE_DATA } from '../constants';
+import { PERFORMANCE_DATA } from '../src/constants';
 
 const Stats: React.FC = () => {
   return (

@@ -5,6 +5,11 @@ import { ArrowRight, ChevronRight } from 'lucide-react';
 const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-zinc-950">
+      {/* Background gradient orbs */}
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-blue-600/20 rounded-full blur-[128px]"></div>
+      <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-indigo-600/15 rounded-full blur-[100px]"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-zinc-800/30 rounded-full blur-[150px]"></div>
+      
       {/* Background Subtle Tech Grid */}
       <div className="absolute inset-0 grid-bg opacity-30"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-zinc-950/80"></div>
@@ -29,17 +34,17 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-6">
             <a 
               href="#services" 
-              className="group flex items-center justify-center space-x-3 px-10 py-5 bg-white text-black font-bold uppercase text-xs tracking-[0.2em] hover:bg-zinc-200 transition-all"
+              className="group flex items-center justify-center space-x-3 px-10 py-5 bg-white text-black font-bold uppercase text-xs tracking-[0.2em] hover:bg-blue-500 hover:text-white hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transition-all duration-300"
             >
               <span>View Solutions</span>
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-300" />
             </a>
             <a 
               href="#about" 
-              className="flex items-center justify-center space-x-3 px-10 py-5 border border-zinc-800 bg-zinc-900/40 text-white font-bold uppercase text-xs tracking-[0.2em] hover:bg-zinc-800 transition-all"
+              className="group flex items-center justify-center space-x-3 px-10 py-5 border border-zinc-700 bg-zinc-900/40 text-white font-bold uppercase text-xs tracking-[0.2em] hover:border-blue-500 hover:bg-blue-500/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-300"
             >
               <span>Our Expertise</span>
-              <ChevronRight size={16} />
+              <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
             </a>
           </div>
         </div>

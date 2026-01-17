@@ -5,6 +5,11 @@ import { ArrowRight, ChevronRight } from 'lucide-react';
 const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-zinc-950">
+      {/* Background gradient orbs */}
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-blue-600/20 rounded-full blur-[128px]"></div>
+      <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-indigo-600/15 rounded-full blur-[100px]"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-zinc-800/30 rounded-full blur-[150px]"></div>
+      
       {/* Background Subtle Tech Grid */}
       <div className="absolute inset-0 grid-bg opacity-30"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-zinc-950/80"></div>
@@ -31,20 +36,17 @@ const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Book Discovery - opens in new tab"
-              className="relative inline-flex items-center px-6 py-3 font-mono uppercase tracking-[0.1em] text-white rounded-sm border border-blue-400 bg-zinc-800 transition-all duration-300"
-              style={{ boxShadow: '2px 2px 0 rgba(0,0,0,1)' }}
+              className="group relative inline-flex items-center px-6 py-3 font-mono uppercase tracking-[0.1em] text-white rounded-sm border border-blue-400 bg-zinc-800 hover:bg-blue-500 hover:border-blue-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transition-all duration-300"
             >
-              <span className="text-blue-400 mr-2"></span>
               <span className="flex items-center gap-2">
                 <span>Book Discovery</span>
-                <ArrowRight size={14} />
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
               </span>
-              <span className="text-blue-400 ml-2"></span>
             </a>
 
-            <a href="#services" className="inline-flex items-center justify-center space-x-3 px-6 py-3 font-mono uppercase tracking-[0.1em] border border-slate-700 text-zinc-200 rounded-sm bg-transparent hover:bg-white hover:text-black transition-all duration-300">
+            <a href="#services" className="group inline-flex items-center justify-center space-x-3 px-6 py-3 font-mono uppercase tracking-[0.1em] border border-zinc-700 text-zinc-200 rounded-sm bg-transparent hover:border-blue-500 hover:bg-blue-500/10 hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-300">
               <span className="mr-1">View Services</span>
-              <ChevronRight size={16} />
+              <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
             </a>
           </div>
         </div>

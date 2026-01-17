@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, X, Terminal, Loader2, Minimize2 } from 'lucide-react';
-import { ChatMessage } from '../types';
+import { ChatMessage } from '../src/types';
 
 const ChatAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
