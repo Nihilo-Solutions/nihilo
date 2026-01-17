@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { FOUNDERS } from '../constants';
+import { FOUNDERS } from '../src/constants';
 import { ShieldCheck, Cpu, Code2 } from 'lucide-react';
 
 const About: React.FC = () => {
