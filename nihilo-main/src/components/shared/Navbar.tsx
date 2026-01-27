@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
               </button>
               
               {isSolutionsOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[800px] bg-zinc-950/95 backdrop-blur-xl border border-zinc-800 rounded-xl shadow-2xl p-6">
+                <div className="fixed top-24 left-1/2 -translate-x-1/2 w-[800px] bg-zinc-950/95 backdrop-blur-xl border border-zinc-800 rounded-xl shadow-2xl p-6 z-50">
                   <div className="grid grid-cols-4 gap-6">
                     {categories.map(({ name, icon: Icon, color }) => (
                       <div key={name}>
