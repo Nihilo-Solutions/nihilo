@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import path from 'path';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -8,6 +9,9 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizePackageImports: ['lucide-react', '@mui/material'],
+  },
+  turbopack: {
+    root: path.resolve(__dirname),
   },
   allowedDevOrigins: ['*.riker.replit.dev', '127.0.0.1'],
 };
