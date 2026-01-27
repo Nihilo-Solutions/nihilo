@@ -1,14 +1,13 @@
 import Link from 'next/link';
 import { Activity, ArrowUpRight } from 'lucide-react';
 import { Hero, Services, Security, About, Booking } from '@/components/features';
-import { Footer, TableOfContents } from '@/components/shared';
+import { Footer } from '@/components/shared';
 
 export default function HomePage() {
   return (
     <div className="relative min-h-screen bg-zinc-950 text-zinc-200 selection:bg-blue-500/30">
       <main>
         <Hero />
-        <TableOfContents />
         <Services />
         
         <section id="assessment" className="py-24 bg-zinc-950">
