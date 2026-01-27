@@ -1,11 +1,33 @@
-// src/app/layout.tsx
 import type { Metadata } from 'next';
-import '../styles.css';  // ← Adjust path to your global CSS file
-// If you have a global layout/header/footer component, import and wrap here
+import { Analytics } from '@vercel/analytics/react';
+import { Navbar } from '@/components/shared';
+import '@/styles.css';
 
 export const metadata: Metadata = {
-  title: 'Nihilo Solutions — Enterprise AI Consulting',
+  title: {
+    default: 'Nihilo Solutions — Enterprise AI Consulting',
+    template: '%s | Nihilo Solutions',
+  },
   description: 'Secure, tenant-local RAG pipelines and agentic automation on Azure & AWS. Production-ready enterprise AI.',
+  keywords: ['Enterprise AI', 'RAG', 'Cloud Automation', 'Azure', 'AWS', 'LLM Operations', 'Agentic Automation'],
+  authors: [{ name: 'Nihilo Solutions' }],
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://nihilosolutions.com',
+    siteName: 'Nihilo Solutions',
+    title: 'Nihilo Solutions — Enterprise AI Consulting',
+    description: 'Custom LLM operations and secure RAG design on AWS and Azure.',
+    images: [{ url: 'https://nihilosolutions.com/logo.png' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
+  metadataBase: new URL('https://nihilosolutions.com'),
 };
 
 export default function RootLayout({
@@ -15,10 +37,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black text-white antialiased">
-        {/* If you have a shared Header/Navbar component, put it here */}
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+      </head>
+      <body className="bg-zinc-950 text-white antialiased">
+        <Navbar />
         {children}
-        {/* Shared Footer if needed */}
+        <Analytics />
       </body>
     </html>
   );

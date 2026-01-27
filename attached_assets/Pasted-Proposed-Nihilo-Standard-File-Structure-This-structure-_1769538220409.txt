@@ -1,0 +1,42 @@
+Proposed "Nihilo-Standard" File Structure
+This structure follows the 2026 industry standard for Next.js 15+ with the App Router, focusing on scalability and SEO.
+
+Plaintext
+
+nihilo/
+├── .github/              # CI/CD workflows (GitHub Actions)
+├── public/               # Static assets (fonts, optimized images, robots.txt)
+│   └── icons/            # Lucide-based or custom SVG icons
+├── src/                  # All application logic (the "engine")
+│   ├── app/              # Next.js App Router (Routes & Layouts)
+│   │   ├── (marketing)/  # Route group for SEO-heavy pages (home, about)
+│   │   ├── (auth)/       # Group for login/signup
+│   │   ├── api/          # Backend routes (Azure OpenAI/AWS Bedrock hooks)
+│   │   ├── layout.tsx    # Root layout with Metadata & JSON-LD
+│   │   └── page.tsx      # Main landing page
+│   ├── components/       # UI & Feature components
+│   │   ├── ui/           # Atomic components (Buttons, Inputs, Modals)
+│   │   ├── features/     # Domain-specific (Chatbot, SecurityDashboard)
+│   │   └── shared/       # Navigation, Footer, SEO-optimized Wrappers
+│   ├── lib/              # Shared logic & utilities
+│   │   ├── ai/           # RAG logic, LLM providers (AWS/Azure)
+│   │   ├── utils.ts      # Tailwind merge & utility functions
+│   │   └── seo.ts        # Dynamic Metadata helpers
+│   ├── hooks/            # Custom React hooks
+│   └── types/            # TypeScript definitions/interfaces
+├── .gitignore            # Clean up: add .dev*_pid here
+├── next.config.ts        # Replaces vite.config.ts
+├── package.json          # Dependency management
+└── tsconfig.json         # TypeScript configuration
+Key Improvements Explained
+Consolidate into src/: Moving everything into a single source directory makes your root cleaner and simplifies your build tool configurations.
+
+Route Groups (): By using folders like (marketing) or (dashboard), you can organize your code without affecting the URL structure. This is perfect for keeping your "Nihilo Solutions" public face separate from any internal tools.
+
+The lib/ai Directory: Since Nihilo is an AI-first company, your logic for connecting to Azure OpenAI or AWS Bedrock should be centralized here, not buried inside your components.
+
+Cleanup:
+
+Delete process files: Delete any .dev*_pid files from the repo. These are local artifacts and don't belong in version control.
+
+Replace index.html: In Next.js, your root layout and pages handle what used to be in index.html.

@@ -1,4 +1,4 @@
-import { Service, Project } from './types';
+import type { Service, Project } from '@/types';
 
 export const SERVICES: Service[] = [
   {
