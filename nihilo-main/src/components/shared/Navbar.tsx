@@ -105,13 +105,13 @@ const Navbar: React.FC = () => {
             </div>
 
             {navItems.map((item) => (
-              <a 
+              <Link 
                 key={item}
-                href={`#${item.toLowerCase()}`} 
+                href={`/#${item.toLowerCase()}`} 
                 className="nav-link text-[11px] font-bold mono uppercase tracking-[0.4em]"
               >
                 {item}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -181,14 +181,14 @@ const Navbar: React.FC = () => {
               </div>
 
               {navItems.map((item) => (
-                <a 
+                <Link 
                   key={item}
-                  href={`#${item.toLowerCase()}`}
+                  href={`/#${item.toLowerCase()}`}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-lg font-bold text-white uppercase tracking-widest py-2 border-b border-zinc-800 hover:text-blue-400 transition-colors"
                 >
                   {item}
-                </a>
+                </Link>
               ))}
               <a
                 href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
