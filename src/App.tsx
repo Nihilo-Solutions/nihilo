@@ -10,12 +10,13 @@ function App() {
   return (
     <BrowserRouter>
       {/* 1. Placing Navbar here makes it global across all pages */}
-      <Navbar /> 
-      
+      <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/assessment" element={<AssessmentPage />} />
         <Route path="/security" element={<SecurityPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

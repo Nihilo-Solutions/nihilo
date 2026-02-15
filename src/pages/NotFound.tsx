@@ -1,13 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Terminal, ArrowLeft, Hash } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const NotFound: React.FC = () => {
   return (
     <div className="min-h-screen bg-zinc-950 flex flex-col items-center justify-center px-6 text-center">
+      <SEO
+        title="Page Not Found"
+        description="The requested page could not be found."
+        noindex={true}
+      />
       {/* Background Decor */}
       <div className="absolute inset-0 grid-bg opacity-5 pointer-events-none"></div>
-      
+
       <div className="relative">
         <div className="flex justify-center mb-8">
           <div className="p-4 bg-zinc-900 border border-zinc-800 rounded-sm">
@@ -18,7 +24,7 @@ const NotFound: React.FC = () => {
         <h1 className="text-8xl font-black text-white italic tracking-tighter mb-4 opacity-20">
           404
         </h1>
-        
+
         <div className="mb-10">
           <h2 id="route-not-found" className="text-2xl font-bold text-white uppercase tracking-[0.3em] mb-4">
             Route_Not_Found
@@ -28,13 +34,13 @@ const NotFound: React.FC = () => {
           </p>
         </div>
 
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           className="inline-flex items-center gap-3 px-8 py-4 bg-blue-500 text-black font-black uppercase tracking-widest text-[10px] hover:bg-white transition-all"
         >
           <ArrowLeft size={14} /> Return to Home Base
         </Link>
-        
+
         <div className="mt-16 flex items-center justify-center gap-4 text-zinc-800 font-mono text-[10px] tracking-[0.5em]">
           <Hash size={10} /> <span>SYSTEM_ID: NULL_PTR</span>
         </div>

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Add Link import
 import emailjs from '@emailjs/browser';
 import { ASSESSMENT_QUESTIONS } from '../constants';
-import { Mail, Calendar, ArrowRight, ShieldCheck, ChevronRight, FileText } from 'lucide-react'; // Added FileText
+import { Mail, Calendar, ArrowRight, ShieldCheck, ChevronRight, FileText } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const AssessmentPage: React.FC = () => {
   const [stage, setStage] = useState<'intake' | 'test' | 'results'>('intake');
@@ -14,7 +15,7 @@ const AssessmentPage: React.FC = () => {
 
   const calculateReadinessScore = () => {
     const highReadinessAnswers = [
-      "Cloud-Native", "Yes, fully integrated", "Real-time", 
+      "Cloud-Native", "Yes, fully integrated", "Real-time",
       "Automated Dashboards", "Immediately", "Early Adopters", "Enterprise Standard"
     ];
     const totalQuestions = ASSESSMENT_QUESTIONS.length;
@@ -27,7 +28,7 @@ const AssessmentPage: React.FC = () => {
     const phases = [...new Set(ASSESSMENT_QUESTIONS.map(q => q.phase))];
     const formattedResults = phases.map(phase => {
       const phaseQuestions = ASSESSMENT_QUESTIONS.filter(q => q.phase === phase);
-      const phaseAnswers = phaseQuestions.map(q => 
+      const phaseAnswers = phaseQuestions.map(q =>
         `[Q] ${q.question}\n    RESULT: ${answers[q.id] || 'N/A'}`
       ).join('\n\n');
       return `--- SECTION: ${phase.toUpperCase()} ---\n${phaseAnswers}\n`;
@@ -42,9 +43,9 @@ const AssessmentPage: React.FC = () => {
     };
 
     emailjs.send(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID, 
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID, 
-      templateParams, 
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      templateParams,
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
       .then(() => {
@@ -71,6 +72,11 @@ const AssessmentPage: React.FC = () => {
   if (stage === 'intake') {
     return (
       <div className="pt-40 pb-20 max-w-xl mx-auto px-6 animate-in fade-in duration-700">
+        <SEO
+          title="AI Business Assessment"
+          description="Assess your organization's readiness for AI and automation with our comprehensive 35-point audit."
+          canonical="https://nihilosolutions.com/assessment"
+        />
         <div className="inline-flex items-center space-x-3 mb-6 px-4 py-2 border border-blue-500/30 rounded-full bg-blue-500/5">
           <ShieldCheck size={14} className="text-blue-400" />
           <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-blue-400">Strategic Audit Initialized</span>
@@ -80,22 +86,22 @@ const AssessmentPage: React.FC = () => {
           Provide your enterprise credentials to begin the 35-point organizational AI readiness audit.
         </p>
         <div className="space-y-4">
-          <input 
-            type="text" placeholder="Full Name" 
+          <input
+            type="text" placeholder="Full Name"
             className="w-full p-4 bg-zinc-900 border border-zinc-800 text-white focus:border-blue-500 outline-none transition-all font-mono text-sm placeholder:text-zinc-700"
-            onChange={(e) => setUserData({...userData, name: e.target.value})}
+            onChange={(e) => setUserData({ ...userData, name: e.target.value })}
           />
-          <input 
-            type="email" placeholder="Business Email" 
+          <input
+            type="email" placeholder="Business Email"
             className="w-full p-4 bg-zinc-900 border border-zinc-800 text-white focus:border-blue-500 outline-none transition-all font-mono text-sm placeholder:text-zinc-700"
-            onChange={(e) => setUserData({...userData, email: e.target.value})}
+            onChange={(e) => setUserData({ ...userData, email: e.target.value })}
           />
-          <input 
-            type="text" placeholder="Company Name" 
+          <input
+            type="text" placeholder="Company Name"
             className="w-full p-4 bg-zinc-900 border border-zinc-800 text-white focus:border-blue-500 outline-none transition-all font-mono text-sm placeholder:text-zinc-700"
-            onChange={(e) => setUserData({...userData, company: e.target.value})}
+            onChange={(e) => setUserData({ ...userData, company: e.target.value })}
           />
-          <button 
+          <button
             disabled={!userData.email || !userData.name}
             onClick={() => { setStage('test'); window.scrollTo(0, 0); }}
             className="w-full py-4 bg-blue-500 text-black font-black uppercase tracking-widest text-xs hover:bg-white transition-all flex justify-center items-center gap-2 mt-4 disabled:opacity-30"
@@ -124,7 +130,7 @@ const AssessmentPage: React.FC = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 uppercase italic tracking-tighter leading-tight">{q.question}</h2>
         <div className="grid gap-4">
           {q.options.map(opt => (
-            <button 
+            <button
               key={opt}
               onClick={() => handleAnswer(opt)}
               className="p-6 text-left border border-zinc-900 bg-zinc-900/20 hover:border-blue-500/50 hover:bg-zinc-900 transition-all text-zinc-400 hover:text-white font-mono text-xs uppercase tracking-widest flex justify-between group items-center"
@@ -146,26 +152,26 @@ const AssessmentPage: React.FC = () => {
         </div>
         <div className="text-[10px] font-mono uppercase tracking-[0.4em] text-zinc-500">AI_Business_Maturity_Index</div>
       </div>
-      
+
       <h2 id="assessment-complete" className="text-4xl font-bold text-white mb-6 italic uppercase tracking-tighter">Assessment Complete</h2>
-      
+
       {!emailSent ? (
         <>
           <p className="text-zinc-400 mb-12 leading-relaxed font-light">
             A comprehensive strategy report for <span className="text-white font-bold">{userData.company}</span> has been compiled and is ready for dispatch.
           </p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <button 
-              onClick={sendEmail} 
+            <button
+              onClick={sendEmail}
               disabled={isSending}
               className="flex items-center justify-center gap-3 p-5 bg-zinc-900 border border-zinc-800 hover:border-blue-500 text-white font-bold uppercase text-[10px] tracking-[0.3em] transition-all disabled:opacity-50 group"
             >
               <Mail size={16} className="group-hover:text-blue-400" /> {isSending ? "Dispatching..." : "Email Full Report"}
             </button>
-            <a 
-              href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/" 
-              target="_blank" 
+            <a
+              href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
+              target="_blank"
               rel="noreferrer"
               className="flex items-center justify-center gap-3 p-5 bg-blue-500 text-black font-bold uppercase text-[10px] tracking-[0.3em] hover:bg-white transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)]"
             >
@@ -183,26 +189,26 @@ const AssessmentPage: React.FC = () => {
               </div>
             </div>
           </div>
-          
+
           <h3 className="text-xl font-bold text-white uppercase tracking-widest mb-4 italic">Report Dispatched</h3>
           <p className="text-zinc-400 text-sm leading-relaxed mb-8 font-light">
-            Check your inbox. A copy has also been sent to our engineering team for review. 
+            Check your inbox. A copy has also been sent to our engineering team for review.
             <br /><br />
             Expect a follow-up email within 24 hours.
           </p>
-          
+
           <div className="flex flex-col gap-3">
-            <a 
-              href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/" 
-              target="_blank" 
+            <a
+              href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
+              target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-blue-500 text-black font-black uppercase tracking-widest text-[10px] hover:bg-white transition-all shadow-[0_0_15px_rgba(59,130,246,0.2)]"
             >
               <Calendar size={16} /> Proceed to Calendar
             </a>
-            
+
             {/* UPDATED BUTTON: Redirects to Security Page instead of direct download */}
-            <Link 
+            <Link
               to="/security"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-zinc-900 border border-zinc-800 text-white font-bold uppercase tracking-widest text-[10px] hover:border-blue-500 transition-all"
             >

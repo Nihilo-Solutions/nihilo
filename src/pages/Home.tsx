@@ -6,16 +6,17 @@ import Services from '../components/Services';
 import About from '../components/About';
 import Booking from '../components/Booking';
 import Security from '../components/Security';
+import SEO from '../components/SEO';
 
-import { 
-  Github, 
-  Linkedin, 
-  Terminal, 
-  Cpu, 
-  Zap, 
-  ShieldCheck, 
-  Hash, 
-  ArrowUpRight, 
+import {
+  Github,
+  Linkedin,
+  Terminal,
+  Cpu,
+  Zap,
+  ShieldCheck,
+  Hash,
+  ArrowUpRight,
   Command,
   Activity
 } from 'lucide-react';
@@ -85,7 +86,7 @@ const Footer: React.FC = () => (
           </ul>
         </div>
       </div>
-      
+
       {/* Bottom Bar */}
       <div className="pt-12 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center text-zinc-700 text-[10px] mono tracking-widest uppercase">
         <p>&copy; {new Date().getFullYear()} Nihilo Solutions LLC. All rights reserved.</p>
@@ -102,26 +103,31 @@ const Footer: React.FC = () => (
 const Home: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-zinc-950 text-zinc-200 selection:bg-blue-500/30">
+      <SEO
+        title="Nihilo Solutions"
+        description="Nihilo Solutions delivers secure, tenant-local RAG, LLM Ops, and agentic automation on Azure & AWS."
+        canonical="https://nihilosolutions.com/"
+      />
       <main>
         <Hero />
         <TableOfContents />
         <Services />
-        
+
         {/* Readiness Assessment CTA */}
         <section id="assessment" className="py-24 bg-zinc-950">
           <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center">
-             <div className="inline-flex items-center space-x-3 mb-6 px-4 py-2 border border-blue-500/30 rounded-full bg-blue-500/5">
-                <Activity size={14} className="text-blue-400" />
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-blue-400">System Diagnostic Available</span>
-             </div>
-             <h2 id="ready-for-ai-implementation" className="text-4xl font-bold text-white mb-8 italic uppercase tracking-tighter">Ready for AI implementation?</h2>
-             <Link 
-               to="/assessment"
-               className="inline-flex items-center space-x-4 px-10 py-4 bg-zinc-900 border border-zinc-800 text-white font-bold uppercase text-[10px] tracking-[0.3em] hover:border-blue-500 transition-all group"
-             >
-               <span>Start Readiness Protocol</span>
-               <ArrowUpRight size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-             </Link>
+            <div className="inline-flex items-center space-x-3 mb-6 px-4 py-2 border border-blue-500/30 rounded-full bg-blue-500/5">
+              <Activity size={14} className="text-blue-400" />
+              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-blue-400">System Diagnostic Available</span>
+            </div>
+            <h2 id="ready-for-ai-implementation" className="text-4xl font-bold text-white mb-8 italic uppercase tracking-tighter">Ready for AI implementation?</h2>
+            <Link
+              to="/assessment"
+              className="inline-flex items-center space-x-4 px-10 py-4 bg-zinc-900 border border-zinc-800 text-white font-bold uppercase text-[10px] tracking-[0.3em] hover:border-blue-500 transition-all group"
+            >
+              <span>Start Readiness Protocol</span>
+              <ArrowUpRight size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            </Link>
           </div>
         </section>
 
