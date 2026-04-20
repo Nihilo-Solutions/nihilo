@@ -117,12 +117,12 @@ const Navbar: React.FC = () => {
 
           <div className="flex items-center space-x-3">
             <a
-              href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
+              href="https://intake.nihilosolutions.com"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex btn-cta"
             >
-              <span>Book Call</span>
+              <span>Start Readiness Protocol</span>
             </a>
             
             <button
@@ -191,12 +191,12 @@ const Navbar: React.FC = () => {
                 </Link>
               ))}
               <a
-                href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
+                href="https://intake.nihilosolutions.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center justify-center px-6 py-3 font-mono uppercase tracking-[0.2em] text-white rounded-sm border-2 border-blue-500 bg-zinc-900 hover:bg-blue-500 hover:text-black transition-all"
               >
-                <span className="text-xs font-black">Book Call</span>
+                <span className="text-[10px] font-black">Start Readiness Protocol</span>
               </a>
             </div>
           </div>

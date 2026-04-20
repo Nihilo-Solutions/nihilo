@@ -19,22 +19,22 @@ const Hero: React.FC = () => {
           </div>
           
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight tracking-tight mb-4 md:mb-6">
-            Zero to One Enterprise AI
+            AI Automations That Cut Ops Costs 30–60%
           </h1>
 
           <p className="max-w-2xl text-base md:text-lg lg:text-xl text-zinc-400 font-light leading-relaxed mb-6 md:mb-8 border-l-2 border-zinc-800 pl-4 md:pl-8">
-            We design, implement and productionize tenant-local RAG pipelines and agentic automation on Azure and AWS. Secure, auditable, and engineered for scale.
+            We build AI automations deployed inside your cloud, not ours. Azure-native. Production in 4–6 weeks.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mt-4">
             <a
-              href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
+              href="https://intake.nihilosolutions.com"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Book Discovery - opens in new tab"
+              aria-label="Start Readiness Protocol - opens in new tab"
               className="btn-primary"
             >
-              <span>Book Discovery</span>
+              <span>Start Readiness Protocol</span>
               <ArrowRight size={14} />
             </a>
 

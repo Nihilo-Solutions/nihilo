@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Activity, ArrowUpRight } from 'lucide-react';
-import { Hero, Services, Security, About, Booking } from '@/components/features';
+import { Hero, Services, Security, About, Booking, CaseStudy } from '@/components/features';
 import { Footer } from '@/components/shared';
 
 export default function HomePage() {
@@ -9,6 +9,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <Services />
+        <CaseStudy />
         
         <section id="assessment" className="py-24 bg-zinc-950">
           <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center">

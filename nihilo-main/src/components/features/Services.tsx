@@ -52,8 +52,8 @@ const Services: React.FC = () => {
             </ul>
             <h5 className="text-sm text-zinc-300 uppercase tracking-wider mb-2">Key benefits & KPIs</h5>
             <ul className="text-zinc-500 text-[13px] space-y-2">
-              <li>Reduced data exposure: typical deployments show &gt;95% reduction in external data egress.</li>
-              <li>Improved Precision@K by 20–40% through tuned retrieval and reranking.</li>
+              <li>Reduced data exposure: typical Azure deployments show &gt;95% reduction in external data egress.</li>
+              <li>Typically improves Precision@K by 20–40% on enterprise data lakes through tuned retrieval and reranking.</li>
               <li>Median retrieval latency &lt;200ms for typical document stores, supporting enterprise SLAs.</li>
             </ul>
             <p className="mt-4 text-zinc-400 text-sm">
@@ -77,8 +77,8 @@ const Services: React.FC = () => {
             </ul>
             <h5 className="text-sm text-zinc-300 uppercase tracking-wider mb-2">Key benefits & KPIs</h5>
             <ul className="text-zinc-500 text-[13px] space-y-2">
-              <li>Reduce repetitive manual steps by 60–85%, accelerating throughput and reducing error rates.</li>
-              <li>Decrease Mean Time To Resolution (MTTR) by 30–70% through automated triage and remediation.</li>
+              <li>Typically reduces manual steps by 60–85% in back-office operations based on our Azure deployments.</li>
+              <li>Decrease Mean Time To Resolution (MTTR) by typically 30–70% through automated triage and remediation.</li>
               <li>Full auditability: 100% of agent actions are logged, traceable, and replayable for compliance.</li>
             </ul>
             <p className="mt-4 text-zinc-400 text-sm">

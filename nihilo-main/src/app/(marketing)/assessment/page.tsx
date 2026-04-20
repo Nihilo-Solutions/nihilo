@@ -170,7 +170,7 @@ export default function AssessmentPage() {
               <Mail size={16} className="group-hover:text-blue-400" /> {isSending ? "Dispatching..." : "Email Full Report"}
             </button>
             <a 
-              href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/" 
+              href="https://intake.nihilosolutions.com" 
               target="_blank" 
               rel="noreferrer"
               className="flex items-center justify-center gap-3 p-5 bg-blue-500 text-black font-bold uppercase text-[10px] tracking-[0.3em] hover:bg-white transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)]"
@@ -199,7 +199,7 @@ export default function AssessmentPage() {
           
           <div className="flex flex-col gap-3">
             <a 
-              href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/" 
+              href="https://intake.nihilosolutions.com" 
               target="_blank" 
               rel="noreferrer"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-blue-500 text-black font-black uppercase tracking-widest text-[10px] hover:bg-white transition-all shadow-[0_0_15px_rgba(59,130,246,0.2)]"

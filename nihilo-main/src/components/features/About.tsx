@@ -1,16 +1,17 @@
 'use client';
 
 import Image from 'next/image';
-import { Terminal, Shield, Award, Cpu } from 'lucide-react';
+import { Terminal, Shield, Award, Cpu, Linkedin } from 'lucide-react';
 
 const ProfileCard: React.FC<{
   initials: string;
   name: string;
   title: string;
   bio: string;
+  linkedin: string;
   domains: string[];
   alt?: string;
-}> = ({ initials, name, title, bio, domains, alt }) => {
+}> = ({ initials, name, title, bio, linkedin, domains, alt }) => {
   return (
     <div className="border border-white/10 p-8 rounded-lg bg-[#0a0a0a]">
       <div className="flex items-start space-x-6">
@@ -26,7 +27,7 @@ const ProfileCard: React.FC<{
         </div>
 
         <div className="flex-1">
-          <h3 className="text-2xl md:text-3xl font-bold text-white uppercase italic tracking-tighter">{name}</h3>
+          <div className="flex justify-between items-center w-full"><h3 className="text-2xl md:text-3xl font-bold text-white uppercase italic tracking-tighter">{name}</h3><a href={linkedin} target="_blank" rel="noopener noreferrer" className="text-zinc-600 hover:text-[#0077b5] transition-colors p-2"><Linkedin size={20} /></a></div>
           <div className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-400 mt-2">{title}</div>
           <div className="border-t border-white/5 mt-4 pt-4">
             <p className="text-zinc-400 text-sm leading-relaxed font-light">{bio}</p>
@@ -51,7 +52,8 @@ const About: React.FC = () => {
     initials: 'SO',
     name: 'Sam Oakes',
     title: 'Co-Founder / AI Strategy',
-    bio: 'Focused on bridging the AI adoption gap, aligning product strategy, technical feasibility, and organizational change to deliver measurable outcomes.',
+    linkedin: 'https://linkedin.com/in/samoakes',
+    bio: 'Bridging the gap between specialized AI deployments and measurable enterprise outcomes. Previously led engineering and cloud orchestration projects at top-tier firms, orchestrating tenant-local LLM and zero-trust cloud infrastructure. Architected automated systems yielding 30-60% reduction in manual operations.',
     domains: ['AI Strategy', 'Workflow Automation', 'Cognitive Computing', 'Growth Engineering'],
   };
 
@@ -59,7 +61,8 @@ const About: React.FC = () => {
     initials: 'JI',
     name: 'Jake Ice',
     title: 'Co-Founder / Head of Business Operations',
-    bio: 'Leads client acquisition, sales operations, and commercial strategy, managing proposals, partnerships, and financial operations to drive growth.',
+    linkedin: 'https://linkedin.com/in/jake-ice-nihilo',
+    bio: 'Driving commercial strategy, partnerships, and operations. Over a decade of B2B enterprise sales and operational scaling experience at leading SaaS and cloud consultancy providers. Specializes in aligning technical RAG and agentic pipelines with core business KPIs and client success initiatives.',
     domains: ['Client Acquisition', 'Sales Operations', 'Proposals & BD', 'Financial Ops'],
   };
 
@@ -112,20 +115,20 @@ const About: React.FC = () => {
 
               <div>
                 <h4 className="text-blue-500 text-[9px] font-mono uppercase tracking-[0.3em] mb-4 flex items-center gap-2">
-                  <Award size={12} /> Cloud Certifications
+                  <Award size={12} /> Key Certifications
                 </h4>
                 <div className="grid grid-cols-1 gap-2">
                   <div className="p-3 bg-zinc-800/50 border border-zinc-700/50 rounded-sm text-zinc-200 text-[9px] font-mono uppercase tracking-widest flex items-center justify-between">
-                    AWS Certified <Shield size={10} className="text-zinc-500" />
+                    AWS Solutions Architect Pro <Shield size={10} className="text-zinc-500" />
                   </div>
                   <div className="p-3 bg-zinc-800/50 border border-zinc-700/50 rounded-sm text-zinc-200 text-[9px] font-mono uppercase tracking-widest flex items-center justify-between">
-                    Azure Solutions Architect <Shield size={10} className="text-zinc-500" />
+                    Azure Solutions Architect Exp <Shield size={10} className="text-zinc-500" />
                   </div>
                   <div className="p-3 bg-zinc-800/50 border border-zinc-700/50 rounded-sm text-zinc-200 text-[9px] font-mono uppercase tracking-widest flex items-center justify-between">
-                    CISSP Framework <Shield size={10} className="text-zinc-500" />
+                    AWS Security Specialty <Shield size={10} className="text-zinc-500" />
                   </div>
                   <div className="p-3 bg-zinc-800/50 border border-zinc-700/50 rounded-sm text-zinc-200 text-[9px] font-mono uppercase tracking-widest flex items-center justify-between">
-                    ISO27001 Ready <Shield size={10} className="text-zinc-500" />
+                    CISSP Framework Aligned <Shield size={10} className="text-zinc-500" />
                   </div>
                 </div>
               </div>

@@ -41,17 +41,16 @@ const Booking: React.FC = () => {
           <div className="relative">
             <div className="absolute -inset-2 md:-inset-4 border border-zinc-800 rounded-lg pointer-events-none"></div>
             <div className="bg-zinc-900 p-6 md:p-10 lg:p-16 border border-zinc-700 text-center">
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Discovery Call</h3>
-              <p className="text-zinc-500 text-xs md:text-sm mb-6 md:mb-10 mono">ESTABLISHING_ENCRYPTED_LINK...</p>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-6">Discovery Call</h3>
               
               <a
-                href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
+                href="https://intake.nihilosolutions.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center space-x-4 w-full py-6 bg-white text-black font-black uppercase text-xs tracking-[0.3em] hover:bg-zinc-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)]"
-                aria-label="Book Consultation - opens in new tab"
+                className="inline-flex items-center justify-center space-x-4 w-full py-6 bg-white text-black font-black uppercase text-[11px] tracking-[0.3em] hover:bg-zinc-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)]"
+                aria-label="Start Readiness Protocol - opens in new tab"
               >
-                <span>Book Consultation</span>
+                <span>Start Readiness Protocol</span>
                 <ArrowRight size={16} />
               </a>
               

@@ -17,22 +17,24 @@ const Stats: React.FC = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
               <div className="p-6 border border-zinc-900 bg-zinc-900/20">
-                <span className="block text-4xl font-bold text-white mb-2">85%</span>
-                <span className="text-zinc-600 text-[10px] mono uppercase tracking-widest font-bold">Manual Task Reduction</span>
+                <span className="block text-4xl font-bold text-white mb-2">85%<span className="text-zinc-600 text-xl">*</span></span>
+                <span className="text-zinc-600 text-[10px] mono uppercase tracking-widest font-bold">Typical Task Reduction</span>
               </div>
               <div className="p-6 border border-zinc-900 bg-zinc-900/20">
-                <span className="block text-4xl font-bold text-white mb-2">4.2x</span>
+                <span className="block text-4xl font-bold text-white mb-2">4.2x<span className="text-zinc-600 text-xl">*</span></span>
                 <span className="text-zinc-600 text-[10px] mono uppercase tracking-widest font-bold">Data Processing Speed</span>
               </div>
               <div className="p-6 border border-zinc-900 bg-zinc-900/20">
-                <span className="block text-4xl font-bold text-white mb-2">0.03%</span>
+                <span className="block text-4xl font-bold text-white mb-2">0.03%<span className="text-zinc-600 text-xl">*</span></span>
                 <span className="text-zinc-600 text-[10px] mono uppercase tracking-widest font-bold">Workflow Error Rate</span>
               </div>
               <div className="p-6 border border-zinc-900 bg-zinc-900/20">
-                <span className="block text-4xl font-bold text-white mb-2">30%</span>
-                <span className="text-zinc-600 text-[10px] mono uppercase tracking-widest font-bold">Cloud Cost Savings</span>
+                <span className="block text-4xl font-bold text-white mb-2">30%<span className="text-zinc-600 text-xl">*</span></span>
+                <span className="text-zinc-600 text-[10px] mono uppercase tracking-widest font-bold">Typical Cloud Savings</span>
               </div>
             </div>
+            
+            <p className="text-zinc-600 text-[10px] mono uppercase mt-6 tracking-wide">* Based on aggregated performance from our typical Azure and AWS production deployments.</p>
           </div>
 
           <div className="bg-zinc-900/40 border border-zinc-800 p-10 rounded-xl h-[450px] w-full relative">
