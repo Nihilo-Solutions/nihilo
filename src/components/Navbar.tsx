@@ -10,37 +10,34 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'py-4' : 'py-8'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'py-4' : 'py-6'}`}>
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
-        <div className={`grid grid-cols-3 items-center px-8 py-3 rounded-full border transition-all duration-500 
-          ${isScrolled 
-            ? 'bg-zinc-950/90 backdrop-blur-xl border-zinc-800 shadow-[0_0_30px_rgba(0,0,0,0.5)]' 
-            : 'bg-transparent border-transparent'
+        <div className={`flex items-center justify-between px-6 py-4 rounded-xl transition-all duration-500 
+          ${isScrolled
+            ? 'bg-navy-950/80 backdrop-blur-md border border-navy-800 shadow-lg'
+            : 'bg-transparent border border-transparent'
           }`}>
-          
+
           {/* Left: Brand */}
           <div className="flex justify-start">
-            <a href="/" className="flex items-center space-x-2 group">
-              <div className="w-2 h-2 bg-white rounded-full group-hover:shadow-[0_0_8px_#fff] transition-all duration-500"></div>
-              <span className="text-sm font-black tracking-[0.3em] text-white uppercase italic">Nihilo</span>
+            <a href="/" className="flex items-center space-x-3 group">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-DEFAULT to-accent flex items-center justify-center shadow-lg shadow-cyan-DEFAULT/20 group-hover:shadow-cyan-DEFAULT/40 transition-all duration-300">
+                <span className="text-white font-bold text-lg">N</span>
+              </div>
+              <span className="text-xl font-bold tracking-tight text-white font-heading group-hover:text-cyan-light transition-colors">Nihilo</span>
             </a>
           </div>
 
-          {/* Center: High-Contrast Navigation */}
-          <div className="hidden md:flex justify-center items-center space-x-24">
-            {['Services', 'About', 'Contact'].map((item) => (
-              <a 
+          {/* Center: Navigation */}
+          <div className="hidden md:flex justify-center items-center space-x-8">
+            {['Services', 'Methodology', 'Contact'].map((item) => (
+              <a
                 key={item}
-                href={`#${item.toLowerCase()}`} 
-                className="relative group text-[11px] font-bold mono uppercase tracking-[0.4em] text-zinc-100 transition-all duration-300"
+                href={`#${item.toLowerCase()}`}
+                className="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-300 relative group"
               >
-                {/* Glowing Text on Hover */}
-                <span className="group-hover:text-blue-400 group-hover:drop-shadow-[0_0_8px_rgba(96,165,250,0.8)] transition-all duration-300">
-                  {item}
-                </span>
-                
-                {/* Technical Underline Indicator */}
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-blue-500 transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_5px_#3b82f6]"></span>
+                {item}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-DEFAULT transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </div>
@@ -48,13 +45,12 @@ const Navbar: React.FC = () => {
           {/* Right: CTA */}
           <div className="flex justify-end items-center">
             <a
-              href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
+              href="https://intake.nihilosolutions.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-2 font-mono uppercase tracking-[0.2em] text-white rounded-sm border-2 border-blue-500 bg-zinc-900 transition-all duration-300 hover:bg-blue-500 hover:text-black hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+              className="inline-flex items-center px-5 py-2.5 text-sm font-bold text-white rounded-lg bg-accent hover:bg-accent-dark border border-accent-light/20 transition-all duration-300 hover:shadow-[0_0_15px_-3px_rgba(59,130,246,0.5)] shadow-md"
             >
-              <span className="mr-2 font-bold"></span>
-              <span className="text-[10px] font-black">Book Call</span>
+              Start Readiness Protocol
             </a>
           </div>
         </div>

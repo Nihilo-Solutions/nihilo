@@ -26,8 +26,8 @@ const Diagnostic: React.FC = () => {
           <p className="text-zinc-400 mb-10 font-mono text-xs tracking-widest uppercase">
             Analysis ready. Enter email to receive readiness report & engineering feedback.
           </p>
-          <input 
-            type="email" 
+          <input
+            type="email"
             placeholder="eng_lead@enterprise.com"
             className="w-full bg-zinc-950 border border-zinc-800 p-4 text-white mb-6 font-mono outline-none focus:border-blue-500 transition-colors"
             onChange={(e) => setEmail(e.target.value)}
@@ -41,26 +41,26 @@ const Diagnostic: React.FC = () => {
   }
 
   return (
-    <section id="assessment" className="py-32 bg-zinc-950 border-t border-zinc-900">
+    <section id="assessment" className="py-32 bg-navy-950 border-t border-navy-900">
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
         <div className="max-w-3xl mx-auto">
           {/* Progress Header */}
-          <div className="flex justify-between items-end mb-8 font-mono text-[10px] tracking-[0.4em] uppercase text-zinc-600">
+          <div className="flex justify-between items-end mb-8 font-mono text-[10px] tracking-[0.4em] uppercase text-navy-400">
             <div className="flex items-center gap-3">
               <Terminal size={14} />
               <span>Phase: {ASSESSMENT_QUESTIONS[step].phase}</span>
             </div>
             <span>{Math.round(((step + 1) / ASSESSMENT_QUESTIONS.length) * 100)}%</span>
           </div>
-          <div className="h-[1px] w-full bg-zinc-900 mb-16">
-            <div 
-              className="h-full bg-blue-500 shadow-[0_0_10px_#3b82f6] transition-all duration-500" 
-              style={{ width: `${((step + 1) / ASSESSMENT_QUESTIONS.length) * 100}%` }} 
+          <div className="h-[1px] w-full bg-navy-900 mb-16">
+            <div
+              className="h-full bg-accent shadow-[0_0_10px_rgba(99,102,241,0.5)] transition-all duration-500"
+              style={{ width: `${((step + 1) / ASSESSMENT_QUESTIONS.length) * 100}%` }}
             />
           </div>
 
           {/* Question */}
-          <h2 className="text-4xl font-bold text-white mb-12 tracking-tighter italic uppercase">
+          <h2 className="text-4xl font-bold text-white mb-12 tracking-tight font-heading leading-tight">
             {ASSESSMENT_QUESTIONS[step].question}
           </h2>
 
@@ -70,12 +70,12 @@ const Diagnostic: React.FC = () => {
               <button
                 key={opt}
                 onClick={() => handleChoice(opt)}
-                className="group flex justify-between items-center p-6 border border-zinc-900 bg-zinc-900/20 hover:border-blue-500/50 hover:bg-zinc-900/50 transition-all duration-300"
+                className="group flex justify-between items-center p-6 border border-navy-700 bg-navy-900/60 hover:border-cyan-DEFAULT/50 hover:bg-navy-800/80 transition-all duration-300 rounded-lg shadow-sm hover:shadow-cyan-DEFAULT/10"
               >
-                <span className="font-mono text-[11px] tracking-widest text-zinc-400 group-hover:text-white transition-colors">
+                <span className="font-medium text-[15px] text-slate-200 group-hover:text-white transition-colors text-left">
                   {opt}
                 </span>
-                <ChevronRight size={16} className="text-zinc-800 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
+                <ChevronRight size={18} className="text-navy-500 group-hover:text-cyan-DEFAULT group-hover:translate-x-1 transition-all" />
               </button>
             ))}
           </div>
