@@ -1,0 +1,13 @@
+{
+  "/(marketing)/assessment/page": "/assessment",
+  "/(marketing)/page": "/",
+  "/(marketing)/privacy/page": "/privacy",
+  "/(marketing)/security/page": "/security",
+  "/(marketing)/use-cases/page": "/use-cases",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/solutions/[slug]/page": "/solutions/[slug]",
+  "/solutions/page": "/solutions"
+}

@@ -37,6 +37,9 @@ const Footer: React.FC = () => (
         <div>
           <h4 className="text-[10px] mono uppercase tracking-[0.3em] text-white mb-8">Technical_Services</h4>
           <ul className="space-y-4 text-zinc-500 text-sm font-light">
+            <li>
+              <a href="/privacy" className="hover:underline">Privacy Policy</a>
+            </li>
             <li className="flex items-center space-x-3 group cursor-pointer">
               <Zap size={14} strokeWidth={1.5} className="group-hover:text-blue-400 transition-colors" />
               <a href="#services" className="group-hover:text-white transition-colors">AI Engineering</a>
@@ -77,7 +80,9 @@ const Footer: React.FC = () => (
       
       <div className="pt-12 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center text-zinc-700 text-[10px] mono tracking-widest uppercase">
         <p>&copy; {new Date().getFullYear()} Nihilo Solutions LLC. All rights reserved.</p>
-        <div className="flex space-x-8 mt-4 md:mt-0">
+        <div className="flex space-x-8 mt-4 md:mt-0 items-center">
+          <a href="/privacy" className="hover:text-zinc-400 transition-colors">Privacy Policy</a>
+          <span className="text-zinc-800">|</span>
           <a href="mailto:nihilo@nihilosolutions.com" className="hover:text-zinc-400 transition-colors">Contact Engineering</a>
           <span className="text-zinc-800">|</span>
           <span className="text-zinc-800 italic">Principals Led</span>
