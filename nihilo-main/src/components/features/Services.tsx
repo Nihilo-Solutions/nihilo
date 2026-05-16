@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { 
-  Database, 
-  Cpu, 
+import {
+  Database,
+  Cpu,
   Layers
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
@@ -11,10 +11,10 @@ const ServiceIcon = ({ icon: Icon, colorClass = "text-blue-400" }: { icon: Lucid
     <div className="absolute -inset-2 bg-blue-500/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     <div className="relative flex items-center justify-center w-14 h-14 rounded-xl bg-zinc-900 border border-zinc-800 shadow-2xl transition-all duration-300 group-hover:border-blue-500/50">
       <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-xl" />
-      <Icon 
-        size={24} 
-        strokeWidth={1.5} 
-        className={`${colorClass} drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]`} 
+      <Icon
+        size={24}
+        strokeWidth={1.5}
+        className={`${colorClass} drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]`}
       />
     </div>
   </div>
@@ -35,14 +35,18 @@ const Services: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-          
+
+          {/* Card 1: Enterprise RAG implementation */}
           <article className="group p-6 md:p-10 bg-zinc-900/40 border border-zinc-900 rounded-2xl hover:bg-zinc-900/60 hover:border-zinc-800 transition-all duration-500">
             <ServiceIcon icon={Database} colorClass="text-blue-400" />
-            <h4 id="enterprise-rag-implementation" className="text-lg md:text-xl font-bold text-white mb-4 md:mb-6 tracking-tight uppercase italic">
-              Enterprise RAG Implementation
+            <h4 id="enterprise-rag-implementation" className="text-lg md:text-xl font-bold text-white mb-2 tracking-tight uppercase italic">
+              Enterprise RAG implementation
             </h4>
+            <p className="text-sm md:text-base text-blue-300 font-light italic mb-4 md:mb-6">
+              Retrieval that stays in your tenancy.
+            </p>
             <p className="text-[13px] text-zinc-500 mb-4 font-light">
-              Organizations scaling LLM features frequently confront fragmented knowledge, unpredictable hallucinations, and regulatory exposure when sensitive information leaves the tenancy. Nihilo solves this with a production-grade enterprise RAG implementation that keeps embeddings, vector indexes, and retrieval logic inside your cloud tenancy (tenant-local RAG). We normalize and redact sensitive fields during ingestion, deploy vector databases in your VPC/VNet, and use hybrid retrieval (semantic + metadata) combined with reranking to reduce hallucination risk while preserving auditability and data residency.
+              Production-grade RAG that addresses fragmented knowledge, unauditable hallucinations, and data egress, with nothing crossing your tenancy boundary.
             </p>
             <h5 className="text-sm text-zinc-300 uppercase tracking-wider mb-2">How we implement it</h5>
             <ul className="text-zinc-500 text-[13px] mb-4 space-y-2">
@@ -52,22 +56,26 @@ const Services: React.FC = () => {
             </ul>
             <h5 className="text-sm text-zinc-300 uppercase tracking-wider mb-2">Key benefits & KPIs</h5>
             <ul className="text-zinc-500 text-[13px] space-y-2">
-              <li>Reduced data exposure: typical Azure deployments show &gt;95% reduction in external data egress.</li>
-              <li>Typically improves Precision@K by 20–40% on enterprise data lakes through tuned retrieval and reranking.</li>
-              <li>Median retrieval latency &lt;200ms for typical document stores, supporting enterprise SLAs.</li>
+              <li>&gt;95% reduction in external data egress (typical Azure deployments).</li>
+              <li>20-40% improvement in Precision@K on enterprise data lakes.</li>
+              <li>&lt;200ms median retrieval latency for typical document stores.</li>
             </ul>
             <p className="mt-4 text-zinc-400 text-sm">
               Learn more in our <Link className="underline text-blue-400" href="/security">Security Whitepaper</Link> or start with a technical readiness evaluation via the <Link className="underline text-blue-400" href="/assessment">AI Readiness Assessment</Link>.
             </p>
           </article>
 
+          {/* Card 2: Agentic process automation */}
           <article className="group p-6 md:p-10 bg-zinc-900/40 border border-zinc-900 rounded-2xl hover:bg-zinc-900/60 hover:border-zinc-800 transition-all duration-500">
             <ServiceIcon icon={Cpu} colorClass="text-emerald-400" />
-            <h4 id="agentic-process-automation" className="text-lg md:text-xl font-bold text-white mb-4 md:mb-6 tracking-tight uppercase italic">
-              Agentic Process Automation
+            <h4 id="agentic-process-automation" className="text-lg md:text-xl font-bold text-white mb-2 tracking-tight uppercase italic">
+              Agentic process automation
             </h4>
+            <p className="text-sm md:text-base text-emerald-300 font-light italic mb-4 md:mb-6">
+              Workflow automation you can actually audit.
+            </p>
             <p className="text-[13px] text-zinc-500 mb-4 font-light">
-              Many enterprises struggle with slow, error-prone workflows that rely on manual handoffs and brittle integrations. Nihilo's agentic process automation blends deterministic orchestration with controlled LLM agents to automate multi-step business processes while preserving governance. Agents operate inside policy sandboxes with clear role separation and observable action trails, enabling autonomous behavior for routine tasks and human-in-the-loop control for exceptions.
+              Deterministic orchestration with controlled LLM agents, autonomous on routine work and human-in-the-loop on exceptions, with every agent action logged and replayable.
             </p>
             <h5 className="text-sm text-zinc-300 uppercase tracking-wider mb-2">How Nihilo delivers agentic automation</h5>
             <ul className="text-zinc-500 text-[13px] mb-4 space-y-2">
@@ -77,22 +85,26 @@ const Services: React.FC = () => {
             </ul>
             <h5 className="text-sm text-zinc-300 uppercase tracking-wider mb-2">Key benefits & KPIs</h5>
             <ul className="text-zinc-500 text-[13px] space-y-2">
-              <li>Typically reduces manual steps by 60–85% in back-office operations based on our Azure deployments.</li>
-              <li>Decrease Mean Time To Resolution (MTTR) by typically 30–70% through automated triage and remediation.</li>
-              <li>Full auditability: 100% of agent actions are logged, traceable, and replayable for compliance.</li>
+              <li>60-85% reduction in manual steps (typical back-office deployments).</li>
+              <li>30-70% MTTR reduction via automated triage and remediation.</li>
+              <li>100% of agent actions logged, traceable, and replayable.</li>
             </ul>
             <p className="mt-4 text-zinc-400 text-sm">
               See practical examples for <em>agentic automation on Azure</em> and schedule a focused assessment via our <Link className="underline text-blue-400" href="/assessment">AI Readiness Assessment</Link> or <a className="underline text-blue-400" href="#contact">book a discovery call</a>.
             </p>
           </article>
 
+          {/* Card 3: Cloud-native AI infrastructure */}
           <article className="group p-6 md:p-10 bg-zinc-900/40 border border-zinc-900 rounded-2xl hover:bg-zinc-900/60 hover:border-zinc-800 transition-all duration-500">
             <ServiceIcon icon={Layers} colorClass="text-purple-400" />
-            <h4 id="cloud-native-ai-infrastructure" className="text-lg md:text-xl font-bold text-white mb-4 md:mb-6 tracking-tight uppercase italic">
-              Cloud-Native AI Infrastructure
+            <h4 id="cloud-native-ai-infrastructure" className="text-lg md:text-xl font-bold text-white mb-2 tracking-tight uppercase italic">
+              Cloud-native AI infrastructure
             </h4>
+            <p className="text-sm md:text-base text-purple-300 font-light italic mb-4 md:mb-6">
+              Inference at enterprise scale, on your terms.
+            </p>
             <p className="text-[13px] text-zinc-500 mb-4 font-light">
-              Deploying AI at enterprise scale requires infrastructure that balances performance, cost predictability, and security. Nihilo engineers cloud-native AI platforms that treat model workloads as platform services: autoscaling inference clusters, request batching and caching, and telemetry-driven governance. Where compliance demands it, we deploy tenant-local infrastructure with strict network controls and KMS integrations so your inference and embedding pipelines remain under your control.
+              Cloud-native AI platforms that treat model workloads as platform services, deployed in your tenancy with KMS integrations so you keep the keys.
             </p>
             <h5 className="text-sm text-zinc-300 uppercase tracking-wider mb-2">Core implementation patterns</h5>
             <ul className="text-zinc-500 text-[13px] mb-4 space-y-2">
@@ -102,9 +114,9 @@ const Services: React.FC = () => {
             </ul>
             <h5 className="text-sm text-zinc-300 uppercase tracking-wider mb-2">Key benefits & KPIs</h5>
             <ul className="text-zinc-500 text-[13px] space-y-2">
-              <li>Lower inference costs: batching & caching commonly yield 25–50% reduction in per-request spend.</li>
-              <li>Operational resilience: multi-zone failover and autoscaling meet enterprise RTO/RPO targets.</li>
-              <li>Security posture: tenant-local deployments and KMS simplify SOC 2 / ISO 27001 evidence collection.</li>
+              <li>25-50% reduction in per-request inference cost via batching and caching.</li>
+              <li>Multi-zone failover and autoscaling meeting enterprise RTO/RPO.</li>
+              <li>Tenant-local deployments simplify SOC 2 / ISO 27001 evidence collection.</li>
             </ul>
             <p className="mt-4 text-zinc-400 text-sm">
               Read the deployment checklist in our <Link className="underline text-blue-400" href="/security">Security Whitepaper</Link> or request a platform design review during your <Link className="underline text-blue-400" href="/assessment">readiness assessment</Link>.

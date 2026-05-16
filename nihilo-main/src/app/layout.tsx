@@ -20,10 +20,10 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Nihilo Solutions — Enterprise AI Consulting',
+    default: 'Tenant-Local AI Automation on Azure & AWS | Nihilo Solutions',
     template: '%s | Nihilo Solutions',
   },
-  description: 'Secure, tenant-local RAG pipelines and agentic automation on Azure & AWS. Production-ready enterprise AI.',
+  description: 'Production AI automation deployed inside your Azure or AWS tenancy. Tenant-local RAG, agentic workflows, SOC 2 / ISO 27001 ready. Production in 4-6 weeks.',
   keywords: ['Enterprise AI', 'RAG', 'Cloud Automation', 'Azure', 'AWS', 'LLM Operations', 'Agentic Automation'],
   authors: [{ name: 'Nihilo Solutions' }],
   openGraph: {
@@ -31,12 +31,15 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://nihilosolutions.com',
     siteName: 'Nihilo Solutions',
-    title: 'Nihilo Solutions — Enterprise AI Consulting',
-    description: 'Custom LLM operations and secure RAG design on AWS and Azure.',
+    title: 'Tenant-Local AI Automation on Azure & AWS | Nihilo Solutions',
+    description: 'Production AI automation deployed inside your Azure or AWS tenancy. Tenant-local RAG, agentic workflows, SOC 2 / ISO 27001 ready. Production in 4-6 weeks.',
+    // TODO: replace with real 1200x630 OG image - handled in a later slice.
     images: [{ url: 'https://nihilosolutions.com/logo.png' }],
   },
   twitter: {
     card: 'summary_large_image',
+    title: 'Tenant-Local AI Automation on Azure & AWS | Nihilo Solutions',
+    description: 'Production AI automation deployed inside your Azure or AWS tenancy. Tenant-local RAG, agentic workflows, SOC 2 / ISO 27001 ready. Production in 4-6 weeks.',
   },
   icons: {
     icon: '/logo.png',

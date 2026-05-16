@@ -51,10 +51,10 @@ const About: React.FC = () => {
   const sam = {
     initials: 'SO',
     name: 'Sam Oakes',
-    title: 'Co-Founder / AI Strategy',
+    title: 'Co-Founder / AI Engineer',
     linkedin: 'https://linkedin.com/in/samoakes',
-    bio: 'Bridging the gap between specialized AI deployments and measurable enterprise outcomes. Previously led engineering and cloud orchestration projects at top-tier firms, orchestrating tenant-local LLM and zero-trust cloud infrastructure. Architected automated systems yielding 30-60% reduction in manual operations.',
-    domains: ['AI Strategy', 'Workflow Automation', 'Cognitive Computing', 'Growth Engineering'],
+    bio: 'Sam designs and ships the systems. Background in cloud orchestration and tenant-local LLM infrastructure across regulated industries. Currently architecting AI and security platforms at LDI (managed services). Holds AWS Solutions Architect Pro, Azure Solutions Architect Expert, AWS Security Specialty, and aligns to CISSP. Writes the code on day one of every engagement.',
+    domains: ['Cloud Security', 'Tenant-Local Architecture', 'RAG Implementation', 'Agentic Systems'],
   };
 
   const vance = {
@@ -70,11 +70,18 @@ const About: React.FC = () => {
     <section id="about" className="py-24 bg-[#0a0a0a]">
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
+
           <div className="lg:col-span-2">
-            <ProfileCard {...sam} alt={"Sam Oakes - AI Strategy Consultant at Nihilo"} />
+            <ProfileCard {...sam} alt="Sam Oakes - Co-Founder / AI Engineer at Nihilo" />
             <div className="mt-6">
               <ProfileCard {...vance} />
+            </div>
+
+            {/* Two-of-us pitch */}
+            <div className="mt-8 border-l-2 border-blue-500/50 pl-6">
+              <p className="text-zinc-300 text-sm md:text-base leading-relaxed">
+                <span className="font-bold text-white">Why this matters for you:</span> When you engage Nihilo, you talk to the engineer who builds it and the operator who runs delivery. No account managers between you and the work. Two phone calls, one chain of accountability.
+              </p>
             </div>
           </div>
 
@@ -84,7 +91,7 @@ const About: React.FC = () => {
                 <Terminal size={18} className="text-blue-500" />
                 <h3 className="text-white font-bold uppercase italic tracking-tighter text-xl">Technical Pedigree</h3>
               </div>
-              
+
               <p className="text-zinc-500 text-[10px] font-mono uppercase tracking-[0.2em] mb-8 leading-relaxed">
                 Core competencies and cloud certifications that shape our delivery.
               </p>
@@ -113,7 +120,7 @@ const About: React.FC = () => {
                 </ul>
               </div>
 
-              <div>
+              <div className="mb-10">
                 <h4 className="text-blue-500 text-[9px] font-mono uppercase tracking-[0.3em] mb-4 flex items-center gap-2">
                   <Award size={12} /> Key Certifications
                 </h4>
@@ -130,6 +137,15 @@ const About: React.FC = () => {
                   <div className="p-3 bg-zinc-800/50 border border-zinc-700/50 rounded-sm text-zinc-200 text-[9px] font-mono uppercase tracking-widest flex items-center justify-between">
                     CISSP Framework Aligned <Shield size={10} className="text-zinc-500" />
                   </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-blue-500 text-[9px] font-mono uppercase tracking-[0.3em] mb-4 flex items-center gap-2">
+                  <Shield size={12} /> Partnership
+                </h4>
+                <div className="p-3 bg-blue-500/5 border border-blue-500/30 rounded-sm text-zinc-200 text-[9px] font-mono uppercase tracking-widest flex items-center justify-between">
+                  Microsoft Azure Partner <Shield size={10} className="text-blue-400" />
                 </div>
               </div>
             </div>
