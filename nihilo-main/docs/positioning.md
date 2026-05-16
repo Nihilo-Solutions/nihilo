@@ -17,6 +17,7 @@ Everything else flows from this. If a piece of copy could be said by Anthropic, 
 - Tenant-local deployment by default (your cloud, your keys, your data residency).
 - Founder-led delivery (talk to the engineer who builds it).
 - AWS Solutions Architect Pro, Azure Solutions Architect Expert, AWS Security Specialty, CISSP-aligned certifications on the engineering side.
+- Microsoft Azure Partner.
 - Real production deployments with quantified outcomes (Lettini Brothers: 100% automation rate on inbound leads, sub-1-minute response time).
 
 **The differentiator** (why we beat the alternatives):
@@ -26,6 +27,8 @@ Everything else flows from this. If a piece of copy could be said by Anthropic, 
 - vs. strategy firms: we ship code, not slide decks.
 
 ## The hero copy (homepage)
+
+> **Status: locked.**
 
 ```
 EYEBROW:     [No eyebrow. Cut it. The H1 is strong enough.]
@@ -41,19 +44,18 @@ SECONDARY:   See how it works
 ```
 
 Notes:
-- The current H1 "AI Automations That Cut Ops Costs 30-60%" leads with the outcome. That's strong. The proposed version above leads with the *what + where*, which is more defensible. Test both. The cost-cut version may convert better; the deployment version positions better.
-- The 30-60% claim is real but needs to be supportable. If we lead with it, every prospect will ask "based on what?" We should have the answer ready.
+- The 30-60% cost reduction claim is real and supportable. Reference it in supporting body copy (proof bullets, stats section, service-line KPIs), not in the H1. If we lead with the cost claim in the H1, every prospect asks "based on what?" and the answer needs to be visible alongside.
 
 ## Section headers (homepage, in order)
 
-1. **Hero** — as above.
-2. **What we deliver** — three service lines, expanded.
-3. **Why tenant-local** — the differentiator section. Why your cloud, not ours, matters.
-4. **Proof** — case studies + quantified outcomes. Currently one (Lettini Brothers); need to build to three.
-5. **Security and governance** — the security posture section. Currently strong; keep.
-6. **The team** — Sam + Jake bios. Direct-access model. Currently good; tighten.
-7. **Discovery** — the CTA to book.
-8. **Footer** — contact, legal, links.
+1. **Hero**: as above.
+2. **What we deliver**: three service lines, expanded.
+3. **Why tenant-local**: the differentiator section. Why your cloud, not ours, matters.
+4. **Proof**: case studies + quantified outcomes. Currently one (Lettini Brothers); need to build to three.
+5. **Security and governance**: the security posture section. Currently strong; keep.
+6. **The team**: Sam + Jake bios. Direct-access model. Currently good; tighten.
+7. **Discovery**: the CTA to book.
+8. **Footer**: contact, legal, links.
 
 ## Service line copy (homepage)
 
@@ -76,7 +78,7 @@ Notes:
 > Workflow automation you can actually audit.
 
 **Body:**
-> Most enterprise workflows fail not because the work is hard, but because the handoffs are brittle. We blend deterministic orchestration with controlled LLM agents to automate multi-step processes while preserving governance. Agents run inside policy sandboxes with clear role separation and observable action trails. Autonomous on routine work; human-in-the-loop on exceptions. RBAC, separation of duties, and full action logging — not bolted on, designed in.
+> Most enterprise workflows fail not because the work is hard, but because the handoffs are brittle. We blend deterministic orchestration with controlled LLM agents to automate multi-step processes while preserving governance. Agents run inside policy sandboxes with clear role separation and observable action trails. Autonomous on routine work; human-in-the-loop on exceptions. RBAC, separation of duties, and full action logging: not bolted on, designed in.
 
 **KPIs:**
 - 60-85% reduction in manual steps (typical back-office deployments).
@@ -119,13 +121,13 @@ This section doesn't exist on the current site. It should. This is our wedge.
 
 Current bios are decent. Sharpen:
 
-### Sam Oakes — Co-Founder, Principal Engineer (NOT "AI Strategy Consultant")
+### Sam Oakes: Co-Founder / AI Engineer
 
 > Sam designs and ships the systems. Background in cloud orchestration and tenant-local LLM infrastructure across regulated industries. Currently architecting AI and security platforms at LDI (managed services). Holds AWS Solutions Architect Pro, Azure Solutions Architect Expert, AWS Security Specialty, and aligns to CISSP. Writes the code on day one of every engagement.
 
 **Tags:** AI Engineering, Tenant-Local Architecture, Cloud Security, RAG Implementation, Agentic Systems
 
-### Jake Ice — Co-Founder, Head of Business Operations
+### Jake Ice: Co-Founder, Head of Business Operations
 
 > Jake runs delivery and commercial strategy. Over a decade scaling B2B enterprise sales and operations at SaaS and cloud consultancies. Translates technical capability into business outcomes and runs the client side end-to-end. Owns commercial structure, partnerships, and ensuring engagements stay on time and on scope.
 
@@ -182,8 +184,8 @@ Right now we only have CTA 1 prominently displayed. Adding CTA 2 (talk-to-princi
 - Game-changing
 - Revolutionary
 - Disruption / disruptive
-- Enterprise-grade (it's redundant — "enterprise" is doing the work)
-- Solutions (as a generic suffix — "AI solutions," "cloud solutions" — it means nothing)
+- Enterprise-grade (it's redundant; "enterprise" is doing the work)
+- Solutions (the generic suffix, as in "AI solutions," "cloud solutions": it means nothing)
 
 If you catch yourself reaching for one of these, the underlying point is too vague. Find the specific thing.
 
