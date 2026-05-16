@@ -35,22 +35,22 @@ Everything we do on this site is judged against that goal. Pretty visuals that d
 
 5. **Treat the site as a product, not a brochure.** It has users (visitors), a job-to-be-done (decide whether to book a call), and metrics (conversion rate, qualified leads). Iterate accordingly.
 
-6. **Plain markdown is the source of truth for content.** All copy, positioning, FAQs, case studies live as markdown in `/content/` or `/docs/`. The Next.js site renders them. Never inline long-form copy directly into JSX components. This makes copy editable without a dev session and makes content reviewable in pull requests.
+6. **Markdown as content source — aspirational, not current.** The intent is for long-form copy (case studies, articles, service descriptions) to live as markdown in `/content/`, rendered by Next.js. Today, that copy is still inlined in TSX components. Don't add new inlined copy reflexively — if a migration to a content layer is on the table, ask first. See ADR-003 in `docs/site-architecture.md`.
 
 ## Working style
 
 - **Small changes**: just make them and show me the diff.
 - **Medium changes (a page rewrite, new component, more than ~80 lines)**: describe the plan first, then execute.
 - **Big changes (new section, IA restructure, dependency add, infra change)**: discuss before touching anything.
-- **Never commit, push, or deploy without explicit say-so.** Cloudflare auto-deploys on push to main, so a push *is* a deploy.
-- **Never bypass the lint/typecheck/test gates.** If they're failing, fix the underlying issue, don't disable the rule.
+- **Never commit, push, or deploy without explicit say-so.** Vercel auto-deploys on push to main, so a push *is* a deploy.
+- **Never bypass the lint/typecheck/test gates.** If they're failing, fix the underlying issue, don't disable the rule. (Note: lint/test/format scripts don't exist in `package.json` yet; adding them is on the to-do list.)
 
 ## What to never touch without explicit instruction
 
-- Anything in `/infra/`, `wrangler.toml`, `next.config.*`, or other deploy/build config.
-- The Cloudflare configuration (Pages, Workers, DNS, WAF).
+- `vercel.json`, `next.config.*`, `postcss.config.*`, `tailwind.config.*`, or other deploy/build config.
+- The Vercel project configuration (project settings, environment variables, domains).
 - `package.json` dependencies. Don't add or upgrade without asking.
-- Analytics tags (GA4 measurement ID, Cloudflare Web Analytics). Don't remove or modify.
+- Analytics wiring (`@vercel/analytics` in `layout.tsx`; GA4 if/when it's added). Don't remove or modify.
 - Anything that touches the intake form on `intake.nihilosolutions.com` (separate concern).
 - Privacy policy or legal pages without me reviewing the wording.
 
@@ -58,24 +58,27 @@ Everything we do on this site is judged against that goal. Pretty visuals that d
 
 The full set is in `docs/site-architecture.md`. The short version:
 
-- **Framework**: Next.js (App Router). React + TypeScript.
-- **Styling**: Tailwind. Use the existing design tokens, don't introduce new ones without reason.
-- **Content**: Markdown in `/content/` rendered by MDX or a content layer. Don't inline long copy.
-- **Components**: One per file, in `/components/`. Server components by default. `"use client"` only when needed.
+- **Framework**: Next.js 16 (App Router). React 19 + TypeScript (strict).
+- **Styling**: hybrid — Tailwind utilities + CSS custom properties in `src/styles.css` + inline `style={{}}` props. Reuse existing design tokens; don't introduce new ones without reason.
+- **Content**: currently inlined in TSX. A markdown content layer is aspirational (ADR-003).
+- **Components**: one per file. Homepage sections in `src/components/features/`, layout chrome in `src/components/shared/`. Server components by default; `"use client"` only when needed.
 - **No new dependencies** without explicit approval. The site has fewer moving parts than most Next.js apps and we want to keep it that way.
 - **Accessibility is a build gate.** Use semantic HTML. Real headings (`<h1>`/`<h2>`/`<h3>`), real buttons (`<button>`), real links (`<a href>`). No `<div onClick>`.
 
 ## Useful commands
 
+Run from `nihilo-main/`:
+
 ```bash
-pnpm dev              # local dev server
-pnpm build            # production build
-pnpm lint             # ESLint + TypeScript
-pnpm test             # any tests we have
-pnpm format           # Prettier
+npm install
+npm run dev      # next dev -p 5000 -H 0.0.0.0
+npm run build    # next build
+npm run start    # next start
 ```
 
-(Adjust if the repo actually uses npm or yarn — check `package.json`.)
+Local URL: `http://localhost:5000`.
+
+No `lint`, `test`, or `format` scripts are defined in `package.json` yet. Adding them is on the to-do list.
 
 ## Domain glossary
 

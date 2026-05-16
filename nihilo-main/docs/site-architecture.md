@@ -1,188 +1,233 @@
 # Nihilo site architecture and conventions
 
-The repo conventions, stack details, and architectural decisions for the Nihilo Solutions marketing site. This file lives in `docs/site-architecture.md` in the repo.
+Repo conventions, stack details, and architectural decisions for the Nihilo Solutions marketing site. This file lives at `nihilo-main/docs/site-architecture.md` and is the source of truth for "what the repo looks like, how we build, where it deploys."
 
-> Note: some sections are placeholders to be filled in by Sam after looking at the actual repo. Mark them with `# TODO:` for now and tighten in the first session.
+> Last verified against the repo: 2026-05-15.
 
 ## Stack
 
-> # TODO: confirm exact versions by looking at package.json
-
-- **Framework**: Next.js (App Router). Server components by default.
-- **Language**: TypeScript. Strict mode.
-- **Styling**: Tailwind CSS.
-- **Hosting**: Cloudflare Pages.
-- **Analytics**: GA4 + Cloudflare Web Analytics.
-- **Forms**: Intake form on `intake.nihilosolutions.com` (separate concern).
-- **Image optimization**: Next.js `<Image>` component. Source images in `/public/`.
-- **Fonts**: webfonts (TBD which). Subset and preload.
-- **Markdown rendering**: TBD. Either `next-mdx-remote`, `contentlayer`, `velite`, or a custom `gray-matter` + `remark` pipeline. Decide before building the article system.
+- **Framework**: Next.js 16.1.1 (App Router). Server components by default.
+- **Language**: TypeScript 5.8 (strict mode).
+- **Runtime / package manager**: Node 20+, npm.
+- **Styling**: Tailwind CSS v4 (via `@tailwindcss/postcss`), plus a single global `src/styles.css` defining CSS custom properties (e.g., `--brand-void`, `--brand-azure`, `--fg`, `--font-space-grotesk`), plus inline `style={{}}` props on many components. Hybrid model; see ADR-004.
+- **UI / motion / data**: `lucide-react` icons, `framer-motion`, `recharts`, `@mui/material` + `@emotion/react`/`@emotion/styled`.
+- **Hosting**: Vercel. `vercel.json` at `nihilo-main/`, `@vercel/analytics` mounted in the root layout.
+- **Analytics**: `@vercel/analytics` only. The legacy `nihilo-main/index.html` references a GA4 tag (`G-HTNV61D4K4`) but is not served by Next.js. GA4 wiring on the App Router is a pending decision.
+- **Forms**: Intake form on `intake.nihilosolutions.com` (subdomain). `@emailjs/browser` installed for any future in-site form needs. ADR-005 proposes moving intake on-site.
+- **Image optimization**: Next.js `<Image>` component. Source images in `nihilo-main/public/`.
+- **Fonts**: Inter, Space Grotesk, JetBrains Mono via `next/font/google`, wired through CSS variables in `layout.tsx`.
+- **Markdown content layer**: not implemented. Long-form copy is currently inlined in TSX. See ADR-003.
 
 ## Repository layout
 
-> # TODO: confirm by looking at the actual repo. This is the proposed shape if we end up reorganizing.
+The Next.js app lives under `nihilo-main/`. The git repo root contains `.git/`, `.gitignore`, `.vscode/`, `design/`, and the `nihilo-main/` subdirectory.
 
 ```
-/
-├── app/                       # Next.js App Router
-│   ├── (marketing)/           # Marketing routes group
-│   │   ├── page.tsx           # Homepage
-│   │   ├── security/
-│   │   │   └── page.tsx
-│   │   ├── assessment/
-│   │   │   └── page.tsx
-│   │   └── privacy/
-│   │       └── page.tsx
-│   ├── articles/
-│   │   ├── page.tsx           # Articles index
-│   │   └── [slug]/
-│   │       └── page.tsx
-│   ├── case-studies/
-│   │   ├── page.tsx
-│   │   └── [slug]/
-│   │       └── page.tsx
-│   ├── layout.tsx             # Root layout with global meta
-│   ├── sitemap.ts             # Auto-generated sitemap
-│   └── robots.ts              # robots.txt
+nihilo-main/
+├── src/
+│   ├── app/                           # Next.js App Router
+│   │   ├── layout.tsx                 # Root layout: fonts, Navbar, Vercel Analytics
+│   │   ├── not-found.tsx
+│   │   ├── robots.ts
+│   │   ├── sitemap.ts
+│   │   ├── (marketing)/               # Marketing route group (see ADR-007)
+│   │   │   ├── page.tsx               # Homepage
+│   │   │   ├── assessment/page.tsx
+│   │   │   ├── privacy/page.tsx
+│   │   │   ├── security/page.tsx
+│   │   │   └── use-cases/page.tsx
+│   │   └── solutions/
+│   │       ├── page.tsx
+│   │       ├── SolutionsContent.tsx
+│   │       └── [slug]/
+│   │           ├── page.tsx
+│   │           └── SolutionContent.tsx
+│   │
+│   ├── components/
+│   │   ├── features/                  # Homepage sections (Hero, About, Services, ...)
+│   │   │   ├── About.tsx
+│   │   │   ├── Booking.tsx
+│   │   │   ├── CaseStudy.tsx
+│   │   │   ├── ChatAssistant.tsx
+│   │   │   ├── Diagnostic.tsx
+│   │   │   ├── Hero.tsx
+│   │   │   ├── Security.tsx
+│   │   │   ├── Services.tsx
+│   │   │   ├── Stats.tsx
+│   │   │   └── index.ts
+│   │   └── shared/                    # Layout chrome
+│   │       ├── Footer.tsx
+│   │       ├── Navbar.tsx
+│   │       ├── TableOfContents.tsx
+│   │       └── index.ts
+│   │
+│   ├── lib/
+│   │   ├── data/
+│   │   │   ├── pages.ts               # Solution-page data
+│   │   │   └── types.ts
+│   │   ├── seo.ts
+│   │   └── utils.ts
+│   │
+│   ├── types/index.ts
+│   ├── constants.tsx                  # Shared constants (e.g., PERFORMANCE_DATA)
+│   ├── metadata.json
+│   └── styles.css                     # Global CSS + design-token custom properties
 │
-├── components/                # React components
-│   ├── ui/                    # Low-level primitives (Button, Card, etc.)
-│   ├── sections/              # Homepage sections (Hero, Services, etc.)
-│   ├── layout/                # Header, Footer
-│   └── seo/                   # SEO components (StructuredData, etc.)
+├── public/                            # Static assets
+│   ├── diagrams/
+│   ├── headshots/
+│   ├── llms.txt
+│   ├── logo.png
+│   ├── manifest.json
+│   ├── nihilo_whitepaper.pdf
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── sitemap.xsl
 │
-├── content/                   # Markdown source content
-│   ├── articles/              # Blog/article markdown
-│   ├── case-studies/          # Case study markdown
-│   ├── services/              # Service line copy
-│   └── site/                  # Site-wide copy (hero, footer, etc.)
-│
-├── docs/                      # Project docs (this file lives here)
+├── docs/                              # Project docs (this file lives here)
+│   ├── conversion-playbook.md
 │   ├── positioning.md
 │   ├── seo-strategy.md
-│   ├── conversion-playbook.md
 │   └── site-architecture.md
 │
-├── lib/                       # Utility code
-│   ├── content/               # Content loader / parser
-│   ├── seo/                   # SEO helpers
-│   └── analytics/             # GA4 event helpers
+├── scripts/
+│   ├── start-dev.sh
+│   └── stop-dev.sh
 │
-├── public/                    # Static assets
-│   ├── headshots/
-│   ├── logos/
-│   ├── og-images/
-│   └── ...
-│
-├── styles/                    # Global CSS, Tailwind config
-├── CLAUDE.md                  # Claude Code instructions (root level)
+├── CLAUDE.md                          # Project-level Claude Code instructions
 ├── README.md
+├── index.html                         # LEGACY (Vite-era). Not served. See "Gotchas".
 ├── next.config.ts
+├── next-env.d.ts
 ├── package.json
-├── tailwind.config.ts
-└── tsconfig.json
+├── package-lock.json
+├── postcss.config.cjs
+├── tailwind.config.cjs
+├── tsconfig.json
+└── vercel.json
 ```
+
+Path alias: `@/*` → `./src/*` (configured in `tsconfig.json`).
+
+No `content/` directory exists. Long-form copy currently lives inside TSX components. See ADR-003.
 
 ## Conventions
 
 ### File naming
-- React components: `PascalCase.tsx` (e.g., `HeroSection.tsx`)
-- Markdown content: `kebab-case.md` (e.g., `tenant-local-rag-azure.md`)
-- Utility code: `kebab-case.ts` (e.g., `content-loader.ts`)
-- Page routes: lowercase (Next.js convention)
+- React components: `PascalCase.tsx` (e.g., `Hero.tsx`).
+- Utility modules: `kebab-case.ts` (e.g., `seo.ts`).
+- Route files follow Next.js conventions: `page.tsx`, `layout.tsx`, `not-found.tsx`, `robots.ts`, `sitemap.ts`.
+- Page routes: lowercase URL segments.
 
 ### Component conventions
 - One component per file. The filename matches the component name.
-- Server components by default. Add `"use client"` only when client interactivity is genuinely needed.
-- Props always typed via an interface or type at the top of the file.
-- No `default export` for most components; named exports preferred. Exceptions: page components and layouts (Next.js requires default exports).
-- Co-locate component-specific helpers in the same file unless they're reused elsewhere.
+- Server components by default. Add `"use client"` only when client interactivity is genuinely needed (currently used in `About.tsx`, `Stats.tsx`, and the solutions content components).
+- Props typed inline (interface or type at the top of the file).
+- Page components and the root layout use `default export` (Next.js requires it). Other components: current code mixes default and named exports; prefer named for new components.
+- Section components for the homepage live in `src/components/features/`. Layout chrome (Navbar, Footer, TableOfContents) lives in `src/components/shared/`. Both folders re-export through `index.ts` for short import paths.
 
 ### Content conventions
-- All long-form copy lives in `/content/` as markdown with frontmatter, not in JSX.
-- Frontmatter requirements vary by content type:
-  - Articles: `title`, `description`, `slug`, `publishedAt`, `author`, `tags`, `ogImage`, `keywords`.
-  - Case studies: `title`, `client`, `industry`, `publishedAt`, `slug`, `summary`, `kpis`, `ogImage`.
-  - Service pages: `title`, `slug`, `summary`, `kpis`.
-- Markdown body uses MDX or vanilla markdown depending on the content layer chosen.
-- One article per file. No multi-article files.
+- **Current reality**: long-form copy is inlined in component files. There is no markdown content layer.
+- **Aspirational**: per `docs/positioning.md` and `CLAUDE.md`, copy should eventually live in `/content/` as markdown with frontmatter, rendered into the site. See ADR-003.
+- The positioning copy bank in `docs/positioning.md` is authoritative for what the copy should say, regardless of where it currently lives.
 
 ### Styling conventions
-- Use Tailwind utility classes. Don't write custom CSS unless absolutely necessary.
-- Use the existing design tokens (colors, spacing, typography scales). Don't introduce new tokens without reason.
-- Mobile-first. Use Tailwind's responsive prefixes (`md:`, `lg:`) for desktop overrides.
-- Dark theme by default — the site is dark-themed. Don't introduce a light theme without explicit discussion.
+- **Current reality**: hybrid. Tailwind utility classes for layout primitives; inline `style={{}}` props with CSS custom properties (`var(--brand-azure)`, `var(--font-space-grotesk)`, etc.) for visual treatment; a single global `src/styles.css` defines the design tokens.
+- Reuse existing tokens. Don't introduce new ones without reason.
+- Dark theme only. No light theme switching.
+- Mobile-first. Use Tailwind responsive prefixes for desktop overrides.
+- See ADR-004 for the convergence plan.
 
 ### SEO conventions
-- Every page component must export `metadata` (Next.js App Router pattern) with:
-  - `title`
+- Root layout exports site-wide `metadata` (`title.template`, default OG, etc.). Per-page metadata exports are required for non-homepage routes; current coverage is spotty and is an active improvement area.
+- Required per-page metadata fields:
+  - `title` (override via the layout template `%s | Nihilo Solutions`)
   - `description`
   - `openGraph` with `title`, `description`, `images`, `url`
-  - `twitter` with `card`, `title`, `description`, `images`
+  - `twitter` (`card` minimum)
   - `alternates.canonical`
-- Use the `<StructuredData>` component (in `components/seo/`) to inject JSON-LD per page.
-- Add `Article`, `BreadcrumbList`, `FAQPage`, etc. schemas where appropriate.
-- Per-page OG images preferred over a single global one. Use dynamic OG image generation via `@vercel/og` if possible.
+- JSON-LD structured data: currently not emitted by any Next.js page. A `<StructuredData>` component is planned but not yet built. The legacy `index.html` has a ProfessionalService JSON-LD block, but `index.html` is not served.
+- Per-page OG images preferred over the site-wide default. Current default is `/logo.png` — replace with a real OG card.
 
 ### Accessibility conventions
 - Semantic HTML. Real `<button>`, `<a href>`, `<nav>`, `<main>`, `<footer>`. No `<div onClick>`.
 - One `<h1>` per page. Don't skip heading levels.
 - All interactive elements keyboard-accessible.
 - Form fields have associated `<label>` elements.
-- Images have meaningful `alt` text. Decorative images use `alt=""`.
-- Color contrast meets WCAG AA at minimum. AAA where reasonable.
+- Images use `next/image` with meaningful `alt` text. Decorative images: `alt=""`.
+- Color contrast meets WCAG AA minimum.
 - Visible focus indicators on all interactive elements.
 
 ### Performance conventions
-- Use Next.js `<Image>` for all images. Never plain `<img>`.
-- Lazy-load images below the fold.
-- Use `<Link>` from `next/link` for internal navigation. Prefetch by default; opt out for very long routes.
-- Code-split heavy components with `dynamic()` if needed.
-- Avoid client-side JavaScript on routes that don't need it (server components, no `"use client"`).
+- `next/image` for all images. Never plain `<img>`.
+- `next/link` for internal navigation.
+- Lazy-load below-the-fold heavy components with `dynamic()` where it pays off.
+- Avoid `"use client"` on routes that don't need client interactivity.
+- `experimental.optimizePackageImports` is enabled for `lucide-react` and `@mui/material` (see `next.config.ts`).
 
 ## Architectural decisions (ADRs)
 
-> The "Architecture Decision Record" pattern. Each significant decision gets a short entry here so we don't relitigate them.
+Each significant decision gets a short entry so we don't relitigate them. Decisions are marked **Decided** (in production), **Proposed** (recommended, not yet implemented), or **Aspirational** (stated direction, no current implementation).
 
-### ADR-001: Next.js App Router over Pages Router
-- **Date**: TBD
-- **Decision**: Use Next.js 14+ App Router.
+### ADR-001: Next.js App Router
+
+- **Status**: Decided (in production).
+- **Decision**: Use Next.js 16 with the App Router.
 - **Rationale**: Server components reduce client-side JS, improving page-load and SEO. The data-fetching model is cleaner for content-heavy sites.
 
-### ADR-002: Cloudflare Pages over Vercel
-- **Date**: TBD
-- **Decision**: Host on Cloudflare Pages.
-- **Rationale**: Already on Cloudflare for DNS and Web Analytics. Cheaper at scale. Edge runtime aligns with the security-and-cloud-native brand.
+### ADR-002: Vercel hosting
+
+- **Status**: Decided (in production).
+- **Decision**: Host on Vercel.
+- **Rationale**: First-party Next.js platform. `@vercel/analytics`, automatic preview deploys on PRs, image optimization, and edge functions are turn-key. `vercel.json` lives at `nihilo-main/vercel.json`.
+- **Note**: An earlier draft of this doc proposed Cloudflare Pages. That direction was not pursued.
 
 ### ADR-003: Markdown as content source
-- **Date**: TBD (recommended)
-- **Decision**: Long-form content lives in markdown files in `/content/`, not in a CMS or in JSX.
-- **Rationale**: Editable without a dev session. Reviewable in pull requests. Versionable in git. No vendor lock-in. Easy to feed to AI tools for editing.
 
-### ADR-004: Tailwind over CSS Modules or styled-components
-- **Date**: TBD
-- **Decision**: Tailwind utility classes for all styling.
-- **Rationale**: Faster iteration. Smaller production CSS. Better DX in AI-assisted coding (the class names are visible in the markup).
+- **Status**: Aspirational (not implemented).
+- **Decision (proposed)**: Long-form content (service copy, case studies, articles) lives in markdown files in `/content/`, rendered into the site via MDX or a content layer.
+- **Current reality**: copy is inlined in TSX components. Editing copy currently requires a dev session.
+- **Rationale (if pursued)**: editable without engineering work, reviewable in PRs, versionable in git, no vendor lock-in, easy to feed to AI tools for editing.
+- **Open questions**: which content layer (`next-mdx-remote`, `contentlayer`, `velite`, or a `gray-matter` + `remark` pipeline). Decide before any migration starts.
+
+### ADR-004: Styling — hybrid Tailwind + CSS variables + inline styles
+
+- **Status**: Decided (descriptive of current reality). Convergence plan: TBD.
+- **Decision**: The site uses Tailwind utility classes for layout primitives, CSS custom properties defined in `src/styles.css` for design tokens, and inline `style={{}}` props for component-specific visual treatment.
+- **Rationale (historical)**: the inline-styles + CSS-variables approach came from the original design system and survived the Next.js port. Tailwind was layered in for utility classes.
+- **Convergence plan (TBD)**: a future ADR should decide whether to (a) consolidate on Tailwind utilities + a small `@layer` of token classes, (b) keep the hybrid model and document it as the intended pattern, or (c) move to a CSS-variables-first approach with Tailwind only for spacing/responsive helpers. Not deciding now.
 
 ### ADR-005: Direct-edit forms on the main domain, not subdomain
-- **Date**: TBD (recommended change)
-- **Decision**: Migrate the readiness assessment form from `intake.nihilosolutions.com` to `nihilosolutions.com/assessment`.
+
+- **Status**: Proposed (not implemented).
+- **Decision (proposed)**: Migrate the readiness assessment form from `intake.nihilosolutions.com` to `nihilosolutions.com/assessment`.
 - **Rationale**: Subdomain hops cost trust signals and break analytics attribution. The form can be embedded via iframe or rebuilt natively.
 
 ### ADR-006: Real HTML for the security whitepaper
-- **Date**: TBD (recommended change)
-- **Decision**: Publish the whitepaper as a real HTML page at `/security/whitepaper` in addition to the PDF.
-- **Rationale**: PDFs don't pass SEO authority well. HTML version is crawlable, shareable, and indexable while the PDF stays available as a downloadable artifact.
+
+- **Status**: Proposed (not implemented).
+- **Decision (proposed)**: Publish the whitepaper as a real HTML page at `/security/whitepaper` in addition to the PDF.
+- **Rationale**: PDFs don't pass SEO authority well. HTML is crawlable, shareable, and indexable while the PDF stays available as a downloadable artifact.
+
+### ADR-007: `(marketing)` route group
+
+- **Status**: Decided (in production).
+- **Decision**: Use a Next.js route group `(marketing)` under `src/app/` to colocate the homepage, assessment, privacy, security, and use-cases pages without affecting URL structure.
+- **Rationale**: Lets these marketing routes share a future `(marketing)/layout.tsx` (currently the root `layout.tsx` carries the chrome) while keeping URLs flat (`/`, `/security`, `/assessment`, etc.). Keeps `solutions/` and its dynamic `[slug]` routes separate, since those have different needs (TOC, longer-form content, distinct layout potential).
 
 ## Gotchas and known issues
 
-> Active list. Update as discovered.
+Active list. Update as discovered.
 
-- **Cloudflare auto-deploys on push to main.** A `git push` to main is a production deploy. No staging environment exists yet. Worth setting up a preview branch deploy.
-- **OG image is just the logo.** Needs replacement with a real social card.
-- **Meta tags are not per-page.** Every page currently shares the homepage's OG/Twitter meta. Per-page meta is a P0 fix.
-- **No schema markup anywhere.** P0 fix.
-- **Intake form on a subdomain.** Adds friction; migrate.
+- **Vercel auto-deploys on push to `main`.** A `git push` to main is a production deploy. Preview deploys land on PR branches automatically.
+- **Legacy `nihilo-main/index.html`** is a Vite-era artifact. Not served by Next.js. Slated for removal pending decisions on (a) whether to port GA4 to the App Router layout, and (b) emitting JSON-LD via Next.js. The file references `/src/index.tsx`, which does not exist.
+- **GA4 not wired.** The legacy `index.html` references a GA4 tag (`G-HTNV61D4K4`); the Next.js layout currently mounts only `@vercel/analytics`. If GA4 is wanted on the live site, add it to `layout.tsx` (or per-page) before removing `index.html`.
+- **JSON-LD not emitted.** No structured data is rendered by App Router pages. P0 fix.
+- **OG image is the logo.** Replace with a real social card.
+- **Per-page meta is incomplete.** Many routes inherit the layout default. Per-page meta is a P0 fix.
+- **Intake form on a subdomain.** Adds friction. See ADR-005.
+- **No `lint`/`test`/`format` npm scripts** in `package.json`. Only `dev`, `build`, `start` exist. Adding these is a small task.
+- **Stray `.dev_pid` / `.dev3001_pid` / `.dev3006_pid` files** in `nihilo-main/` are leftovers from the Replit dev manager (`scripts/start-dev.sh` / `stop-dev.sh`). Harmless but worth cleaning up if those scripts are no longer used.
 
 ## Performance budgets
 
@@ -216,37 +261,42 @@ Bundle size budget:
 
 ## Local development
 
-> # TODO: fill in once the repo is cloned
-
 ```bash
-git clone git@github.com:nihilosolutions/site.git nihilo-site
-cd nihilo-site
-pnpm install
-cp .env.example .env.local
-# fill in any required env vars
-pnpm dev
+cd nihilo-main
+npm install
+npm run dev      # next dev -p 5000 -H 0.0.0.0
 ```
 
-The site runs at `http://localhost:3000`.
+Available scripts (from `nihilo-main/package.json`):
+
+| Script | Command |
+|---|---|
+| `npm run dev` | `next dev -p 5000 -H 0.0.0.0` |
+| `npm run build` | `next build` |
+| `npm run start` | `next start` |
+
+No `lint`, `test`, or `format` scripts exist yet. Adding them is on the to-do list.
+
+Local URL: `http://localhost:5000`.
 
 ## Deployment
 
-- **Automatic**: push to `main` → Cloudflare Pages builds and deploys to production.
-- **Preview**: push to any other branch → Cloudflare Pages creates a preview URL.
-- **Manual**: not currently configured.
+- **Production**: push to `main` → Vercel builds and deploys to production.
+- **Preview**: push to any other branch (or open a PR) → Vercel creates a preview URL.
+- **Configuration**: `nihilo-main/vercel.json` plus Vercel project settings (managed in the Vercel dashboard).
 
 ## Environment variables
 
-> # TODO: enumerate all env vars when first seen
+> Enumerate as discovered. The repo currently has a single `.env` at the repo root (gitignored).
 
-Likely candidates:
-- `NEXT_PUBLIC_GA_MEASUREMENT_ID` — GA4 ID
-- `NEXT_PUBLIC_SITE_URL` — canonical site URL
-- `INTAKE_FORM_URL` — link to the intake form (current subdomain)
+Likely candidates as the site grows:
+- `NEXT_PUBLIC_SITE_URL` — canonical site URL (used by `metadataBase` in `layout.tsx`).
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID` — only if GA4 is added to the layout.
+- `EMAILJS_*` — if `@emailjs/browser` is used for any in-site forms.
 
 ## What this file is not
 
-This is not the positioning, the SEO strategy, or the conversion playbook. Those are in their own files. This is purely the technical architecture and conventions for the repo.
+This is not the positioning, the SEO strategy, or the conversion playbook. Those are in their own files in `docs/`. This file is purely the technical architecture and conventions for the repo.
 
 ## When to update this file
 
@@ -254,3 +304,4 @@ This is not the positioning, the SEO strategy, or the conversion playbook. Those
 - When stack components change (framework upgrade, hosting move).
 - When new conventions emerge (a new file type, a new pattern).
 - When a known gotcha is discovered or fixed.
+- When the repo layout changes meaningfully.
