@@ -7,3 +7,4 @@ export { default as Booking } from './Booking';
 export { default as Diagnostic } from './Diagnostic';
 export { default as ChatAssistant } from './ChatAssistant';
 export { default as CaseStudy } from './CaseStudy';
+export { default as WhyTenantLocal } from './WhyTenantLocal';

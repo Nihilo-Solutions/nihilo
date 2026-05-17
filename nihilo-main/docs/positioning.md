@@ -50,22 +50,32 @@ Notes:
 
 1. **Hero**: as above.
 2. **What we deliver**: three service lines, expanded.
-3. **Why tenant-local**: the differentiator section. Why your cloud, not ours, matters.
+3. **Why tenant-local**: the trust posture section. Executive-readable lead, technical depth follow.
 4. **Proof**: case studies + quantified outcomes. Currently one (Lettini Brothers); need to build to three.
-5. **Security and governance**: the security posture section. Currently strong; keep.
+5. **Security and governance**: the deeper security posture section. Currently strong; keep.
 6. **The team**: Sam + Jake bios. Direct-access model. Currently good; tighten.
 7. **Discovery**: the CTA to book.
 8. **Footer**: contact, legal, links.
 
 ## Service line copy (homepage)
 
+Each service card is written in two layers. Layer A leads with a business outcome a non-technical executive can take to their CFO or board. Layer B carries the technical depth a CTO or VP Engineering needs to feel confident handing the work off. Both layers are required. Removing Layer A loses the business buyer; removing Layer B loses the technical buyer.
+
 ### Enterprise RAG implementation
 
 **Headline:**
 > Retrieval that stays in your tenancy.
 
-**Body:**
-> When you scale LLM features, three things bite: fragmented knowledge across systems, hallucinations you can't audit, and data leaving the perimeter for someone else's API. We build production RAG that solves all three. Embeddings, vector indexes, and retrieval logic deploy in your VPC or VNet. Ingestion pipelines normalize and redact PII before indexing. Hybrid retrieval (semantic + metadata + rerank) keeps factuality high. SOC 2 and ISO 27001 evidence collection is straightforward because nothing crosses your boundary.
+**Layer A (business outcome):**
+> Your team spends hours every week digging through scattered documents, emails, and systems for answers that already exist somewhere. We build a private AI search layer that surfaces those answers in seconds, with sensitive data never leaving your cloud.
+
+**Layer B (technical body):**
+> Production-grade RAG that addresses fragmented knowledge, unauditable hallucinations, and data egress, with nothing crossing your tenancy boundary.
+
+**How we implement it:**
+- Secure ingestion pipelines that filter, normalize and redact PII before indexing.
+- Tenant-local vector stores with BYOK KMS integration and strict network controls.
+- Retrieval tuning, prompt templates and reranking to improve factuality.
 
 **KPIs:**
 - >95% reduction in external data egress (typical Azure deployments).
@@ -77,8 +87,16 @@ Notes:
 **Headline:**
 > Workflow automation you can actually audit.
 
-**Body:**
-> Most enterprise workflows fail not because the work is hard, but because the handoffs are brittle. We blend deterministic orchestration with controlled LLM agents to automate multi-step processes while preserving governance. Agents run inside policy sandboxes with clear role separation and observable action trails. Autonomous on routine work; human-in-the-loop on exceptions. RBAC, separation of duties, and full action logging: not bolted on, designed in.
+**Layer A (business outcome):**
+> Repetitive operational work, lead routing, ticket triage, data entry, approval handoffs, eats your team's bandwidth and slows the business down. We automate that work with AI agents that operate inside controls you set, with a full audit trail for every action taken.
+
+**Layer B (technical body):**
+> Deterministic orchestration with controlled LLM agents, autonomous on routine work and human-in-the-loop on exceptions, with every agent action logged and replayable.
+
+**How we implement it:**
+- Define agent goals and safety constraints using reusable governance templates.
+- Orchestrate agents with event-driven serverless patterns for reliability and idempotency.
+- Integrate with ticketing, CI and observability stacks while enforcing RBAC and separation of duties.
 
 **KPIs:**
 - 60-85% reduction in manual steps (typical back-office deployments).
@@ -90,32 +108,46 @@ Notes:
 **Headline:**
 > Inference at enterprise scale, on your terms.
 
-**Body:**
-> Deploying AI at scale requires infrastructure that balances performance, cost, and control. We engineer cloud-native AI platforms that treat model workloads as platform services: autoscaling inference, request batching, telemetry-driven governance, cost dashboards. Where compliance requires it, the whole stack runs in your tenancy with KMS integrations so you keep the keys.
+**Layer A (business outcome):**
+> When AI usage starts mattering to the P&L, infrastructure decisions go from theoretical to existential. We build the AI backbone that scales with your business, runs on the cloud you already use, and keeps cost predictable as volume grows.
+
+**Layer B (technical body):**
+> Cloud-native AI platforms that treat model workloads as platform services, deployed in your tenancy with KMS integrations so you keep the keys.
+
+**How we implement it:**
+- IaC modules (Terraform/ARM) with secure-by-default parameterization.
+- Autoscaling inference clusters, batching and model tiering to reduce per-request cost.
+- Telemetry for model drift, A/B evaluation and cost dashboards to enforce governance.
 
 **KPIs:**
 - 25-50% reduction in per-request inference cost via batching and caching.
 - Multi-zone failover and autoscaling meeting enterprise RTO/RPO.
 - Tenant-local deployments simplify SOC 2 / ISO 27001 evidence collection.
 
-## "Why tenant-local" section (new section to add)
+## Why tenant-local
 
-This section doesn't exist on the current site. It should. This is our wedge.
+The wedge. This section is the executive-readable translation of the security story, with technical depth available below for the second buyer. It feeds the homepage `WhyTenantLocal` component.
+
+**Eyebrow:** `02 // Trust posture`
 
 **Headline:**
-> Why "tenant-local" matters more than you think.
+> Your data stays in your cloud. Nothing crosses your boundary.
 
-**Body:**
-> Most AI vendors ask you to send your data to their cloud, then ask security and legal to trust the contract. That model works until it doesn't, and when it doesn't, the cost is everything.
->
-> **Tenant-local means**:
-> - Your data never crosses your boundary. No external egress on inference or retrieval.
-> - You hold the keys. BYOK KMS integration is the default, not a premium tier.
-> - Your existing audit, IAM, and monitoring already work. You don't add a vendor to your SOC 2 scope.
-> - You own the deployment. If we leave, your platform doesn't go with us.
-> - Compliance evidence collection is straightforward, not a custom project for every audit.
->
-> We don't operate a multi-tenant SaaS. We architect, deploy, and harden your AI platform inside your account, then hand you the keys.
+**Layer A (business outcome, executive-readable, 2 to 3 sentences):**
+> Most AI vendors ask you to send sensitive data into their environment and trust the contract. We deploy AI inside your own Azure or AWS tenancy, so customer data, regulated information, and proprietary content never leave. That keeps you aligned with SOC 2 and ISO 27001 evidence requirements without adding a new vendor to your compliance scope.
+
+**Trust markers (icon grid for the homepage component):**
+- **Data never leaves your tenancy.** No external egress on retrieval or inference.
+- **SOC 2 and ISO 27001 aligned.** Evidence collection stays inside your existing scope.
+- **BYOK encryption.** Your keys, your control, default for every deployment.
+
+**Layer B (technical depth, for the technical buyer):**
+> Tenant-local means embeddings, vector indexes, retrieval logic, and inference all deploy inside your VPC or VNet. Your existing IAM, audit, and monitoring tools already cover this footprint because nothing new is leaving your perimeter. We do not operate a multi-tenant SaaS. We architect, deploy, and harden your AI platform inside your account, then hand you the keys. If we walk away, your platform doesn't go with us.
+
+**Why this matters for regulated industries and executive risk:**
+- A data breach involving an external AI vendor is a board-level event. Our architecture removes that risk vector by design.
+- Your security review, IAM, and monitoring already cover this work because nothing new is leaving your perimeter.
+- "Trust the vendor" is replaced with "trust your own controls."
 
 ## The team section
 
