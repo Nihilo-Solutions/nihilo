@@ -20,12 +20,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!solution) {
     return {
       title: "Solution Not Found",
+      robots: {
+        index: false,
+        follow: true,
+      },
     };
   }
 
   return {
     title: solution.title,
     description: solution.description,
+    robots: {
+      index: false,
+      follow: true,
+    },
     openGraph: {
       title: solution.title,
       description: solution.description,
