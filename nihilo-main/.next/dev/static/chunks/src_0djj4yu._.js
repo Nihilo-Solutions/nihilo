@@ -160,14 +160,14 @@ const About = ()=>{
     const sam = {
         initials: 'SO',
         name: 'Sam Oakes',
-        title: 'Co-Founder / AI Strategy',
+        title: 'Co-Founder / AI Engineer',
         linkedin: 'https://linkedin.com/in/samoakes',
-        bio: 'Bridging the gap between specialized AI deployments and measurable enterprise outcomes. Previously led engineering and cloud orchestration projects at top-tier firms, orchestrating tenant-local LLM and zero-trust cloud infrastructure. Architected automated systems yielding 30-60% reduction in manual operations.',
+        bio: 'Sam designs and ships the systems. Background in cloud orchestration and tenant-local LLM infrastructure across regulated industries. Currently architecting AI and security platforms at LDI (managed services). Holds AWS Solutions Architect Pro, Azure Solutions Architect Expert, AWS Security Specialty, and aligns to CISSP. Writes the code on day one of every engagement.',
         domains: [
-            'AI Strategy',
-            'Workflow Automation',
-            'Cognitive Computing',
-            'Growth Engineering'
+            'Cloud Security',
+            'Tenant-Local Architecture',
+            'RAG Implementation',
+            'Agentic Systems'
         ]
     };
     const vance = {
@@ -196,7 +196,7 @@ const About = ()=>{
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ProfileCard, {
                                 ...sam,
-                                alt: "Sam Oakes - AI Strategy Consultant at Nihilo"
+                                alt: "Sam Oakes - Co-Founder / AI Engineer at Nihilo"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/features/About.tsx",
                                 lineNumber: 75,
@@ -214,6 +214,31 @@ const About = ()=>{
                             }, void 0, false, {
                                 fileName: "[project]/src/components/features/About.tsx",
                                 lineNumber: 76,
+                                columnNumber: 13
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "mt-8 border-l-2 border-blue-500/50 pl-6",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-zinc-300 text-sm md:text-base leading-relaxed",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "font-bold text-white",
+                                            children: "Why this matters for you:"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/features/About.tsx",
+                                            lineNumber: 83,
+                                            columnNumber: 17
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        " When you engage Nihilo, you talk to the engineer who builds it and the operator who runs delivery. No account managers between you and the work. Two phone calls, one chain of accountability."
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/features/About.tsx",
+                                    lineNumber: 82,
+                                    columnNumber: 15
+                                }, ("TURBOPACK compile-time value", void 0))
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/features/About.tsx",
+                                lineNumber: 81,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
@@ -235,7 +260,7 @@ const About = ()=>{
                                                 className: "text-blue-500"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/features/About.tsx",
-                                                lineNumber: 84,
+                                                lineNumber: 91,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -243,13 +268,13 @@ const About = ()=>{
                                                 children: "Technical Pedigree"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/features/About.tsx",
-                                                lineNumber: 85,
+                                                lineNumber: 92,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/features/About.tsx",
-                                        lineNumber: 83,
+                                        lineNumber: 90,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -257,7 +282,7 @@ const About = ()=>{
                                         children: "Core competencies and cloud certifications that shape our delivery."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/features/About.tsx",
-                                        lineNumber: 88,
+                                        lineNumber: 95,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -270,14 +295,14 @@ const About = ()=>{
                                                         size: 12
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/features/About.tsx",
-                                                        lineNumber: 94,
+                                                        lineNumber: 101,
                                                         columnNumber: 20
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     " Core Competencies"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/features/About.tsx",
-                                                lineNumber: 93,
+                                                lineNumber: 100,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -290,14 +315,14 @@ const About = ()=>{
                                                                 className: "w-1 h-1 bg-blue-500 rounded-full"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/features/About.tsx",
-                                                                lineNumber: 98,
+                                                                lineNumber: 105,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             "LLMOps & RAG Architecture"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/features/About.tsx",
-                                                        lineNumber: 97,
+                                                        lineNumber: 104,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -307,14 +332,14 @@ const About = ()=>{
                                                                 className: "w-1 h-1 bg-blue-500 rounded-full"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/features/About.tsx",
-                                                                lineNumber: 102,
+                                                                lineNumber: 109,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             "Agentic Workflow Orchestration"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/features/About.tsx",
-                                                        lineNumber: 101,
+                                                        lineNumber: 108,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -324,14 +349,14 @@ const About = ()=>{
                                                                 className: "w-1 h-1 bg-blue-500 rounded-full"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/features/About.tsx",
-                                                                lineNumber: 106,
+                                                                lineNumber: 113,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             "Cloud-native Modernization"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/features/About.tsx",
-                                                        lineNumber: 105,
+                                                        lineNumber: 112,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -341,29 +366,30 @@ const About = ()=>{
                                                                 className: "w-1 h-1 bg-blue-500 rounded-full"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/features/About.tsx",
-                                                                lineNumber: 110,
+                                                                lineNumber: 117,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             "Secure Tenant Deployments"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/features/About.tsx",
-                                                        lineNumber: 109,
+                                                        lineNumber: 116,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/features/About.tsx",
-                                                lineNumber: 96,
+                                                lineNumber: 103,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/features/About.tsx",
-                                        lineNumber: 92,
+                                        lineNumber: 99,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "mb-10",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                                 className: "text-blue-500 text-[9px] font-mono uppercase tracking-[0.3em] mb-4 flex items-center gap-2",
@@ -372,14 +398,14 @@ const About = ()=>{
                                                         size: 12
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/features/About.tsx",
-                                                        lineNumber: 118,
+                                                        lineNumber: 125,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     " Key Certifications"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/features/About.tsx",
-                                                lineNumber: 117,
+                                                lineNumber: 124,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -394,13 +420,13 @@ const About = ()=>{
                                                                 className: "text-zinc-500"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/features/About.tsx",
-                                                                lineNumber: 122,
+                                                                lineNumber: 129,
                                                                 columnNumber: 49
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/features/About.tsx",
-                                                        lineNumber: 121,
+                                                        lineNumber: 128,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -412,13 +438,13 @@ const About = ()=>{
                                                                 className: "text-zinc-500"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/features/About.tsx",
-                                                                lineNumber: 125,
+                                                                lineNumber: 132,
                                                                 columnNumber: 51
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/features/About.tsx",
-                                                        lineNumber: 124,
+                                                        lineNumber: 131,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -430,13 +456,13 @@ const About = ()=>{
                                                                 className: "text-zinc-500"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/features/About.tsx",
-                                                                lineNumber: 128,
+                                                                lineNumber: 135,
                                                                 columnNumber: 44
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/features/About.tsx",
-                                                        lineNumber: 127,
+                                                        lineNumber: 134,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -448,31 +474,74 @@ const About = ()=>{
                                                                 className: "text-zinc-500"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/features/About.tsx",
-                                                                lineNumber: 131,
+                                                                lineNumber: 138,
                                                                 columnNumber: 45
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/features/About.tsx",
-                                                        lineNumber: 130,
+                                                        lineNumber: 137,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/features/About.tsx",
-                                                lineNumber: 120,
+                                                lineNumber: 127,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/features/About.tsx",
-                                        lineNumber: 116,
+                                        lineNumber: 123,
+                                        columnNumber: 15
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                className: "text-blue-500 text-[9px] font-mono uppercase tracking-[0.3em] mb-4 flex items-center gap-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Shield$3e$__["Shield"], {
+                                                        size: 12
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/features/About.tsx",
+                                                        lineNumber: 145,
+                                                        columnNumber: 19
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    " Partnership"
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/features/About.tsx",
+                                                lineNumber: 144,
+                                                columnNumber: 17
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "p-3 bg-blue-500/5 border border-blue-500/30 rounded-sm text-zinc-200 text-[9px] font-mono uppercase tracking-widest flex items-center justify-between",
+                                                children: [
+                                                    "Microsoft Azure Partner ",
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Shield$3e$__["Shield"], {
+                                                        size: 10,
+                                                        className: "text-blue-400"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/features/About.tsx",
+                                                        lineNumber: 148,
+                                                        columnNumber: 43
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/features/About.tsx",
+                                                lineNumber: 147,
+                                                columnNumber: 17
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/features/About.tsx",
+                                        lineNumber: 143,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/features/About.tsx",
-                                lineNumber: 82,
+                                lineNumber: 89,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -482,18 +551,18 @@ const About = ()=>{
                                     children: "Verified Production Standards"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/features/About.tsx",
-                                    lineNumber: 138,
+                                    lineNumber: 154,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/features/About.tsx",
-                                lineNumber: 137,
+                                lineNumber: 153,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/features/About.tsx",
-                        lineNumber: 81,
+                        lineNumber: 88,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]

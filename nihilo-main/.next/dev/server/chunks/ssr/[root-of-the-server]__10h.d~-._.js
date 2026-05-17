@@ -61,35 +61,20 @@ const Hero = ()=>{
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "max-w-5xl",
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "mb-6 md:mb-10 flex items-center",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-[9px] md:text-[11px] mono uppercase tracking-[0.2em] md:tracking-[0.4em] text-zinc-500 bg-zinc-900/50 px-2 md:px-3 py-1 border border-zinc-800 rounded",
-                                children: "System Architecture & AI Engineering"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/features/Hero.tsx",
-                                lineNumber: 16,
-                                columnNumber: 13
-                            }, ("TURBOPACK compile-time value", void 0))
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                            className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight tracking-tight mb-4 md:mb-6",
+                            children: "Production AI Automation, Deployed in Your Cloud."
                         }, void 0, false, {
                             fileName: "[project]/src/components/features/Hero.tsx",
                             lineNumber: 15,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight tracking-tight mb-4 md:mb-6",
-                            children: "AI Automations That Cut Ops Costs 30–60%"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/features/Hero.tsx",
-                            lineNumber: 21,
-                            columnNumber: 11
-                        }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "max-w-2xl text-base md:text-lg lg:text-xl text-zinc-400 font-light leading-relaxed mb-6 md:mb-8 border-l-2 border-zinc-800 pl-4 md:pl-8",
-                            children: "We build AI automations deployed inside your cloud, not ours. Azure-native. Production in 4–6 weeks."
+                            children: "Tenant-local RAG and agentic workflows on Azure and AWS. SOC 2 / ISO 27001 ready by default. Production in 4-6 weeks."
                         }, void 0, false, {
                             fileName: "[project]/src/components/features/Hero.tsx",
-                            lineNumber: 25,
+                            lineNumber: 19,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -99,27 +84,27 @@ const Hero = ()=>{
                                     href: "https://intake.nihilosolutions.com",
                                     target: "_blank",
                                     rel: "noopener noreferrer",
-                                    "aria-label": "Start Readiness Protocol - opens in new tab",
+                                    "aria-label": "Start your readiness assessment - opens in new tab",
                                     className: "btn-primary",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            children: "Start Readiness Protocol"
+                                            children: "Start your readiness assessment"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Hero.tsx",
-                                            lineNumber: 37,
+                                            lineNumber: 31,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                             size: 14
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Hero.tsx",
-                                            lineNumber: 38,
+                                            lineNumber: 32,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/features/Hero.tsx",
-                                    lineNumber: 30,
+                                    lineNumber: 24,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -127,29 +112,29 @@ const Hero = ()=>{
                                     className: "btn-secondary",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            children: "View Services"
+                                            children: "See how it works"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Hero.tsx",
-                                            lineNumber: 42,
+                                            lineNumber: 36,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                             size: 16
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Hero.tsx",
-                                            lineNumber: 43,
+                                            lineNumber: 37,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/features/Hero.tsx",
-                                    lineNumber: 41,
+                                    lineNumber: 35,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/features/Hero.tsx",
-                            lineNumber: 29,
+                            lineNumber: 23,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
@@ -170,7 +155,7 @@ const Hero = ()=>{
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {}, void 0, false, {
                             fileName: "[project]/src/components/features/Hero.tsx",
-                            lineNumber: 51,
+                            lineNumber: 45,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -178,18 +163,18 @@ const Hero = ()=>{
                             children: "PRODUCTION-READY"
                         }, void 0, false, {
                             fileName: "[project]/src/components/features/Hero.tsx",
-                            lineNumber: 52,
+                            lineNumber: 46,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/features/Hero.tsx",
-                    lineNumber: 50,
+                    lineNumber: 44,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/features/Hero.tsx",
-                lineNumber: 49,
+                lineNumber: 43,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -318,24 +303,32 @@ const Services = ()=>{
                                     colorClass: "text-blue-400"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 40,
+                                    lineNumber: 41,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                     id: "enterprise-rag-implementation",
-                                    className: "text-lg md:text-xl font-bold text-white mb-4 md:mb-6 tracking-tight uppercase italic",
-                                    children: "Enterprise RAG Implementation"
+                                    className: "text-lg md:text-xl font-bold text-white mb-2 tracking-tight uppercase italic",
+                                    children: "Enterprise RAG implementation"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 41,
+                                    lineNumber: 42,
+                                    columnNumber: 13
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-sm md:text-base text-blue-300 font-light italic mb-4 md:mb-6",
+                                    children: "Retrieval that stays in your tenancy."
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/features/Services.tsx",
+                                    lineNumber: 45,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-[13px] text-zinc-500 mb-4 font-light",
-                                    children: "Organizations scaling LLM features frequently confront fragmented knowledge, unpredictable hallucinations, and regulatory exposure when sensitive information leaves the tenancy. Nihilo solves this with a production-grade enterprise RAG implementation that keeps embeddings, vector indexes, and retrieval logic inside your cloud tenancy (tenant-local RAG). We normalize and redact sensitive fields during ingestion, deploy vector databases in your VPC/VNet, and use hybrid retrieval (semantic + metadata) combined with reranking to reduce hallucination risk while preserving auditability and data residency."
+                                    children: "Production-grade RAG that addresses fragmented knowledge, unauditable hallucinations, and data egress, with nothing crossing your tenancy boundary."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 44,
+                                    lineNumber: 48,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
@@ -343,7 +336,7 @@ const Services = ()=>{
                                     children: "How we implement it"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 47,
+                                    lineNumber: 51,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -353,27 +346,27 @@ const Services = ()=>{
                                             children: "Secure ingestion pipelines that filter, normalize and redact PII before indexing."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 49,
+                                            lineNumber: 53,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: "Tenant-local vector stores with BYOK KMS integration and strict network controls."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 50,
+                                            lineNumber: 54,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: "Retrieval tuning, prompt templates and reranking to improve factuality."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 51,
+                                            lineNumber: 55,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 48,
+                                    lineNumber: 52,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
@@ -381,37 +374,37 @@ const Services = ()=>{
                                     children: "Key benefits & KPIs"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 53,
+                                    lineNumber: 57,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
                                     className: "text-zinc-500 text-[13px] space-y-2",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            children: "Reduced data exposure: typical Azure deployments show >95% reduction in external data egress."
+                                            children: ">95% reduction in external data egress (typical Azure deployments)."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 55,
+                                            lineNumber: 59,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            children: "Typically improves Precision@K by 20–40% on enterprise data lakes through tuned retrieval and reranking."
+                                            children: "20-40% improvement in Precision@K on enterprise data lakes."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 56,
+                                            lineNumber: 60,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            children: "Median retrieval latency <200ms for typical document stores, supporting enterprise SLAs."
+                                            children: "<200ms median retrieval latency for typical document stores."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 57,
+                                            lineNumber: 61,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 54,
+                                    lineNumber: 58,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -424,7 +417,7 @@ const Services = ()=>{
                                             children: "Security Whitepaper"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 60,
+                                            lineNumber: 64,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         " or start with a technical readiness evaluation via the ",
@@ -434,20 +427,20 @@ const Services = ()=>{
                                             children: "AI Readiness Assessment"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 60,
+                                            lineNumber: 64,
                                             columnNumber: 174
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         "."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 59,
+                                    lineNumber: 63,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/features/Services.tsx",
-                            lineNumber: 39,
+                            lineNumber: 40,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
@@ -458,24 +451,32 @@ const Services = ()=>{
                                     colorClass: "text-emerald-400"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 65,
+                                    lineNumber: 70,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                     id: "agentic-process-automation",
-                                    className: "text-lg md:text-xl font-bold text-white mb-4 md:mb-6 tracking-tight uppercase italic",
-                                    children: "Agentic Process Automation"
+                                    className: "text-lg md:text-xl font-bold text-white mb-2 tracking-tight uppercase italic",
+                                    children: "Agentic process automation"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 66,
+                                    lineNumber: 71,
+                                    columnNumber: 13
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-sm md:text-base text-emerald-300 font-light italic mb-4 md:mb-6",
+                                    children: "Workflow automation you can actually audit."
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/features/Services.tsx",
+                                    lineNumber: 74,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-[13px] text-zinc-500 mb-4 font-light",
-                                    children: "Many enterprises struggle with slow, error-prone workflows that rely on manual handoffs and brittle integrations. Nihilo's agentic process automation blends deterministic orchestration with controlled LLM agents to automate multi-step business processes while preserving governance. Agents operate inside policy sandboxes with clear role separation and observable action trails, enabling autonomous behavior for routine tasks and human-in-the-loop control for exceptions."
+                                    children: "Deterministic orchestration with controlled LLM agents, autonomous on routine work and human-in-the-loop on exceptions, with every agent action logged and replayable."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 69,
+                                    lineNumber: 77,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
@@ -483,7 +484,7 @@ const Services = ()=>{
                                     children: "How Nihilo delivers agentic automation"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 72,
+                                    lineNumber: 80,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -493,27 +494,27 @@ const Services = ()=>{
                                             children: "Define agent goals and safety constraints using reusable governance templates."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 74,
+                                            lineNumber: 82,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: "Orchestrate agents with event-driven serverless patterns for reliability and idempotency."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 75,
+                                            lineNumber: 83,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: "Integrate with ticketing, CI and observability stacks while enforcing RBAC and separation of duties."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 76,
+                                            lineNumber: 84,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 73,
+                                    lineNumber: 81,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
@@ -521,37 +522,37 @@ const Services = ()=>{
                                     children: "Key benefits & KPIs"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 78,
+                                    lineNumber: 86,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
                                     className: "text-zinc-500 text-[13px] space-y-2",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            children: "Typically reduces manual steps by 60–85% in back-office operations based on our Azure deployments."
+                                            children: "60-85% reduction in manual steps (typical back-office deployments)."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 80,
+                                            lineNumber: 88,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            children: "Decrease Mean Time To Resolution (MTTR) by typically 30–70% through automated triage and remediation."
+                                            children: "30-70% MTTR reduction via automated triage and remediation."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 81,
+                                            lineNumber: 89,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            children: "Full auditability: 100% of agent actions are logged, traceable, and replayable for compliance."
+                                            children: "100% of agent actions logged, traceable, and replayable."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 82,
+                                            lineNumber: 90,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 79,
+                                    lineNumber: 87,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -562,7 +563,7 @@ const Services = ()=>{
                                             children: "agentic automation on Azure"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 85,
+                                            lineNumber: 93,
                                             columnNumber: 42
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         " and schedule a focused assessment via our ",
@@ -572,7 +573,7 @@ const Services = ()=>{
                                             children: "AI Readiness Assessment"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 85,
+                                            lineNumber: 93,
                                             columnNumber: 121
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         " or ",
@@ -582,20 +583,20 @@ const Services = ()=>{
                                             children: "book a discovery call"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 85,
+                                            lineNumber: 93,
                                             columnNumber: 216
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         "."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 84,
+                                    lineNumber: 92,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/features/Services.tsx",
-                            lineNumber: 64,
+                            lineNumber: 69,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
@@ -606,24 +607,32 @@ const Services = ()=>{
                                     colorClass: "text-purple-400"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 90,
+                                    lineNumber: 99,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                     id: "cloud-native-ai-infrastructure",
-                                    className: "text-lg md:text-xl font-bold text-white mb-4 md:mb-6 tracking-tight uppercase italic",
-                                    children: "Cloud-Native AI Infrastructure"
+                                    className: "text-lg md:text-xl font-bold text-white mb-2 tracking-tight uppercase italic",
+                                    children: "Cloud-native AI infrastructure"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 91,
+                                    lineNumber: 100,
+                                    columnNumber: 13
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-sm md:text-base text-purple-300 font-light italic mb-4 md:mb-6",
+                                    children: "Inference at enterprise scale, on your terms."
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/features/Services.tsx",
+                                    lineNumber: 103,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-[13px] text-zinc-500 mb-4 font-light",
-                                    children: "Deploying AI at enterprise scale requires infrastructure that balances performance, cost predictability, and security. Nihilo engineers cloud-native AI platforms that treat model workloads as platform services: autoscaling inference clusters, request batching and caching, and telemetry-driven governance. Where compliance demands it, we deploy tenant-local infrastructure with strict network controls and KMS integrations so your inference and embedding pipelines remain under your control."
+                                    children: "Cloud-native AI platforms that treat model workloads as platform services, deployed in your tenancy with KMS integrations so you keep the keys."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 94,
+                                    lineNumber: 106,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
@@ -631,7 +640,7 @@ const Services = ()=>{
                                     children: "Core implementation patterns"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 97,
+                                    lineNumber: 109,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -641,27 +650,27 @@ const Services = ()=>{
                                             children: "IaC modules (Terraform/ARM) with secure-by-default parameterization."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 99,
+                                            lineNumber: 111,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: "Autoscaling inference clusters, batching and model tiering to reduce per-request cost."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 100,
+                                            lineNumber: 112,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: "Telemetry for model drift, A/B evaluation and cost dashboards to enforce governance."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 101,
+                                            lineNumber: 113,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 98,
+                                    lineNumber: 110,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
@@ -669,37 +678,37 @@ const Services = ()=>{
                                     children: "Key benefits & KPIs"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 103,
+                                    lineNumber: 115,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
                                     className: "text-zinc-500 text-[13px] space-y-2",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            children: "Lower inference costs: batching & caching commonly yield 25–50% reduction in per-request spend."
+                                            children: "25-50% reduction in per-request inference cost via batching and caching."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 105,
+                                            lineNumber: 117,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            children: "Operational resilience: multi-zone failover and autoscaling meet enterprise RTO/RPO targets."
+                                            children: "Multi-zone failover and autoscaling meeting enterprise RTO/RPO."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 106,
+                                            lineNumber: 118,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            children: "Security posture: tenant-local deployments and KMS simplify SOC 2 / ISO 27001 evidence collection."
+                                            children: "Tenant-local deployments simplify SOC 2 / ISO 27001 evidence collection."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 107,
+                                            lineNumber: 119,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 104,
+                                    lineNumber: 116,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -712,7 +721,7 @@ const Services = ()=>{
                                             children: "Security Whitepaper"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 110,
+                                            lineNumber: 122,
                                             columnNumber: 52
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         " or request a platform design review during your ",
@@ -722,20 +731,20 @@ const Services = ()=>{
                                             children: "readiness assessment"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/features/Services.tsx",
-                                            lineNumber: 110,
+                                            lineNumber: 122,
                                             columnNumber: 186
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         "."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/features/Services.tsx",
-                                    lineNumber: 109,
+                                    lineNumber: 121,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/features/Services.tsx",
-                            lineNumber: 89,
+                            lineNumber: 98,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
