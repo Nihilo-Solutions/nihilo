@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Activity, ArrowUpRight } from 'lucide-react';
-import { Hero, Services, Security, About, Booking, CaseStudy } from '@/components/features';
+import { Hero, Services, Security, About, Booking, CaseStudy, WhyTenantLocal } from '@/components/features';
 import { Footer } from '@/components/shared';
 
 export default function HomePage() {
@@ -10,7 +10,8 @@ export default function HomePage() {
         <Hero />
         <Services />
         <CaseStudy />
-        
+        <WhyTenantLocal />
+
         <section id="assessment" className="py-24 bg-zinc-950">
           <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center">
              <div className="inline-flex items-center space-x-3 mb-6 px-4 py-2 border border-blue-500/30 rounded-full bg-blue-500/5">
@@ -18,7 +19,7 @@ export default function HomePage() {
                 <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-blue-400">System Diagnostic Available</span>
              </div>
              <h2 id="ready-for-ai-implementation" className="text-4xl font-bold text-white mb-8 italic uppercase tracking-tighter">Ready for AI implementation?</h2>
-             <Link 
+             <Link
                href="/assessment"
                className="inline-flex items-center space-x-4 px-10 py-4 bg-zinc-900 border border-zinc-800 text-white font-bold uppercase text-[10px] tracking-[0.3em] hover:border-blue-500 transition-all group"
              >

@@ -45,6 +45,9 @@ const Services: React.FC = () => {
             <p className="text-sm md:text-base text-blue-300 font-light italic mb-4 md:mb-6">
               Retrieval that stays in your tenancy.
             </p>
+            <p className="text-[14px] text-zinc-300 mb-4 font-light leading-relaxed">
+              Your team spends hours every week digging through scattered documents, emails, and systems for answers that already exist somewhere. We build a private AI search layer that surfaces those answers in seconds, with sensitive data never leaving your cloud.
+            </p>
             <p className="text-[13px] text-zinc-500 mb-4 font-light">
               Production-grade RAG that addresses fragmented knowledge, unauditable hallucinations, and data egress, with nothing crossing your tenancy boundary.
             </p>
@@ -74,6 +77,9 @@ const Services: React.FC = () => {
             <p className="text-sm md:text-base text-emerald-300 font-light italic mb-4 md:mb-6">
               Workflow automation you can actually audit.
             </p>
+            <p className="text-[14px] text-zinc-300 mb-4 font-light leading-relaxed">
+              Repetitive operational work, lead routing, ticket triage, data entry, approval handoffs, eats your team's bandwidth and slows the business down. We automate that work with AI agents that operate inside controls you set, with a full audit trail for every action taken.
+            </p>
             <p className="text-[13px] text-zinc-500 mb-4 font-light">
               Deterministic orchestration with controlled LLM agents, autonomous on routine work and human-in-the-loop on exceptions, with every agent action logged and replayable.
             </p>
@@ -102,6 +108,9 @@ const Services: React.FC = () => {
             </h4>
             <p className="text-sm md:text-base text-purple-300 font-light italic mb-4 md:mb-6">
               Inference at enterprise scale, on your terms.
+            </p>
+            <p className="text-[14px] text-zinc-300 mb-4 font-light leading-relaxed">
+              When AI usage starts mattering to the P&L, infrastructure decisions go from theoretical to existential. We build the AI backbone that scales with your business, runs on the cloud you already use, and keeps cost predictable as volume grows.
             </p>
             <p className="text-[13px] text-zinc-500 mb-4 font-light">
               Cloud-native AI platforms that treat model workloads as platform services, deployed in your tenancy with KMS integrations so you keep the keys.

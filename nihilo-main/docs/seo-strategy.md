@@ -59,6 +59,96 @@ Aspirational. Higher volume, broader intent. Only worth pursuing after Tier 1 is
 
 These should obviously rank #1 for our own brand. Defend by keeping the homepage on-brand.
 
+## CT-local SEO push
+
+Connecticut local search is a secondary channel but a defensible one. Competition is mostly directories (Clutch, DesignRush, GoodFirms) rather than real consultancies. A focused 3 to 6 month push can put us on page one for a small set of buyer-intent local terms.
+
+### Target keywords
+
+| Keyword | Intent | Volume (estimated) | Difficulty | Priority |
+|---|---|---|---|---|
+| AI consulting Connecticut | buying | low | low-medium | P0 |
+| AI consulting CT | buying | very low | low | P0 |
+| AI consulting Hartford | buying | very low | low | P1 |
+| AI consulting Stamford | buying | very low | low | P1 |
+| Azure AI consulting Connecticut | buying | very low | low | P0 |
+
+Volumes per term are small. Combined, they capture nearly every Connecticut-based buyer who actively searches for an AI consultancy in the state. Worth owning.
+
+### Competitive landscape
+
+Direct competitors in CT that are running real engagements:
+
+- EvolvAI CT
+- HROnTips
+- InveniAI
+- VoterLabs
+- RiskSpan
+- Noteworthy AI
+- Foyer.ai
+- Opinosis Analytics
+
+None of them rank dominantly for "AI consulting Connecticut" today. The page-one slots are mostly directories (Clutch, DesignRush, GoodFirms), one or two listings sites, and a handful of generic agency pages with weak content.
+
+This is the gap. A real consultancy with a focused local landing page and a complete Google Business Profile can credibly compete for page one.
+
+### Realistic timeline
+
+- **First page**: 3 to 6 months from launch of local landing pages and Google Business Profile setup.
+- **Top 3**: 6 to 12 months, assuming consistent local content publishing and at least 2 to 3 high-trust directory listings.
+- **#1**: 12 to 18 months, contingent on backlinks and on a few CT-specific case studies landing in the cluster.
+
+Faster than this is unrealistic without paid acceleration.
+
+### Plan
+
+#### a. Three local landing pages
+
+Create dedicated landing pages:
+
+- `/ai-consulting-connecticut` (main local pillar)
+- `/ai-consulting-hartford`
+- `/ai-consulting-stamford`
+
+Each page:
+
+- Real CT-specific copy. Not boilerplate with the city name swapped in.
+- Local schema (`LocalBusiness` JSON-LD) with address and area-served.
+- Reference to a CT or northeast-region client where possible, anonymized if needed.
+- Internal links to: homepage, pillar pages (tenant-local AI, agentic automation, production AI), the readiness assessment.
+- Unique meta tags per page.
+
+#### b. Google Business Profile setup checklist
+
+- [ ] Claim the listing. Business name: Nihilo Solutions. Category: Computer Consultant plus Software Company.
+- [ ] Set service area: Connecticut statewide, then tagged specifically: Hartford, Stamford, New Haven, Bridgeport.
+- [ ] Upload logo, cover image, and real photos (founders, work artifacts where possible).
+- [ ] Hours of operation: by appointment.
+- [ ] Service list: Enterprise RAG implementation, Agentic process automation, Cloud-native AI infrastructure, AI readiness assessment.
+- [ ] Description: pulls from `docs/positioning.md` one-sentence positioning.
+- [ ] Post 5 Updates in the first 30 days: case study links, article links, "we are open for new clients" announcements.
+- [ ] Solicit 3 to 5 real reviews from past clients in the first 60 days.
+- [ ] Link back to the site from the GBP profile.
+
+#### c. Directory submissions (priority order)
+
+| Directory | Priority | Reasoning |
+|---|---|---|
+| Clutch | P0 | Highest domain authority among B2B consulting directories. Drives both rankings and qualified leads. Free listing tier is enough to start. |
+| G2 | P0 | High domain authority and a category for "AI Consulting Services". Reviews compound over time. |
+| DesignRush | P1 | Decent authority, mostly used for design but has AI and dev categories. Free listing covers the basics. |
+| GoodFirms | P2 | Lower DA but appears on page one for local-AI queries often enough to be worth the time. |
+
+Approach: submit to all four, but invest editorial effort in Clutch and G2 (full client list, work samples, real reviews). Treat DesignRush and GoodFirms as "be present" only.
+
+#### d. Content targeting buyer-intent terms (separate from local)
+
+Local landing pages handle "AI consulting [city]" searches. They do NOT handle technical buyer searches like "tenant-local RAG Azure" or "BYOK RAG enterprise". Those are served by the cluster articles in the main content roadmap below.
+
+The local pages should NOT try to also rank for technical terms. They should rank for local terms and convert local buyers to the readiness assessment.
+
+If a single piece of content tries to rank for "AI consulting Hartford" AND "tenant-local RAG Azure", it will rank for neither.
+
 ## Content roadmap
 
 The minimum to win Tier 1 in 90 days. One article per week, every Sunday, published Monday.
@@ -92,7 +182,7 @@ The minimum to win Tier 1 in 90 days. One article per week, every Sunday, publis
 
 - Listicles ("Top 10 AI tools").
 - News commentary ("ChatGPT just released X").
-- Generic explainers ("What is RAG?") — every AI vendor has this; we can't outrank them.
+- Generic explainers ("What is RAG?"). Every AI vendor has this; we can't outrank them.
 - Anything we can't back up with a deployment we've actually done.
 
 ## Pillar pages and clusters
@@ -129,7 +219,7 @@ Status as of last audit, and what needs doing.
 
 - [ ] **Structured data (JSON-LD).** Currently zero schema markup. Add:
   - `Organization` schema on every page (in `<head>` via root layout).
-  - `LocalBusiness` schema on homepage (for CT location).
+  - `LocalBusiness` schema on homepage and CT local landing pages.
   - `Person` schema for Sam and Jake (on the about/team section).
   - `Service` schema for each service line.
   - `Article` schema on each blog article (auto-generated from frontmatter).
@@ -173,13 +263,13 @@ Status as of last audit, and what needs doing.
 - [ ] **Google Search Console.** Verify the property, submit the sitemap, monitor queries and click-through rates.
 - [ ] **Bing Webmaster Tools.** Same. Bing matters more than people think for B2B (still ~6% of searches, with higher CTR).
 - [ ] **Backlinks.** Strategy TBD. Likely paths: open-source work, conference talks, podcast appearances, guest articles on a couple of established blogs (where the audience overlaps with our ICP).
-- [ ] **Google Business Profile.** Set up for the CT location. Local + niche is a small but real lever.
+- [ ] **Google Business Profile.** See the CT-local SEO push above. Set up for the CT location and keep it current.
 
 ## E-E-A-T signals (Experience, Expertise, Authoritativeness, Trustworthiness)
 
 Google increasingly weights these for any "your money or your life" topic, which includes enterprise software decisions. We need to surface:
 
-- **Experience**: real case studies with real numbers, real client names. (Currently 1 — Lettini Brothers. Need 2-3 more.)
+- **Experience**: real case studies with real numbers, real client names. (Currently 1, Lettini Brothers. Need 2-3 more.)
 - **Expertise**: founder bios with specific credentials. (Currently good. Could add: years of experience, prior employers if no NDA.)
 - **Authoritativeness**: external recognition. Open-source contributions, conference talks, published whitepapers, citations from other AI/security sources.
 - **Trustworthiness**: clear contact info, physical address, real photos of real people, transparent pricing signals, privacy policy, terms of service.
