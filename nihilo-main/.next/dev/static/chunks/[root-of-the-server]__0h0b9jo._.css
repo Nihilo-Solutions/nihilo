@@ -2307,6 +2307,10 @@
     font-size: 13px;
   }
 
+  .text-\[14px\] {
+    font-size: 14px;
+  }
+
   .text-\[72px\] {
     font-size: 72px;
   }
@@ -2409,6 +2413,10 @@
   .tracking-widest {
     --tw-tracking: var(--tracking-widest);
     letter-spacing: var(--tracking-widest);
+  }
+
+  .text-\[\#5B8BFF\] {
+    color: #5b8bff;
   }
 
   .text-black {
@@ -3107,6 +3115,12 @@
   }
 
   @media (min-width: 48rem) {
+    .md\:mb-16 {
+      margin-bottom: calc(var(--spacing) * 16);
+    }
+  }
+
+  @media (min-width: 48rem) {
     .md\:mb-20 {
       margin-bottom: calc(var(--spacing) * 20);
     }
@@ -3176,6 +3190,12 @@
   @media (min-width: 48rem) {
     .md\:gap-8 {
       gap: calc(var(--spacing) * 8);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:gap-12 {
+      gap: calc(var(--spacing) * 12);
     }
   }
 
