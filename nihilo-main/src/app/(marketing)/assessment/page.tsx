@@ -50,6 +50,10 @@ export default function AssessmentPage() {
     if (serviceId && templateId && publicKey) {
       emailjs.send(serviceId, templateId, templateParams, publicKey)
         .then(() => {
+          window.gtag?.('event', 'generate_lead', {
+            event_category: 'contact',
+            event_label: 'intake_form',
+          });
           setEmailSent(true);
           setIsSending(false);
         }, (err) => {

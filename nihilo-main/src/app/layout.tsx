@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
-import Script from 'next/script';
-import { Suspense } from 'react';
-import { Navbar, GAPageView } from '@/components/shared';
+import { Navbar } from '@/components/shared';
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import '@/styles.css';
 
 const inter = Inter({
@@ -61,23 +60,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Analytics />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-HTNV61D4K4"
-          strategy="afterInteractive"
-        />
-        <Script id="ga4-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-HTNV61D4K4', {
-              page_path: window.location.pathname,
-            });
-          `}
-        </Script>
-        <Suspense fallback={null}>
-          <GAPageView />
-        </Suspense>
+        <GoogleAnalytics measurementId="G-HTNV61D4K4" />
       </body>
     </html>
   );
