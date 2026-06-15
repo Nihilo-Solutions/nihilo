@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
@@ -17,20 +18,18 @@ const Hero: React.FC = () => {
           </h1>
 
           <p className="max-w-2xl text-base md:text-lg lg:text-xl text-zinc-400 font-light leading-relaxed mb-6 md:mb-8 border-l-2 border-zinc-800 pl-4 md:pl-8">
-            Tenant-local RAG and agentic workflows on Azure and AWS. SOC 2 / ISO 27001 ready by default. Production in 4-6 weeks.
+            Tenant-local RAG and agentic workflows on Azure and AWS. SOC 2 / ISO 27001 ready by default. Production in 4 to 8 weeks.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mt-4">
-            <a
-              href="https://intake.nihilosolutions.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Start your readiness assessment - opens in new tab"
+            <Link
+              href="/intake"
+              aria-label="Talk to a principal"
               className="btn-primary"
             >
-              <span>Start your readiness assessment</span>
+              <span>Talk to a principal</span>
               <ArrowRight size={14} />
-            </a>
+            </Link>
 
             <a href="#services" className="btn-secondary">
               <span>See how it works</span>

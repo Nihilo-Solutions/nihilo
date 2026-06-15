@@ -93,8 +93,8 @@ export default function TermsOfService() {
             <p className="leading-relaxed">
               Questions about these Terms can be directed to:
               <br />
-              <a href="mailto:support@nihilosolutions.com" className="text-white hover:text-blue-400 transition-colors mt-2 inline-block font-mono">
-                support@nihilosolutions.com
+              <a href="mailto:sam@nihilosolutions.com" className="text-white hover:text-blue-400 transition-colors mt-2 inline-block font-mono">
+                sam@nihilosolutions.com
               </a>
             </p>
           </section>

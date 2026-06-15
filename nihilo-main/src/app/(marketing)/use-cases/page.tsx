@@ -13,7 +13,7 @@ export default function UseCasesPage() {
     <main className="min-h-screen bg-zinc-950 text-white antialiased pt-32 pb-16 px-6 md:px-12 lg:px-24">
       <header className="max-w-4xl mx-auto text-center mb-12">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight italic uppercase tracking-tighter">
-          Proven Enterprise AI Use Cases — Tenant-local RAG & Agentic Automation
+          Proven Enterprise AI Use Cases: Tenant-local RAG & Agentic Automation
         </h1>
         <p className="mt-4 text-zinc-400 max-w-2xl mx-auto">
           Deploy private, tenant-isolated retrieval-augmented generation (RAG) with
@@ -35,7 +35,7 @@ export default function UseCasesPage() {
               Solution: Tenant-local RAG provides encrypted, on-premise-like vector
               stores (BYOK) for sensitive ledger and transaction embeddings, combined
               with agentic automation to orchestrate periodic audits, anomaly
-              detection, and automated reporting — without ever exporting customer
+              detection, and automated reporting, without ever exporting customer
               data outside the tenant boundary.
             </p>
             <ul className="list-disc ml-5 text-zinc-400">
@@ -44,12 +44,9 @@ export default function UseCasesPage() {
               <li>Automated audit trail with append-only logs for every action</li>
               <li>Encrypted storage using customer-managed keys (BYOK)</li>
             </ul>
-            <div className="mt-4 flex gap-3">
-              <Link href="/assessment" className="inline-block bg-blue-500 hover:bg-blue-400 text-black font-bold px-4 py-2 rounded-md uppercase text-xs tracking-widest">
-                Start an Assessment
-              </Link>
-              <Link href="/#contact" className="inline-block border border-zinc-700 text-white px-4 py-2 rounded-md uppercase text-xs tracking-widest hover:border-blue-500 transition-colors">
-                Contact Sales
+            <div className="mt-4">
+              <Link href="/intake" className="inline-block bg-blue-500 hover:bg-blue-400 text-black font-bold px-4 py-2 rounded-md uppercase text-xs tracking-widest">
+                Talk to a principal
               </Link>
             </div>
           </article>
@@ -63,21 +60,18 @@ export default function UseCasesPage() {
             <p className="text-zinc-400">
               Solution: Tenant-local RAG keeps PHI-derived vectors inside an isolated
               vector DB, while agentic workflows automate claim routing, denials
-              classification, and appeals drafting — all auditable and encrypted with
+              classification, and appeals drafting, all auditable and encrypted with
               customer-managed keys.
             </p>
             <ul className="list-disc ml-5 text-zinc-400">
-              <li>Claims throughput improved by 3–5x with automated triage</li>
+              <li>Claims throughput improved by 3-5x with automated triage</li>
               <li>Reduced appeals turnaround time with AI-assisted drafting</li>
               <li>Full audit logs for regulatory review and HIPAA compliance</li>
-              <li>Data never leaves tenant boundary — BYOK enforced</li>
+              <li>Data never leaves tenant boundary, BYOK enforced</li>
             </ul>
-            <div className="mt-4 flex gap-3">
-              <Link href="/assessment" className="inline-block bg-blue-500 hover:bg-blue-400 text-black font-bold px-4 py-2 rounded-md uppercase text-xs tracking-widest">
-                Schedule a Demo
-              </Link>
-              <Link href="/#contact" className="inline-block border border-zinc-700 text-white px-4 py-2 rounded-md uppercase text-xs tracking-widest hover:border-blue-500 transition-colors">
-                Contact Us
+            <div className="mt-4">
+              <Link href="/intake" className="inline-block bg-blue-500 hover:bg-blue-400 text-black font-bold px-4 py-2 rounded-md uppercase text-xs tracking-widest">
+                Talk to a principal
               </Link>
             </div>
           </article>
@@ -91,21 +85,18 @@ export default function UseCasesPage() {
             <p className="text-zinc-400">
               Solution: Tenant-local RAG enables high-precision retrieval from your
               private knowledge base; agentic automation can create follow-ups,
-              summarize conversations, and escalate with context — all under strict
+              summarize conversations, and escalate with context, all under strict
               zero-trust orchestration.
             </p>
             <ul className="list-disc ml-5 text-zinc-400">
-              <li>Faster mean time to resolution (MTTR) by 40–70%</li>
+              <li>Faster mean time to resolution (MTTR) by 40-70%</li>
               <li>Higher first-contact resolution using contextual retrieval</li>
               <li>Automated escalations with full audit trail</li>
               <li>Secure egress and DLP policy enforcement</li>
             </ul>
-            <div className="mt-4 flex gap-3">
-              <Link href="/assessment" className="inline-block bg-blue-500 hover:bg-blue-400 text-black font-bold px-4 py-2 rounded-md uppercase text-xs tracking-widest">
-                Request Assessment
-              </Link>
-              <Link href="/#contact" className="inline-block border border-zinc-700 text-white px-4 py-2 rounded-md uppercase text-xs tracking-widest hover:border-blue-500 transition-colors">
-                Talk to an Expert
+            <div className="mt-4">
+              <Link href="/intake" className="inline-block bg-blue-500 hover:bg-blue-400 text-black font-bold px-4 py-2 rounded-md uppercase text-xs tracking-widest">
+                Talk to a principal
               </Link>
             </div>
           </article>
@@ -115,11 +106,11 @@ export default function UseCasesPage() {
           <div className="sticky top-32">
             <div className="bg-zinc-900/50 rounded-xl p-4 border border-zinc-800">
               <h3 className="text-lg font-medium mb-3 text-white">Architecture</h3>
-              <p className="text-zinc-500 mb-4 text-sm">Tenant-local RAG flow — BYOK, audit logs, secure egress.</p>
+              <p className="text-zinc-500 mb-4 text-sm">Tenant-local RAG flow: BYOK, audit logs, secure egress.</p>
               <div className="w-full h-auto relative">
                 <Image
                   src="/diagrams/tenant-local-rag.svg"
-                  alt="Tenant-local RAG architecture: User → App → Orchestrator (zero-trust) → tenant-isolated Vector DB → LLM. Labels for BYOK, audit logs, and secure egress."
+                  alt="Tenant-local RAG architecture: User to App to Orchestrator (zero-trust) to tenant-isolated Vector DB to LLM. Labels for BYOK, audit logs, and secure egress."
                   width={900}
                   height={360}
                   className="rounded-md"

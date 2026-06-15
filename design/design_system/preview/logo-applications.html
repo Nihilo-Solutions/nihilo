@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans)}
+  .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .cell{background:var(--bg);padding:22px;min-height:150px;display:flex;flex-direction:column;gap:12px;align-items:flex-start;justify-content:center}
+  .lab{font-family:var(--font-mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--fg-faint);align-self:flex-start}
+  img{max-width:100%}
+</style>
+</head>
+<body>
+<div class="grid">
+  <div class="cell"><span class="lab">Favicon · 32</span><img src="../assets/logo/nihilo-favicon.svg" width="48" height="48"/><span class="lab" style="color:var(--fg-dim)">Browser tab · bookmarks</span></div>
+  <div class="cell" style="background:#0B0D14"><span class="lab">Social Avatar · 512</span><img src="../assets/logo/nihilo-avatar.svg" width="80" height="80" style="border-radius:8px"/><span class="lab" style="color:var(--fg-dim)">LinkedIn · X · GitHub</span></div>
+  <div class="cell"><span class="lab">Deck Stacked</span><img src="../assets/logo/nihilo-deck-stacked.svg" style="height:110px;filter:invert(1) brightness(2)"/></div>
+</div>
+</body>
+</html>

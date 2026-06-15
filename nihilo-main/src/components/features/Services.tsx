@@ -64,7 +64,7 @@ const Services: React.FC = () => {
               <li>&lt;200ms median retrieval latency for typical document stores.</li>
             </ul>
             <p className="mt-4 text-zinc-400 text-sm">
-              Learn more in our <Link className="underline text-blue-400" href="/security">Security Whitepaper</Link> or start with a technical readiness evaluation via the <Link className="underline text-blue-400" href="/assessment">AI Readiness Assessment</Link>.
+              Learn more in our <Link className="underline text-blue-400" href="/security">security posture</Link> or start with a technical readiness evaluation via our <Link className="underline text-blue-400" href="/intake">intake</Link>.
             </p>
           </article>
 
@@ -96,7 +96,7 @@ const Services: React.FC = () => {
               <li>100% of agent actions logged, traceable, and replayable.</li>
             </ul>
             <p className="mt-4 text-zinc-400 text-sm">
-              See practical examples for <em>agentic automation on Azure</em> and schedule a focused assessment via our <Link className="underline text-blue-400" href="/assessment">AI Readiness Assessment</Link> or <a className="underline text-blue-400" href="#contact">book a discovery call</a>.
+              See practical examples for <em>agentic automation on Azure</em> and schedule a focused conversation via our <Link className="underline text-blue-400" href="/intake">intake</Link>.
             </p>
           </article>
 
@@ -128,7 +128,7 @@ const Services: React.FC = () => {
               <li>Tenant-local deployments simplify SOC 2 / ISO 27001 evidence collection.</li>
             </ul>
             <p className="mt-4 text-zinc-400 text-sm">
-              Read the deployment checklist in our <Link className="underline text-blue-400" href="/security">Security Whitepaper</Link> or request a platform design review during your <Link className="underline text-blue-400" href="/assessment">readiness assessment</Link>.
+              Read the deployment checklist on our <Link className="underline text-blue-400" href="/security">security posture page</Link> or request a platform design review through <Link className="underline text-blue-400" href="/intake">intake</Link>.
             </p>
           </article>
         </div>

@@ -29,7 +29,7 @@ export default function SolutionContent({ solution }: SolutionContentProps) {
     <div className="min-h-screen bg-zinc-950 text-zinc-200">
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-blue-600/10 rounded-full blur-[128px]"></div>
       <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-indigo-600/10 rounded-full blur-[100px]"></div>
-      
+
       <main className="relative max-w-screen-xl mx-auto px-6 lg:px-12 py-24 pt-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -55,11 +55,11 @@ export default function SolutionContent({ solution }: SolutionContentProps) {
             {categoryIcons[solution.category]}
             <span className="text-xs font-mono uppercase tracking-wider">{solution.category}</span>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight mb-6">
             {solution.title}
           </h1>
-          
+
           <p className="text-lg md:text-xl text-zinc-400 max-w-3xl leading-relaxed">
             {solution.description}
           </p>
@@ -111,15 +111,13 @@ export default function SolutionContent({ solution }: SolutionContentProps) {
               </ul>
 
               <div className="mt-8 pt-6 border-t border-zinc-800">
-                <a
-                  href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/intake"
                   className="btn-primary w-full justify-center"
                 >
-                  Schedule Consultation
+                  Talk to a principal
                   <ArrowRight size={14} />
-                </a>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -136,15 +134,13 @@ export default function SolutionContent({ solution }: SolutionContentProps) {
             Our team of enterprise AI specialists is ready to help you implement {solution.title.toLowerCase()} that delivers measurable business results.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/intake"
               className="btn-primary"
             >
-              Book Discovery Call
+              Talk to a principal
               <ArrowRight size={14} />
-            </a>
+            </Link>
             <Link href="/solutions" className="btn-secondary">
               Explore More Solutions
             </Link>

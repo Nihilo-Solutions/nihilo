@@ -44,12 +44,12 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'py-2 md:py-4' : 'py-4 md:py-8'}`}>
       <div className="max-w-screen-2xl mx-auto px-4 md:px-6 lg:px-12">
-        <div className={`flex items-center justify-between px-4 md:px-8 py-3 rounded-full border transition-all duration-500 
-          ${isScrolled 
-            ? 'bg-zinc-950/90 backdrop-blur-xl border-zinc-800 shadow-[0_0_30px_rgba(0,0,0,0.5)]' 
+        <div className={`flex items-center justify-between px-4 md:px-8 py-3 rounded-full border transition-all duration-500
+          ${isScrolled
+            ? 'bg-zinc-950/90 backdrop-blur-xl border-zinc-800 shadow-[0_0_30px_rgba(0,0,0,0.5)]'
             : 'bg-zinc-950/70 backdrop-blur-sm border-zinc-800/50 md:bg-transparent md:border-transparent'
           }`}>
-          
+
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2 group">
               <div className="w-2 h-2 bg-white rounded-full group-hover:shadow-[0_0_8px_#fff] transition-all duration-500"></div>
@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
                 Solutions
                 <ChevronDown size={12} className={`transition-transform ${isSolutionsOpen ? 'rotate-180' : ''}`} />
               </button>
-              
+
               {isSolutionsOpen && (
                 <div className="fixed top-24 left-1/2 -translate-x-1/2 w-[800px] bg-zinc-950/95 backdrop-blur-xl border border-zinc-800 rounded-xl shadow-2xl p-6 z-50">
                   <div className="grid grid-cols-4 gap-6">
@@ -105,9 +105,9 @@ const Navbar: React.FC = () => {
             </div>
 
             {navItems.map((item) => (
-              <Link 
+              <Link
                 key={item}
-                href={`/#${item.toLowerCase()}`} 
+                href={`/#${item.toLowerCase()}`}
                 className="nav-link text-[11px] font-bold mono uppercase tracking-[0.4em]"
               >
                 {item}
@@ -116,15 +116,13 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="flex items-center space-x-3">
-            <a
-              href="https://intake.nihilosolutions.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/intake"
               className="hidden sm:inline-flex btn-cta"
             >
-              <span>Start Readiness Protocol</span>
-            </a>
-            
+              <span>Get started</span>
+            </Link>
+
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2 text-white hover:text-blue-400 transition-colors"
@@ -146,7 +144,7 @@ const Navbar: React.FC = () => {
                   <span>Solutions</span>
                   <ChevronDown size={20} className={`transition-transform ${activeMobileCategory === 'solutions' ? 'rotate-180' : ''}`} />
                 </button>
-                
+
                 {activeMobileCategory === 'solutions' && (
                   <div className="mt-3 space-y-4">
                     {categories.map(({ name, icon: Icon, color }) => (
@@ -181,7 +179,7 @@ const Navbar: React.FC = () => {
               </div>
 
               {navItems.map((item) => (
-                <Link 
+                <Link
                   key={item}
                   href={`/#${item.toLowerCase()}`}
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -190,14 +188,13 @@ const Navbar: React.FC = () => {
                   {item}
                 </Link>
               ))}
-              <a
-                href="https://intake.nihilosolutions.com"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/intake"
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="mt-4 inline-flex items-center justify-center px-6 py-3 font-mono uppercase tracking-[0.2em] text-white rounded-sm border-2 border-blue-500 bg-zinc-900 hover:bg-blue-500 hover:text-black transition-all"
               >
-                <span className="text-[10px] font-black">Start Readiness Protocol</span>
-              </a>
+                <span className="text-[10px] font-black">Get started</span>
+              </Link>
             </div>
           </div>
         )}

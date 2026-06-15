@@ -11,6 +11,7 @@
   "engines": {
     "node": ">=20.x"
   },
+  "// TODO emailjs": "@emailjs/browser is orphaned after the /assessment Formspree migration. Remove from dependencies once the Power Automate swap is stable and the email path is confirmed dead.",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.14.0",

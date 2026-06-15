@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, JetBrains_Mono } from 'next/font/google';
+import { Inter, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { Navbar } from '@/components/shared';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
@@ -19,12 +19,19 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 });
 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['500', '700'],
+  variable: '--font-space-grotesk',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   title: {
     default: 'Tenant-Local AI Automation on Azure & AWS | Nihilo Solutions',
     template: '%s | Nihilo Solutions',
   },
-  description: 'Production AI automation deployed inside your Azure or AWS tenancy. Tenant-local RAG, agentic workflows, SOC 2 / ISO 27001 ready. Production in 4-6 weeks.',
+  description: 'Production AI automation deployed inside your Azure or AWS tenancy. Tenant-local RAG, agentic workflows, SOC 2 / ISO 27001 ready. Production in 4 to 8 weeks.',
   keywords: ['Enterprise AI', 'RAG', 'Cloud Automation', 'Azure', 'AWS', 'LLM Operations', 'Agentic Automation'],
   authors: [{ name: 'Nihilo Solutions' }],
   openGraph: {
@@ -33,14 +40,14 @@ export const metadata: Metadata = {
     url: 'https://nihilosolutions.com',
     siteName: 'Nihilo Solutions',
     title: 'Tenant-Local AI Automation on Azure & AWS | Nihilo Solutions',
-    description: 'Production AI automation deployed inside your Azure or AWS tenancy. Tenant-local RAG, agentic workflows, SOC 2 / ISO 27001 ready. Production in 4-6 weeks.',
+    description: 'Production AI automation deployed inside your Azure or AWS tenancy. Tenant-local RAG, agentic workflows, SOC 2 / ISO 27001 ready. Production in 4 to 8 weeks.',
     // TODO: replace with real 1200x630 OG image - handled in a later slice.
     images: [{ url: 'https://nihilosolutions.com/logo.png' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Tenant-Local AI Automation on Azure & AWS | Nihilo Solutions',
-    description: 'Production AI automation deployed inside your Azure or AWS tenancy. Tenant-local RAG, agentic workflows, SOC 2 / ISO 27001 ready. Production in 4-6 weeks.',
+    description: 'Production AI automation deployed inside your Azure or AWS tenancy. Tenant-local RAG, agentic workflows, SOC 2 / ISO 27001 ready. Production in 4 to 8 weeks.',
   },
   icons: {
     icon: '/logo.png',
@@ -55,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable}`}>
       <body className="bg-zinc-950 text-white antialiased font-sans">
         <Navbar />
         {children}

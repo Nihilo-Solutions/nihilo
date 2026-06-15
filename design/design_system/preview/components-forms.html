@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans)}
+  .wrap{padding:22px 24px;display:flex;flex-direction:column;gap:14px;min-height:150px}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .lab{font-family:var(--font-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--fg-dim)}
+  .inp{background:#14171F;border:1px solid var(--line);border-radius:2px;padding:10px 14px;font-family:var(--font-sans);font-size:14px;color:#fff;outline:none;transition:border-color var(--dur-base)}
+  .inp:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(45,107,255,.15)}
+  .inp::placeholder{color:var(--fg-faint)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .chip{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--line-azure);background:rgba(45,107,255,.1);color:var(--accent-lit);border-radius:2px}
+  .chips{display:flex;gap:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="row">
+    <div class="field"><span class="lab">Company</span><input class="inp" placeholder="Enter legal entity"/></div>
+    <div class="field"><span class="lab">Cloud</span><input class="inp" value="Azure (primary)"/></div>
+  </div>
+  <div class="field"><span class="lab">Focus areas</span>
+    <div class="chips">
+      <span class="chip">RAG</span>
+      <span class="chip">Agentic</span>
+      <span class="chip">SOC 2</span>
+      <span class="chip">BYOK KMS</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nihilo — Marketing (Light)</title>
+<link rel="icon" href="../../assets/logo/nihilo-favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFAF9; --bg-alt:#F4F4F3; --surface:#FFFFFF;
+  --line:#E5E5E4; --line-strong:#D4D4D3;
+  --fg:#0B0C0F; --fg-dim:#3F3F46; --fg-mute:#71717A; --fg-faint:#A1A1AA;
+  --accent:#2D6BFF; --accent-lit:#1E54D4; --accent-soft:#EAF0FF;
+  --font-sans:'Inter',system-ui,sans-serif;
+  --font-display:'Space Grotesk',var(--font-sans);
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box} body{margin:0;font-family:var(--font-sans);color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit;text-decoration:none}
+.container{max-width:1280px;margin:0 auto;padding:0 32px}
+.eb{font-family:var(--font-mono);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--fg-mute)}
+.eb-a{color:var(--accent-lit)}
+
+/* NAV */
+nav.top{position:sticky;top:0;z-index:40;background:rgba(250,250,249,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav.top .row{display:flex;align-items:center;justify-content:space-between;height:72px}
+nav.top .brand{display:flex;align-items:center;gap:12px}
+nav.top .brand img{height:26px}
+nav.top .brand .status{font-family:var(--font-mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--fg-faint);padding-left:12px;border-left:1px solid var(--line)}
+nav.top .links{display:flex;gap:36px;font-family:var(--font-mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--fg-mute)}
+nav.top .links a:hover{color:var(--fg)}
+nav.top .cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;padding:12px 20px;border:1px solid var(--fg);color:var(--fg);border-radius:2px;transition:.15s}
+nav.top .cta:hover{background:var(--fg);color:#fff}
+
+/* HERO */
+.hero{position:relative;padding:96px 0 120px;overflow:hidden}
+.hero .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.04) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at top, black 10%, transparent 60%)}
+.hero .halo{position:absolute;top:-30%;right:-10%;width:700px;height:700px;border-radius:999px;background:rgba(45,107,255,.12);filter:blur(140px);pointer-events:none}
+.hero .kicker{display:inline-flex;align-items:center;gap:12px;padding:8px 14px;border:1px solid var(--line-strong);border-radius:999px;background:var(--surface);font-family:var(--font-mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:32px}
+.hero .kicker .dot{width:6px;height:6px;border-radius:99px;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+.hero h1{font-family:var(--font-display);font-weight:600;font-size:84px;line-height:.98;letter-spacing:-0.035em;margin:0 0 28px;max-width:1040px}
+.hero h1 em{font-style:italic;color:var(--accent-lit)}
+.hero p.lede{font-size:22px;line-height:1.5;color:var(--fg-dim);max-width:720px;font-weight:300;margin:0 0 48px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.22em;padding:16px 24px;border-radius:2px;transition:.15s;cursor:pointer;border:1px solid transparent}
+.btn-p{background:var(--fg);color:#fff}
+.btn-p:hover{background:var(--accent-lit)}
+.btn-s{border-color:var(--line-strong);color:var(--fg);background:var(--surface)}
+.btn-s:hover{border-color:var(--fg)}
+
+/* META STRIP */
+.meta{margin-top:64px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;display:flex;justify-content:space-between;gap:40px;font-family:var(--font-mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--fg-mute)}
+.meta .item{display:flex;align-items:center;gap:10px}
+.meta .item strong{color:var(--fg);font-weight:600}
+
+/* SECTION HEADER */
+.section{padding:120px 0;position:relative}
+.section.alt{background:var(--bg-alt)}
+.section .head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:64px;gap:40px;border-bottom:1px solid var(--line);padding-bottom:20px}
+.section .head .num{font-family:var(--font-mono);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--fg-faint)}
+.section .head h2{font-family:var(--font-display);font-weight:600;font-style:italic;font-size:56px;letter-spacing:-0.03em;line-height:1;margin:0;text-transform:uppercase}
+.section .head p{color:var(--fg-mute);max-width:380px;margin:0;font-size:14px;font-family:var(--font-mono);line-height:1.6}
+
+/* SERVICES */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line)}
+.svc{background:var(--surface);padding:40px;display:flex;flex-direction:column;gap:20px;transition:.15s;cursor:pointer}
+.svc:hover{background:var(--surface);transform:translateY(-2px);box-shadow:0 20px 40px -20px rgba(0,0,0,.08)}
+.svc .well{width:56px;height:56px;background:var(--bg-alt);border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--accent-lit)}
+.svc h3{font-family:var(--font-sans);font-weight:700;font-size:22px;font-style:italic;text-transform:uppercase;letter-spacing:-0.01em;margin:0}
+.svc p{color:var(--fg-mute);font-size:14px;line-height:1.65;margin:0;font-weight:300}
+.svc .meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:4px}
+.svc .tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--fg-faint)}
+.svc .more{font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-lit);padding-top:14px;border-top:1px solid var(--line);margin-top:auto}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);border:1px solid var(--line)}
+.stat{background:var(--surface);padding:40px 32px}
+.stat .num{font-family:var(--font-display);font-weight:600;font-size:72px;letter-spacing:-0.035em;line-height:1;color:var(--fg);margin-bottom:12px}
+.stat .num em{color:var(--accent-lit);font-style:normal}
+.stat .lab{font-family:var(--font-mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--fg-mute);margin-bottom:8px}
+.stat .note{font-size:12px;color:var(--fg-faint);line-height:1.55}
+
+/* PROCESS */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.step{padding:28px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.step .n{font-family:var(--font-mono);font-size:12px;letter-spacing:.32em;color:var(--accent-lit);margin-bottom:24px}
+.step h4{font-family:var(--font-sans);font-weight:700;font-style:italic;font-size:18px;text-transform:uppercase;margin:0 0 10px;letter-spacing:-0.01em}
+.step p{color:var(--fg-mute);font-size:13px;line-height:1.6;margin:0;font-weight:300}
+
+/* QUOTE */
+.quote{max-width:1040px;margin:0 auto;text-align:center;padding:40px 0}
+.quote h3{font-family:var(--font-display);font-weight:500;font-size:48px;line-height:1.1;letter-spacing:-0.02em;margin:0 0 32px;color:var(--fg)}
+.quote h3 em{font-style:italic;color:var(--accent-lit)}
+.quote .cite{font-family:var(--font-mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--fg-mute)}
+
+/* CTA */
+.cta-band{background:var(--fg);color:#fff;padding:96px 0;position:relative;overflow:hidden}
+.cta-band .halo{position:absolute;top:-30%;right:-10%;width:600px;height:600px;border-radius:999px;background:rgba(45,107,255,.3);filter:blur(120px)}
+.cta-band .inner{position:relative;display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}
+.cta-band h3{font-family:var(--font-display);font-weight:600;font-size:56px;letter-spacing:-0.03em;line-height:1.04;margin:0;max-width:700px}
+.cta-band h3 em{font-style:italic;color:#7CA3FF}
+.cta-band .btn-p-dk{background:#fff;color:var(--fg)}
+.cta-band .btn-p-dk:hover{background:#7CA3FF;color:#fff}
+
+/* FOOTER */
+footer{padding:64px 0 40px;border-top:1px solid var(--line);background:var(--bg)}
+footer .row{display:flex;justify-content:space-between;gap:40px;margin-bottom:48px;flex-wrap:wrap}
+footer .brand-col{max-width:320px}
+footer .brand-col img{height:26px;margin-bottom:16px}
+footer .brand-col p{color:var(--fg-mute);font-size:13px;line-height:1.6;font-weight:300}
+footer .col h5{font-family:var(--font-mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--fg-faint);margin:0 0 16px;font-weight:500}
+footer .col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+footer .col a{font-size:13px;color:var(--fg-dim)}
+footer .col a:hover{color:var(--fg)}
+footer .legal{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-family:var(--font-mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--fg-faint)}
+
+@media (max-width: 960px){
+  .hero h1{font-size:56px}
+  .services,.stats{grid-template-columns:1fr 1fr}
+  .proc{grid-template-columns:1fr 1fr}
+  .section .head{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="container row">
+    <div class="brand">
+      <img src="../../assets/logo/nihilo-primary-lockup.svg" alt="Nihilo Solutions"/>
+      <span class="status">Ex Nihilo · MMXXVI</span>
+    </div>
+    <div class="links">
+      <a href="#services">Services</a>
+      <a href="#thesis">Thesis</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="cta" href="#contact">Start Protocol →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="grid-bg"></div>
+  <div class="halo"></div>
+  <div class="container" style="position:relative">
+    <div class="kicker"><span class="dot"></span>Azure-Native Enterprise AI · Est. 2024</div>
+    <h1>Enterprise AI,<br/><em>from nothing.</em></h1>
+    <p class="lede">We architect tenant-local RAG pipelines and agentic automation that keep your data inside your cloud. Production-grade deployments on Azure &amp; AWS in 4–6 weeks.</p>
+    <div class="ctas">
+      <button class="btn btn-p">Start Readiness Protocol →</button>
+      <button class="btn btn-s">Book Discovery Call ›</button>
+    </div>
+    <div class="meta">
+      <span class="item"><strong>●</strong> Tenant-local · Your VPC</span>
+      <span class="item"><strong>●</strong> SOC 2 · HIPAA ready</span>
+      <span class="item"><strong>●</strong> 30–60% ops cost reduction</span>
+      <span class="item"><strong>●</strong> 4–6 wk to production</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="head">
+      <div>
+        <div class="num">01 // Capabilities</div>
+        <h2>Foundational<br/>Expertise</h2>
+      </div>
+      <p>We operate at the intersection of high-fidelity design and deep system architecture. Every engagement is a ground-up build, tuned to your tenancy.</p>
+    </div>
+    <div class="services">
+      <div class="svc">
+        <div class="well"><img src="../../assets/icons/rag.svg" width="26" height="26" style="filter:invert(24%) sepia(100%) saturate(3000%) hue-rotate(215deg) brightness(92%) contrast(95%)"/></div>
+        <h3>Enterprise RAG</h3>
+        <p>Tenant-local vector stores, hybrid retrieval with reranking, PII-filtered ingestion, BYOK KMS. Median retrieval latency below 200ms.</p>
+        <div class="meta"><span class="tag">· Azure AI Search</span><span class="tag">· AWS OpenSearch</span></div>
+        <span class="more">Architecture note →</span>
+      </div>
+      <div class="svc">
+        <div class="well"><img src="../../assets/icons/agentic.svg" width="26" height="26" style="filter:invert(24%) sepia(100%) saturate(3000%) hue-rotate(215deg) brightness(92%) contrast(95%)"/></div>
+        <h3>Agentic Automation</h3>
+        <p>Policy-sandboxed LLM agents with full action trails. Human-in-the-loop for exceptions, deterministic fallbacks, idempotent action execution.</p>
+        <div class="meta"><span class="tag">· Semantic Kernel</span><span class="tag">· LangGraph</span></div>
+        <span class="more">Architecture note →</span>
+      </div>
+      <div class="svc">
+        <div class="well"><img src="../../assets/icons/security.svg" width="26" height="26" style="filter:invert(24%) sepia(100%) saturate(3000%) hue-rotate(215deg) brightness(92%) contrast(95%)"/></div>
+        <h3>Zero-Trust AI</h3>
+        <p>Private endpoints, data loss prevention, customer-managed keys, audit-grade logging. SOC 2 evidence produced by construction.</p>
+        <div class="meta"><span class="tag">· Entra ID</span><span class="tag">· Key Vault</span></div>
+        <span class="more">Architecture note →</span>
+      </div>
+      <div class="svc">
+        <div class="well"><img src="../../assets/icons/azure.svg" width="26" height="26" style="filter:invert(24%) sepia(100%) saturate(3000%) hue-rotate(215deg) brightness(92%) contrast(95%)"/></div>
+        <h3>Cloud-Native AI</h3>
+        <p>IaC modules, autoscaling inference, request batching, spot-fleet workers. Multi-zone failover for enterprise RTO/RPO.</p>
+        <div class="meta"><span class="tag">· Bicep</span><span class="tag">· Terraform</span></div>
+        <span class="more">Architecture note →</span>
+      </div>
+      <div class="svc">
+        <div class="well"><img src="../../assets/icons/data-pipeline.svg" width="26" height="26" style="filter:invert(24%) sepia(100%) saturate(3000%) hue-rotate(215deg) brightness(92%) contrast(95%)"/></div>
+        <h3>Data Pipelines</h3>
+        <p>Incremental ingestion, change data capture, schema-aware chunking, redaction. Data foundation first — models second.</p>
+        <div class="meta"><span class="tag">· Fabric</span><span class="tag">· Databricks</span></div>
+        <span class="more">Architecture note →</span>
+      </div>
+      <div class="svc">
+        <div class="well"><img src="../../assets/icons/zero-to-one.svg" width="26" height="26" style="filter:invert(24%) sepia(100%) saturate(3000%) hue-rotate(215deg) brightness(92%) contrast(95%)"/></div>
+        <h3>Zero to One</h3>
+        <p>From blank-sheet architecture to production deployment. Six-week sprints, weekly demos, no research theater.</p>
+        <div class="meta"><span class="tag">· 4–6 weeks</span><span class="tag">· Fixed scope</span></div>
+        <span class="more">Architecture note →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THESIS / STATS -->
+<section class="section alt" id="thesis">
+  <div class="container">
+    <div class="head">
+      <div>
+        <div class="num">02 // Proof</div>
+        <h2>Measurable<br/>Outcomes</h2>
+      </div>
+      <p>Numbers aggregated across enterprise engagements (2024–2026). Each metric is verified on a per-tenant basis during discovery.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num"><em>30–60%</em></div><div class="lab">Ops cost reduction</div><div class="note">Typical post-deployment savings across manual-work domains.</div></div>
+      <div class="stat"><div class="num">&lt;200ms</div><div class="lab">Retrieval latency</div><div class="note">Median across enterprise document stores.</div></div>
+      <div class="stat"><div class="num">4–6 wk</div><div class="lab">Time to production</div><div class="note">From kickoff to deployed SLA.</div></div>
+      <div class="stat"><div class="num">&gt;95%</div><div class="lab">Egress reduction</div><div class="note">Sensitive data remains tenant-local.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="head">
+      <div>
+        <div class="num">03 // Engagement</div>
+        <h2>From Nothing,<br/>A System</h2>
+      </div>
+      <p>A fixed-scope, four-phase engagement. Weekly demos, evidence-based handoffs, no research theater.</p>
+    </div>
+    <div class="proc">
+      <div class="step"><div class="n">PHASE 01</div><h4>Readiness</h4><p>Map sources, classify sensitivity, select a high-value workload. Produces an architecture note and a scored readiness report.</p></div>
+      <div class="step"><div class="n">PHASE 02</div><h4>Foundation</h4><p>Tenant-local ingestion, vector store, retrieval service. IaC committed, CI green, eval harness seeded.</p></div>
+      <div class="step"><div class="n">PHASE 03</div><h4>System</h4><p>Agent orchestration, policy sandbox, UI surface. Human-in-the-loop for exceptions and overrides.</p></div>
+      <div class="step"><div class="n">PHASE 04</div><h4>Hand-off</h4><p>Production SLO, runbook, audit pack. Your team owns the system on day 30.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="section alt">
+  <div class="container">
+    <div class="quote">
+      <h3>“We stopped renting our data to public models. Nihilo deployed a tenant-local system in our Azure subscription in <em>six weeks</em>.”</h3>
+      <div class="cite">— VP Engineering · Fortune 500 Financial Services</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band" id="contact">
+  <div class="halo"></div>
+  <div class="container inner">
+    <h3>Begin the<br/><em>readiness protocol.</em></h3>
+    <button class="btn btn-p btn-p-dk">Book Discovery Call →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="brand-col">
+        <img src="../../assets/logo/nihilo-primary-lockup.svg" alt="Nihilo"/>
+        <p>Azure-native enterprise AI consulting. Tenant-local RAG and agentic automation, built to production by BlackPenguin.</p>
+      </div>
+      <div class="col">
+        <h5>Capabilities</h5>
+        <ul><li><a>Enterprise RAG</a></li><li><a>Agentic Automation</a></li><li><a>Zero-Trust AI</a></li><li><a>Cloud-Native AI</a></li></ul>
+      </div>
+      <div class="col">
+        <h5>Company</h5>
+        <ul><li><a>Thesis</a></li><li><a>Process</a></li><li><a>Case studies</a></li><li><a>Contact</a></li></ul>
+      </div>
+      <div class="col">
+        <h5>Protocols</h5>
+        <ul><li><a>Readiness Report</a></li><li><a>Architecture Notes</a></li><li><a>SOC 2 Package</a></li><li><a>Security</a></li></ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© MMXXVI · Nihilo Solutions · BlackPenguin</span>
+      <span>Azure · AWS · SOC 2 Type II</span>
+      <span>nihilosolutions.com</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

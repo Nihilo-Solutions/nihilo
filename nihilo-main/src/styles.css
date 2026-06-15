@@ -1,20 +1,164 @@
 @import "tailwindcss";
 @source "./**/*.{js,ts,jsx,tsx}";
 
-/* Project base overrides */
+/* =============================================================
+   NIHILO SOLUTIONS, DESIGN TOKENS
+   Mirrored from ~/Desktop/nihilo/design/design_system/colors_and_type.css
+   (brand kit v1.0). Today's session brief flips canonical from dark
+   to light; `:root` therefore declares the light defaults inline and
+   `[data-theme="dark"]` overrides for the one dark section (Philosophy).
+   ============================================================= */
+
 :root {
+  color-scheme: light;
+
+  /* Brand core */
+  --brand-void:      #05060A;
+  --brand-ink:       #0B0D14;
+  --brand-azure:     #2D6BFF;
+  --brand-azure-lit: #5B8BFF;
+  --brand-azure-dim: #1E3A8A;
+  --brand-bone:      #F4F5F7;
+  --brand-chalk:     #FFFFFF;
+
+  /* Neutral scale (cool, tuned to azure) */
+  --n-0:   #FFFFFF;
+  --n-50:  #F4F5F7;
+  --n-100: #E4E6EB;
+  --n-200: #C7CBD4;
+  --n-300: #9AA0AE;
+  --n-400: #6B7280;
+  --n-500: #4B5360;
+  --n-600: #303643;
+  --n-700: #1E222D;
+  --n-800: #14171F;
+  --n-900: #0B0D14;
+  --n-950: #05060A;
+
+  /* Semantic (light defaults) */
+  --bg:          var(--brand-chalk);
+  --bg-sunk:     #EAECF0;
+  --bg-raised:   var(--brand-bone);
+  --bg-elev:     #FFFFFF;
+
+  --fg:          var(--n-900);
+  --fg-mute:     var(--n-700);
+  --fg-dim:      var(--n-400);
+  --fg-faint:    var(--n-300);
+
+  --line:        rgba(11, 13, 20, 0.08);
+  --line-strong: rgba(11, 13, 20, 0.16);
+  --line-azure:  rgba(45, 107, 255, 0.28);
+
+  --accent:      var(--brand-azure);
+  --accent-lit:  var(--brand-azure-lit);
+  --accent-ink:  #FFFFFF; /* text on azure fills (light theme) */
+
+  /* Status (muted, never candy-colored) */
+  --ok:   #3FB984;
+  --warn: #E5A23C;
+  --err:  #E5544A;
+  --info: var(--brand-azure);
+
+  /* Radii (minimal, precise, never pill-y except nav) */
+  --r-0: 0px;
+  --r-1: 2px;
+  --r-2: 4px;
+  --r-3: 8px;
+  --r-4: 12px;
+  --r-5: 16px;
+  --r-full: 9999px;
+
+  /* Spacing (4px baseline) */
+  --s-0: 0;
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+
+  /* Elevation */
+  --shadow-1: 0 1px 2px rgba(11, 13, 20, 0.06);
+  --shadow-2: 0 4px 12px rgba(11, 13, 20, 0.08);
+  --shadow-3: 0 12px 40px rgba(11, 13, 20, 0.12);
+
+  /* Type families.
+     The Next.js next/font instances expose --font-inter, --font-jetbrains-mono,
+     --font-space-grotesk on <html>. The brand-kit semantic names below alias
+     those so component styles can reference --font-display etc. without caring
+     about the underlying loader. */
+  --font-sans:    var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    var(--font-jetbrains-mono), ui-monospace, "SF Mono", Consolas, monospace;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+
+  /* Type scale */
+  --t-hero:    clamp(56px, 8vw, 112px);
+  --t-h1:      clamp(40px, 5vw, 64px);
+  --t-h2:      clamp(28px, 3.5vw, 44px);
+  --t-h3:      24px;
+  --t-h4:      18px;
+  --t-body:    16px;
+  --t-sm:      14px;
+  --t-xs:      12px;
+  --t-eyebrow: 11px;
+
+  --lh-tight: 1.05;
+  --lh-snug:  1.2;
+  --lh-body:  1.55;
+
+  /* Motion */
+  --ease-out:    cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:    150ms;
+  --dur-base:    240ms;
+  --dur-slow:    400ms;
+}
+
+/* Dark mode override for surfaces that opt in via data-theme="dark"
+   (e.g., the Philosophy section). The brand-kit colors_and_type.css uses
+   this same selector pattern. */
+[data-theme="dark"] {
   color-scheme: dark;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --bg:          var(--brand-ink);
+  --bg-sunk:     var(--brand-void);
+  --bg-raised:   var(--n-800);
+  --bg-elev:     var(--n-700);
+
+  --fg:          var(--n-0);
+  --fg-mute:     var(--n-200);
+  --fg-dim:      var(--n-300);
+  --fg-faint:    var(--n-500);
+
+  --line:        rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --line-azure:  rgba(45, 107, 255, 0.32);
+
+  --accent-ink:  #0A1738; /* text on azure fills (dark theme) */
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.45);
+  --shadow-3: 0 12px 40px rgba(0, 0, 0, 0.55);
 }
 
 body {
-  background-color: #09090b;
-  color: white;
+  background-color: var(--bg);
+  color: var(--fg);
   font-family: var(--font-sans);
 }
 
-/* Button hover effects */
+/* ============================================================
+   Legacy button utility classes from the dark-theme implementation.
+   Branch 3b will revisit these as the site shell goes light-first.
+   Kept here so /solutions, /solutions/[slug], and Navbar don't break
+   during the transition.
+   ============================================================ */
+
 .btn-primary {
   position: relative;
   display: inline-flex;
@@ -78,7 +222,6 @@ body {
   transform: translateX(4px);
 }
 
-/* Nav link hover */
 .nav-link {
   position: relative;
   color: #f4f4f5;
@@ -106,7 +249,6 @@ body {
   width: 100%;
 }
 
-/* CTA button in nav */
 .btn-cta {
   display: inline-flex;
   align-items: center;
@@ -131,20 +273,22 @@ body {
   transform: scale(1.05);
 }
 
-/* Table of Contents styles (sticky, dark theme) */
-:root {
-  --toc-bg: rgba(10,10,10,0.85);
-  --toc-border: rgba(255,255,255,0.06);
-  --toc-accent: #3b82f6;
-  --toc-text: #d4d4d8;
-}
+/* ============================================================
+   Table of Contents styles (sticky, dark theme).
+   Still scoped to the dark TOC component; not yet migrated.
+   ============================================================ */
 
 .toc {
+  --toc-bg: rgba(10, 10, 10, 0.85);
+  --toc-border: rgba(255, 255, 255, 0.06);
+  --toc-accent: #3b82f6;
+  --toc-text: #d4d4d8;
+
   position: sticky;
   top: 0;
   z-index: 60;
   backdrop-filter: blur(6px);
-  background: linear-gradient(180deg, var(--toc-bg), rgba(10,10,10,0.72));
+  background: linear-gradient(180deg, var(--toc-bg), rgba(10, 10, 10, 0.72));
   border-bottom: 1px solid var(--toc-border);
   padding: 0.6rem 1rem;
   display: flex;
@@ -175,7 +319,7 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 .toc__list::-webkit-scrollbar { height: 6px; }
-.toc__list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.06); border-radius: 4px; }
+.toc__list::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.06); border-radius: 4px; }
 
 .toc__link {
   display: inline-block;
@@ -192,16 +336,16 @@ body {
 .toc__link:hover,
 .toc__link:focus {
   transform: translateY(-2px);
-  background: rgba(59,130,246,0.08);
-  border-color: rgba(59,130,246,0.18);
+  background: rgba(59, 130, 246, 0.08);
+  border-color: rgba(59, 130, 246, 0.18);
   color: white;
   outline: none;
 }
 .toc__link[aria-current="true"] {
-  background: linear-gradient(90deg, rgba(59,130,246,0.14), rgba(147,197,253,0.06));
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.14), rgba(147, 197, 253, 0.06));
   color: white;
-  border: 1px solid rgba(59,130,246,0.32);
-  box-shadow: 0 4px 18px rgba(59,130,246,0.06);
+  border: 1px solid rgba(59, 130, 246, 0.32);
+  box-shadow: 0 4px 18px rgba(59, 130, 246, 0.06);
 }
 
 @media (max-width: 768px) {

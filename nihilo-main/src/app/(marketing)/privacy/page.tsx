@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const metadata = {
-  title: 'Privacy Policy | Nihilo Solutions',
+  title: { absolute: 'Privacy Policy | Nihilo Solutions' },
   description: 'Privacy Policy for Nihilo Solutions LLC',
 };
 
@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
       <div className="max-w-4xl mx-auto px-6 lg:px-12">
         <h1 className="text-4xl font-bold text-white mb-8 tracking-widest uppercase">Privacy Policy</h1>
         <p className="mb-8 leading-relaxed">
-          Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+          Last updated: June 2026
         </p>
 
         <div className="space-y-12">
@@ -58,8 +58,8 @@ export default function PrivacyPolicy() {
             <p className="leading-relaxed">
               To ask questions or comment about this privacy policy and our privacy practices, contact us at:
               <br />
-              <a href="mailto:support@nihilosolutions.com" className="text-white hover:text-blue-400 transition-colors mt-2 inline-block font-mono">
-                support@nihilosolutions.com
+              <a href="mailto:sam@nihilosolutions.com" className="text-white hover:text-blue-400 transition-colors mt-2 inline-block font-mono">
+                sam@nihilosolutions.com
               </a>
             </p>
           </section>

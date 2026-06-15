@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .cell{background:var(--bg);padding:24px;min-height:150px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+  .cell.light{background:var(--brand-bone);color:var(--brand-ink)}
+  .cell.void{background:var(--brand-void)}
+  .lab{font-family:var(--font-mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--fg-faint)}
+  .cell.light .lab{color:#9AA0AE}
+  .logo{flex:1;display:flex;align-items:center;width:100%}
+  .logo img{height:60px;width:auto}
+  .full img{height:54px}
+</style>
+</head>
+<body>
+<div class="grid">
+  <div class="cell void"><span class="lab">Primary · Dark</span><div class="logo full"><img src="../assets/logo/nihilo-primary-lockup.svg" style="filter:invert(1) brightness(2)"/></div></div>
+  <div class="cell light"><span class="lab">Primary · Light</span><div class="logo full"><img src="../assets/logo/nihilo-primary-lockup.svg"/></div></div>
+  <div class="cell"><span class="lab">Icon Mark</span><div class="logo"><img src="../assets/logo/nihilo-icon.svg" style="filter:invert(1) brightness(2);height:72px"/></div></div>
+  <div class="cell"><span class="lab">Wordmark</span><div class="logo full"><img src="../assets/logo/nihilo-wordmark.svg" style="filter:invert(1) brightness(2)"/></div></div>
+  <div class="cell"><span class="lab">Monochrome</span><div class="logo full"><img src="../assets/logo/nihilo-mono.svg" style="filter:invert(1) brightness(2)"/></div></div>
+  <div class="cell light"><span class="lab">Mono · Light</span><div class="logo full"><img src="../assets/logo/nihilo-mono-light.svg"/></div></div>
+</div>
+</body>
+</html>

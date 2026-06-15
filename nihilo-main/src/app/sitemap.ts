@@ -1,15 +1,20 @@
 import { MetadataRoute } from 'next';
-import { solutionPages } from '@/lib/data/pages';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://nihilosolutions.com';
 
-  const staticPages: MetadataRoute.Sitemap = [
+  return [
     {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
+    },
+    {
+      url: `${baseUrl}/intake`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/solutions`,
@@ -18,10 +23,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/assessment`,
+      url: `${baseUrl}/use-cases`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/security`,
@@ -30,10 +35,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/use-cases`,
+      url: `${baseUrl}/privacy`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
     {
       url: `${baseUrl}/terms`,
@@ -42,13 +47,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
   ];
-
-  const solutionSitemapEntries: MetadataRoute.Sitemap = solutionPages.map((page) => ({
-    url: `${baseUrl}/solutions/${page.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
-
-  return [...staticPages, ...solutionSitemapEntries];
 }

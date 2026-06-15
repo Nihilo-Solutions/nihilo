@@ -91,3 +91,40 @@ No `lint`, `test`, or `format` scripts are defined in `package.json` yet. Adding
 ## When in doubt
 
 Re-read `docs/positioning.md`. If the answer isn't there, ask me before guessing.
+
+## Obsidian vault access
+
+Claude Code has access to the personal Obsidian vault via the `obsidian-nihilo` MCP server.
+
+- **Vault path**: `/Users/samoakes/Desktop/knowledge-vault-project/knowledge-vault`
+- **Nihilo subfolder**: `/nihilo` — read and write only within this folder
+- **Do not read or write outside `/nihilo`** unless explicitly instructed
+- At session start, after loading required docs, check `/nihilo` for any planning notes or open decisions relevant to the current task
+- If you find notes that conflict with `docs/positioning.md` or `docs/site-architecture.md`, flag the conflict before acting
+
+### What lives in the vault vs the repo
+
+| Vault `/nihilo` | Repo `docs/` |
+|---|---|
+| Planning notes, open questions, ideas | Locked decisions, copy bank, SEO strategy |
+| Client context, meeting notes | Architecture decisions (ADRs) |
+| In-progress thinking | Source of truth for conventions |
+
+The vault is working memory. The repo docs are locked reference. When something graduates from idea to decision, it moves to the repo.
+
+## Vault logging
+
+At the end of every session, write a session log to:
+/Users/samoakes/Desktop/knowledge-vault-project/knowledge-vault/nihilo/sessions/YYYY-MM-DD-[topic].md
+
+Use the obsidian-nihilo MCP if available. If not, write directly 
+to the filesystem path above — Obsidian watches the filesystem 
+and picks up new files automatically.
+
+Log format:
+- Decisions made this session
+- Branches applied and their status
+- Open items carried forward
+- Next steps
+
+Do this before ending any session, without being asked.

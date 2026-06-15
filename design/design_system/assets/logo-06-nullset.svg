@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 72" fill="none">
+  
+  <g transform="translate(32 36)">
+    <circle r="16" stroke="currentColor" stroke-width="1.75" fill="none"></circle>
+    <line x1="-14" y1="14" x2="14" y2="-14" stroke="#2D6BFF" stroke-width="1.75" stroke-linecap="square"></line>
+  </g>
+  <text x="62" y="47" font-family="Space Grotesk, sans-serif" font-size="30" font-weight="700" letter-spacing="-0.04em" fill="currentColor">NIHILO</text>
+</svg>

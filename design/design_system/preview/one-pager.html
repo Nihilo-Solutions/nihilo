@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nihilo — Case Study · One-Pager</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  @page{size:Letter;margin:0}
+  *{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html,body{margin:0;padding:0;background:#25262B;font-family:var(--font-sans);color:#0B0C0F}
+
+  .sheet{width:8.5in;height:11in;background:#FAFAF9;margin:40px auto;position:relative;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.5)}
+
+  /* Masthead */
+  .mast{padding:.5in .5in .35in;border-bottom:2px solid #0B0C0F;display:flex;justify-content:space-between;align-items:flex-end;position:relative}
+  .mast .brand{display:flex;align-items:center;gap:12px}
+  .mast .brand img{height:24px}
+  .mast .brand .div{width:1px;height:18px;background:#D4D4D3}
+  .mast .brand .eb{font-family:var(--font-mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#71717A}
+  .mast .doc{text-align:right;font-family:var(--font-mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#71717A}
+  .mast .doc strong{color:#0B0C0F;font-weight:600}
+
+  /* Title */
+  .title{padding:.35in .5in .25in;display:grid;grid-template-columns:2fr 1fr;gap:.4in;align-items:flex-end}
+  .title .num{font-family:var(--font-mono);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#2D6BFF;margin-bottom:10px}
+  .title h1{font-family:var(--font-display);font-weight:600;font-size:44px;line-height:.98;letter-spacing:-0.03em;margin:0;color:#0B0C0F}
+  .title h1 em{font-style:italic;color:#1E54D4}
+  .title .meta{font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;color:#3F3F46;line-height:1.7}
+  .title .meta .lab{color:#A1A1AA;text-transform:uppercase;letter-spacing:.26em;display:block;margin-bottom:2px}
+  .title .meta .row{margin-bottom:10px}
+
+  /* Exec summary panel */
+  .summary{margin:.2in .5in;padding:.25in;background:#0B0C0F;color:#fff;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;position:relative;overflow:hidden;border-radius:4px}
+  .summary::before{content:'';position:absolute;top:0;right:0;width:200px;height:100%;background:radial-gradient(circle at right,rgba(45,107,255,.25),transparent 70%)}
+  .summary .cell{padding:0 24px;position:relative;border-right:1px solid rgba(255,255,255,.1)}
+  .summary .cell:last-child{border-right:none}
+  .summary .cell .k{font-family:var(--font-display);font-weight:600;font-size:36px;letter-spacing:-0.03em;line-height:1;color:#fff;margin-bottom:6px}
+  .summary .cell .k em{color:#5B8BFF;font-style:normal}
+  .summary .cell .l{font-family:var(--font-mono);font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:#9AA0AE}
+  .summary .cell .n{font-size:10px;color:#C7CBD4;margin-top:4px;line-height:1.5;font-family:var(--font-sans)}
+
+  /* Body two-col */
+  .body{padding:.1in .5in .25in;display:grid;grid-template-columns:1.4fr 1fr;gap:.35in}
+  .body h3{font-family:var(--font-sans);font-weight:700;font-style:italic;font-size:13px;text-transform:uppercase;letter-spacing:.02em;color:#0B0C0F;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid #D4D4D3}
+  .body p{font-size:10.5px;line-height:1.55;color:#3F3F46;margin:0 0 10px;font-weight:400}
+  .body ul{list-style:none;padding:0;margin:0}
+  .body ul li{font-size:10px;line-height:1.5;color:#3F3F46;padding-left:16px;position:relative;margin-bottom:6px}
+  .body ul li::before{content:'';position:absolute;left:0;top:7px;width:8px;height:1px;background:#2D6BFF}
+  .body .block{margin-bottom:16px}
+
+  /* Right sidebar */
+  .side .quote{padding:16px 18px;background:#F4F4F3;border-left:3px solid #2D6BFF;margin-bottom:16px}
+  .side .quote p{font-family:var(--font-display);font-style:italic;font-size:14px;line-height:1.4;color:#0B0C0F;margin:0 0 8px}
+  .side .quote .cite{font-family:var(--font-mono);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:#71717A}
+
+  .side .stack{border:1px solid #D4D4D3;padding:14px 16px;border-radius:4px}
+  .side .stack h4{font-family:var(--font-mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#71717A;margin:0 0 10px}
+  .side .stack .chip{display:inline-block;font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;color:#1E54D4;background:#EAF0FF;border:1px solid #D4DEFF;padding:3px 7px;border-radius:2px;margin:2px 3px 2px 0}
+
+  /* Timeline */
+  .timeline{padding:.1in .5in .15in}
+  .timeline .hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+  .timeline .hd h3{font-family:var(--font-sans);font-weight:700;font-style:italic;font-size:13px;text-transform:uppercase;color:#0B0C0F;margin:0}
+  .timeline .hd .range{font-family:var(--font-mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#71717A}
+  .timeline .bar{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+  .timeline .phase{background:#F4F4F3;padding:10px 12px;border-top:3px solid #2D6BFF;position:relative}
+  .timeline .phase:nth-child(2){border-color:#5B8BFF}
+  .timeline .phase:nth-child(3){border-color:#1E54D4}
+  .timeline .phase:nth-child(4){border-color:#0B0C0F}
+  .timeline .phase .n{font-family:var(--font-mono);font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:#71717A;margin-bottom:4px}
+  .timeline .phase .t{font-family:var(--font-sans);font-weight:600;font-size:12px;color:#0B0C0F;margin-bottom:4px}
+  .timeline .phase .d{font-size:9px;line-height:1.5;color:#3F3F46}
+
+  /* Footer */
+  .foot{position:absolute;bottom:.4in;left:.5in;right:.5in;border-top:1px solid #D4D4D3;padding-top:10px;display:flex;justify-content:space-between;align-items:center;font-family:var(--font-mono);font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:#71717A}
+  .foot .sig{display:flex;align-items:center;gap:8px}
+  .foot .sig img{height:14px}
+  .foot em{color:#1E54D4;font-style:normal;font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- MASTHEAD -->
+  <div class="mast">
+    <div class="brand">
+      <img src="../assets/logo/nihilo-primary-lockup.svg"/>
+      <span class="div"></span>
+      <span class="eb">Case Study · 01</span>
+    </div>
+    <div class="doc">
+      <strong>CS-01 · Q1 MMXXVI</strong><br/>Confidential · Named client on request
+    </div>
+  </div>
+
+  <!-- TITLE -->
+  <div class="title">
+    <div>
+      <div class="num">// Financial Services · F500</div>
+      <h1>From blank sheet to tenant-local RAG in <em>six weeks.</em></h1>
+    </div>
+    <div class="meta">
+      <div class="row"><span class="lab">Client</span>F500 Financial Services</div>
+      <div class="row"><span class="lab">Stack</span>Azure · Fabric · Entra ID</div>
+      <div class="row"><span class="lab">Team</span>Nihilo (3) · Client (5)</div>
+      <div class="row"><span class="lab">Outcome</span>Production deploy, 42% ops cost ↓</div>
+    </div>
+  </div>
+
+  <!-- SUMMARY STATS -->
+  <div class="summary">
+    <div class="cell"><div class="k"><em>42%</em></div><div class="l">Ops cost reduction</div><div class="n">Measured across three manual workflows in quarter one.</div></div>
+    <div class="cell"><div class="k">6 wk</div><div class="l">Kickoff → production</div><div class="n">Fixed-scope sprints with weekly eval harness.</div></div>
+    <div class="cell"><div class="k">0</div><div class="l">External egress events</div><div class="n">All data remained within client Azure tenancy.</div></div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+    <div class="main">
+      <div class="block">
+        <h3>Problem</h3>
+        <p>The client's analyst team spent an estimated 14 hours per week manually reconciling counterparty exposures across three siloed systems of record. Existing SaaS AI tools were blocked by the compliance office — sensitive counterparty data could not leave the client's Azure tenancy under any circumstance.</p>
+      </div>
+      <div class="block">
+        <h3>Approach</h3>
+        <p>We deployed a tenant-local RAG pipeline in the client's own Azure subscription using Azure AI Search, Fabric for ingestion, and a policy-sandboxed agent for reconciliation narration. All embeddings, vector indexes, and audit logs remained inside the tenant VNet — no external model provider ever saw raw data.</p>
+        <ul>
+          <li>PII-redacted ingestion from three sources, incremental CDC</li>
+          <li>Hybrid retrieval (dense + BM25) with LLM reranking</li>
+          <li>Agent with deterministic fallback for exception paths</li>
+          <li>Human-in-the-loop approval for all write-back actions</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h3>Result</h3>
+        <p>Production deployment in six weeks. 42% reduction in manual analyst hours against the baseline workflow, with every action evidenced in an audit-grade log. Zero external data-egress events through the production pilot. The SOC 2 evidence package was produced by construction during the build, not retrofitted.</p>
+      </div>
+    </div>
+
+    <div class="side">
+      <div class="quote">
+        <p>“We stopped renting our data to public models. Production in six weeks.”</p>
+        <div class="cite">— VP Engineering · F500 FS</div>
+      </div>
+      <div class="stack">
+        <h4>Stack</h4>
+        <span class="chip">Azure AI Search</span>
+        <span class="chip">Azure OpenAI</span>
+        <span class="chip">Fabric</span>
+        <span class="chip">Entra ID</span>
+        <span class="chip">Key Vault</span>
+        <span class="chip">Semantic Kernel</span>
+        <span class="chip">Bicep</span>
+        <span class="chip">GitHub Actions</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="timeline">
+    <div class="hd">
+      <h3>Engagement Timeline</h3>
+      <div class="range">Week 01 → Week 06</div>
+    </div>
+    <div class="bar">
+      <div class="phase"><div class="n">Phase 01 · Wk 1</div><div class="t">Readiness</div><div class="d">Source mapping · sensitivity classification · workload selection</div></div>
+      <div class="phase"><div class="n">Phase 02 · Wk 2-3</div><div class="t">Foundation</div><div class="d">Tenant-local ingestion · vector store · retrieval service · IaC</div></div>
+      <div class="phase"><div class="n">Phase 03 · Wk 4-5</div><div class="t">System</div><div class="d">Agent orchestration · policy sandbox · UI surface · HITL</div></div>
+      <div class="phase"><div class="n">Phase 04 · Wk 6</div><div class="t">Hand-off</div><div class="d">Production SLO · runbook · audit pack · day-30 ownership</div></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="foot">
+    <div class="sig">
+      <img src="../assets/logo/nihilo-primary-lockup.svg"/>
+      <span>nihilosolutions.com</span>
+    </div>
+    <span>Ex nihilo, <em>a system.</em></span>
+    <span>BlackPenguin · MMXXVI</span>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -19,7 +19,7 @@ export default function SolutionsContent() {
     <div className="min-h-screen bg-zinc-950 text-zinc-200">
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-blue-600/10 rounded-full blur-[128px]"></div>
       <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-indigo-600/10 rounded-full blur-[100px]"></div>
-      
+
       <main className="relative max-w-screen-2xl mx-auto px-6 lg:px-12 py-24 pt-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -30,11 +30,11 @@ export default function SolutionsContent() {
           <div className="inline-flex items-center space-x-3 mb-6 px-4 py-2 border border-blue-500/30 rounded-full bg-blue-500/5">
             <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-blue-400">Enterprise AI Solutions</span>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight mb-6">
             Solutions Portfolio
           </h1>
-          
+
           <p className="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed">
             Explore our comprehensive suite of enterprise AI solutions spanning cloud platforms, industry verticals, and security compliance frameworks.
           </p>
@@ -99,15 +99,13 @@ export default function SolutionsContent() {
           <p className="text-zinc-400 mb-6 max-w-2xl mx-auto">
             Our team specializes in building bespoke AI solutions tailored to your unique business requirements. Let&apos;s discuss your specific needs.
           </p>
-          <a
-            href="https://outlook.office.com/book/NihiloSolutions1@nihilosolutions.com/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/intake"
             className="btn-primary"
           >
-            Schedule Consultation
+            Talk to a principal
             <ArrowRight size={14} />
-          </a>
+          </Link>
         </motion.div>
       </main>
 

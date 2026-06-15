@@ -51,9 +51,9 @@ const About: React.FC = () => {
   const sam = {
     initials: 'SO',
     name: 'Sam Oakes',
-    title: 'Co-Founder / AI Engineer',
+    title: 'Co-Founder & AI Lead',
     linkedin: 'https://linkedin.com/in/samoakes',
-    bio: 'Sam designs and ships the systems. Background in cloud orchestration and tenant-local LLM infrastructure across regulated industries. Currently architecting AI and security platforms at LDI (managed services). Holds AWS Solutions Architect Pro, Azure Solutions Architect Expert, AWS Security Specialty, and aligns to CISSP. Writes the code on day one of every engagement.',
+    bio: 'Sam designs and ships the systems. Lead AI Architect at LDI, an MSP, where he builds AI and security platforms for regulated industries. ISC2 Certified in Cybersecurity. Published researcher on risk management of emergent technology. Briefed Travelers Insurance on quantum integration. B.S. Cybersecurity from Sacred Heart University, D1 athlete. Writes the code on day one of every engagement.',
     domains: ['Cloud Security', 'Tenant-Local Architecture', 'RAG Implementation', 'Agentic Systems'],
   };
 
@@ -72,7 +72,7 @@ const About: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
           <div className="lg:col-span-2">
-            <ProfileCard {...sam} alt="Sam Oakes - Co-Founder / AI Engineer at Nihilo" />
+            <ProfileCard {...sam} alt="Sam Oakes - Co-Founder & AI Lead at Nihilo" />
             <div className="mt-6">
               <ProfileCard {...vance} />
             </div>
@@ -93,7 +93,7 @@ const About: React.FC = () => {
               </div>
 
               <p className="text-zinc-500 text-[10px] font-mono uppercase tracking-[0.2em] mb-8 leading-relaxed">
-                Core competencies and cloud certifications that shape our delivery.
+                Core competencies and credentials that shape our delivery.
               </p>
 
               <div className="mb-10">
@@ -122,20 +122,20 @@ const About: React.FC = () => {
 
               <div className="mb-10">
                 <h4 className="text-blue-500 text-[9px] font-mono uppercase tracking-[0.3em] mb-4 flex items-center gap-2">
-                  <Award size={12} /> Key Certifications
+                  <Award size={12} /> Credentials
                 </h4>
                 <div className="grid grid-cols-1 gap-2">
                   <div className="p-3 bg-zinc-800/50 border border-zinc-700/50 rounded-sm text-zinc-200 text-[9px] font-mono uppercase tracking-widest flex items-center justify-between">
-                    AWS Solutions Architect Pro <Shield size={10} className="text-zinc-500" />
+                    ISC2 Certified in Cybersecurity <Shield size={10} className="text-zinc-500" />
                   </div>
                   <div className="p-3 bg-zinc-800/50 border border-zinc-700/50 rounded-sm text-zinc-200 text-[9px] font-mono uppercase tracking-widest flex items-center justify-between">
-                    Azure Solutions Architect Exp <Shield size={10} className="text-zinc-500" />
+                    B.S. Cybersecurity, Sacred Heart <Shield size={10} className="text-zinc-500" />
                   </div>
                   <div className="p-3 bg-zinc-800/50 border border-zinc-700/50 rounded-sm text-zinc-200 text-[9px] font-mono uppercase tracking-widest flex items-center justify-between">
-                    AWS Security Specialty <Shield size={10} className="text-zinc-500" />
+                    Published, Emergent Tech Risk <Shield size={10} className="text-zinc-500" />
                   </div>
                   <div className="p-3 bg-zinc-800/50 border border-zinc-700/50 rounded-sm text-zinc-200 text-[9px] font-mono uppercase tracking-widest flex items-center justify-between">
-                    CISSP Framework Aligned <Shield size={10} className="text-zinc-500" />
+                    Briefed Travelers Insurance <Shield size={10} className="text-zinc-500" />
                   </div>
                 </div>
               </div>
@@ -145,7 +145,7 @@ const About: React.FC = () => {
                   <Shield size={12} /> Partnership
                 </h4>
                 <div className="p-3 bg-blue-500/5 border border-blue-500/30 rounded-sm text-zinc-200 text-[9px] font-mono uppercase tracking-widest flex items-center justify-between">
-                  Microsoft Azure Partner <Shield size={10} className="text-blue-400" />
+                  Microsoft Azure Partner Network <Shield size={10} className="text-blue-400" />
                 </div>
               </div>
             </div>

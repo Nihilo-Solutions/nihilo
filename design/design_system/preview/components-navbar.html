@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 22px;margin:14px 18px;background:rgba(11,13,20,0.7);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:999px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .dot{width:8px;height:8px;background:#fff;border-radius:999px;box-shadow:0 0 8px rgba(255,255,255,.6)}
+  .name{font-family:var(--font-sans);font-weight:800;font-style:italic;letter-spacing:.22em;font-size:13px;text-transform:uppercase}
+  .links{display:flex;gap:34px}
+  .link{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:#f4f4f5;text-decoration:none}
+  .cta{font-family:var(--font-mono);font-size:10px;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:#fff;background:#18181b;border:2px solid var(--accent);padding:7px 16px;border-radius:2px}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="brand"><span class="dot"></span><span class="name">Nihilo</span></div>
+  <div class="links">
+    <a class="link" href="#">Solutions ›</a>
+    <a class="link" href="#">Services</a>
+    <a class="link" href="#">About</a>
+    <a class="link" href="#">Contact</a>
+  </div>
+  <a class="cta">Start Readiness Protocol</a>
+</nav>
+<div style="padding:10px 32px 16px">
+  <p style="font-family:var(--font-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--fg-faint);margin:0">Sticky · blur 12px · border pill · mono tracking 0.32em</p>
+</div>
+</body>
+</html>

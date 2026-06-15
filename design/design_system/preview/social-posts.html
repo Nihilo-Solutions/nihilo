@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nihilo — Social Post Templates</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#17171A;color:#fff;font-family:var(--font-sans);padding:48px}
+h1.page{font-family:var(--font-display);font-size:28px;font-weight:600;letter-spacing:-0.02em;margin:0 0 8px}
+p.page{font-family:var(--font-mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#9AA0AE;margin:0 0 40px}
+.section{margin-bottom:64px}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:12px;margin-bottom:20px}
+.sec-title{font-family:var(--font-mono);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:#fff}
+.sec-meta{font-family:var(--font-mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#71717A}
+.sec-sub{color:#9AA0AE;font-size:12px;font-family:var(--font-mono);margin:0 0 20px;letter-spacing:.08em}
+.row{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}
+.cap{font-family:var(--font-mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#9AA0AE;margin-top:10px}
+
+/* =========================
+   LINKEDIN CAROUSEL 1080×1350
+   ========================= */
+.li-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.li-card{aspect-ratio:4/5;background:var(--brand-void);position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.08);padding:22px 20px;display:flex;flex-direction:column;justify-content:space-between;color:#fff}
+.li-card .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:28px 28px;opacity:.6}
+.li-card .halo{position:absolute;width:220px;height:220px;border-radius:999px;filter:blur(80px);pointer-events:none}
+.li-card .top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center}
+.li-card .top img{height:12px;filter:invert(1) brightness(2)}
+.li-card .top .slide-num{font-family:var(--font-mono);font-size:9px;letter-spacing:.28em;color:var(--fg-faint)}
+.li-card .body{position:relative;z-index:2}
+.li-card .eb{font-family:var(--font-mono);font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent-lit);margin-bottom:10px}
+.li-card h4{font-family:var(--font-display);font-weight:600;font-size:22px;line-height:1.04;letter-spacing:-0.02em;margin:0 0 10px}
+.li-card h4 em{font-style:italic;color:var(--accent-lit)}
+.li-card p{font-size:10px;line-height:1.55;color:var(--fg-dim);margin:0;font-weight:300}
+.li-card .bot{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.08);padding-top:10px;font-family:var(--font-mono);font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--fg-faint);display:flex;justify-content:space-between;align-items:center}
+.li-card .arrow{color:var(--accent-lit)}
+
+/* cover slide */
+.li-cover{background:var(--brand-void)}
+.li-cover .halo-a{top:-30%;left:-30%;background:rgba(45,107,255,.3)}
+.li-cover h4{font-size:30px;line-height:1}
+.li-cover .mark{position:relative;z-index:2;display:flex;align-items:center;gap:8px}
+.li-cover .mark img{height:14px;filter:invert(1) brightness(2)}
+
+/* spec slide — large stat */
+.li-stat h4{font-family:var(--font-display);font-weight:600;font-size:60px;letter-spacing:-0.035em;line-height:1;color:#fff}
+.li-stat h4 em{font-style:normal;color:var(--accent-lit)}
+
+/* =========================
+   IG SQUARE 1080×1080
+   ========================= */
+.ig-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ig{aspect-ratio:1/1;background:var(--brand-void);position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.08);padding:30px;color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+.ig .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:36px 36px;opacity:.6}
+.ig .halo{position:absolute;width:280px;height:280px;border-radius:999px;filter:blur(100px)}
+.ig .top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center}
+.ig .top img{height:14px;filter:invert(1) brightness(2)}
+.ig .top .tag{font-family:var(--font-mono);font-size:9px;letter-spacing:.28em;color:var(--fg-faint)}
+.ig .body{position:relative;z-index:2}
+.ig .eb{font-family:var(--font-mono);font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent-lit);margin-bottom:12px}
+.ig h4{font-family:var(--font-display);font-weight:600;font-size:36px;line-height:1.02;letter-spacing:-0.03em;margin:0}
+.ig h4 em{font-style:italic;color:var(--accent-lit)}
+.ig .bot{position:relative;z-index:2;font-family:var(--font-mono);font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--fg-faint);border-top:1px solid rgba(255,255,255,.08);padding-top:12px;display:flex;justify-content:space-between}
+
+.ig-announce h4{font-size:44px;line-height:1}
+.ig-stat h4{font-family:var(--font-display);font-size:100px;letter-spacing:-0.04em;line-height:.95;color:#fff}
+.ig-stat h4 em{font-style:normal;color:var(--accent-lit)}
+.ig-stat .sub{font-family:var(--font-mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--fg-dim);margin-top:10px}
+
+/* =========================
+   X / TWITTER 1200×675 (16:9)
+   ========================= */
+.x-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.x{aspect-ratio:16/9;background:var(--brand-void);position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.08);padding:30px 36px;color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+.x .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:40px 40px;opacity:.6}
+.x .halo{position:absolute;width:300px;height:300px;border-radius:999px;filter:blur(100px)}
+.x .top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center}
+.x .top img{height:16px;filter:invert(1) brightness(2)}
+.x .top .tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.28em;color:var(--fg-faint)}
+.x .body{position:relative;z-index:2;max-width:70%}
+.x .eb{font-family:var(--font-mono);font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent-lit);margin-bottom:10px}
+.x h4{font-family:var(--font-display);font-weight:600;font-size:32px;line-height:1.04;letter-spacing:-0.025em;margin:0}
+.x h4 em{font-style:italic;color:var(--accent-lit)}
+.x .bot{position:relative;z-index:2;font-family:var(--font-mono);font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--fg-faint);border-top:1px solid rgba(255,255,255,.08);padding-top:10px;display:flex;justify-content:space-between}
+
+.x-quote h4{font-family:var(--font-display);font-weight:500;font-style:italic;font-size:26px;line-height:1.22}
+.x-quote h4 em{color:var(--accent-lit)}
+
+.spec{margin-top:16px;padding:14px 18px;background:#0B0D14;border:1px solid rgba(255,255,255,.08);border-radius:3px;font-family:var(--font-mono);font-size:10px;color:#9AA0AE;line-height:1.7}
+.spec strong{color:#fff}
+</style>
+</head>
+<body>
+
+<h1 class="page">Social Post Templates</h1>
+<p class="page">LinkedIn carousel · Instagram square · X / Twitter · All templates use locked tokens</p>
+
+<!-- LINKEDIN CAROUSEL -->
+<div class="section">
+  <div class="sec-head">
+    <span class="sec-title">01 · LinkedIn Carousel</span>
+    <span class="sec-meta">1080 × 1350 · 5 slides · 4:5 ratio</span>
+  </div>
+  <p class="sec-sub">Swipe deck for long-form thought leadership. Cover → Problem → Proof → Approach → CTA.</p>
+  <div class="li-row">
+    <!-- Cover -->
+    <div class="li-card li-cover">
+      <div class="grid"></div>
+      <div class="halo halo-a"></div>
+      <div class="top">
+        <div class="mark"><img src="../assets/logo/nihilo-primary-lockup.svg"/></div>
+        <span class="slide-num">01/05</span>
+      </div>
+      <div class="body">
+        <div class="eb">Field Note · 04</div>
+        <h4>Why your<br/>AI pilot <em>won't</em><br/>reach prod.</h4>
+      </div>
+      <div class="bot"><span>Swipe</span><span class="arrow">→</span></div>
+    </div>
+    <!-- Problem -->
+    <div class="li-card">
+      <div class="grid"></div>
+      <div class="halo" style="bottom:-30%;right:-30%;background:rgba(45,107,255,.22)"></div>
+      <div class="top"><div class="mark"><img src="../assets/logo/nihilo-primary-lockup.svg"/></div><span class="slide-num">02/05</span></div>
+      <div class="body">
+        <div class="eb">01 · Problem</div>
+        <h4>Most pilots <em>rent</em> data to public models.</h4>
+        <p style="margin-top:10px">Compliance blocks prod. Egress risk kills scale. The demo never ships.</p>
+      </div>
+      <div class="bot"><span>Problem</span><span class="arrow">→</span></div>
+    </div>
+    <!-- Proof (stat) -->
+    <div class="li-card li-stat">
+      <div class="grid"></div>
+      <div class="halo" style="top:30%;left:-30%;background:rgba(91,139,255,.25)"></div>
+      <div class="top"><div class="mark"><img src="../assets/logo/nihilo-primary-lockup.svg"/></div><span class="slide-num">03/05</span></div>
+      <div class="body">
+        <div class="eb">02 · Proof</div>
+        <h4><em>30–60%</em><br/>ops cost<br/>reduction.</h4>
+      </div>
+      <div class="bot"><span>Median · F500 Deploys</span><span class="arrow">→</span></div>
+    </div>
+    <!-- Approach -->
+    <div class="li-card">
+      <div class="grid"></div>
+      <div class="halo" style="top:-30%;right:-30%;background:rgba(45,107,255,.2)"></div>
+      <div class="top"><div class="mark"><img src="../assets/logo/nihilo-primary-lockup.svg"/></div><span class="slide-num">04/05</span></div>
+      <div class="body">
+        <div class="eb">03 · Approach</div>
+        <h4>Your data<br/>never leaves<br/><em>your tenancy.</em></h4>
+      </div>
+      <div class="bot"><span>Azure · AWS</span><span class="arrow">→</span></div>
+    </div>
+    <!-- CTA -->
+    <div class="li-card" style="background:#000">
+      <div class="halo" style="top:20%;left:20%;width:320px;height:320px;background:rgba(45,107,255,.35)"></div>
+      <div class="grid"></div>
+      <div class="top"><div class="mark"><img src="../assets/logo/nihilo-primary-lockup.svg"/></div><span class="slide-num">05/05</span></div>
+      <div class="body">
+        <div class="eb">04 · Begin</div>
+        <h4>From nothing,<br/><em>a system.</em></h4>
+        <p style="margin-top:10px;color:#fff;font-weight:400">Book a readiness protocol.</p>
+      </div>
+      <div class="bot"><span>nihilosolutions.com</span><span class="arrow">→</span></div>
+    </div>
+  </div>
+  <div class="spec"><strong>Caption template —</strong> Hook (1 line) · 3–5 line thesis · final CTA line. Hashtags: #EnterpriseAI #RAG #AzureOpenAI (max 3).</div>
+</div>
+
+<!-- INSTAGRAM -->
+<div class="section">
+  <div class="sec-head">
+    <span class="sec-title">02 · Instagram Square</span>
+    <span class="sec-meta">1080 × 1080 · 1:1</span>
+  </div>
+  <p class="sec-sub">Single-post formats: announce, quote, big-stat. All tap the same tokens.</p>
+  <div class="ig-row">
+    <div class="ig ig-announce">
+      <div class="grid"></div>
+      <div class="halo" style="top:-30%;left:-30%;background:rgba(45,107,255,.25)"></div>
+      <div class="top"><img src="../assets/logo/nihilo-primary-lockup.svg"/><span class="tag">New · 04.26</span></div>
+      <div class="body">
+        <div class="eb">Field Note · 04</div>
+        <h4>Tenant-local<br/>RAG, <em>from scratch,</em><br/>in six weeks.</h4>
+      </div>
+      <div class="bot"><span>Read on LinkedIn</span><span>nihilosolutions.com</span></div>
+    </div>
+    <div class="ig">
+      <div class="grid"></div>
+      <div class="halo" style="bottom:-30%;right:-30%;background:rgba(91,139,255,.22)"></div>
+      <div class="top"><img src="../assets/logo/nihilo-primary-lockup.svg"/><span class="tag">Voice · 03</span></div>
+      <div class="body">
+        <div class="eb">Case Study · F500 FS</div>
+        <h4 style="font-family:var(--font-display);font-weight:500;font-style:italic;font-size:28px;line-height:1.22">"We stopped renting our data to public models. Production in <em>six weeks.</em>"</h4>
+        <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--fg-faint);margin-top:14px">— VP Eng · F500</div>
+      </div>
+      <div class="bot"><span>Quote</span><span>Ex nihilo · 2026</span></div>
+    </div>
+    <div class="ig ig-stat">
+      <div class="grid"></div>
+      <div class="halo" style="top:20%;left:20%;background:rgba(45,107,255,.3)"></div>
+      <div class="top"><img src="../assets/logo/nihilo-primary-lockup.svg"/><span class="tag">Proof</span></div>
+      <div class="body">
+        <div class="eb">Outcome</div>
+        <h4><em>42%</em></h4>
+        <div class="sub">Ops cost reduction · Q1 MMXXVI</div>
+      </div>
+      <div class="bot"><span>Tenant-local</span><span>Azure-native</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- X / TWITTER -->
+<div class="section">
+  <div class="sec-head">
+    <span class="sec-title">03 · X / Twitter</span>
+    <span class="sec-meta">1200 × 675 · 16:9</span>
+  </div>
+  <p class="sec-sub">In-stream header cards — announce and quote formats.</p>
+  <div class="x-row">
+    <div class="x">
+      <div class="grid"></div>
+      <div class="halo" style="top:-30%;right:-10%;background:rgba(45,107,255,.22)"></div>
+      <div class="top"><img src="../assets/logo/nihilo-primary-lockup.svg"/><span class="tag">Field Note · 04</span></div>
+      <div class="body">
+        <div class="eb">Azure-Native AI</div>
+        <h4>We keep your data <em>in your tenancy.</em><br/>Production in 4–6 weeks.</h4>
+      </div>
+      <div class="bot"><span>nihilosolutions.com</span><span>Azure · AWS · SOC 2</span></div>
+    </div>
+    <div class="x x-quote">
+      <div class="grid"></div>
+      <div class="halo" style="bottom:-30%;left:-10%;background:rgba(91,139,255,.2)"></div>
+      <div class="top"><img src="../assets/logo/nihilo-primary-lockup.svg"/><span class="tag">Voice · 03</span></div>
+      <div class="body">
+        <div class="eb">— VP Eng · F500 FS</div>
+        <h4>"We stopped renting our data to public models. Production in <em>six weeks</em>."</h4>
+      </div>
+      <div class="bot"><span>Case study</span><span>nihilosolutions.com</span></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -20,9 +20,12 @@ const nextConfig: NextConfig = {
     // chaining through the catch-all www->non-www rule (two hops dilute re-indexing).
     const wwwHost = [{ type: 'host' as const, value: 'www.nihilosolutions.com' }];
     return [
-      // /book -> /assessment (the on-site readiness/intake flow)
-      { source: '/book', has: wwwHost, destination: 'https://nihilosolutions.com/assessment', statusCode: 301 },
-      { source: '/book', destination: '/assessment', statusCode: 301 },
+      // /assessment -> /intake (deprecated readiness page, /intake is the only intake surface)
+      { source: '/assessment', has: wwwHost, destination: 'https://nihilosolutions.com/intake', statusCode: 301 },
+      { source: '/assessment', destination: '/intake', statusCode: 301 },
+      // /book -> /intake (single on-site intake flow)
+      { source: '/book', has: wwwHost, destination: 'https://nihilosolutions.com/intake', statusCode: 301 },
+      { source: '/book', destination: '/intake', statusCode: 301 },
       // /platforms -> /solutions
       { source: '/platforms', has: wwwHost, destination: 'https://nihilosolutions.com/solutions', statusCode: 301 },
       { source: '/platforms', destination: '/solutions', statusCode: 301 },

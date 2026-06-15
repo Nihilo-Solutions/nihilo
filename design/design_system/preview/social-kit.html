@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nihilo — Social Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; background: #0B0C0F; color: var(--fg); font-family: var(--font-sans); padding: 48px; }
+  h1.page { font-family: var(--font-display); font-size: 32px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 8px; }
+  p.page { color: var(--fg-dim); margin: 0 0 40px; font-size: 14px; }
+
+  .section { margin-bottom: 64px; }
+  .section-title { font-family: var(--font-mono); font-size: 12px; letter-spacing: .32em; text-transform: uppercase; color: var(--fg-faint); margin-bottom: 16px; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
+  .section-sub { color: var(--fg-dim); font-size: 13px; margin: 12px 0 20px; font-family: var(--font-mono); }
+
+  /* LinkedIn banner 1584 × 396 */
+  .li-banner { width: 1584px; height: 396px; background: var(--brand-void); position: relative; overflow: hidden; border: 1px solid var(--line); }
+  .li-banner .grid { position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(ellipse at 75% 50%, black 20%, transparent 70%); }
+  .li-banner .halo-1 { position: absolute; top: -40%; right: 10%; width: 700px; height: 700px; border-radius: 999px; background: rgba(45,107,255,.22); filter: blur(160px); }
+  .li-banner .halo-2 { position: absolute; bottom: -50%; right: -10%; width: 500px; height: 500px; border-radius: 999px; background: rgba(91,139,255,.18); filter: blur(140px); }
+  .li-banner .content { position: absolute; top: 50%; left: 80px; transform: translateY(-50%); color: #fff; max-width: 820px; }
+  .li-banner .eb { font-family: var(--font-mono); font-size: 13px; letter-spacing: .36em; text-transform: uppercase; color: var(--accent-lit); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+  .li-banner .eb .dot { width:8px; height:8px; border-radius:99px; background: var(--accent-lit); box-shadow: 0 0 10px var(--accent-lit); }
+  .li-banner h2 { font-family: var(--font-display); font-weight: 600; font-size: 72px; line-height: 1.02; letter-spacing: -0.035em; margin: 0 0 18px; }
+  .li-banner h2 em { font-style: italic; color: var(--accent-lit); }
+  .li-banner p { font-family: var(--font-mono); font-size: 14px; letter-spacing: .08em; color: var(--fg-dim); margin: 0; }
+  .li-banner .mark { position: absolute; top: 40px; right: 60px; display: flex; align-items: center; gap: 14px; }
+  .li-banner .mark img { height: 36px; filter: invert(1) brightness(2); }
+  .li-banner .mark .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--fg-faint); padding-left: 14px; border-left: 1px solid var(--line); }
+  .li-banner .url { position: absolute; bottom: 36px; left: 80px; font-family: var(--font-mono); font-size: 13px; letter-spacing: .28em; text-transform: uppercase; color: var(--fg-dim); display: flex; align-items: center; gap: 20px; }
+  .li-banner .url::before { content: ''; width: 36px; height: 1px; background: var(--accent-lit); }
+
+  /* LinkedIn avatar 400×400 */
+  .row { display: flex; gap: 40px; flex-wrap: wrap; align-items: flex-start; }
+  .avatar { width: 400px; height: 400px; background: var(--brand-void); position: relative; display: flex; align-items: center; justify-content: center; border: 1px solid var(--line); overflow: hidden; }
+  .avatar-lt { background: #fff; }
+  .avatar img { width: 60%; }
+  .avatar-dk img { filter: invert(1) brightness(2); }
+
+  /* OG image 1200×630 */
+  .og { width: 1200px; height: 630px; background: var(--brand-void); position: relative; overflow: hidden; border: 1px solid var(--line); padding: 64px 72px; color: #fff; display: flex; flex-direction: column; justify-content: space-between; }
+  .og .grid { position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(ellipse at 80% 50%, black 20%, transparent 70%); }
+  .og .halo { position: absolute; top: 0; right: -10%; width: 600px; height: 600px; border-radius: 999px; background: rgba(45,107,255,.2); filter: blur(140px); }
+  .og .top { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; }
+  .og .top img { height: 32px; filter: invert(1) brightness(2); }
+  .og .top .tag { font-family: var(--font-mono); font-size: 12px; letter-spacing: .32em; text-transform: uppercase; color: var(--fg-faint); }
+  .og .body { position: relative; z-index: 2; }
+  .og .eb { font-family: var(--font-mono); font-size: 13px; letter-spacing: .36em; text-transform: uppercase; color: var(--accent-lit); margin-bottom: 20px; }
+  .og h3 { font-family: var(--font-display); font-weight: 600; font-size: 72px; line-height: 1.02; letter-spacing: -0.035em; margin: 0; max-width: 900px; }
+  .og h3 em { font-style: italic; color: var(--accent-lit); }
+  .og .bot { display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 13px; letter-spacing: .28em; text-transform: uppercase; color: var(--fg-dim); border-top: 1px solid var(--line); padding-top: 18px; position: relative; z-index: 2; }
+
+  /* Instagram square 1080×1080 */
+  .ig { width: 540px; height: 540px; background: var(--brand-void); position: relative; overflow: hidden; border: 1px solid var(--line); padding: 40px; color: #fff; display: flex; flex-direction: column; justify-content: space-between; }
+  .ig .halo { position: absolute; top: -30%; left: -30%; width: 500px; height: 500px; border-radius: 999px; background: rgba(45,107,255,.2); filter: blur(120px); }
+  .ig .grid { position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 48px 48px; opacity: .6; }
+  .ig .mark { position: relative; z-index: 2; display: flex; align-items: center; gap: 12px; }
+  .ig .mark img { height: 20px; filter: invert(1) brightness(2); }
+  .ig .body { position: relative; z-index: 2; }
+  .ig .eb { font-family: var(--font-mono); font-size: 11px; letter-spacing: .32em; text-transform: uppercase; color: var(--accent-lit); margin-bottom: 14px; }
+  .ig h4 { font-family: var(--font-display); font-weight: 600; font-size: 48px; line-height: 1.04; letter-spacing: -0.03em; margin: 0; }
+  .ig h4 em { font-style: italic; color: var(--accent-lit); }
+  .ig .bot { position: relative; z-index: 2; font-family: var(--font-mono); font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: var(--fg-dim); border-top: 1px solid var(--line); padding-top: 14px; display: flex; justify-content: space-between; }
+
+  .caption { color: var(--fg-faint); font-family: var(--font-mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<h1 class="page">Social Kit</h1>
+<p class="page">LinkedIn banner (1584×396), avatar (400×400), OpenGraph (1200×630), Instagram square (1080×1080, shown at 50%).</p>
+
+<!-- LINKEDIN BANNER -->
+<div class="section">
+  <div class="section-title">01 · LinkedIn Banner · 1584 × 396</div>
+  <div style="transform: scale(.62); transform-origin: top left; margin-bottom: -150px;">
+    <div class="li-banner">
+      <div class="grid"></div>
+      <div class="halo-1"></div>
+      <div class="halo-2"></div>
+      <div class="mark">
+        <img src="../assets/logo/nihilo-primary-lockup.svg" alt="Nihilo"/>
+        <span class="lbl">Ex Nihilo · MMXXVI</span>
+      </div>
+      <div class="content">
+        <div class="eb"><span class="dot"></span>Azure-Native Enterprise AI</div>
+        <h2>Enterprise AI,<br/><em>from nothing.</em></h2>
+        <p>Tenant-local RAG · Agentic automation · Production in 4–6 weeks</p>
+      </div>
+      <div class="url">
+        <span>nihilosolutions.com</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AVATARS -->
+<div class="section">
+  <div class="section-title">02 · Profile Avatar · 400 × 400</div>
+  <div class="row">
+    <div>
+      <div class="avatar avatar-dk" style="transform:scale(.5);transform-origin:top left;margin-bottom:-200px;margin-right:-200px;">
+        <img src="../assets/logo/nihilo-icon.svg" style="filter: invert(1) brightness(2)"/>
+      </div>
+      <div class="caption">Dark — default</div>
+    </div>
+    <div>
+      <div class="avatar avatar-lt" style="transform:scale(.5);transform-origin:top left;margin-bottom:-200px;margin-right:-200px;">
+        <img src="../assets/logo/nihilo-icon.svg"/>
+      </div>
+      <div class="caption">Light — alternate</div>
+    </div>
+    <div>
+      <div class="avatar" style="transform:scale(.5);transform-origin:top left;margin-bottom:-200px;margin-right:-200px; background: #0B0C0F;">
+        <img src="../assets/logo/nihilo-wordmark.svg" style="filter: invert(1) brightness(2); width: 70%"/>
+      </div>
+      <div class="caption">Wordmark variant</div>
+    </div>
+  </div>
+</div>
+
+<!-- OG IMAGE -->
+<div class="section">
+  <div class="section-title">03 · OpenGraph / Twitter Card · 1200 × 630</div>
+  <div style="transform: scale(.78); transform-origin: top left; margin-bottom: -140px;">
+    <div class="og">
+      <div class="grid"></div>
+      <div class="halo"></div>
+      <div class="top">
+        <img src="../assets/logo/nihilo-primary-lockup.svg"/>
+        <span class="tag">Azure-Native AI</span>
+      </div>
+      <div class="body">
+        <div class="eb">Zero to One · Enterprise AI</div>
+        <h3>We build AI that keeps your data <em>in your tenancy.</em></h3>
+      </div>
+      <div class="bot">
+        <span>nihilosolutions.com</span>
+        <span>30–60% ops cost reduction</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IG SQUARES -->
+<div class="section">
+  <div class="section-title">04 · Instagram / LinkedIn Square · 1080 × 1080 (shown at 50%)</div>
+  <div class="row">
+    <div>
+      <div class="ig">
+        <div class="halo"></div>
+        <div class="grid"></div>
+        <div class="mark"><img src="../assets/logo/nihilo-primary-lockup.svg"/></div>
+        <div class="body">
+          <div class="eb">Thesis · 01</div>
+          <h4>Your data<br/>never leaves<br/><em>your tenancy.</em></h4>
+        </div>
+        <div class="bot"><span>nihilosolutions.com</span><span>Ex Nihilo · 2026</span></div>
+      </div>
+      <div class="caption">Thesis card</div>
+    </div>
+
+    <div>
+      <div class="ig">
+        <div class="halo" style="background:rgba(91,139,255,.18); top:auto; bottom:-30%; right:-30%; left:auto;"></div>
+        <div class="grid"></div>
+        <div class="mark"><img src="../assets/logo/nihilo-primary-lockup.svg"/></div>
+        <div class="body">
+          <div class="eb">Outcome · 02</div>
+          <h4>30–60%<br/><em>ops cost<br/>reduction</em></h4>
+        </div>
+        <div class="bot"><span>Production in 4–6 wk</span><span>Azure · AWS</span></div>
+      </div>
+      <div class="caption">Stat card</div>
+    </div>
+
+    <div>
+      <div class="ig">
+        <div class="grid"></div>
+        <div class="mark"><img src="../assets/logo/nihilo-primary-lockup.svg"/></div>
+        <div class="body">
+          <div class="eb">Quote · 03</div>
+          <h4>“Production in <em>six weeks.</em>”</h4>
+          <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:.28em; text-transform:uppercase; color: var(--fg-faint); margin-top:18px;">— VP Eng · F500 Financial Services</div>
+        </div>
+        <div class="bot"><span>nihilosolutions.com</span><span>Case Study</span></div>
+      </div>
+      <div class="caption">Quote card</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

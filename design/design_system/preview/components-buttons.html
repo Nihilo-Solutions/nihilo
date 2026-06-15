@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans)}
+  .wrap{padding:26px 32px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;min-height:150px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;padding:12px 22px;border-radius:2px;cursor:pointer;border:1px solid transparent;transition:all var(--dur-base) var(--ease-out)}
+  .primary{background:#1E222D;border-color:var(--accent);color:#fff}
+  .primary:hover{background:var(--accent);box-shadow:var(--glow-azure);transform:scale(1.03)}
+  .secondary{background:transparent;border-color:var(--n-500);color:var(--fg-mute)}
+  .secondary:hover{border-color:var(--accent);background:rgba(45,107,255,.12);color:#fff}
+  .ghost{background:transparent;color:var(--fg-mute);border:none;padding:12px 8px}
+  .ghost:hover{color:var(--accent-lit)}
+  .lab{font-family:var(--font-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--fg-faint);margin-right:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="lab">Primary</span>
+  <button class="btn primary">Start Readiness Protocol →</button>
+  <span class="lab">Secondary</span>
+  <button class="btn secondary">View Services ›</button>
+  <span class="lab">Ghost</span>
+  <button class="btn ghost">Learn more ↗</button>
+</div>
+</body>
+</html>
