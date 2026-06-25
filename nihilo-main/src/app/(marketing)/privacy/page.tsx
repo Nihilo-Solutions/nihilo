@@ -3,6 +3,7 @@ import React from 'react';
 export const metadata = {
   title: { absolute: 'Privacy Policy | Nihilo Solutions' },
   description: 'Privacy Policy for Nihilo Solutions LLC',
+  alternates: { canonical: 'https://nihilosolutions.com/privacy' },
 };
 
 export default function PrivacyPolicy() {

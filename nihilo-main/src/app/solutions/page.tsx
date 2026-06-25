@@ -4,6 +4,7 @@ import SolutionsContent from "./SolutionsContent";
 export const metadata: Metadata = {
   title: "Enterprise AI Solutions",
   description: "Explore our comprehensive suite of enterprise AI solutions spanning Azure, AWS, industry verticals, and security compliance frameworks. 50+ specialized AI implementation services.",
+  alternates: { canonical: 'https://nihilosolutions.com/solutions' },
   openGraph: {
     title: "Enterprise AI Solutions | Nihilo Solutions",
     description: "Comprehensive enterprise AI solutions for Azure, AWS, industry-specific implementations, and security compliance.",

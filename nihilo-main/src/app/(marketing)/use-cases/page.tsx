@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: 'Use Cases',
   description:
     'Real-world enterprise AI use cases and outcomes: tenant-local RAG, agentic automation, secure BYOK deployment for Finance, Healthcare, and Support.',
+  alternates: { canonical: 'https://nihilosolutions.com/use-cases' },
 };
 
 export default function UseCasesPage() {
