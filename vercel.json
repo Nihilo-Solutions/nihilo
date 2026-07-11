@@ -1,8 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    { "source": "/intake", "destination": "https://intake.nihilosolutions.com/", "permanent": false }
-  ]
+  "trailingSlash": false
 }
