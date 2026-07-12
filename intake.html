@@ -22,6 +22,8 @@
   .lede{color:var(--n300);font-size:17px;max-width:62ch;margin-bottom:40px;}
   fieldset{border:none;margin:0 0 36px;padding:0;}
   legend{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--n400);padding:0;margin-bottom:8px;width:100%;border-bottom:1px solid var(--border);padding-bottom:10px;}
+  .subgroup{border:none;margin:0;padding:0;}
+  .subgroup>legend{font-family:inherit;font-size:14px;font-weight:500;letter-spacing:normal;text-transform:none;color:inherit;margin:18px 0 7px;padding:0;border:0;width:auto;}
   .legend-hint{color:var(--n400);font-size:13px;margin:-2px 0 16px;}
   label{display:block;font-size:14px;font-weight:500;margin:18px 0 7px;}
   .req{color:var(--azure-lit);}
@@ -114,20 +116,24 @@
           <option>Non-Profit & Community</option>
           <option>Other</option>
         </select>
-        <label>Where are you?</label>
-        <div class="checks">
+        <fieldset class="subgroup">
+          <legend>Where are you?</legend>
+          <div class="checks">
           <label class="chip"><input type="radio" name="Location" value="Connecticut" /><span>Connecticut</span></label>
           <label class="chip"><input type="radio" name="Location" value="Northeast US" /><span>Northeast US</span></label>
           <label class="chip"><input type="radio" name="Location" value="Elsewhere in US" /><span>Elsewhere in US</span></label>
           <label class="chip"><input type="radio" name="Location" value="International" /><span>International</span></label>
         </div>
-        <label>Stage</label>
-        <div class="checks">
+        </fieldset>
+        <fieldset class="subgroup">
+          <legend>Stage</legend>
+          <div class="checks">
           <label class="chip"><input type="radio" name="Stage" value="Idea" /><span>Just an idea</span></label>
           <label class="chip"><input type="radio" name="Stage" value="Early / pre-launch" /><span>Early / pre-launch</span></label>
           <label class="chip"><input type="radio" name="Stage" value="Operating business" /><span>Operating business</span></label>
           <label class="chip"><input type="radio" name="Stage" value="Established / scaling" /><span>Established / scaling</span></label>
         </div>
+        </fieldset>
       </fieldset>
 
       <fieldset>
@@ -143,8 +149,9 @@
       <fieldset>
         <legend>04 / AI and systems (if relevant)</legend>
         <p class="legend-hint">Only if you are considering AI or automation. Skip if not.</p>
-        <label>What would AI ideally do?</label>
-        <div class="checks">
+        <fieldset class="subgroup">
+          <legend>What would AI ideally do?</legend>
+          <div class="checks">
           <label class="chip"><input type="checkbox" name="AI Goals" value="Answer customer questions" /><span>Answer customer questions</span></label>
           <label class="chip"><input type="checkbox" name="AI Goals" value="Search internal knowledge" /><span>Search internal knowledge</span></label>
           <label class="chip"><input type="checkbox" name="AI Goals" value="Automate a workflow" /><span>Automate a workflow</span></label>
@@ -152,8 +159,10 @@
           <label class="chip"><input type="checkbox" name="AI Goals" value="Generate content" /><span>Generate content</span></label>
           <label class="chip"><input type="checkbox" name="AI Goals" value="Not sure" /><span>Not sure</span></label>
         </div>
-        <label>Data and tools it would connect to</label>
-        <div class="checks">
+        </fieldset>
+        <fieldset class="subgroup">
+          <legend>Data and tools it would connect to</legend>
+          <div class="checks">
           <label class="chip"><input type="checkbox" name="Systems" value="Website / CMS" /><span>Website / CMS</span></label>
           <label class="chip"><input type="checkbox" name="Systems" value="CRM" /><span>CRM</span></label>
           <label class="chip"><input type="checkbox" name="Systems" value="Docs / knowledge base" /><span>Docs / knowledge base</span></label>
@@ -161,19 +170,23 @@
           <label class="chip"><input type="checkbox" name="Systems" value="Microsoft / Azure" /><span>Microsoft / Azure</span></label>
           <label class="chip"><input type="checkbox" name="Systems" value="None yet" /><span>None yet</span></label>
         </div>
-        <label>Any data, privacy, or compliance constraints?</label>
-        <div class="checks">
+        </fieldset>
+        <fieldset class="subgroup">
+          <legend>Any data, privacy, or compliance constraints?</legend>
+          <div class="checks">
           <label class="chip"><input type="checkbox" name="Compliance" value="Regulated industry" /><span>Regulated industry</span></label>
           <label class="chip"><input type="checkbox" name="Compliance" value="Sensitive customer data" /><span>Sensitive customer data</span></label>
           <label class="chip"><input type="checkbox" name="Compliance" value="Data must stay in our tenancy" /><span>Data must stay in our tenancy</span></label>
           <label class="chip"><input type="checkbox" name="Compliance" value="None" /><span>None</span></label>
         </div>
+        </fieldset>
       </fieldset>
 
       <fieldset>
         <legend>05 / Scope, budget, and timeline</legend>
-        <label>Approximate budget</label>
-        <div class="checks">
+        <fieldset class="subgroup">
+          <legend>Approximate budget</legend>
+          <div class="checks">
           <label class="chip"><input type="radio" name="Budget" value="Under 5k" /><span>Under $5k</span></label>
           <label class="chip"><input type="radio" name="Budget" value="5-15k" /><span>$5k to $15k</span></label>
           <label class="chip"><input type="radio" name="Budget" value="15-30k" /><span>$15k to $30k</span></label>
@@ -182,6 +195,7 @@
           <label class="chip"><input type="radio" name="Budget" value="Monthly retainer" /><span>Monthly retainer</span></label>
           <label class="chip"><input type="radio" name="Budget" value="Not sure" /><span>Not sure yet</span></label>
         </div>
+        </fieldset>
         <label for="timeline">Ideal timeline</label>
         <select id="timeline" name="Timeline">
           <option value="">Select a timeframe...</option>
