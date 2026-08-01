@@ -1,0 +1,35 @@
+# Nihilo Solutions
+
+> Nihilo Solutions is a principal-led, three-person AI-native product studio and Azure-native AI consulting firm based in Fairfield, Connecticut. We design and build modern websites, web platforms, and native iOS apps for founders and small businesses, with AI designed into the product rather than bolted on. We also ship our own products under the Nihilo Labs banner, such as Stowed. We work with clients across Connecticut and nationally on a remote basis.
+
+## What we do
+
+- **Websites and platforms**: Modern, fast, distinctive marketing sites, web platforms, dashboards, and internal tools. Designed like a product, not a template. MVPs from idea to live in weeks.
+- **Native iOS apps**: Native iOS apps designed and engineered in-house in SwiftUI.
+- **AI features and agentic automation**: Conversational interfaces, semantic search, agents and workflow automation, personalization, and generative content built into the product itself.
+- **Fractional AI partner and consulting**: Embedded, Azure-native AI leadership and implementation for companies without internal AI capability. RAG pipelines and agentic automation, with data kept inside the client tenancy.
+
+## Who we are
+
+- **Sam Oakes**, Co-founder, Design and Engineering. Builds AI and platform systems for regulated industries. ISC2 Certified in Cybersecurity, B.S. in Cybersecurity, published on emerging-tech risk. LinkedIn: https://www.linkedin.com/in/samoakes123/
+- **Jake Ice**, Co-founder, Commercial and Operations. B2B sales and delivery. LinkedIn: https://www.linkedin.com/in/jake-ice/
+- **Ish Pandhal**, Co-founder, Marketing and Sales. LinkedIn: https://www.linkedin.com/in/ishpalpandhal/
+
+## How we are different
+
+- Principal-led with no middle layer. The people who design and build it are the people you talk to.
+- We build the product and can stay on to run it as your embedded AI partner, instead of building and vanishing.
+- Azure-native AI with a cybersecurity founder. AI built secure, with client data kept inside the client tenancy.
+- We ship our own apps, so our product instinct is proven, not claimed. Stowed is live in public beta.
+
+## Key pages
+
+- Home: https://nihilosolutions.com/
+- Start a project (intake form): https://nihilosolutions.com/intake
+- Stowed (our flagship app): https://stowedapp.app
+
+## Contact
+
+- Email: sam@nihilosolutions.com
+- Location: Fairfield, Connecticut, United States
+- Preferred citation: Nihilo Solutions (nihilosolutions.com)
