@@ -1,0 +1,61 @@
+# Deploys to Vercel by calling a Deploy Hook, bypassing Vercel's Git
+# integration entirely.
+#
+# Only needed while the Git integration is not firing on push. If Vercel starts
+# deploying on its own again, delete this file, otherwise every push produces
+# two deployments.
+#
+# Setup:
+#   1. Vercel > Project > Settings > Git > Deploy Hooks. Create a hook against
+#      branch `main` and copy the URL.
+#   2. GitHub > repo Settings > Secrets and variables > Actions > New repository
+#      secret, named VERCEL_DEPLOY_HOOK_URL, value = that URL.
+#
+# The job no-ops until that secret exists, so merging this changes nothing on
+# its own. It can also be run by hand from the Actions tab.
+
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Never let two deploys race; a newer push supersedes an in-flight one.
+concurrency:
+  group: vercel-deploy
+  cancel-in-progress: false
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Vercel deploy hook
+        env:
+          HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${HOOK_URL:-}" ]; then
+            echo "::warning::VERCEL_DEPLOY_HOOK_URL is not set. Skipping deploy."
+            echo "Add the secret to enable this workflow. See the comments in this file."
+            exit 0
+          fi
+
+          # The URL is a secret, so print only the status code and body, never
+          # the request line.
+          code=$(curl -sS -X POST --max-time 30 \
+                   -o /tmp/vercel-response.json \
+                   -w '%{http_code}' \
+                   "$HOOK_URL")
+
+          echo "Vercel responded with HTTP $code"
+          cat /tmp/vercel-response.json || true
+          echo
+
+          if [ "$code" -lt 200 ] || [ "$code" -ge 300 ]; then
+            echo "::error::Deploy hook failed with HTTP $code"
+            exit 1
+          fi
+
+          echo "Deployment queued. Track it in the Vercel dashboard."
