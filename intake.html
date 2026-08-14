@@ -4,263 +4,335 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="index, follow" />
-<title>Start a Project | Nihilo Solutions</title>
-<meta name="description" content="Tell Nihilo what you are building. A short brief so we can tell you straight if we can build it: websites, platforms, iOS apps, AI features, or an ongoing AI partnership." />
+<title>Tell us about your business | Nihilo Solutions</title>
+<meta name="description" content="Share the details of your business and the main challenge you are trying to solve. We come back within one to two business days with a recommendation, and you can book a call whenever it suits." />
 <link rel="canonical" href="https://nihilosolutions.com/intake" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<style>
-  :root{
-    --void:#05060A; --ink:#0B0D14; --surface:#14171F; --azure:#2D6BFF; --azure-lit:#5B8BFF;
-    --bone:#F4F5F7; --n300:#9AA0AE; --n400:#6B7280; --border:#1E222D;
-  }
-  *{box-sizing:border-box;}
-  body{margin:0;background:var(--void);color:var(--bone);font-family:Inter,system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;}
-  .wrap{max-width:740px;margin:0 auto;padding:56px 24px 96px;}
-  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--azure-lit);margin-bottom:20px;}
-  h1{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(34px,6vw,56px);line-height:1.05;letter-spacing:-.03em;margin:0 0 16px;}
-  h1 em{font-style:italic;color:var(--azure-lit);}
-  .lede{color:var(--n300);font-size:17px;max-width:62ch;margin-bottom:40px;}
-  fieldset{border:none;margin:0 0 36px;padding:0;}
-  legend{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--n400);padding:0;margin-bottom:8px;width:100%;border-bottom:1px solid var(--border);padding-bottom:10px;}
-  .subgroup{border:none;margin:0;padding:0;}
-  .subgroup>legend{font-family:inherit;font-size:14px;font-weight:500;letter-spacing:normal;text-transform:none;color:inherit;margin:18px 0 7px;padding:0;border:0;width:auto;}
-  .legend-hint{color:var(--n400);font-size:13px;margin:-2px 0 16px;}
-  label{display:block;font-size:14px;font-weight:500;margin:18px 0 7px;}
-  .req{color:var(--azure-lit);}
-  input[type=text],input[type=email],input[type=tel],input[type=url],select,textarea{
-    width:100%;background:var(--ink);border:1px solid var(--border);color:var(--bone);border-radius:8px;padding:12px 14px;font-family:inherit;font-size:15px;transition:border-color .15s,box-shadow .15s;}
-  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--azure);box-shadow:0 0 0 3px rgba(45,107,255,.18);}
-  textarea{min-height:100px;resize:vertical;}
-  .hint{color:var(--n400);font-size:12.5px;margin-top:6px;}
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-  @media (max-width:560px){.grid2{grid-template-columns:1fr;}}
-  .checks{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
-  .chip{position:relative;}
-  .chip input{position:absolute;opacity:0;inset:0;cursor:pointer;}
-  .chip span{display:inline-block;padding:8px 14px;border:1px solid var(--border);border-radius:999px;font-size:13.5px;color:var(--n300);background:var(--ink);cursor:pointer;transition:all .15s;}
-  .chip input:checked + span{border-color:var(--azure);color:var(--azure-lit);background:rgba(45,107,255,.08);}
-  .chip input:focus-visible + span{box-shadow:0 0 0 3px rgba(45,107,255,.25);}
-  .cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;}
-  @media (max-width:560px){.cards{grid-template-columns:1fr;}}
-  .card{position:relative;}
-  .card input{position:absolute;opacity:0;inset:0;cursor:pointer;}
-  .card span{display:block;padding:14px 16px;border:1px solid var(--border);border-radius:10px;background:var(--ink);cursor:pointer;transition:all .15s;}
-  .card span strong{display:block;font-family:"Space Grotesk",sans-serif;font-size:15px;margin-bottom:3px;}
-  .card span small{color:var(--n400);font-size:12.5px;line-height:1.4;display:block;}
-  .card input:checked + span{border-color:var(--azure);background:rgba(45,107,255,.08);}
-  .card input:checked + span strong{color:var(--azure-lit);}
-  button{background:var(--azure);color:#fff;border:none;border-radius:10px;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:16px;padding:15px 28px;cursor:pointer;transition:background .15s,transform .05s;width:100%;}
-  button:hover{background:var(--azure-lit);}
-  button:active{transform:translateY(1px);}
-  button:disabled{opacity:.6;cursor:default;}
-  .consent{color:var(--n400);font-size:12.5px;margin-top:16px;}
-  .hp{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;}
-  .footer{margin-top:56px;color:var(--n400);font-size:12px;font-family:"JetBrains Mono",monospace;letter-spacing:.05em;}
-  #status{margin-top:18px;font-size:14px;}
-  #status.err{color:#E5544A;}
-  .success{display:none;text-align:center;padding:60px 0;}
-  .success.show{display:block;}
-  .success .mark{color:var(--azure-lit);font-size:40px;}
-  .success h2{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:28px;margin:16px 0 8px;}
-  .success p{color:var(--n300);}
-</style>
+<meta name="theme-color" content="#0A0A0C" />
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon.png" sizes="any" type="image/png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Nihilo Solutions" />
+<meta property="og:title" content="Tell us about your business | Nihilo Solutions" />
+<meta property="og:description" content="Five minutes of context, and we come back with a recommendation. No obligation." />
+<meta property="og:url" content="https://nihilosolutions.com/intake" />
+<meta property="og:image" content="https://nihilosolutions.com/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<div class="wrap">
-  <div id="formView">
-    <div class="eyebrow">// Project Initiation Form</div>
-    <h1>Tell us what you are <em>building.</em></h1>
-    <p class="lede">No pitch, no pressure. Whether it is a website, a platform, an iOS app, an AI feature, or an ongoing AI partnership, share the idea and we will tell you straight if we can build it. Fields marked <span class="req">*</span> are required. We reply within 1 to 2 business days.</p>
+<a href="#main" class="skip">Skip to content</a>
 
-    <form id="intake" action="https://formspree.io/f/xzdlnnra" method="POST" accept-charset="UTF-8">
-      <input type="hidden" name="_subject" value="New project brief from nihilosolutions.com" />
-      <div class="hp" aria-hidden="true"><label>Do not fill this out<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label></div>
-
-      <fieldset>
-        <legend>01 / What do you need?</legend>
-        <p class="legend-hint">Select everything that applies. This shapes who from the studio picks up your brief.</p>
-        <div class="cards">
-          <label class="card"><input type="checkbox" name="Services" value="Website / marketing site" /><span><strong>Website or marketing site</strong><small>A modern, fast, distinctive site. Not a template.</small></span></label>
-          <label class="card"><input type="checkbox" name="Services" value="Web platform / dashboard / internal tool" /><span><strong>Web platform or tool</strong><small>Dashboards, portals, internal tools, an MVP.</small></span></label>
-          <label class="card"><input type="checkbox" name="Services" value="Native iOS app" /><span><strong>Native iOS app</strong><small>Designed and engineered in-house in SwiftUI.</small></span></label>
-          <label class="card"><input type="checkbox" name="Services" value="AI feature / automation" /><span><strong>AI feature or automation</strong><small>Chat, semantic search, agents, personalization.</small></span></label>
-          <label class="card"><input type="checkbox" name="Services" value="Fractional AI partner (ongoing)" /><span><strong>Fractional AI partner</strong><small>Embedded, ongoing AI leadership and build.</small></span></label>
-          <label class="card"><input type="checkbox" name="Services" value="AI strategy / advisory" /><span><strong>AI strategy or advisory</strong><small>A roadmap, an audit, or a second opinion.</small></span></label>
-          <label class="card"><input type="checkbox" name="Services" value="Branding / design" /><span><strong>Branding or design</strong><small>Identity, product design, a visual system.</small></span></label>
-          <label class="card"><input type="checkbox" name="Services" value="Not sure yet" /><span><strong>Not sure yet</strong><small>Tell us the problem, we will scope it.</small></span></label>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>02 / About you</legend>
-        <div class="grid2">
-          <div><label for="name">Your name <span class="req">*</span></label><input id="name" name="Your Name" type="text" required /></div>
-          <div><label for="business">Company or project name <span class="req">*</span></label><input id="business" name="Company" type="text" required /></div>
-        </div>
-        <div class="grid2">
-          <div><label for="email">Email <span class="req">*</span></label><input id="email" name="_replyto" type="email" required /></div>
-          <div><label for="phone">Phone (optional)</label><input id="phone" name="Phone" type="tel" /></div>
-        </div>
-        <label for="industry">Industry <span class="req">*</span></label>
-        <select id="industry" name="Industry" required>
-          <option value="">Select your industry...</option>
-          <option>Professional Services (Legal, Finance, Consulting)</option>
-          <option>Technology & Software / SaaS</option>
-          <option>Retail & E-commerce</option>
-          <option>Health & Wellness</option>
-          <option>Real Estate</option>
-          <option>Construction & Trades</option>
-          <option>Hospitality & Food & Beverage</option>
-          <option>Manufacturing & Logistics</option>
-          <option>Education & Training</option>
-          <option>Non-Profit & Community</option>
-          <option>Other</option>
-        </select>
-        <fieldset class="subgroup">
-          <legend>Where are you?</legend>
-          <div class="checks">
-          <label class="chip"><input type="radio" name="Location" value="Connecticut" /><span>Connecticut</span></label>
-          <label class="chip"><input type="radio" name="Location" value="Northeast US" /><span>Northeast US</span></label>
-          <label class="chip"><input type="radio" name="Location" value="Elsewhere in US" /><span>Elsewhere in US</span></label>
-          <label class="chip"><input type="radio" name="Location" value="International" /><span>International</span></label>
-        </div>
-        </fieldset>
-        <fieldset class="subgroup">
-          <legend>Stage</legend>
-          <div class="checks">
-          <label class="chip"><input type="radio" name="Stage" value="Idea" /><span>Just an idea</span></label>
-          <label class="chip"><input type="radio" name="Stage" value="Early / pre-launch" /><span>Early / pre-launch</span></label>
-          <label class="chip"><input type="radio" name="Stage" value="Operating business" /><span>Operating business</span></label>
-          <label class="chip"><input type="radio" name="Stage" value="Established / scaling" /><span>Established / scaling</span></label>
-        </div>
-        </fieldset>
-      </fieldset>
-
-      <fieldset>
-        <legend>03 / The problem and the goal</legend>
-        <label for="problem">What are you trying to solve or build? <span class="req">*</span></label>
-        <textarea id="problem" name="Problem" required placeholder="The problem, the idea, or what is holding the business back right now."></textarea>
-        <label for="success">What does success look like?</label>
-        <textarea id="success" name="Success" placeholder="What you want to be true in 3 to 6 months, and how you would measure it."></textarea>
-        <label for="currentSite">Current website or app (if any)</label>
-        <input id="currentSite" name="Current URL" type="url" placeholder="https://" />
-      </fieldset>
-
-      <fieldset>
-        <legend>04 / AI and systems (if relevant)</legend>
-        <p class="legend-hint">Only if you are considering AI or automation. Skip if not.</p>
-        <fieldset class="subgroup">
-          <legend>What would AI ideally do?</legend>
-          <div class="checks">
-          <label class="chip"><input type="checkbox" name="AI Goals" value="Answer customer questions" /><span>Answer customer questions</span></label>
-          <label class="chip"><input type="checkbox" name="AI Goals" value="Search internal knowledge" /><span>Search internal knowledge</span></label>
-          <label class="chip"><input type="checkbox" name="AI Goals" value="Automate a workflow" /><span>Automate a workflow</span></label>
-          <label class="chip"><input type="checkbox" name="AI Goals" value="Capture / route leads" /><span>Capture / route leads</span></label>
-          <label class="chip"><input type="checkbox" name="AI Goals" value="Generate content" /><span>Generate content</span></label>
-          <label class="chip"><input type="checkbox" name="AI Goals" value="Not sure" /><span>Not sure</span></label>
-        </div>
-        </fieldset>
-        <fieldset class="subgroup">
-          <legend>Data and tools it would connect to</legend>
-          <div class="checks">
-          <label class="chip"><input type="checkbox" name="Systems" value="Website / CMS" /><span>Website / CMS</span></label>
-          <label class="chip"><input type="checkbox" name="Systems" value="CRM" /><span>CRM</span></label>
-          <label class="chip"><input type="checkbox" name="Systems" value="Docs / knowledge base" /><span>Docs / knowledge base</span></label>
-          <label class="chip"><input type="checkbox" name="Systems" value="Database" /><span>Database</span></label>
-          <label class="chip"><input type="checkbox" name="Systems" value="Microsoft / Azure" /><span>Microsoft / Azure</span></label>
-          <label class="chip"><input type="checkbox" name="Systems" value="None yet" /><span>None yet</span></label>
-        </div>
-        </fieldset>
-        <fieldset class="subgroup">
-          <legend>Any data, privacy, or compliance constraints?</legend>
-          <div class="checks">
-          <label class="chip"><input type="checkbox" name="Compliance" value="Regulated industry" /><span>Regulated industry</span></label>
-          <label class="chip"><input type="checkbox" name="Compliance" value="Sensitive customer data" /><span>Sensitive customer data</span></label>
-          <label class="chip"><input type="checkbox" name="Compliance" value="Data must stay in our tenancy" /><span>Data must stay in our tenancy</span></label>
-          <label class="chip"><input type="checkbox" name="Compliance" value="None" /><span>None</span></label>
-        </div>
-        </fieldset>
-      </fieldset>
-
-      <fieldset>
-        <legend>05 / Scope, budget, and timeline</legend>
-        <fieldset class="subgroup">
-          <legend>Approximate budget</legend>
-          <div class="checks">
-          <label class="chip"><input type="radio" name="Budget" value="Under 5k" /><span>Under $5k</span></label>
-          <label class="chip"><input type="radio" name="Budget" value="5-15k" /><span>$5k to $15k</span></label>
-          <label class="chip"><input type="radio" name="Budget" value="15-30k" /><span>$15k to $30k</span></label>
-          <label class="chip"><input type="radio" name="Budget" value="30-60k" /><span>$30k to $60k</span></label>
-          <label class="chip"><input type="radio" name="Budget" value="60k+" /><span>$60k+</span></label>
-          <label class="chip"><input type="radio" name="Budget" value="Monthly retainer" /><span>Monthly retainer</span></label>
-          <label class="chip"><input type="radio" name="Budget" value="Not sure" /><span>Not sure yet</span></label>
-        </div>
-        </fieldset>
-        <label for="timeline">Ideal timeline</label>
-        <select id="timeline" name="Timeline">
-          <option value="">Select a timeframe...</option>
-          <option>ASAP, within 2 to 4 weeks</option>
-          <option>1 to 2 months</option>
-          <option>3 to 6 months</option>
-          <option>Flexible</option>
-          <option>Ongoing engagement</option>
-        </select>
-      </fieldset>
-
-      <fieldset>
-        <legend>06 / Final details</legend>
-        <label for="admire">Brands, products, or sites you admire</label>
-        <textarea id="admire" name="Admire" placeholder="Even outside your industry. Helps us understand your taste."></textarea>
-        <label for="hear">How did you hear about Nihilo?</label>
-        <select id="hear" name="How Heard">
-          <option value="">Select...</option>
-          <option>Google / Search Engine</option>
-          <option>AI assistant (ChatGPT, Perplexity, etc.)</option>
-          <option>Referral</option>
-          <option>LinkedIn</option>
-          <option>Instagram / TikTok</option>
-          <option>Local networking event</option>
-          <option>Stowed / one of our apps</option>
-          <option>Other</option>
-        </select>
-        <label for="anything">Anything else we should know?</label>
-        <textarea id="anything" name="Anything Else"></textarea>
-      </fieldset>
-
-      <button type="submit" id="submitBtn">Send project brief</button>
-      <p class="consent">By submitting, you agree that Nihilo Solutions may contact you about your project. We reply within 1 to 2 business days.</p>
-      <p id="status" role="status" aria-live="polite"></p>
-    </form>
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Nihilo Solutions, home">Nihilo<sup>∅</sup></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/solutions">Solutions</a>
+      <a href="/how-it-works">How it works</a>
+      <a href="/who-we-help">Who we help</a>
+      <a href="/about">About</a>
+    </nav>
+    <div class="nav-cta">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+        <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke-linecap="round"/></svg>
+      </button>
+      <a href="/contact#book" class="btn solid sm" data-book>Book a call</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </div>
-
-  <div class="success" id="successView">
-    <div class="mark">&#10022;</div>
-    <h2>Brief received.</h2>
-    <p>Thank you. The Nihilo Solutions team will review your details and be in touch within 1 to 2 business days.</p>
-  </div>
-
-  <div class="footer">&copy; 2026 &middot; NIHILO SOLUTIONS &middot; AZURE-NATIVE AI</div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/solutions">Solutions</a>
+  <a href="/how-it-works">How it works</a>
+  <a href="/who-we-help">Who we help</a>
+  <a href="/about">About</a>
+  <a href="/contact">Contact</a>
+  <a href="/contact#book" class="btn solid" data-book>Book a 30-minute call</a>
 </div>
 
+<main id="main">
+
+<section class="hero hero-page">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow">Option 02 <span class="dot">∅</span> More detail first</span>
+      <h1 style="margin-top:18px">Tell us about <span class="serif">your business.</span></h1>
+      <p class="hero-sub">About five minutes. Enough for us to come back with a real recommendation rather than a generic reply. If you would rather just talk, book a call instead and skip all of this.</p>
+      <div class="hero-actions">
+        <a href="#form" class="btn solid">Start the form ↓</a>
+        <a href="/contact#book" class="btn" data-book>Book a call instead</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tight" id="form">
+  <div class="wrap-narrow">
+
+    <!-- =========================================================================
+         MICROSOFT FORM EMBED
+         Set MS_FORM_URL at the top of /assets/site.js (Forms > Collect responses
+         > Embed, then copy the src from the generated iframe) and this
+         placeholder is replaced automatically by the live form.
+
+         The Microsoft Form must collect, in this order:
+           1. Business name
+           2. Website (if any)
+           3. Industry or type of business
+           4. Rough company size
+           5. Main challenge: website / leads and follow-up / operations and
+              automation / a combination / not sure
+           6. Current tools (CRM, email, scheduling, accounting), if known
+           7. Anything else we should know
+           8. Contact name, email, phone
+
+         The fallback form below is live and fully working. It hides itself
+         automatically once MS_FORM_URL is set.
+         ========================================================================= -->
+    <div class="embed-slot reveal" data-embed="msform" hidden>
+      <div class="embed-placeholder">
+        <span class="mark" aria-hidden="true">∅</span>
+        <h3>Microsoft Form embed goes here</h3>
+        <p>Replace with the live Microsoft Form by setting <code>MS_FORM_URL</code> in <code>/assets/site.js</code>.</p>
+      </div>
+    </div>
+
+    <!-- FALLBACK FORM (hidden automatically once the Microsoft Form is configured) -->
+    <div id="formFallback" style="margin-top:30px">
+      <div class="form-card" id="formView">
+        <p class="hint" style="margin:0 0 26px">Fields marked <span class="req">*</span> are required. We reply within one to two business days, and nothing here commits you to anything.</p>
+
+        <form id="intake" action="https://formspree.io/f/xzdlnnra" method="POST" accept-charset="UTF-8">
+          <input type="hidden" name="_subject" value="New business intake from nihilosolutions.com" />
+          <div class="hp" aria-hidden="true"><label>Do not fill this out<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label></div>
+
+          <fieldset>
+            <legend>01 / Your business</legend>
+            <div class="grid2">
+              <div>
+                <label for="business">Business name <span class="req">*</span></label>
+                <input id="business" name="Business Name" type="text" required autocomplete="organization" />
+              </div>
+              <div>
+                <label for="site">Website, if you have one</label>
+                <input id="site" name="Website" type="url" placeholder="https://" autocomplete="url" />
+              </div>
+            </div>
+
+            <label for="industry">Industry or type of business <span class="req">*</span></label>
+            <select id="industry" name="Industry" required>
+              <option value="">Select one...</option>
+              <option>Service business (trades, home services, field service)</option>
+              <option>Retail or local commerce</option>
+              <option>Professional services (legal, accounting, consulting, insurance)</option>
+              <option>Wholesale or distribution</option>
+              <option>Light manufacturing or operations</option>
+              <option>Health and wellness</option>
+              <option>Hospitality or food and beverage</option>
+              <option>Real estate or property</option>
+              <option>Education or training</option>
+              <option>Non-profit or community</option>
+              <option>Other</option>
+            </select>
+
+            <fieldset class="subgroup">
+              <legend>Roughly how many people work there? <span class="req">*</span></legend>
+              <div class="checks">
+                <label class="chip"><input type="radio" name="Company Size" value="Just me" required /><span>Just me</span></label>
+                <label class="chip"><input type="radio" name="Company Size" value="2-10" /><span>2 to 10</span></label>
+                <label class="chip"><input type="radio" name="Company Size" value="11-25" /><span>11 to 25</span></label>
+                <label class="chip"><input type="radio" name="Company Size" value="26-50" /><span>26 to 50</span></label>
+                <label class="chip"><input type="radio" name="Company Size" value="51-150" /><span>51 to 150</span></label>
+                <label class="chip"><input type="radio" name="Company Size" value="150+" /><span>More than 150</span></label>
+              </div>
+            </fieldset>
+          </fieldset>
+
+          <fieldset>
+            <legend>02 / The main challenge</legend>
+            <fieldset class="subgroup">
+              <legend>What are you mainly trying to solve? <span class="req">*</span></legend>
+              <div class="opts">
+                <label class="opt"><input type="radio" name="Main Challenge" value="Website" required /><span><strong>Website</strong><small>Dated, slow, or not turning visitors into inquiries.</small></span></label>
+                <label class="opt"><input type="radio" name="Main Challenge" value="Leads and follow-up" /><span><strong>Leads and follow-up</strong><small>Inquiries arrive but go cold before anyone replies.</small></span></label>
+                <label class="opt"><input type="radio" name="Main Challenge" value="Operations and automation" /><span><strong>Operations and automation</strong><small>Too much repetitive admin, too many manual hand-offs.</small></span></label>
+                <label class="opt"><input type="radio" name="Main Challenge" value="A combination" /><span><strong>A combination</strong><small>More than one of the above, or all three.</small></span></label>
+                <label class="opt"><input type="radio" name="Main Challenge" value="Not sure yet" /><span><strong>Not sure yet</strong><small>Something is not working. Help us work out what.</small></span></label>
+                <label class="opt"><input type="radio" name="Main Challenge" value="Something else" /><span><strong>Something else</strong><small>Describe it below and we will take a look.</small></span></label>
+              </div>
+            </fieldset>
+
+            <label for="detail">Tell us a bit more about it <span class="req">*</span></label>
+            <textarea id="detail" name="Challenge Detail" required placeholder="What is happening now, how long it has been like that, and what you would like to be true instead."></textarea>
+          </fieldset>
+
+          <fieldset>
+            <legend>03 / What you are running on</legend>
+            <p class="hint" style="margin-bottom:4px">Only if you know. Plenty of businesses do not, and that is a perfectly normal answer.</p>
+            <fieldset class="subgroup">
+              <legend>Current tools</legend>
+              <div class="checks">
+                <label class="chip"><input type="checkbox" name="Tools" value="A CRM" /><span>A CRM</span></label>
+                <label class="chip"><input type="checkbox" name="Tools" value="Microsoft 365" /><span>Microsoft 365</span></label>
+                <label class="chip"><input type="checkbox" name="Tools" value="Google Workspace" /><span>Google Workspace</span></label>
+                <label class="chip"><input type="checkbox" name="Tools" value="Online scheduling" /><span>Online scheduling</span></label>
+                <label class="chip"><input type="checkbox" name="Tools" value="Email marketing" /><span>Email marketing</span></label>
+                <label class="chip"><input type="checkbox" name="Tools" value="Accounting software" /><span>Accounting software</span></label>
+                <label class="chip"><input type="checkbox" name="Tools" value="Industry-specific software" /><span>Industry software</span></label>
+                <label class="chip"><input type="checkbox" name="Tools" value="Mostly spreadsheets" /><span>Mostly spreadsheets</span></label>
+                <label class="chip"><input type="checkbox" name="Tools" value="Not sure" /><span>Not sure</span></label>
+              </div>
+            </fieldset>
+            <label for="toolnames">Which ones, if you know the names?</label>
+            <input id="toolnames" name="Tool Names" type="text" placeholder="For example: HubSpot, Outlook, QuickBooks, Calendly" />
+          </fieldset>
+
+          <fieldset>
+            <legend>04 / How to reach you</legend>
+            <div class="grid2">
+              <div>
+                <label for="name">Your name <span class="req">*</span></label>
+                <input id="name" name="Contact Name" type="text" required autocomplete="name" />
+              </div>
+              <div>
+                <label for="email">Email <span class="req">*</span></label>
+                <input id="email" name="_replyto" type="email" required autocomplete="email" />
+              </div>
+            </div>
+            <div class="grid2">
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="Phone" type="tel" autocomplete="tel" />
+              </div>
+              <div>
+                <label for="timeline">When would you want this done?</label>
+                <select id="timeline" name="Timeline">
+                  <option value="">Select one...</option>
+                  <option>As soon as possible</option>
+                  <option>In the next month or two</option>
+                  <option>In the next three to six months</option>
+                  <option>Just exploring for now</option>
+                </select>
+              </div>
+            </div>
+            <label for="anything">Anything else we should know?</label>
+            <textarea id="anything" name="Anything Else" placeholder="Constraints, budget range, a deadline, a previous project that went badly, anything that helps."></textarea>
+          </fieldset>
+
+          <button type="submit" class="form-submit" id="submitBtn">Send this to Nihilo</button>
+          <p class="consent">By submitting, you agree that Nihilo Solutions may contact you about your enquiry. We do not add you to a mailing list and we do not share your details.</p>
+          <p id="status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <!-- CONFIRMATION: still offers the call -->
+      <div class="form-card success" id="successView">
+        <div class="mark" aria-hidden="true">∅</div>
+        <h2>Got it. Thank you.</h2>
+        <p>Your details are with us. One of the principals will read this properly and come back within one to two business days with a recommendation.</p>
+        <p>If you would rather not wait, the next step is a 30-minute call. You can pick a time now.</p>
+        <div class="btn-row">
+          <a href="/contact#book" class="btn solid" data-book>Book a 30-minute call →</a>
+          <a href="/solutions" class="btn">Read about the packages</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALWAYS-ON SECONDARY PATH -->
+    <div class="btn-row reveal" style="margin-top:34px;justify-content:space-between">
+      <span class="btn-note">Prefer to talk it through? A call is often faster than a form.</span>
+      <a href="/contact#book" class="btn sm" data-book>Book a 30-minute call →</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">Nihilo<sup>∅</sup>
+        <span class="line">Websites, lead follow-up, and operations automation for small and mid-sized businesses. Based in Fairfield, Connecticut, working with clients nationally.</span>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h3>Solutions</h3>
+          <a href="/solutions#website">Website Rebuild</a>
+          <a href="/solutions#lead-capture">Lead Capture &amp; Follow-up</a>
+          <a href="/solutions#operations">Operations Automation</a>
+          <a href="/solutions#starters">Industry Starters</a>
+          <a href="/solutions#retainer">Growth Retainer</a>
+        </div>
+        <div class="foot-col">
+          <h3>Studio</h3>
+          <a href="/how-it-works">How it works</a>
+          <a href="/who-we-help">Who we help</a>
+          <a href="/about">About</a>
+        </div>
+        <div class="foot-col">
+          <h3>Start</h3>
+          <a href="/contact#book" data-book>Book a call</a>
+          <a href="/intake">Tell us about your business</a>
+          <a href="mailto:sam@nihilosolutions.com">sam@nihilosolutions.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Nihilo Solutions</span>
+      <span>Fairfield, Connecticut</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
 <script>
-  var form=document.getElementById('intake'),statusEl=document.getElementById('status'),btn=document.getElementById('submitBtn');
-  form.addEventListener('submit',function(e){
-    e.preventDefault();statusEl.textContent='';statusEl.className='';btn.disabled=true;btn.textContent='Sending...';
-    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
-      .then(function(res){
-        if(res.ok){
-          document.getElementById('formView').style.display='none';
-          document.getElementById('successView').classList.add('show');
-          if(typeof gtag==='function'){gtag('event','generate_lead',{form_name:'project_intake'});}
-          window.scrollTo({top:0,behavior:'smooth'});
-        } else {
-          return res.json().then(function(j){throw new Error((j.errors&&j.errors.map(function(x){return x.message;}).join(', '))||'Submission failed');});
-        }
-      }).catch(function(){
-        statusEl.textContent='Something went wrong. Please email sam@nihilosolutions.com or try again.';
-        statusEl.className='err';btn.disabled=false;btn.textContent='Send project brief';
-      });
+(function () {
+  var form = document.getElementById('intake');
+  if (!form) return;
+  var statusEl = document.getElementById('status');
+  var btn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    statusEl.textContent = '';
+    statusEl.className = '';
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function (res) {
+      if (!res.ok) {
+        return res.json().then(function (j) {
+          throw new Error((j.errors && j.errors.map(function (x) { return x.message; }).join(', ')) || 'Submission failed');
+        });
+      }
+      document.getElementById('formView').style.display = 'none';
+      document.getElementById('successView').classList.add('show');
+      if (typeof gtag === 'function') gtag('event', 'generate_lead', { form_name: 'business_intake' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }).catch(function () {
+      statusEl.textContent = 'Something went wrong. Please email sam@nihilosolutions.com, or book a call instead.';
+      statusEl.className = 'err';
+      btn.disabled = false;
+      btn.textContent = 'Send this to Nihilo';
+    });
   });
+})();
 </script>
 </body>
 </html>
