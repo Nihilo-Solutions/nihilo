@@ -372,6 +372,12 @@ a.card:hover .arrow{color:var(--accent)}
   border-radius:6px;padding:4px 9px;color:var(--text-soft);display:inline-block;
 }
 .embed-help{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-d);margin-top:14px}
+.embed-escape{
+  flex:none;padding:14px 20px;border-top:1px solid var(--line-d);background:var(--void-3);
+  font-size:13.5px;color:var(--muted-d);text-align:center;
+}
+.embed-escape a{color:var(--accent);border-bottom:1px solid var(--accent-line);padding-bottom:1px}
+.embed-escape a:hover{border-bottom-color:var(--accent)}
 
 /* --------------------------------- forms --------------------------------- */
 .form-card{border:1px solid var(--line-d);border-radius:var(--radius);padding:40px;background:var(--card)}

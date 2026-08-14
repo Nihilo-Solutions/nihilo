@@ -149,13 +149,13 @@ Both integrations read from one config block at the top of `assets/site.js`:
 
 ```js
 var NIHILO = {
-  BOOKING_URL: 'REPLACE_ME',   // shared discovery calendar for Jake and Ish
+  BOOKING_URL: 'https://outlook.office.com/book/NihiloSolutionsDiscoveryCall@nihilosolutions.com/',
   MS_FORM_URL: 'REPLACE_ME'    // Microsoft Form, "Tell us about your business"
 };
 ```
 
-Nothing else needs editing. Until each value is replaced the site stays fully
-usable.
+Nothing else needs editing. The booking calendar is live; until `MS_FORM_URL`
+is set the intake page keeps serving its working fallback form.
 
 ### Booking calendar
 
@@ -175,10 +175,13 @@ it inline.
 **Helper text under the embed.**
 > What to expect: 30 minutes · no cost · no obligation · written recommendation afterwards
 
-**Placeholder state.** Until configured, the slot renders a labelled card
-naming the options (Calendly, Microsoft Bookings, shared team calendar) with
-two working fallbacks: email to arrange a time, and the intake form. A visitor
-is never dead-ended.
+**Live.** Points at the Microsoft Bookings page for the Nihilo Solutions
+Discovery Call. A Bookings page only renders in an iframe when it allows
+anonymous booking; if it requires sign-in the frame comes up blank, since
+Microsoft's login screen refuses to be framed. Every mounted embed therefore
+also renders an "open in a new tab" escape link, and buttons on other pages
+open the scheduler directly rather than framing it. Confirm the frame renders
+once deployed; if it does not, enable anonymous booking or link out instead.
 
 **Below the embed**, a persistent secondary path: "Would rather write it down
 first →" linking to `/intake`.
@@ -305,7 +308,8 @@ so no content is hidden if JavaScript fails to load.
 
 ### Open items
 
-1. Set `BOOKING_URL` and `MS_FORM_URL` in `assets/site.js`.
+1. Set `MS_FORM_URL` in `assets/site.js`. `BOOKING_URL` is live; confirm the
+   iframe actually renders on the deployed site rather than coming up blank.
 2. Build the Microsoft Form to the field list in section 4, and set its
    thank-you message or redirect to include the booking link.
 3. Regenerate `og-image.png`. It still carries the old "product studio"

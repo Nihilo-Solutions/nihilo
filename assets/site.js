@@ -6,11 +6,19 @@
    in the site needs to change: every "Book a call" button and the intake page
    read from here.
 
-     BOOKING_URL  Shared discovery-call calendar for Jake and Ish.
-                  Calendly, Microsoft Bookings, or any embeddable scheduler.
-                  Use the direct embed URL, e.g.
-                    https://calendly.com/nihilo/discovery
-                    https://outlook.office365.com/book/NihiloSolutions@.../
+     BOOKING_URL  Shared discovery-call calendar for Jake and Ish. Currently
+                  the Microsoft Bookings page for "Nihilo Solutions Discovery
+                  Call". The plain /book/ URL is used because that is the form
+                  Microsoft's own embed code takes; the ?ismsaljsauthenabled
+                  parameter on the share link is not needed for embedding.
+
+                  NOTE: Microsoft Bookings pages only render inside an iframe
+                  when the booking page is set to allow anonymous booking. If
+                  the page requires sign-in, the frame will come up blank, as
+                  Microsoft's login screen refuses to be framed. Every booking
+                  section also renders an "open in a new tab" link for that
+                  case; if the frame is blank on the live site, drop the embed
+                  and link out instead.
 
      MS_FORM_URL  Microsoft Form for "Tell us about your business".
                   In Forms use Collect responses > Embed and copy the src of
@@ -22,7 +30,7 @@
    ========================================================================== */
 
 var NIHILO = {
-  BOOKING_URL: 'REPLACE_ME',
+  BOOKING_URL: 'https://outlook.office.com/book/NihiloSolutionsDiscoveryCall@nihilosolutions.com/',
   MS_FORM_URL: 'REPLACE_ME'
 };
 
@@ -118,6 +126,16 @@ var NIHILO = {
     frame.setAttribute('allow', 'camera; microphone; geolocation');
     slot.innerHTML = '';
     slot.appendChild(frame);
+
+    /* Always give a way out of the frame. Microsoft Bookings and some
+       schedulers refuse to render when framed, and a blank box with no escape
+       hatch would silently cost bookings. */
+    var esc = document.createElement('p');
+    esc.className = 'embed-escape';
+    esc.innerHTML = 'Not loading? <a href="' + url + '" target="_blank" rel="noopener">Open the ' +
+      (kind === 'booking' ? 'booking page' : 'form') + ' in a new tab ↗</a>';
+    slot.appendChild(esc);
+
     slot.hidden = false;
     slot.classList.add('mounted', 'in');
     return true;

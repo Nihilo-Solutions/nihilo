@@ -28,16 +28,23 @@ changing:
 
 ```js
 var NIHILO = {
-  BOOKING_URL: 'REPLACE_ME',   // shared discovery calendar for Jake and Ish
+  BOOKING_URL: 'https://outlook.office.com/book/NihiloSolutionsDiscoveryCall@nihilosolutions.com/',
   MS_FORM_URL: 'REPLACE_ME'    // Microsoft Form for "Tell us about your business"
 };
 ```
 
-**BOOKING_URL** — Calendly, Microsoft Bookings, or any embeddable scheduler
-pointed at the shared team calendar. Use the direct embed URL. Once set, the
-`/contact#book` section renders the live scheduler in place of the placeholder,
-and any "Book a call" button on a page without the embed opens the scheduler
-directly.
+**BOOKING_URL** — set to the Microsoft Bookings page for the Nihilo Solutions
+Discovery Call. The `/contact#book` section renders it inline, and every "Book
+a call" button on a page without the embed opens it in a new tab.
+
+The plain `/book/` URL is used rather than the share link's
+`?ismsaljsauthenabled` variant, because that is the form Microsoft's own embed
+code takes. Note that a Bookings page only renders inside an iframe when it
+allows anonymous booking; if the page requires sign-in, the frame comes up
+blank because Microsoft's login screen refuses to be framed. Every booking
+section also renders an "open in a new tab" escape link for that case. If the
+frame is blank on the live site, either enable anonymous booking in Bookings or
+drop the embed and link out instead.
 
 **MS_FORM_URL** — in Microsoft Forms choose *Collect responses > Embed* and copy
 the `src` from the generated iframe. Once set, `/intake` renders the Microsoft
