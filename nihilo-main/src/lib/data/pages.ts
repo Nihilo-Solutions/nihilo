@@ -1,6 +1,77 @@
 import { SolutionPage } from "./types";
 
 export const solutionPages: SolutionPage[] = [
+  // CORE SMB SOLUTIONS (3 pages — the primary Nihilo service lines)
+  {
+    slug: 'website-modernization',
+    title: 'Website Modernization',
+    category: 'Industry',
+    description:
+      'A modern website built for speed, search, and conversions. We design and develop on Next.js, tuned for 90+ Lighthouse scores on day one, with SEO structure, mobile performance, and a CMS so you can update without a developer.',
+    content: {
+      intro:
+        'Most small and mid-size business websites are slow, buried in search results, and impossible for non-developers to update. They cost more in lost business than they ever cost to build. We fix that with a ground-up rebuild on a modern stack designed to perform.',
+      approach:
+        'Every project starts with a free growth assessment — we score your current site on speed, SEO, and mobile performance so we know exactly what to fix. We then design and build on Next.js, with performance optimization, on-page SEO, structured data, and a clean CMS integration from day one. Most projects are live in 2-4 weeks.',
+      outcomes:
+        'Clients see 90+ Lighthouse scores across performance, SEO, and accessibility at launch. Typical results include a 2-4x increase in organic traffic within 90 days and meaningful improvement in contact form submissions and consultation requests.',
+    },
+    features: [
+      'Next.js build with 90+ Lighthouse on performance, SEO, and accessibility',
+      'Mobile-first responsive design tested across devices',
+      'On-page SEO: structured data, meta tags, canonical URLs, schema markup',
+      'CMS integration so you can update copy, images, and blog posts without a developer',
+      'Speed optimization: image compression, lazy loading, CDN configuration',
+      'Google Analytics and Search Console setup and verification',
+    ],
+  },
+  {
+    slug: 'seo-growth-system',
+    title: 'SEO Growth System',
+    category: 'Industry',
+    description:
+      'A keyword-grounded SEO program that targets the searches your buyers actually make. Not vanity traffic, not generic articles. Qualified visitors who are ready to spend — built over 90 days with technical SEO, content, and local search.',
+    content: {
+      intro:
+        'Most small businesses either ignore SEO entirely or pay for low-quality content that generates traffic with no intent to buy. We do neither. Our SEO growth system is built around buyer-intent keywords specific to your business, geography, and service area.',
+      approach:
+        'We start with keyword research tied to buyer intent, not search volume alone. We then run a full technical SEO audit — Core Web Vitals, indexing, crawlability, schema — and fix what we find. Monthly content production targets the high-value, low-competition terms your buyers search for. For local businesses, we layer in Google Business Profile optimization and local citation building.',
+      outcomes:
+        'Most clients see meaningful ranking improvements within 60-90 days and organic traffic double in 6 months. The leads that come from SEO tend to convert at higher rates because they arrived with intent — they searched for exactly what you sell.',
+    },
+    features: [
+      'Keyword research tied to buyer intent and your specific service area',
+      'Technical SEO audit and remediation (Core Web Vitals, indexing, schema)',
+      'Monthly content production targeting high-value, low-competition terms',
+      'Local SEO: Google Business Profile optimization and citation building',
+      'Backlink audit and outreach planning',
+      'Monthly rank tracking and performance reporting',
+    ],
+  },
+  {
+    slug: 'ai-automation-system',
+    title: 'AI Automation System',
+    category: 'Industry',
+    description:
+      'We identify the repetitive manual work eating your week — lead follow-up, scheduling, reporting, data entry — and replace it with AI-driven workflows that run without you touching them. Principal-led process audit, scoped implementation, measurable result.',
+    content: {
+      intro:
+        'Most small businesses waste 10-20 hours per week on work that can be automated: chasing leads who did not respond, copying data between systems, generating the same report every Monday, reminding clients about appointments they already know about. AI automation fixes this.',
+      approach:
+        'We start with a process audit to find the highest-leverage automation targets in your specific business. We then design and implement AI-driven workflows using tools that integrate with your existing systems — no rip-and-replace. Human-in-the-loop exceptions where they matter; fully autonomous on routine work.',
+      outcomes:
+        'Clients recover 8-20 hours per week within 30-60 days. Lead response rates improve because follow-up is instant and consistent. Reporting is generated automatically. The principals who used to do this work spend that time on higher-value activity.',
+    },
+    features: [
+      'Process audit to identify the highest-leverage automation targets',
+      'AI-powered lead response and follow-up sequences',
+      'Automated scheduling, reminders, and appointment confirmation',
+      'Reporting and analytics delivered on autopilot',
+      'CRM and email platform integration',
+      'Human-in-the-loop design for exception handling and high-stakes decisions',
+    ],
+  },
+
   // AZURE SOLUTIONS (13 pages)
   {
     slug: "azure-fabric-automation",

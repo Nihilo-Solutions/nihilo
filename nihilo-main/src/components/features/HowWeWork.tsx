@@ -1,27 +1,23 @@
 const phases: { num: string; title: string; body: string }[] = [
   {
     num: '01',
-    title: 'Readiness Audit',
-    body:
-      'A structured diagnostic. We map your workflows, data sources, and infrastructure. We tell you what AI can actually move and what it cannot. Flat fee. No obligation to continue.',
+    title: 'Growth Assessment',
+    body: 'We audit your current site, SEO position, and workflow bottlenecks. You get a concrete scorecard with the three highest-leverage things to fix. No obligation to continue.',
   },
   {
     num: '02',
-    title: 'Architecture',
-    body:
-      'We design the system inside your Azure tenant. Vector stores, agent orchestration, integration points. You own the architecture document regardless of what happens next.',
+    title: 'Scoped proposal',
+    body: 'We scope the engagement based on what the audit found. Fixed price, fixed scope. No surprises. You know exactly what we are building and what it costs before we start.',
   },
   {
     num: '03',
-    title: 'Build',
-    body:
-      'We build inside your environment. Every credential in Key Vault. Every component tested against your real workflows. Production-ready in 4 to 8 weeks.',
+    title: 'Build and launch',
+    body: 'We build. You review. We launch. Most projects are live in 2 to 4 weeks. You keep full ownership of everything we build: the code, the content, the accounts.',
   },
   {
     num: '04',
-    title: 'Handoff and Support',
-    body:
-      'Your team owns what we build. We document everything, train your staff, and stay available for 30 days post-launch. No retainer required to keep the lights on.',
+    title: 'Measure and improve',
+    body: 'We set up tracking before launch so you can see what is working. Monthly reporting, optional ongoing retainer. You choose how much support you want after launch.',
   },
 ];
 
@@ -56,9 +52,9 @@ const HowWeWork: React.FC = () => {
             color: '#0B0D14',
           }}
         >
-          From nothing
+          From audit
           <br />
-          <span className="italic" style={{ color: '#2D6BFF' }}>to production.</span>
+          <span className="italic" style={{ color: '#2D6BFF' }}>to results.</span>
         </h2>
 
         <p
@@ -71,7 +67,7 @@ const HowWeWork: React.FC = () => {
             lineHeight: 1.6,
           }}
         >
-          Every engagement follows the same four phases. No surprises. No scope creep. No hand-offs to junior staff.
+          Every engagement starts with a free assessment. We find the gaps, scope the fix, build it, and measure what changes. No surprises, no hand-offs to junior staff.
         </p>
 
         {/* Four phases */}
@@ -133,7 +129,7 @@ const HowWeWork: React.FC = () => {
             marginTop: '48px',
           }}
         >
-          Principal-led throughout. You work with Sam or Jake at every phase.
+          Principal-led throughout. You work with Sam or Jake at every phase, not a project manager.
         </p>
       </div>
 

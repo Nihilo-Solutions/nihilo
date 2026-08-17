@@ -2,225 +2,348 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ASSESSMENT_QUESTIONS } from '@/constants';
-import { Mail, ArrowRight, ShieldCheck, ChevronRight, FileText } from 'lucide-react';
+import { ArrowRight, Loader2 } from 'lucide-react';
 
-interface AssessmentPayload {
-  name: string;
-  email: string;
-  company: string;
-  readiness_score: number;
-  answers: Record<string, string>;
-  source: string;
+interface AssessmentScores {
+  speed: number;
+  seo: number;
+  mobile: number;
 }
 
-async function submitAssessment(payload: AssessmentPayload): Promise<boolean> {
-  // TODO: swap Formspree endpoint for Power Automate HTTP trigger URL
-  // Power Automate flow: SharePoint log → Outlook notification → Teams alert
-  const FORM_ENDPOINT = 'https://formspree.io/f/[PASTE_REAL_ID_HERE]';
+type Stage = 'form' | 'loading' | 'results' | 'leadCapture' | 'submitted';
 
-  try {
-    const response = await fetch(FORM_ENDPOINT, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
-      body: JSON.stringify(payload),
-    });
-    return response.ok;
-  } catch (err) {
-    console.error('Assessment submission failed:', err);
-    return false;
-  }
+const FIELD_CLASS =
+  'w-full px-4 py-3 bg-zinc-900 text-white border border-zinc-800 outline-none ' +
+  'placeholder:text-zinc-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30 transition text-sm font-mono';
+
+const LABEL_CLASS = 'block text-xs font-mono uppercase tracking-[0.2em] text-zinc-400 mb-2';
+
+function ScoreBar({ label, score }: { label: string; score: number }) {
+  const color =
+    score >= 90 ? 'bg-emerald-500' : score >= 50 ? 'bg-yellow-500' : 'bg-red-500';
+  const textColor =
+    score >= 90 ? 'text-emerald-400' : score >= 50 ? 'text-yellow-400' : 'text-red-400';
+
+  return (
+    <div className="space-y-2">
+      <div className="flex justify-between items-baseline">
+        <span className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-400">{label}</span>
+        <span className={`text-2xl font-black ${textColor}`}>{score}</span>
+      </div>
+      <div className="h-1.5 w-full bg-zinc-800 rounded-full overflow-hidden">
+        <div
+          className={`h-full ${color} transition-all duration-700 rounded-full`}
+          style={{ width: `${score}%` }}
+        />
+      </div>
+      <p className="text-[11px] text-zinc-600">
+        {score >= 90 ? 'Good' : score >= 50 ? 'Needs improvement' : 'Poor'}
+      </p>
+    </div>
+  );
+}
+
+function gradeLabel(scores: AssessmentScores): string {
+  const avg = Math.round((scores.speed + scores.seo + scores.mobile) / 3);
+  if (avg >= 85) return 'Strong foundation';
+  if (avg >= 60) return 'Room to grow';
+  return 'Significant opportunity';
 }
 
 export default function AssessmentPage() {
-  const [stage, setStage] = useState<'intake' | 'test' | 'results'>('intake');
-  const [userData, setUserData] = useState({ name: '', email: '', company: '' });
-  const [currentStep, setCurrentStep] = useState(0);
-  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [stage, setStage] = useState<Stage>('form');
+  const [url, setUrl] = useState('');
+  const [scores, setScores] = useState<AssessmentScores | null>(null);
+  const [error, setError] = useState('');
+
+  // Lead capture fields
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [company, setCompany] = useState('');
   const [isSending, setIsSending] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
-  const calculateReadinessScore = () => {
-    const highReadinessAnswers = [
-      "Cloud-Native", "Yes, fully integrated", "Real-time",
-      "Automated Dashboards", "Immediately", "Early Adopters", "Enterprise Standard"
-    ];
-    const totalQuestions = ASSESSMENT_QUESTIONS.length;
-    const matchingAnswers = Object.values(answers).filter(val => highReadinessAnswers.includes(val)).length;
-    return Math.min(98, Math.max(15, Math.floor((matchingAnswers / totalQuestions) * 100) + 42));
-  };
+  const handleUrlSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError('');
+    setStage('loading');
 
-  const handleSubmit = async () => {
-    setIsSending(true);
-    const payload: AssessmentPayload = {
-      name: userData.name,
-      email: userData.email,
-      company: userData.company,
-      readiness_score: calculateReadinessScore(),
-      answers,
-      source: '/assessment',
-    };
-
-    const ok = await submitAssessment(payload);
-
-    if (ok) {
-      // GA4 generate_lead fires on every successful submit, independent of which
-      // backend (Formspree, Power Automate, etc.) is wired up at FORM_ENDPOINT.
-      window.gtag?.('event', 'generate_lead', {
-        event_category: 'contact',
-        event_label: 'intake_form',
+    try {
+      // Show scores first — lead capture comes after results
+      const res = await fetch('/api/assess', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: 'anonymous', email: 'anonymous@placeholder.com', company: '', website: url }),
       });
-      setSubmitted(true);
-    } else {
-      alert('Submission failed. Please contact sam@nihilosolutions.com');
-    }
 
-    setIsSending(false);
-  };
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error ?? `Server error ${res.status}`);
+      }
 
-  const handleAnswer = (option: string) => {
-    setAnswers({ ...answers, [ASSESSMENT_QUESTIONS[currentStep].id]: option });
-    if (currentStep < ASSESSMENT_QUESTIONS.length - 1) {
-      setCurrentStep(currentStep + 1);
-      window.scrollTo(0, 0);
-    } else {
+      const data = await res.json();
+      setScores(data.scores);
       setStage('results');
-      window.scrollTo(0, 0);
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Something went wrong';
+      setError(msg);
+      setStage('form');
     }
   };
 
-  if (stage === 'intake') {
-    return (
-      <div className="pt-40 pb-20 max-w-xl mx-auto px-6 animate-in fade-in duration-700">
-        <div className="inline-flex items-center space-x-3 mb-6 px-4 py-2 border border-blue-500/30 rounded-full bg-blue-500/5">
-          <ShieldCheck size={14} className="text-blue-400" />
-          <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-blue-400">Strategic Audit Initialized</span>
-        </div>
-        <h1 className="text-4xl font-bold text-white mb-4 italic uppercase tracking-tighter">AI Business Assessment</h1>
-        <p className="text-zinc-500 mb-10 font-mono text-xs uppercase tracking-widest leading-relaxed">
-          Provide your enterprise credentials to begin the 35-point organizational AI readiness audit.
-        </p>
-        <div className="space-y-4">
-          <input
-            type="text" placeholder="Full Name"
-            className="w-full p-4 bg-zinc-900 border border-zinc-800 text-white focus:border-blue-500 outline-none transition-all font-mono text-sm placeholder:text-zinc-700"
-            onChange={(e) => setUserData({...userData, name: e.target.value})}
-          />
-          <input
-            type="email" placeholder="Business Email"
-            className="w-full p-4 bg-zinc-900 border border-zinc-800 text-white focus:border-blue-500 outline-none transition-all font-mono text-sm placeholder:text-zinc-700"
-            onChange={(e) => setUserData({...userData, email: e.target.value})}
-          />
-          <input
-            type="text" placeholder="Company Name"
-            className="w-full p-4 bg-zinc-900 border border-zinc-800 text-white focus:border-blue-500 outline-none transition-all font-mono text-sm placeholder:text-zinc-700"
-            onChange={(e) => setUserData({...userData, company: e.target.value})}
-          />
-          <button
-            disabled={!userData.email || !userData.name}
-            onClick={() => { setStage('test'); window.scrollTo(0, 0); }}
-            className="w-full py-4 bg-blue-500 text-black font-black uppercase tracking-widest text-xs hover:bg-white transition-all flex justify-center items-center gap-2 mt-4 disabled:opacity-30"
-          >
-            Execute Assessment <ArrowRight size={16} />
-          </button>
-        </div>
-      </div>
-    );
-  }
+  const handleLeadSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!scores) return;
+    setIsSending(true);
 
-  if (stage === 'test') {
-    const q = ASSESSMENT_QUESTIONS[currentStep];
-    const progress = ((currentStep + 1) / ASSESSMENT_QUESTIONS.length) * 100;
-    return (
-      <div className="pt-40 pb-20 max-w-3xl mx-auto px-6">
-        <div className="mb-12">
-          <div className="flex justify-between items-end mb-4 font-mono text-[10px] tracking-[0.3em] uppercase text-zinc-600">
-            <span>Section: {q.phase}</span>
-            <span>{Math.round(progress)}%</span>
-          </div>
-          <div className="h-[1px] w-full bg-zinc-900">
-            <div className="h-full bg-blue-500 shadow-[0_0_10px_#3b82f6] transition-all duration-500" style={{ width: `${progress}%` }} />
-          </div>
-        </div>
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 uppercase italic tracking-tighter leading-tight">{q.question}</h2>
-        <div className="grid gap-4">
-          {q.options.map(opt => (
-            <button
-              key={opt}
-              onClick={() => handleAnswer(opt)}
-              className="p-6 text-left border border-zinc-900 bg-zinc-900/20 hover:border-blue-500/50 hover:bg-zinc-900 transition-all text-zinc-400 hover:text-white font-mono text-xs uppercase tracking-widest flex justify-between group items-center"
-            >
-              {opt}
-              <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-blue-400" />
-            </button>
-          ))}
-        </div>
-      </div>
-    );
-  }
+    try {
+      await fetch('/api/assess', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, company, website: url }),
+      });
+
+      window.gtag?.('event', 'generate_lead', {
+        event_category: 'assessment',
+        event_label: 'growth_assessment',
+      });
+
+      setStage('submitted');
+    } catch {
+      // Non-fatal — we still show submitted state
+      setStage('submitted');
+    } finally {
+      setIsSending(false);
+    }
+  };
 
   return (
-    <div className="pt-40 pb-20 max-w-2xl mx-auto px-6 text-center animate-in zoom-in-95 duration-700">
-      <div className="mb-12">
-        <div className="text-[72px] font-black text-blue-500 italic leading-none mb-2 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]">
-          {calculateReadinessScore()}%
-        </div>
-        <div className="text-[10px] font-mono uppercase tracking-[0.4em] text-zinc-500">AI_Business_Maturity_Index</div>
-      </div>
+    <main className="min-h-screen bg-zinc-950 text-zinc-200 pt-32 pb-24 px-4">
+      <div className="max-w-xl mx-auto">
 
-      <h2 id="assessment-complete" className="text-4xl font-bold text-white mb-6 italic uppercase tracking-tighter">Assessment Complete</h2>
-
-      {!submitted ? (
-        <>
-          <p className="text-zinc-400 mb-12 leading-relaxed font-light">
-            A comprehensive strategy report for <span className="text-white font-bold">{userData.company}</span> has been compiled and is ready for dispatch.
+        {/* Header */}
+        <div className="mb-10">
+          <span className="text-[10px] mono uppercase tracking-[0.4em] text-zinc-600 mb-4 block">
+            Free · No obligation
+          </span>
+          <h1
+            className="text-4xl font-bold text-white tracking-tight leading-tight mb-4"
+            style={{ fontFamily: 'var(--font-space-grotesk)' }}
+          >
+            Growth Assessment
+          </h1>
+          <p className="text-zinc-400 text-base leading-relaxed">
+            Enter your website URL. We will run a real PageSpeed audit and show you your speed, SEO, and mobile scores instantly.
           </p>
+        </div>
 
-          <div className="grid grid-cols-1 gap-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
+        {/* URL form */}
+        {(stage === 'form' || stage === 'loading') && (
+          <form onSubmit={handleUrlSubmit} className="space-y-4">
+            <div>
+              <label htmlFor="assess-url" className={LABEL_CLASS}>
+                Website URL
+              </label>
+              <input
+                id="assess-url"
+                type="text"
+                inputMode="url"
+                required
+                placeholder="yoursite.com"
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                className={FIELD_CLASS}
+                disabled={stage === 'loading'}
+              />
+            </div>
+
+            {error && (
+              <p className="text-red-400 text-sm font-mono">{error}</p>
+            )}
+
             <button
-              onClick={handleSubmit}
-              disabled={isSending}
-              className="flex items-center justify-center gap-3 p-5 bg-blue-500 text-black font-bold uppercase text-[10px] tracking-[0.3em] hover:bg-white transition-all disabled:opacity-50 group"
+              type="submit"
+              disabled={stage === 'loading' || !url}
+              className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-blue-600 hover:bg-blue-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-white font-bold text-sm uppercase tracking-[0.15em] transition-colors"
             >
-              <Mail size={16} /> {isSending ? "Dispatching..." : "Submit Assessment"}
+              {stage === 'loading' ? (
+                <>
+                  <Loader2 size={16} className="animate-spin" />
+                  Running audit...
+                </>
+              ) : (
+                <>
+                  Score my site
+                  <ArrowRight size={16} />
+                </>
+              )}
+            </button>
+
+            <p className="text-[11px] text-zinc-600 text-center">
+              Powered by Google PageSpeed Insights. Takes 10-20 seconds.
+            </p>
+          </form>
+        )}
+
+        {/* Results */}
+        {stage === 'results' && scores && (
+          <div className="space-y-8 animate-in fade-in duration-500">
+            <div className="border border-zinc-800 bg-zinc-900/40 rounded-lg p-6 space-y-6">
+              <div className="flex items-baseline justify-between">
+                <h2 className="text-white font-bold text-lg">{gradeLabel(scores)}</h2>
+                <span className="text-[11px] font-mono text-zinc-500 uppercase tracking-widest">
+                  {new URL(/^https?:\/\//.test(url) ? url : `https://${url}`).hostname}
+                </span>
+              </div>
+
+              <ScoreBar label="Speed (desktop)" score={scores.speed} />
+              <ScoreBar label="SEO" score={scores.seo} />
+              <ScoreBar label="Mobile performance" score={scores.mobile} />
+            </div>
+
+            <div className="border-l-2 border-blue-500/40 pl-5">
+              <p className="text-zinc-300 text-sm leading-relaxed">
+                Scores below 90 represent real, measurable traffic and lead losses. We can fix every one of these, and we will tell you which to prioritize first.
+              </p>
+            </div>
+
+            <button
+              onClick={() => setStage('leadCapture')}
+              className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm uppercase tracking-[0.15em] transition-colors"
+            >
+              Get the full report
+              <ArrowRight size={16} />
+            </button>
+
+            <button
+              onClick={() => { setStage('form'); setScores(null); }}
+              className="w-full text-[11px] font-mono uppercase tracking-widest text-zinc-600 hover:text-zinc-400 transition-colors py-2"
+            >
+              Score a different site
             </button>
           </div>
-        </>
-      ) : (
-        <div className="bg-zinc-900/50 border border-blue-500/30 p-8 md:p-12 rounded-lg animate-in zoom-in-95 duration-500">
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-blue-500 blur-xl opacity-20 animate-pulse"></div>
-              <div className="relative bg-zinc-900 border-2 border-blue-500 rounded-full p-4">
-                <ShieldCheck size={40} className="text-blue-500" />
+        )}
+
+        {/* Lead capture */}
+        {stage === 'leadCapture' && scores && (
+          <div className="space-y-6 animate-in fade-in duration-500">
+            <div className="border border-zinc-800 rounded-lg p-4 bg-zinc-900/30">
+              <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">Your scores</p>
+              <div className="flex gap-6">
+                <div className="text-center">
+                  <p className="text-2xl font-black text-white">{scores.speed}</p>
+                  <p className="text-[10px] text-zinc-600 uppercase tracking-widest">Speed</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-2xl font-black text-white">{scores.seo}</p>
+                  <p className="text-[10px] text-zinc-600 uppercase tracking-widest">SEO</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-2xl font-black text-white">{scores.mobile}</p>
+                  <p className="text-[10px] text-zinc-600 uppercase tracking-widest">Mobile</p>
+                </div>
               </div>
             </div>
+
+            <div>
+              <h2 className="text-xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                Get the full report
+              </h2>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                We will send you a prioritized fix list and tell you what each improvement is worth in traffic and leads. No pitch, no obligation.
+              </p>
+            </div>
+
+            <form onSubmit={handleLeadSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="lead-name" className={LABEL_CLASS}>Name</label>
+                <input
+                  id="lead-name"
+                  type="text"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className={FIELD_CLASS}
+                />
+              </div>
+              <div>
+                <label htmlFor="lead-email" className={LABEL_CLASS}>Email</label>
+                <input
+                  id="lead-email"
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className={FIELD_CLASS}
+                />
+              </div>
+              <div>
+                <label htmlFor="lead-company" className={LABEL_CLASS}>
+                  Company <span className="text-zinc-600 normal-case tracking-normal">(optional)</span>
+                </label>
+                <input
+                  id="lead-company"
+                  type="text"
+                  value={company}
+                  onChange={(e) => setCompany(e.target.value)}
+                  className={FIELD_CLASS}
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSending || !name || !email}
+                className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-blue-600 hover:bg-blue-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-white font-bold text-sm uppercase tracking-[0.15em] transition-colors"
+              >
+                {isSending ? (
+                  <>
+                    <Loader2 size={16} className="animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send my report
+                    <ArrowRight size={16} />
+                  </>
+                )}
+              </button>
+
+              <p className="text-[11px] text-zinc-600 text-center">
+                No spam. We respond personally within 1 business day.
+              </p>
+            </form>
           </div>
+        )}
 
-          <h3 className="text-xl font-bold text-white uppercase tracking-widest mb-4 italic">Report Dispatched</h3>
-          <p className="text-zinc-400 text-sm leading-relaxed mb-8 font-light">
-            Your assessment has been logged with our engineering team.
-            <br /><br />
-            Expect a follow-up email within 24 hours.
-          </p>
+        {/* Submitted */}
+        {stage === 'submitted' && (
+          <div className="space-y-6 animate-in fade-in duration-500">
+            <div className="border-l-2 border-blue-500 pl-6 py-2">
+              <p className="text-white font-bold mb-2">Report on its way.</p>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                We received your scores and will send a prioritized fix list within 1 business day.
+                If you want to talk through the results directly, book time below.
+              </p>
+            </div>
 
-          <div className="flex flex-col gap-3">
-            <Link
-              href="/security"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-zinc-900 border border-zinc-800 text-white font-bold uppercase tracking-widest text-[10px] hover:border-blue-500 transition-all"
-            >
-              <FileText size={16} className="text-blue-400" /> Read Security Whitepaper
-            </Link>
+            <div className="flex flex-col gap-3">
+              <Link
+                href="/intake"
+                className="flex items-center justify-center gap-2 px-6 py-4 bg-zinc-900 border border-zinc-800 hover:border-blue-500 text-white font-bold text-sm uppercase tracking-[0.15em] transition-colors"
+              >
+                Talk to a principal
+                <ArrowRight size={16} />
+              </Link>
+
+              <button
+                onClick={() => { setStage('form'); setScores(null); setUrl(''); }}
+                className="text-[11px] font-mono uppercase tracking-widest text-zinc-600 hover:text-zinc-400 transition-colors py-2"
+              >
+                Score another site
+              </button>
+            </div>
           </div>
-        </div>
-      )}
-
-      <p className="text-[9px] font-mono uppercase tracking-widest text-zinc-700 mt-16">
-        Direct Support: <span className="text-zinc-500 underline hover:text-white transition-colors cursor-pointer">sam@nihilosolutions.com</span>
-      </p>
-    </div>
+        )}
+      </div>
+    </main>
   );
 }

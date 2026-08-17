@@ -28,30 +28,41 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Tenant-Local AI Automation on Azure & AWS | Nihilo Solutions',
+    default: 'Website Modernization, SEO & AI Automation for Small Business | Nihilo Solutions',
     template: '%s | Nihilo Solutions',
   },
-  description: 'Production AI automation deployed inside your Azure or AWS tenancy. Tenant-local RAG, agentic workflows, SOC 2 / ISO 27001 ready. Production in 4 to 8 weeks.',
-  keywords: ['Enterprise AI', 'RAG', 'Cloud Automation', 'Azure', 'AWS', 'LLM Operations', 'Agentic Automation'],
+  description:
+    'Nihilo Solutions helps small and mid-size businesses grow with modern websites, search-engine SEO programs, and AI automation. Free growth assessment. Principal-led delivery.',
+  keywords: [
+    'website modernization',
+    'SEO for small business',
+    'AI automation',
+    'web design Connecticut',
+    'SEO agency',
+    'business AI automation',
+    'small business website',
+    'local SEO',
+  ],
   authors: [{ name: 'Nihilo Solutions' }],
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://nihilosolutions.com',
     siteName: 'Nihilo Solutions',
-    title: 'Tenant-Local AI Automation on Azure & AWS | Nihilo Solutions',
-    description: 'Production AI automation deployed inside your Azure or AWS tenancy. Tenant-local RAG, agentic workflows, SOC 2 / ISO 27001 ready. Production in 4 to 8 weeks.',
-    // TODO: replace with real 1200x630 OG image - handled in a later slice.
-    images: [{ url: 'https://nihilosolutions.com/logo.png' }],
+    title: 'Website Modernization, SEO & AI Automation | Nihilo Solutions',
+    description:
+      'Modern websites, SEO growth, and AI automation for small and mid-size businesses. Free growth assessment.',
+    images: [{ url: 'https://nihilosolutions.com/og-image.png' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tenant-Local AI Automation on Azure & AWS | Nihilo Solutions',
-    description: 'Production AI automation deployed inside your Azure or AWS tenancy. Tenant-local RAG, agentic workflows, SOC 2 / ISO 27001 ready. Production in 4 to 8 weeks.',
+    title: 'Website Modernization, SEO & AI Automation | Nihilo Solutions',
+    description:
+      'Modern websites, SEO growth, and AI automation for small and mid-size businesses. Free growth assessment.',
   },
   icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
+    icon: '/favicon.svg',
+    apple: '/apple-touch-icon.png',
   },
   metadataBase: new URL('https://nihilosolutions.com'),
 };

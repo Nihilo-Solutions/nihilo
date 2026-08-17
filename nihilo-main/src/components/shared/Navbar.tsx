@@ -2,22 +2,121 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { Menu, X, ChevronDown, Cloud, Server, Building2, Shield } from 'lucide-react';
-import { solutionPages } from '@/lib/data/pages';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
-const categories = [
-  { name: 'Azure', icon: Cloud, color: 'text-blue-400' },
-  { name: 'AWS', icon: Server, color: 'text-orange-400' },
-  { name: 'Industry', icon: Building2, color: 'text-emerald-400' },
-  { name: 'Security', icon: Shield, color: 'text-purple-400' },
-] as const;
+interface NavItem {
+  label: string;
+  href?: string;
+  children?: { label: string; href: string; description?: string }[];
+}
+
+const navItems: NavItem[] = [
+  {
+    label: 'Solutions',
+    children: [
+      {
+        label: 'Website Modernization',
+        href: '/solutions/website-modernization',
+        description: 'Modern, fast, conversion-optimized websites',
+      },
+      {
+        label: 'SEO Growth System',
+        href: '/solutions/seo-growth-system',
+        description: 'Rank for the searches your buyers make',
+      },
+      {
+        label: 'AI Automation System',
+        href: '/solutions/ai-automation-system',
+        description: 'Replace manual work with AI-driven workflows',
+      },
+    ],
+  },
+  {
+    label: 'Industries',
+    children: [
+      { label: 'Professional Services', href: '/industries/professional-services' },
+      { label: 'Healthcare', href: '/industries/healthcare' },
+      { label: 'Real Estate', href: '/industries/real-estate' },
+      { label: 'Home Services', href: '/industries/home-services' },
+      { label: 'Retail & E-commerce', href: '/industries/retail-ecommerce' },
+      { label: 'Financial Services', href: '/industries/financial-services' },
+    ],
+  },
+  {
+    label: 'Resources',
+    children: [
+      { label: 'About', href: '/about' },
+      { label: 'FAQ', href: '/faq' },
+      { label: 'Contact', href: '/contact' },
+    ],
+  },
+];
+
+interface DropdownProps {
+  item: NavItem;
+  isOpen: boolean;
+  onToggle: () => void;
+  onClose: () => void;
+}
+
+function Dropdown({ item, isOpen, onToggle, onClose }: DropdownProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleOutsideClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        onClose();
+      }
+    }
+    if (isOpen) {
+      document.addEventListener('mousedown', handleOutsideClick);
+    }
+    return () => document.removeEventListener('mousedown', handleOutsideClick);
+  }, [isOpen, onClose]);
+
+  return (
+    <div className="relative" ref={ref}>
+      <button
+        onClick={onToggle}
+        className="nav-link text-[11px] font-bold mono uppercase tracking-[0.35em] flex items-center gap-1.5"
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+      >
+        {item.label}
+        <ChevronDown
+          size={12}
+          className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+        />
+      </button>
+
+      {isOpen && item.children && (
+        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-56 bg-zinc-950/98 backdrop-blur-xl border border-zinc-800 py-2 z-50">
+          {item.children.map((child) => (
+            <Link
+              key={child.href}
+              href={child.href}
+              onClick={onClose}
+              className="block px-4 py-3 hover:bg-zinc-900 transition-colors"
+            >
+              <span className="block text-[12px] font-medium text-white">{child.label}</span>
+              {child.description && (
+                <span className="block text-[10px] text-zinc-500 mt-0.5 leading-relaxed">
+                  {child.description}
+                </span>
+              )}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
-  const [activeMobileCategory, setActiveMobileCategory] = useState<string | null>(null);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openMobileItem, setOpenMobileItem] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -25,175 +124,136 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsSolutionsOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const navItems = ['Services', 'About', 'Contact'];
-
-  const getSolutionsByCategory = (category: string) => {
-    return solutionPages.filter(page => page.category === category);
+  const toggleDropdown = (label: string) => {
+    setOpenDropdown((prev) => (prev === label ? null : label));
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'py-2 md:py-4' : 'py-4 md:py-8'}`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled ? 'py-2 md:py-4' : 'py-4 md:py-8'
+      }`}
+    >
       <div className="max-w-screen-2xl mx-auto px-4 md:px-6 lg:px-12">
-        <div className={`flex items-center justify-between px-4 md:px-8 py-3 rounded-full border transition-all duration-500
-          ${isScrolled
-            ? 'bg-zinc-950/90 backdrop-blur-xl border-zinc-800 shadow-[0_0_30px_rgba(0,0,0,0.5)]'
-            : 'bg-zinc-950/70 backdrop-blur-sm border-zinc-800/50 md:bg-transparent md:border-transparent'
-          }`}>
-
+        <div
+          className={`flex items-center justify-between px-4 md:px-8 py-3 rounded-full border transition-all duration-500
+            ${
+              isScrolled
+                ? 'bg-zinc-950/90 backdrop-blur-xl border-zinc-800 shadow-[0_0_30px_rgba(0,0,0,0.5)]'
+                : 'bg-zinc-950/70 backdrop-blur-sm border-zinc-800/50 md:bg-transparent md:border-transparent'
+            }`}
+        >
+          {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2 group">
-              <div className="w-2 h-2 bg-white rounded-full group-hover:shadow-[0_0_8px_#fff] transition-all duration-500"></div>
-              <span className="text-sm font-black tracking-[0.2em] md:tracking-[0.3em] text-white uppercase italic">Nihilo</span>
+              <div className="w-2 h-2 bg-white rounded-full group-hover:shadow-[0_0_8px_#fff] transition-all duration-500" />
+              <span className="text-sm font-black tracking-[0.2em] md:tracking-[0.3em] text-white uppercase italic">
+                Nihilo
+              </span>
             </Link>
           </div>
 
-          <div className="hidden md:flex justify-center items-center space-x-8 lg:space-x-16">
-            <div ref={dropdownRef} className="relative">
-              <button
-                onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
-                className="nav-link text-[11px] font-bold mono uppercase tracking-[0.4em] flex items-center gap-1"
-              >
-                Solutions
-                <ChevronDown size={12} className={`transition-transform ${isSolutionsOpen ? 'rotate-180' : ''}`} />
-              </button>
-
-              {isSolutionsOpen && (
-                <div className="fixed top-24 left-1/2 -translate-x-1/2 w-[800px] bg-zinc-950/95 backdrop-blur-xl border border-zinc-800 rounded-xl shadow-2xl p-6 z-50">
-                  <div className="grid grid-cols-4 gap-6">
-                    {categories.map(({ name, icon: Icon, color }) => (
-                      <div key={name}>
-                        <div className={`flex items-center gap-2 mb-3 pb-2 border-b border-zinc-800`}>
-                          <Icon size={14} className={color} />
-                          <span className={`text-xs font-bold uppercase tracking-widest ${color}`}>{name}</span>
-                        </div>
-                        <div className="space-y-1 max-h-64 overflow-y-auto scrollbar-thin">
-                          {getSolutionsByCategory(name).map((solution) => (
-                            <Link
-                              key={solution.slug}
-                              href={`/solutions/${solution.slug}`}
-                              onClick={() => setIsSolutionsOpen(false)}
-                              className="block text-xs text-zinc-400 hover:text-white hover:bg-zinc-800/50 px-2 py-1.5 rounded transition-colors"
-                            >
-                              {solution.title.replace(' Solutions', '').replace(' Services', '').replace(' Implementation', '')}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-zinc-800">
-                    <Link
-                      href="/solutions"
-                      onClick={() => setIsSolutionsOpen(false)}
-                      className="text-xs text-blue-400 hover:text-blue-300 font-bold uppercase tracking-widest"
-                    >
-                      View All Solutions →
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {navItems.map((item) => (
-              <Link
-                key={item}
-                href={`/#${item.toLowerCase()}`}
-                className="nav-link text-[11px] font-bold mono uppercase tracking-[0.4em]"
-              >
-                {item}
-              </Link>
-            ))}
+          {/* Desktop nav */}
+          <div className="hidden md:flex justify-center items-center space-x-8 lg:space-x-12">
+            {navItems.map((item) =>
+              item.children ? (
+                <Dropdown
+                  key={item.label}
+                  item={item}
+                  isOpen={openDropdown === item.label}
+                  onToggle={() => toggleDropdown(item.label)}
+                  onClose={() => setOpenDropdown(null)}
+                />
+              ) : (
+                <Link
+                  key={item.label}
+                  href={item.href ?? '#'}
+                  className="nav-link text-[11px] font-bold mono uppercase tracking-[0.35em]"
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
           </div>
 
+          {/* CTA pill + mobile toggle */}
           <div className="flex items-center space-x-3">
             <Link
-              href="/intake"
-              className="hidden sm:inline-flex btn-cta"
+              href="/tools/growth-assessment"
+              className="hidden sm:inline-flex items-center gap-2 bg-white text-black text-[10px] font-black uppercase tracking-[0.15em] px-4 py-2 rounded-full hover:bg-white/90 transition-colors"
             >
-              <span>Get started</span>
+              Check your score
             </Link>
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2 text-white hover:text-blue-400 transition-colors"
               aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
 
+        {/* Mobile menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-2 mx-2 p-6 bg-zinc-950/95 backdrop-blur-xl border border-zinc-800 rounded-2xl max-h-[80vh] overflow-y-auto">
-            <div className="flex flex-col space-y-4">
-              <div>
-                <button
-                  onClick={() => setActiveMobileCategory(activeMobileCategory ? null : 'solutions')}
-                  className="w-full flex items-center justify-between text-lg font-bold text-white uppercase tracking-widest py-2 border-b border-zinc-800"
-                >
-                  <span>Solutions</span>
-                  <ChevronDown size={20} className={`transition-transform ${activeMobileCategory === 'solutions' ? 'rotate-180' : ''}`} />
-                </button>
-
-                {activeMobileCategory === 'solutions' && (
-                  <div className="mt-3 space-y-4">
-                    {categories.map(({ name, icon: Icon, color }) => (
-                      <div key={name}>
-                        <div className={`flex items-center gap-2 mb-2`}>
-                          <Icon size={14} className={color} />
-                          <span className={`text-sm font-bold uppercase tracking-widest ${color}`}>{name}</span>
-                        </div>
-                        <div className="grid grid-cols-2 gap-1 pl-4">
-                          {getSolutionsByCategory(name).slice(0, 4).map((solution) => (
+          <div className="md:hidden mt-2 mx-2 p-4 bg-zinc-950/98 backdrop-blur-xl border border-zinc-800 rounded-2xl">
+            <div className="flex flex-col space-y-1">
+              {navItems.map((item) => (
+                <div key={item.label}>
+                  {item.children ? (
+                    <>
+                      <button
+                        onClick={() =>
+                          setOpenMobileItem((prev) => (prev === item.label ? null : item.label))
+                        }
+                        className="w-full flex items-center justify-between text-base font-bold text-white uppercase tracking-widest py-3 border-b border-zinc-900 hover:text-blue-400 transition-colors"
+                        aria-expanded={openMobileItem === item.label}
+                      >
+                        {item.label}
+                        <ChevronDown
+                          size={14}
+                          className={`transition-transform duration-200 ${
+                            openMobileItem === item.label ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </button>
+                      {openMobileItem === item.label && (
+                        <div className="pl-4 py-2 space-y-2">
+                          {item.children.map((child) => (
                             <Link
-                              key={solution.slug}
-                              href={`/solutions/${solution.slug}`}
-                              onClick={() => setIsMobileMenuOpen(false)}
-                              className="text-xs text-zinc-400 hover:text-white py-1"
+                              key={child.href}
+                              href={child.href}
+                              onClick={() => {
+                                setIsMobileMenuOpen(false);
+                                setOpenMobileItem(null);
+                              }}
+                              className="block text-sm text-zinc-400 py-2 hover:text-white transition-colors"
                             >
-                              {solution.title.replace(' Solutions', '').replace(' Services', '').replace(' Implementation', '')}
+                              {child.label}
                             </Link>
                           ))}
                         </div>
-                      </div>
-                    ))}
+                      )}
+                    </>
+                  ) : (
                     <Link
-                      href="/solutions"
+                      href={item.href ?? '#'}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="block text-sm text-blue-400 font-bold uppercase tracking-widest pt-2"
+                      className="block text-base font-bold text-white uppercase tracking-widest py-3 border-b border-zinc-900 hover:text-blue-400 transition-colors"
                     >
-                      View All →
+                      {item.label}
                     </Link>
-                  </div>
-                )}
-              </div>
-
-              {navItems.map((item) => (
-                <Link
-                  key={item}
-                  href={`/#${item.toLowerCase()}`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-bold text-white uppercase tracking-widest py-2 border-b border-zinc-800 hover:text-blue-400 transition-colors"
-                >
-                  {item}
-                </Link>
+                  )}
+                </div>
               ))}
               <Link
-                href="/intake"
+                href="/tools/growth-assessment"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="mt-4 inline-flex items-center justify-center px-6 py-3 font-mono uppercase tracking-[0.2em] text-white rounded-sm border-2 border-blue-500 bg-zinc-900 hover:bg-blue-500 hover:text-black transition-all"
+                className="mt-4 flex items-center justify-center bg-white text-black font-bold text-sm uppercase tracking-[0.15em] px-6 py-3 rounded-full hover:bg-white/90 transition-colors"
               >
-                <span className="text-[10px] font-black">Get started</span>
+                Check your score
               </Link>
             </div>
           </div>

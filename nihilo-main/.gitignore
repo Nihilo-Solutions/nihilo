@@ -28,3 +28,5 @@ tsconfig.tsbuildinfo
 
 # Office documents (e.g. client/sales drafts) should never be committed
 *.docx
+.vercel
+.env*

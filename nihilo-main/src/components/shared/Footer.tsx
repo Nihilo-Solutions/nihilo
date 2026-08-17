@@ -2,10 +2,10 @@ import Link from 'next/link';
 import Logo from './Logo';
 
 const navLinks: { label: string; href: string }[] = [
-  { label: 'Work', href: '/use-cases' },
   { label: 'Services', href: '/#services' },
-  { label: 'Intake', href: '/intake' },
-  { label: 'Security', href: '/security' },
+  { label: 'Assessment', href: '/assessment' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
   { label: 'Privacy', href: '/privacy' },
   { label: 'Terms', href: '/terms' },
 ];
@@ -30,12 +30,12 @@ const Footer: React.FC = () => (
               lineHeight: 1.8,
             }}
           >
-            AZURE-NATIVE AI CONSULTING · TENANT-LOCAL · PRINCIPAL-LED
+            WEBSITE · SEO · AI AUTOMATION · PRINCIPAL-LED
           </p>
         </div>
 
         {/* Center: navigation */}
-        <nav aria-label="Footer">
+        <nav aria-label="Footer navigation">
           <ul className="space-y-3">
             {navLinks.map(({ label, href }) => (
               <li key={href}>
@@ -64,7 +64,13 @@ const Footer: React.FC = () => (
             className="text-sm"
             style={{ fontFamily: 'var(--font-sans)', color: 'var(--n-300)' }}
           >
-            Azure Partner Network · ISC2 CC
+            Microsoft Azure Partner · ISC2 CC
+          </p>
+          <p
+            className="text-sm"
+            style={{ fontFamily: 'var(--font-sans)', color: 'var(--n-400)' }}
+          >
+            Connecticut, USA
           </p>
         </div>
       </div>
@@ -80,7 +86,7 @@ const Footer: React.FC = () => (
             letterSpacing: '0.28em',
           }}
         >
-          © 2026 · NIHILO SOLUTIONS · AZURE-NATIVE AI
+          &copy; 2026 · NIHILO SOLUTIONS LLC · CONNECTICUT
         </p>
       </div>
     </div>
