@@ -1,0 +1,49 @@
+# Nihilo Solutions
+
+> Nihilo Solutions is a principal-led studio in Fairfield, Connecticut that builds websites, lead capture and follow-up systems, and operations automation for small and mid-sized businesses, typically 5 to 150 people. Work is sold as fixed-scope packages rather than open-ended consulting. We serve service businesses, retailers, professional services firms, wholesalers and distributors, and light manufacturing and operations teams across Connecticut and nationally.
+
+## What we sell
+
+Five productized packages, each with a fixed scope, a typical timeline, and stated boundaries.
+
+- **01. Website Rebuild and Conversion System**. A fast, mobile-first site with clear offers, working lead capture, core SEO structure, redirects from old URLs, and conversion tracking. Solves outdated or template-looking sites that fail to convert visitors into inquiries, slow load times, and unclear next steps. Typical timeline 3 to 5 weeks.
+- **02. AI Lead Capture and Follow-up System**. Site chat and forms that respond instantly, qualify the inquiry, route it to the right person, log it to the CRM, and run follow-up sequences. Solves leads going cold because response takes hours or days, after-hours inquiries being lost, and inconsistent follow-up by busy owners and staff. Typical timeline 2 to 3 weeks, and it works on an existing site.
+- **03. Operations Automation Pack**. Two to four high-return workflows built and documented: lead routing, quote and status follow-up, appointment reminders, internal notifications, and reduced manual data entry. Solves owners and small teams spending significant time on repetitive admin instead of sales or delivery, and manual hand-offs that create delays and errors. Typical timeline 3 to 5 weeks.
+- **04. Industry Starter Systems**. Pre-scoped combinations of packages 01 to 03 tuned for service businesses, retail, professional services, and wholesale and distribution. Solves generic tools that do not fit how the business actually works. Typical timeline 4 to 6 weeks.
+- **05. Ongoing Growth and AI Maintenance Retainer**. Monitoring, security and dependency updates, a monthly block of small improvements, content and system upkeep, and a plain-language monthly report. Solves sites and automations that are launched and then left to decay with no one owning continuous improvement. Monthly, month to month after the initial term.
+
+## How we work
+
+Four steps: Discover (a free 30-minute call, followed by a written recommendation and fixed price), Design and Build (2 to 5 weeks, scope agreed in writing first), Launch (live, documented, handed over, with 30 days of support included), and Optimize (optional monthly retainer).
+
+## How we are different
+
+- Principal-led. The people who scope the work build it and support it. No account managers and no junior delivery team.
+- Fixed scope and fixed price, agreed in writing before work starts. Out-of-scope requests are quoted, not absorbed or silently billed.
+- Clients own everything: domain, hosting, code, data, documentation, and logins. Nothing stops working if the retainer ends.
+- We connect to the CRM, email, and scheduling tools a client already pays for rather than pushing a migration.
+- We publish no invented case studies, client names, or performance metrics.
+
+## Who we are
+
+- **Sam Oakes**, Principal, Design and Engineering. Builds AI and platform systems for regulated industries. ISC2 Certified in Cybersecurity, B.S. in Cybersecurity, published on emerging-tech risk. https://www.linkedin.com/in/samoakes123/
+- **Jake Ice**, Principal, Delivery and Operations. Scoping, delivery, and client relationships, with a B2B sales and recruiting background. https://www.linkedin.com/in/jake-ice/
+- **Ish Pandhal**, Principal, Growth. Demand, offer framing, and lead capture. https://www.linkedin.com/in/ishpalpandhal/
+
+The studio also builds and runs its own software, including Stowed, an inventory and B2B order app for small wholesalers.
+
+## Key pages
+
+- Home: https://nihilosolutions.com/
+- Solutions and packages: https://nihilosolutions.com/solutions
+- How it works: https://nihilosolutions.com/how-it-works
+- Who we help: https://nihilosolutions.com/who-we-help
+- About: https://nihilosolutions.com/about
+- Book a call: https://nihilosolutions.com/contact
+- Tell us about your business (intake form): https://nihilosolutions.com/intake
+
+## Contact
+
+- Email: sam@nihilosolutions.com
+- Location: Fairfield, Connecticut, United States
+- Preferred citation: Nihilo Solutions (nihilosolutions.com)

@@ -9,5 +9,8 @@
 # Dependencies
 node_modules/
 
+# Build output
+.next/
+
 # Logs
 *.log

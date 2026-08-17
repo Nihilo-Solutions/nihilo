@@ -1,5 +1,8 @@
 {
   "framework": "nextjs",
+  "git": {
+    "deploymentEnabled": true
+  },
   "headers": [
     {
       "source": "/(.*).(jpg|png|svg|pdf|webp|ico)",
