@@ -36,8 +36,8 @@ const NAV: NavItem[] = [
       { label: 'Financial Services',    href: '/industries/financial-services' },
     ],
   },
-  { label: 'About',    href: '/about' },
-  { label: 'Contact',  href: '/contact' },
+  { label: 'About',   href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 function DropdownMenu({
@@ -74,7 +74,7 @@ function DropdownMenu({
         <ChevronDown
           size={12}
           strokeWidth={2}
-          className={`text-[#5A6070] transition-transform duration-150 ${isOpen ? 'rotate-180' : ''}`}
+          className={`text-[#A1A1AA] transition-transform duration-150 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
 
@@ -82,10 +82,10 @@ function DropdownMenu({
         <div
           className="absolute top-full left-1/2 -translate-x-1/2 mt-2 py-1 z-50"
           style={{
-            background: '#0D0F16',
-            border: '1px solid rgba(255,255,255,0.09)',
+            background: '#FFFFFF',
+            border: '1px solid rgba(0,0,0,0.1)',
             width: item.children.length > 3 ? '220px' : '260px',
-            boxShadow: '0 16px 40px rgba(0,0,0,0.6)',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
           }}
         >
           {item.children.map((child) => (
@@ -93,13 +93,13 @@ function DropdownMenu({
               key={child.href}
               href={child.href}
               onClick={onClose}
-              className="block px-4 py-3 hover:bg-white/4 transition-colors"
+              className="block px-4 py-3 hover:bg-black/4 transition-colors"
             >
-              <span className="block text-[13px] font-medium text-[#E0E2E8]">
+              <span className="block text-[13px] font-medium text-[#0F0F0F]">
                 {child.label}
               </span>
               {child.description && (
-                <span className="block text-[11px] text-[#5A6070] mt-0.5 leading-snug">
+                <span className="block text-[11px] text-[#A1A1AA] mt-0.5 leading-snug">
                   {child.description}
                 </span>
               )}
@@ -131,8 +131,8 @@ const Navbar: React.FC = () => {
       <nav
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-200"
         style={{
-          background: scrolled ? 'rgba(5,6,10,0.92)' : 'transparent',
-          borderBottom: scrolled ? '1px solid rgba(255,255,255,0.07)' : '1px solid transparent',
+          background: scrolled ? 'rgba(255,255,255,0.95)' : 'transparent',
+          borderBottom: scrolled ? '1px solid rgba(0,0,0,0.08)' : '1px solid transparent',
           backdropFilter: scrolled ? 'blur(12px)' : 'none',
         }}
       >
@@ -146,13 +146,13 @@ const Navbar: React.FC = () => {
               aria-label="Nihilo Solutions — home"
             >
               <span
-                className="text-[13px] font-bold tracking-[0.28em] text-[#F0F1F3] uppercase"
+                className="text-[13px] font-bold tracking-[0.28em] text-[#0F0F0F] uppercase"
                 style={{ fontFamily: 'var(--font-space-grotesk)' }}
               >
                 Nihilo
               </span>
               <span
-                className="hidden sm:block text-[10px] tracking-[0.15em] text-[#3A3F4A] uppercase"
+                className="hidden sm:block text-[10px] tracking-[0.15em] text-[#A1A1AA] uppercase"
                 style={{ fontFamily: 'var(--font-mono)' }}
               >
                 Solutions
@@ -190,7 +190,7 @@ const Navbar: React.FC = () => {
 
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="md:hidden text-[#9AA0AE] hover:text-[#F0F1F3] transition-colors p-1"
+                className="md:hidden text-[#52525B] hover:text-[#0F0F0F] transition-colors p-1"
                 aria-label="Toggle navigation"
                 aria-expanded={mobileOpen}
               >
@@ -201,11 +201,11 @@ const Navbar: React.FC = () => {
         </div>
       </nav>
 
-      {/* Mobile menu — full-width slide */}
+      {/* Mobile menu */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 z-40 flex flex-col pt-16 overflow-y-auto md:hidden"
-          style={{ background: '#05060A', borderTop: '1px solid rgba(255,255,255,0.07)' }}
+          className="fixed inset-0 z-40 flex flex-col pt-16 overflow-y-auto md:hidden bg-white"
+          style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }}
         >
           <div className="flex-1 px-6 py-6 space-y-1">
             {NAV.map((item) =>
@@ -213,7 +213,7 @@ const Navbar: React.FC = () => {
                 <div key={item.label}>
                   <button
                     onClick={() => setOpenMobile((p) => (p === item.label ? null : item.label))}
-                    className="w-full flex items-center justify-between py-4 text-[14px] font-medium text-[#9AA0AE] border-b border-white/6"
+                    className="w-full flex items-center justify-between py-4 text-[14px] font-medium text-[#52525B] border-b border-black/6"
                     aria-expanded={openMobile === item.label}
                   >
                     {item.label}
@@ -230,7 +230,7 @@ const Navbar: React.FC = () => {
                           key={child.href}
                           href={child.href}
                           onClick={() => { setMobileOpen(false); setOpenMobile(null); }}
-                          className="block py-3 text-[13px] text-[#5A6070] hover:text-[#F0F1F3] transition-colors"
+                          className="block py-3 text-[13px] text-[#A1A1AA] hover:text-[#0F0F0F] transition-colors"
                         >
                           {child.label}
                         </Link>
@@ -243,7 +243,7 @@ const Navbar: React.FC = () => {
                   key={item.label}
                   href={item.href ?? '#'}
                   onClick={() => setMobileOpen(false)}
-                  className="block py-4 text-[14px] font-medium text-[#9AA0AE] border-b border-white/6 hover:text-[#F0F1F3] transition-colors"
+                  className="block py-4 text-[14px] font-medium text-[#52525B] border-b border-black/6 hover:text-[#0F0F0F] transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -252,7 +252,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile CTA */}
-          <div className="px-6 py-8 border-t border-white/6">
+          <div className="px-6 py-8 border-t border-black/6">
             <Link
               href="/tools/growth-assessment"
               onClick={() => setMobileOpen(false)}

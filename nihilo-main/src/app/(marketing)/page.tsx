@@ -73,11 +73,11 @@ const painCards = [
 
 const industryItems = [
   { name: 'Professional Services', slug: 'professional-services' },
-  { name: 'Healthcare', slug: 'healthcare' },
-  { name: 'Real Estate', slug: 'real-estate' },
-  { name: 'Home Services', slug: 'home-services' },
-  { name: 'Retail & E-commerce', slug: 'retail-ecommerce' },
-  { name: 'Financial Services', slug: 'financial-services' },
+  { name: 'Healthcare',            slug: 'healthcare' },
+  { name: 'Real Estate',           slug: 'real-estate' },
+  { name: 'Home Services',         slug: 'home-services' },
+  { name: 'Retail & E-commerce',   slug: 'retail-ecommerce' },
+  { name: 'Financial Services',    slug: 'financial-services' },
 ];
 
 const stats = [
@@ -107,7 +107,7 @@ const resources = [
 
 export default function HomePage() {
   return (
-    <div style={{ background: '#05060A', color: '#F0F1F3' }}>
+    <div style={{ background: '#FFFFFF' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -119,13 +119,13 @@ export default function HomePage() {
         <section
           id="problem"
           className="border-t"
-          style={{ borderColor: 'rgba(255,255,255,0.07)', background: '#05060A' }}
+          style={{ borderColor: 'rgba(0,0,0,0.08)', background: '#F7F6F4' }}
         >
           <div className="max-w-screen-xl mx-auto px-6 lg:px-16 py-24 md:py-36">
             <div className="mb-16 max-w-2xl">
               <p className="label mb-4">The problem</p>
               <h2
-                className="text-[#F0F1F3] tracking-tight leading-tight"
+                className="text-[#0F0F0F] tracking-tight leading-tight"
                 style={{
                   fontFamily: 'var(--font-space-grotesk)',
                   fontSize: 'clamp(28px, 3.5vw, 44px)',
@@ -140,32 +140,29 @@ export default function HomePage() {
               {painCards.map((card) => (
                 <div
                   key={card.num}
-                  className="p-8 transition-colors"
-                  style={{
-                    background: '#111318',
-                    border: '1px solid rgba(255,255,255,0.07)',
-                  }}
+                  className="p-8 bg-white"
+                  style={{ border: '1px solid rgba(0,0,0,0.08)' }}
                 >
                   <span
                     className="block font-mono text-[11px] tracking-[0.25em] mb-4"
-                    style={{ color: '#3A3F4A' }}
+                    style={{ color: '#A1A1AA' }}
                   >
                     {card.num}
                   </span>
                   <h3
-                    className="text-[#F0F1F3] mb-4 leading-snug"
+                    className="text-[#0F0F0F] mb-4 leading-snug"
                     style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '17px', fontWeight: 600 }}
                   >
                     {card.headline}
                   </h3>
-                  <p className="text-[13px] leading-relaxed" style={{ color: '#5A6070' }}>
+                  <p className="text-[13px] leading-relaxed" style={{ color: '#52525B' }}>
                     {card.body}
                   </p>
                 </div>
               ))}
             </div>
 
-            <p className="mt-10 text-[13px] leading-relaxed" style={{ color: '#3A3F4A' }}>
+            <p className="mt-10 text-[13px] leading-relaxed" style={{ color: '#A1A1AA' }}>
               If any of these sound familiar, you are not alone. 45% of small businesses have no SEO strategy. Most have a website that was built to check a box, not to grow a business.
             </p>
           </div>
@@ -183,13 +180,13 @@ export default function HomePage() {
         <section
           id="industries"
           className="border-t"
-          style={{ borderColor: 'rgba(255,255,255,0.07)', background: '#05060A' }}
+          style={{ borderColor: 'rgba(0,0,0,0.08)', background: '#FFFFFF' }}
         >
           <div className="max-w-screen-xl mx-auto px-6 lg:px-16 py-24 md:py-36">
             <div className="mb-16 max-w-2xl">
               <p className="label mb-4">Industries we serve</p>
               <h2
-                className="text-[#F0F1F3] tracking-tight leading-tight"
+                className="text-[#0F0F0F] tracking-tight leading-tight"
                 style={{
                   fontFamily: 'var(--font-space-grotesk)',
                   fontSize: 'clamp(28px, 3.5vw, 44px)',
@@ -198,30 +195,27 @@ export default function HomePage() {
               >
                 Built for businesses that compete on reputation.
               </h2>
-              <p className="text-[#9AA0AE] text-[15px] leading-relaxed mt-4">
+              <p className="text-[#52525B] text-[15px] leading-relaxed mt-4">
                 We specialize in industries where trust, local presence, and consistent follow-up are the difference between winning and losing business.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-px" style={{ background: 'rgba(255,255,255,0.07)' }}>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-px" style={{ background: 'rgba(0,0,0,0.08)' }}>
               {industryItems.map((item) => (
                 <Link
                   key={item.slug}
                   href={`/industries/${item.slug}`}
-                  className="group flex items-center justify-between p-6 transition-colors"
-                  style={{ background: '#05060A' }}
+                  className="group flex items-center justify-between p-6 bg-white hover:bg-[#F7F6F4] transition-colors"
                 >
                   <span
-                    className="text-[13px] font-medium transition-colors"
-                    style={{ color: '#9AA0AE' }}
+                    className="text-[13px] font-medium text-[#0F0F0F] group-hover:text-[#E8610A] transition-colors"
                   >
                     {item.name}
                   </span>
                   <ArrowRight
                     size={13}
                     strokeWidth={1.5}
-                    style={{ color: '#3A3F4A' }}
-                    className="transition-transform duration-150 group-hover:translate-x-0.5"
+                    className="text-[#A1A1AA] group-hover:text-[#E8610A] transition-colors transition-transform duration-150 group-hover:translate-x-0.5"
                   />
                 </Link>
               ))}
@@ -233,13 +227,13 @@ export default function HomePage() {
         <section
           id="assessment"
           className="border-t"
-          style={{ borderColor: 'rgba(255,255,255,0.07)', background: '#0B0D14' }}
+          style={{ borderColor: 'rgba(0,0,0,0.08)', background: '#F7F6F4' }}
         >
           <div className="max-w-screen-xl mx-auto px-6 lg:px-16 py-24 md:py-36">
             <div className="max-w-2xl">
               <p className="label mb-4">Free · No obligation</p>
               <h2
-                className="text-[#F0F1F3] tracking-tight leading-tight mb-4"
+                className="text-[#0F0F0F] tracking-tight leading-tight mb-4"
                 style={{
                   fontFamily: 'var(--font-space-grotesk)',
                   fontSize: 'clamp(28px, 3.5vw, 44px)',
@@ -248,7 +242,7 @@ export default function HomePage() {
               >
                 See how your business scores.
               </h2>
-              <p className="text-[#9AA0AE] text-[15px] leading-relaxed mb-10 max-w-lg">
+              <p className="text-[#52525B] text-[15px] leading-relaxed mb-10 max-w-lg">
                 Enter your website URL and get a free speed, SEO, and mobile score in under 60 seconds.
                 We will tell you exactly what is costing you traffic and leads.
               </p>
@@ -269,7 +263,7 @@ export default function HomePage() {
         <section
           id="statistics"
           className="border-t"
-          style={{ borderColor: 'rgba(255,255,255,0.07)', background: '#05060A' }}
+          style={{ borderColor: 'rgba(0,0,0,0.08)', background: '#FFFFFF' }}
         >
           <div className="max-w-screen-xl mx-auto px-6 lg:px-16 py-24 md:py-36">
             <p className="label mb-16">Why this matters</p>
@@ -277,15 +271,16 @@ export default function HomePage() {
               {stats.map((stat) => (
                 <div key={stat.value} className="space-y-3">
                   <p
-                    className="text-[#F0F1F3] font-bold leading-none"
+                    className="font-bold leading-none"
                     style={{
                       fontFamily: 'var(--font-space-grotesk)',
                       fontSize: 'clamp(36px, 4vw, 52px)',
+                      color: '#E8610A',
                     }}
                   >
                     {stat.value}
                   </p>
-                  <p className="text-[13px] leading-relaxed" style={{ color: '#5A6070' }}>
+                  <p className="text-[13px] leading-relaxed" style={{ color: '#52525B' }}>
                     {stat.label}
                   </p>
                 </div>
@@ -298,14 +293,14 @@ export default function HomePage() {
         <section
           id="resources"
           className="border-t"
-          style={{ borderColor: 'rgba(255,255,255,0.07)', background: '#0B0D14' }}
+          style={{ borderColor: 'rgba(0,0,0,0.08)', background: '#F7F6F4' }}
         >
           <div className="max-w-screen-xl mx-auto px-6 lg:px-16 py-24 md:py-36">
             <div className="flex items-end justify-between mb-16">
               <div>
                 <p className="label mb-4">Resources</p>
                 <h2
-                  className="text-[#F0F1F3] tracking-tight leading-tight"
+                  className="text-[#0F0F0F] tracking-tight leading-tight"
                   style={{
                     fontFamily: 'var(--font-space-grotesk)',
                     fontSize: 'clamp(24px, 2.5vw, 36px)',
@@ -315,7 +310,10 @@ export default function HomePage() {
                   Practical guides, free.
                 </h2>
               </div>
-              <span className="hidden md:block text-[12px] tracking-[0.15em] uppercase" style={{ fontFamily: 'var(--font-mono)', color: '#3A3F4A' }}>
+              <span
+                className="hidden md:block text-[12px] tracking-[0.15em] uppercase"
+                style={{ fontFamily: 'var(--font-mono)', color: '#A1A1AA' }}
+              >
                 Coming soon
               </span>
             </div>
@@ -324,45 +322,50 @@ export default function HomePage() {
               {resources.map((resource) => (
                 <div
                   key={resource.title}
-                  className="p-6 space-y-4"
-                  style={{ background: '#111318', border: '1px solid rgba(255,255,255,0.07)' }}
+                  className="p-6 bg-white space-y-4"
+                  style={{ border: '1px solid rgba(0,0,0,0.08)' }}
                 >
                   <span className="label">{resource.tag}</span>
                   <h3
-                    className="text-[#F0F1F3] leading-snug"
+                    className="text-[#0F0F0F] leading-snug"
                     style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '15px', fontWeight: 600 }}
                   >
                     {resource.title}
                   </h3>
-                  <p className="text-[13px] leading-relaxed" style={{ color: '#5A6070' }}>
+                  <p className="text-[13px] leading-relaxed" style={{ color: '#52525B' }}>
                     {resource.description}
                   </p>
-                  <span className="label" style={{ color: '#3A3F4A' }}>Available soon</span>
+                  <span className="label" style={{ color: '#A1A1AA' }}>Available soon</span>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Final CTA */}
-        <section
-          id="cta"
-          className="border-t"
-          style={{ borderColor: 'rgba(255,255,255,0.07)', background: '#05060A' }}
-        >
+        {/* Final CTA — dark section */}
+        <section id="cta" style={{ background: '#111111' }}>
           <div className="max-w-screen-xl mx-auto px-6 lg:px-16 py-24 md:py-40 text-center">
-            <p className="label mb-6">Ready to start</p>
+            <p
+              className="label mb-6"
+              style={{ color: '#555555' }}
+            >
+              Ready to start
+            </p>
             <h2
-              className="text-[#F0F1F3] tracking-tight leading-tight mb-6 max-w-2xl mx-auto"
+              className="tracking-tight leading-tight mb-6 max-w-2xl mx-auto"
               style={{
                 fontFamily: 'var(--font-space-grotesk)',
                 fontSize: 'clamp(32px, 4.5vw, 60px)',
                 fontWeight: 600,
+                color: '#F5F5F5',
               }}
             >
               Ready to build from nothing?
             </h2>
-            <p className="text-[#9AA0AE] text-[15px] leading-relaxed mb-10 max-w-lg mx-auto">
+            <p
+              className="text-[15px] leading-relaxed mb-10 max-w-lg mx-auto"
+              style={{ color: '#888888' }}
+            >
               Start with a free growth assessment. See exactly where your business stands and what to fix first.
               No pitch, no obligation.
             </p>
@@ -371,7 +374,11 @@ export default function HomePage() {
                 Get free assessment
                 <ArrowRight size={14} strokeWidth={2} />
               </Link>
-              <Link href="/intake" className="btn-secondary">
+              <Link
+                href="/intake"
+                className="btn-secondary"
+                style={{ color: '#888888', borderColor: 'rgba(255,255,255,0.15)' }}
+              >
                 Talk to a principal
               </Link>
             </div>

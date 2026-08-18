@@ -3,32 +3,34 @@
 
 /* =============================================================
    NIHILO SOLUTIONS — DESIGN TOKENS
-   Dark-first. No glows. No blobs. No scale transforms.
-   Reference: Stripe, Linear, Vercel aesthetic.
+   Light-first. Orange accent. Enterprise-grade readability.
+   Stripe / HubSpot / Cloudflare aesthetic.
    ============================================================= */
 
 :root {
-  /* Brand */
-  --void:        #05060A;
-  --ink:         #0B0D14;
-  --surface:     #111318;
-  --surface-2:   #1A1D25;
-  --border:      rgba(255, 255, 255, 0.07);
-  --border-2:    rgba(255, 255, 255, 0.13);
+  /* Backgrounds */
+  --void:      #FFFFFF;
+  --ink:       #F7F6F4;
+  --surface:   #EFEFEC;
+  --surface-2: #E5E4E0;
+
+  /* Borders */
+  --border:    rgba(0, 0, 0, 0.09);
+  --border-2:  rgba(0, 0, 0, 0.18);
 
   /* Text */
-  --text:        #F0F1F3;
-  --text-2:      #9AA0AE;
-  --text-3:      #5A6070;
+  --text:   #0F0F0F;
+  --text-2: #52525B;
+  --text-3: #A1A1AA;
 
-  /* Accent — one blue, used sparingly */
-  --azure:       #2D6BFF;
-  --azure-dim:   rgba(45, 107, 255, 0.12);
+  /* Accent — one orange, used sparingly */
+  --orange:     #E8610A;
+  --orange-dim: rgba(232, 97, 10, 0.08);
 
   /* Status */
-  --ok:          #3FB984;
-  --warn:        #E5A23C;
-  --err:         #E5544A;
+  --ok:   #16A34A;
+  --warn: #D97706;
+  --err:  #DC2626;
 
   /* Radii — tight, enterprise */
   --r-0: 0px;
@@ -73,11 +75,11 @@ body {
 }
 
 ::selection {
-  background: rgba(45, 107, 255, 0.25);
+  background: rgba(232, 97, 10, 0.18);
 }
 
 /* ============================================================
-   Utility classes — no glows, no scale, no blob shadows
+   Utility classes
    ============================================================ */
 
 /* Label / eyebrow */
@@ -90,7 +92,7 @@ body {
   color: var(--text-3);
 }
 
-/* Primary CTA — white fill, dark text, sharp */
+/* Primary CTA — orange fill, white text */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -99,8 +101,8 @@ body {
   font-family: var(--font-sans);
   font-size: 14px;
   font-weight: 600;
-  color: #05060A;
-  background: #F0F1F3;
+  color: #ffffff;
+  background: var(--orange);
   border: 1px solid transparent;
   border-radius: var(--r-1);
   cursor: pointer;
@@ -111,7 +113,7 @@ body {
 }
 
 .btn-primary:hover {
-  background: #ffffff;
+  background: #C9520A;
 }
 
 /* Secondary CTA — outlined */
@@ -136,7 +138,7 @@ body {
 
 .btn-secondary:hover {
   color: var(--text);
-  border-color: rgba(255, 255, 255, 0.28);
+  border-color: rgba(0, 0, 0, 0.35);
 }
 
 /* Ghost — text link with arrow */
@@ -156,7 +158,7 @@ body {
   color: var(--text);
 }
 
-/* Nav link — clean underline on hover, no glow */
+/* Nav link */
 .nav-link {
   position: relative;
   font-family: var(--font-sans);
@@ -178,13 +180,21 @@ body {
   background: var(--border);
 }
 
-/* Card — dark surface, precise border */
+/* Card — light surface */
 .card {
-  background: var(--surface);
+  background: var(--void);
   border: 1px solid var(--border);
-  transition: border-color var(--dur-base) var(--ease);
+  transition: border-color var(--dur-base) var(--ease),
+              box-shadow var(--dur-base) var(--ease);
 }
 
 .card:hover {
   border-color: var(--border-2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Dark section — inverted (footer, final CTA) */
+.section-dark {
+  background: #111111;
+  color: #F5F5F5;
 }
