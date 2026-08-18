@@ -1,6 +1,6 @@
 // MICROSOFT_BOOKING_URL: replace this placeholder with your Microsoft Booking page URL.
 // e.g. https://outlook.office365.com/owa/calendar/NihiloSolutions@.../bookingpage/
-const BOOKING_URL = 'REPLACE_WITH_MICROSOFT_BOOKING_URL';
+const BOOKING_URL = 'https://outlook.office.com/book/NihiloSolutionsDiscoveryCall@nihilosolutions.com/';
 
 export default function IntakeForm() {
   return (
