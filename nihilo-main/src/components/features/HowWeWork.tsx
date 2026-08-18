@@ -1,4 +1,4 @@
-const phases: { num: string; title: string; body: string }[] = [
+const phases = [
   {
     num: '01',
     title: 'Growth Assessment',
@@ -6,17 +6,17 @@ const phases: { num: string; title: string; body: string }[] = [
   },
   {
     num: '02',
-    title: 'Scoped proposal',
+    title: 'Scoped Proposal',
     body: 'We scope the engagement based on what the audit found. Fixed price, fixed scope. No surprises. You know exactly what we are building and what it costs before we start.',
   },
   {
     num: '03',
-    title: 'Build and launch',
+    title: 'Build and Launch',
     body: 'We build. You review. We launch. Most projects are live in 2 to 4 weeks. You keep full ownership of everything we build: the code, the content, the accounts.',
   },
   {
     num: '04',
-    title: 'Measure and improve',
+    title: 'Measure and Improve',
     body: 'We set up tracking before launch so you can see what is working. Monthly reporting, optional ongoing retainer. You choose how much support you want after launch.',
   },
 ];
@@ -24,95 +24,41 @@ const phases: { num: string; title: string; body: string }[] = [
 const HowWeWork: React.FC = () => {
   return (
     <section
-      className="bg-white"
-      style={{ paddingTop: '120px', paddingBottom: '120px', fontFamily: 'var(--font-inter)' }}
+      className="border-t"
+      style={{ borderColor: 'rgba(255,255,255,0.07)', background: '#0B0D14' }}
     >
-      <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
+      <div className="max-w-screen-xl mx-auto px-6 lg:px-16 py-24 md:py-36">
 
         {/* Header */}
-        <p
-          className="uppercase"
-          style={{
-            fontFamily: 'var(--font-jetbrains-mono)',
-            fontSize: '11px',
-            color: '#9AA0AE',
-            letterSpacing: '0.3em',
-            marginBottom: '24px',
-          }}
-        >
-          HOW AN ENGAGEMENT RUNS
-        </p>
-
-        <h2
-          className="leading-tight"
-          style={{
-            fontFamily: 'var(--font-space-grotesk)',
-            fontSize: '44px',
-            fontWeight: 600,
-            color: '#0B0D14',
-          }}
-        >
-          From audit
-          <br />
-          <span className="italic" style={{ color: '#2D6BFF' }}>to results.</span>
-        </h2>
-
-        <p
-          style={{
-            fontFamily: 'var(--font-inter)',
-            fontSize: '18px',
-            color: '#6B7280',
-            maxWidth: '560px',
-            marginTop: '16px',
-            lineHeight: 1.6,
-          }}
-        >
-          Every engagement starts with a free assessment. We find the gaps, scope the fix, build it, and measure what changes. No surprises, no hand-offs to junior staff.
-        </p>
+        <div className="mb-20 max-w-2xl">
+          <p className="label mb-4">How an engagement runs</p>
+          <h2
+            className="text-[#F0F1F3] tracking-tight leading-tight"
+            style={{
+              fontFamily: 'var(--font-space-grotesk)',
+              fontSize: 'clamp(28px, 3.5vw, 44px)',
+              fontWeight: 600,
+            }}
+          >
+            From audit to results.
+          </h2>
+          <p className="text-[#9AA0AE] text-[15px] leading-relaxed mt-4 max-w-lg">
+            Every engagement starts with a free assessment. We find the gaps, scope the fix, build it, and measure what changes. No surprises, no hand-offs to junior staff.
+          </p>
+        </div>
 
         {/* Four phases */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
           {phases.map((phase) => (
-            <div
-              key={phase.num}
-              className="phase-card"
-              style={{
-                borderLeft: '1px solid #E4E6EB',
-                paddingLeft: '24px',
-                transition: 'border-color 200ms ease',
-              }}
-            >
-              <p
-                className="uppercase"
-                style={{
-                  fontFamily: 'var(--font-jetbrains-mono)',
-                  fontSize: '10px',
-                  color: '#9AA0AE',
-                  letterSpacing: '0.2em',
-                  marginBottom: '12px',
-                }}
-              >
-                PHASE {phase.num}
-              </p>
+            <div key={phase.num} className="phase-item" style={{ borderLeft: '1px solid rgba(255,255,255,0.07)', paddingLeft: '24px' }}>
+              <p className="label mb-3" style={{ color: '#3A3F4A' }}>Phase {phase.num}</p>
               <h3
-                style={{
-                  fontFamily: 'var(--font-space-grotesk)',
-                  fontSize: '18px',
-                  fontWeight: 600,
-                  color: '#0B0D14',
-                  marginBottom: '12px',
-                }}
+                className="text-[#F0F1F3] mb-3 leading-snug"
+                style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '17px', fontWeight: 600 }}
               >
                 {phase.title}
               </h3>
-              <p
-                style={{
-                  fontFamily: 'var(--font-inter)',
-                  fontSize: '14px',
-                  color: '#6B7280',
-                  lineHeight: 1.7,
-                }}
-              >
+              <p className="text-[13px] leading-relaxed" style={{ color: '#5A6070' }}>
                 {phase.body}
               </p>
             </div>
@@ -121,21 +67,14 @@ const HowWeWork: React.FC = () => {
 
         {/* Footer note */}
         <p
-          className="text-center italic"
-          style={{
-            fontFamily: 'var(--font-inter)',
-            fontSize: '13px',
-            color: '#9AA0AE',
-            marginTop: '48px',
-          }}
+          className="mt-12 text-[11px] tracking-[0.1em] uppercase"
+          style={{ fontFamily: 'var(--font-mono)', color: '#3A3F4A' }}
         >
-          Principal-led throughout. You work with Sam or Jake at every phase, not a project manager.
+          Principal-led throughout — you work with Sam or Jake at every phase, not a project manager.
         </p>
       </div>
 
-      <style>{`
-        .phase-card:hover { border-left-color: #2D6BFF !important; }
-      `}</style>
+      <style>{`.phase-item { transition: border-left-color 200ms; } .phase-item:hover { border-left-color: rgba(255,255,255,0.22) !important; }`}</style>
     </section>
   );
 };

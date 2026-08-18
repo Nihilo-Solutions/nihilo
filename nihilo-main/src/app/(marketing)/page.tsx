@@ -56,18 +56,18 @@ const organizationSchema = {
 const painCards = [
   {
     num: '01',
-    headline: 'You can\'t be found.',
-    body: 'Potential customers search for exactly what you offer every day. They find your competitors and never know you exist. A website no one visits cannot generate leads.',
+    headline: "You can't be found.",
+    body: "Potential customers search for exactly what you offer every day. They find your competitors and never know you exist. A website no one visits cannot generate leads.",
   },
   {
     num: '02',
-    headline: 'Your site doesn\'t convert.',
-    body: 'Visitors land and leave. No clear offer, slow load times, and a contact form buried at the bottom. You\'re paying to drive traffic to a page that does nothing with it.',
+    headline: "Your site doesn't convert.",
+    body: "Visitors land and leave. No clear offer, slow load times, and a contact form buried at the bottom. You're paying to drive traffic to a page that does nothing with it.",
   },
   {
     num: '03',
     headline: 'Manual work kills growth.',
-    body: 'Follow-up emails, scheduling, reporting, data entry — your team spends 10-20 hours a week on work that should run on autopilot. That time is not going back into growing the business.',
+    body: "Follow-up emails, scheduling, reporting, data entry — your team spends 10-20 hours a week on work that should run on autopilot. That time is not going back into growing the business.",
   },
 ];
 
@@ -90,7 +90,7 @@ const stats = [
 const resources = [
   {
     tag: 'Guide',
-    title: 'Why your website isn\'t generating leads (and how to fix it)',
+    title: "Why your website isn't generating leads (and how to fix it)",
     description: 'The most common conversion killers on small business websites, ranked by impact.',
   },
   {
@@ -107,7 +107,7 @@ const resources = [
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen bg-zinc-950 text-zinc-200 selection:bg-blue-500/30">
+    <div style={{ background: '#05060A', color: '#F0F1F3' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -116,13 +116,22 @@ export default function HomePage() {
         <Hero />
 
         {/* Problem section */}
-        <section id="problem" className="py-20 md:py-32 bg-[#0a0a0a] border-t border-white/5">
-          <div className="max-w-screen-2xl mx-auto px-4 md:px-6 lg:px-12">
+        <section
+          id="problem"
+          className="border-t"
+          style={{ borderColor: 'rgba(255,255,255,0.07)', background: '#05060A' }}
+        >
+          <div className="max-w-screen-xl mx-auto px-6 lg:px-16 py-24 md:py-36">
             <div className="mb-16 max-w-2xl">
-              <span className="font-mono text-xs uppercase tracking-widest text-white/50 mb-4 block">
-                The problem
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
+              <p className="label mb-4">The problem</p>
+              <h2
+                className="text-[#F0F1F3] tracking-tight leading-tight"
+                style={{
+                  fontFamily: 'var(--font-space-grotesk)',
+                  fontSize: 'clamp(28px, 3.5vw, 44px)',
+                  fontWeight: 600,
+                }}
+              >
                 Three things stopping your business from growing online.
               </h2>
             </div>
@@ -131,57 +140,89 @@ export default function HomePage() {
               {painCards.map((card) => (
                 <div
                   key={card.num}
-                  className="bg-[#111] border border-white/8 p-8 hover:border-white/20 transition-colors"
+                  className="p-8 transition-colors"
+                  style={{
+                    background: '#111318',
+                    border: '1px solid rgba(255,255,255,0.07)',
+                  }}
                 >
-                  <span className="font-mono text-xs uppercase tracking-widest text-white/30 mb-4 block">
+                  <span
+                    className="block font-mono text-[11px] tracking-[0.25em] mb-4"
+                    style={{ color: '#3A3F4A' }}
+                  >
                     {card.num}
                   </span>
-                  <h3 className="text-lg font-bold text-white mb-4">{card.headline}</h3>
-                  <p className="text-sm text-white/60 leading-relaxed">{card.body}</p>
+                  <h3
+                    className="text-[#F0F1F3] mb-4 leading-snug"
+                    style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '17px', fontWeight: 600 }}
+                  >
+                    {card.headline}
+                  </h3>
+                  <p className="text-[13px] leading-relaxed" style={{ color: '#5A6070' }}>
+                    {card.body}
+                  </p>
                 </div>
               ))}
             </div>
 
-            <p className="mt-10 text-sm text-white/40 italic">
+            <p className="mt-10 text-[13px] leading-relaxed" style={{ color: '#3A3F4A' }}>
               If any of these sound familiar, you are not alone. 45% of small businesses have no SEO strategy. Most have a website that was built to check a box, not to grow a business.
             </p>
           </div>
         </section>
 
-        {/* Solutions overview (Services component) */}
+        {/* Services */}
         <Services />
 
-        {/* How we work (NGS 4-phase timeline) */}
+        {/* How we work */}
         <section id="how-it-works">
           <HowWeWork />
         </section>
 
         {/* Industries */}
-        <section id="industries" className="py-20 md:py-32 bg-[#0a0a0a] border-t border-white/5">
-          <div className="max-w-screen-2xl mx-auto px-4 md:px-6 lg:px-12">
+        <section
+          id="industries"
+          className="border-t"
+          style={{ borderColor: 'rgba(255,255,255,0.07)', background: '#05060A' }}
+        >
+          <div className="max-w-screen-xl mx-auto px-6 lg:px-16 py-24 md:py-36">
             <div className="mb-16 max-w-2xl">
-              <span className="font-mono text-xs uppercase tracking-widest text-white/50 mb-4 block">
-                Industries we serve
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
+              <p className="label mb-4">Industries we serve</p>
+              <h2
+                className="text-[#F0F1F3] tracking-tight leading-tight"
+                style={{
+                  fontFamily: 'var(--font-space-grotesk)',
+                  fontSize: 'clamp(28px, 3.5vw, 44px)',
+                  fontWeight: 600,
+                }}
+              >
                 Built for businesses that compete on reputation.
               </h2>
-              <p className="mt-4 text-white/60 text-base leading-relaxed">
+              <p className="text-[#9AA0AE] text-[15px] leading-relaxed mt-4">
                 We specialize in industries where trust, local presence, and consistent follow-up are the difference between winning and losing business.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-px" style={{ background: 'rgba(255,255,255,0.07)' }}>
               {industryItems.map((item) => (
                 <Link
                   key={item.slug}
                   href={`/industries/${item.slug}`}
-                  className="group bg-[#111] border border-white/8 p-6 hover:border-white/20 transition-colors flex items-center justify-between"
+                  className="group flex items-center justify-between p-6 transition-colors"
+                  style={{ background: '#05060A' }}
                 >
-                  <span className="text-sm font-medium text-white/80 group-hover:text-white transition-colors">
+                  <span
+                    className="text-[13px] font-medium transition-colors"
+                    style={{ color: '#9AA0AE' }}
+                  >
                     {item.name}
                   </span>
-                  <ArrowRight size={14} className="text-white/30 group-hover:text-white/60 transition-colors" />
+                  <ArrowRight
+                    size={13}
+                    strokeWidth={1.5}
+                    style={{ color: '#3A3F4A' }}
+                    className="transition-transform duration-150 group-hover:translate-x-0.5"
+                  />
                 </Link>
               ))}
             </div>
@@ -189,34 +230,34 @@ export default function HomePage() {
         </section>
 
         {/* Assessment teaser */}
-        <section id="assessment" className="py-20 md:py-32 bg-white border-t border-zinc-100">
-          <div className="max-w-screen-2xl mx-auto px-4 md:px-6 lg:px-12">
+        <section
+          id="assessment"
+          className="border-t"
+          style={{ borderColor: 'rgba(255,255,255,0.07)', background: '#0B0D14' }}
+        >
+          <div className="max-w-screen-xl mx-auto px-6 lg:px-16 py-24 md:py-36">
             <div className="max-w-2xl">
-              <p className="font-mono text-xs uppercase tracking-widest text-zinc-400 mb-4">
-                Free · No obligation
-              </p>
+              <p className="label mb-4">Free · No obligation</p>
               <h2
-                className="text-3xl md:text-4xl font-bold text-zinc-900 leading-tight mb-4"
-                style={{ fontFamily: 'var(--font-space-grotesk)' }}
+                className="text-[#F0F1F3] tracking-tight leading-tight mb-4"
+                style={{
+                  fontFamily: 'var(--font-space-grotesk)',
+                  fontSize: 'clamp(28px, 3.5vw, 44px)',
+                  fontWeight: 600,
+                }}
               >
                 See how your business scores.
               </h2>
-              <p className="text-zinc-600 text-base leading-relaxed mb-8 max-w-xl">
+              <p className="text-[#9AA0AE] text-[15px] leading-relaxed mb-10 max-w-lg">
                 Enter your website URL and get a free speed, SEO, and mobile score in under 60 seconds.
                 We will tell you exactly what is costing you traffic and leads.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/tools/growth-assessment"
-                  className="inline-flex items-center justify-center gap-2 bg-[#0B0D14] text-white px-8 py-3 text-sm font-medium hover:bg-[#1a1d27] transition-colors"
-                >
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link href="/tools/growth-assessment" className="btn-primary">
                   Get my free assessment
-                  <ArrowRight size={14} />
+                  <ArrowRight size={14} strokeWidth={2} />
                 </Link>
-                <Link
-                  href="/intake"
-                  className="inline-flex items-center justify-center gap-2 border border-zinc-300 text-zinc-900 px-8 py-3 text-sm font-medium hover:border-zinc-400 transition-colors"
-                >
+                <Link href="/intake" className="btn-secondary">
                   Talk to a principal
                 </Link>
               </div>
@@ -225,16 +266,28 @@ export default function HomePage() {
         </section>
 
         {/* Statistics */}
-        <section id="statistics" className="py-20 md:py-32 bg-[#0a0a0a] border-t border-white/5">
-          <div className="max-w-screen-2xl mx-auto px-4 md:px-6 lg:px-12">
-            <span className="font-mono text-xs uppercase tracking-widest text-white/50 mb-12 block">
-              Why this matters
-            </span>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <section
+          id="statistics"
+          className="border-t"
+          style={{ borderColor: 'rgba(255,255,255,0.07)', background: '#05060A' }}
+        >
+          <div className="max-w-screen-xl mx-auto px-6 lg:px-16 py-24 md:py-36">
+            <p className="label mb-16">Why this matters</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
               {stats.map((stat) => (
                 <div key={stat.value} className="space-y-3">
-                  <p className="text-4xl md:text-5xl font-black text-white">{stat.value}</p>
-                  <p className="text-sm text-white/50 leading-relaxed">{stat.label}</p>
+                  <p
+                    className="text-[#F0F1F3] font-bold leading-none"
+                    style={{
+                      fontFamily: 'var(--font-space-grotesk)',
+                      fontSize: 'clamp(36px, 4vw, 52px)',
+                    }}
+                  >
+                    {stat.value}
+                  </p>
+                  <p className="text-[13px] leading-relaxed" style={{ color: '#5A6070' }}>
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </div>
@@ -242,34 +295,49 @@ export default function HomePage() {
         </section>
 
         {/* Resources preview */}
-        <section id="resources" className="py-20 md:py-32 bg-[#0a0a0a] border-t border-white/5">
-          <div className="max-w-screen-2xl mx-auto px-4 md:px-6 lg:px-12">
-            <div className="flex items-end justify-between mb-12">
+        <section
+          id="resources"
+          className="border-t"
+          style={{ borderColor: 'rgba(255,255,255,0.07)', background: '#0B0D14' }}
+        >
+          <div className="max-w-screen-xl mx-auto px-6 lg:px-16 py-24 md:py-36">
+            <div className="flex items-end justify-between mb-16">
               <div>
-                <span className="font-mono text-xs uppercase tracking-widest text-white/50 mb-4 block">
-                  Resources
-                </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+                <p className="label mb-4">Resources</p>
+                <h2
+                  className="text-[#F0F1F3] tracking-tight leading-tight"
+                  style={{
+                    fontFamily: 'var(--font-space-grotesk)',
+                    fontSize: 'clamp(24px, 2.5vw, 36px)',
+                    fontWeight: 600,
+                  }}
+                >
                   Practical guides, free.
                 </h2>
               </div>
-              <span className="text-sm text-white/40 hidden md:block">Coming soon</span>
+              <span className="hidden md:block text-[12px] tracking-[0.15em] uppercase" style={{ fontFamily: 'var(--font-mono)', color: '#3A3F4A' }}>
+                Coming soon
+              </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {resources.map((resource) => (
                 <div
                   key={resource.title}
-                  className="bg-[#111] border border-white/8 p-6 space-y-4"
+                  className="p-6 space-y-4"
+                  style={{ background: '#111318', border: '1px solid rgba(255,255,255,0.07)' }}
                 >
-                  <span className="font-mono text-xs uppercase tracking-widest text-white/40">
-                    {resource.tag}
-                  </span>
-                  <h3 className="text-base font-bold text-white leading-snug">{resource.title}</h3>
-                  <p className="text-sm text-white/50 leading-relaxed">{resource.description}</p>
-                  <span className="text-xs font-mono text-white/30 uppercase tracking-widest">
-                    Available soon
-                  </span>
+                  <span className="label">{resource.tag}</span>
+                  <h3
+                    className="text-[#F0F1F3] leading-snug"
+                    style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '15px', fontWeight: 600 }}
+                  >
+                    {resource.title}
+                  </h3>
+                  <p className="text-[13px] leading-relaxed" style={{ color: '#5A6070' }}>
+                    {resource.description}
+                  </p>
+                  <span className="label" style={{ color: '#3A3F4A' }}>Available soon</span>
                 </div>
               ))}
             </div>
@@ -277,33 +345,33 @@ export default function HomePage() {
         </section>
 
         {/* Final CTA */}
-        <section id="cta" className="py-24 md:py-40 bg-zinc-950 border-t border-white/5">
-          <div className="max-w-screen-2xl mx-auto px-4 md:px-6 lg:px-12 text-center">
-            <span className="font-mono text-xs uppercase tracking-widest text-white/50 mb-6 block">
-              Ready to start
-            </span>
+        <section
+          id="cta"
+          className="border-t"
+          style={{ borderColor: 'rgba(255,255,255,0.07)', background: '#05060A' }}
+        >
+          <div className="max-w-screen-xl mx-auto px-6 lg:px-16 py-24 md:py-40 text-center">
+            <p className="label mb-6">Ready to start</p>
             <h2
-              className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-6 max-w-3xl mx-auto"
-              style={{ fontFamily: 'var(--font-space-grotesk)' }}
+              className="text-[#F0F1F3] tracking-tight leading-tight mb-6 max-w-2xl mx-auto"
+              style={{
+                fontFamily: 'var(--font-space-grotesk)',
+                fontSize: 'clamp(32px, 4.5vw, 60px)',
+                fontWeight: 600,
+              }}
             >
               Ready to build from nothing?
             </h2>
-            <p className="text-white/60 text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+            <p className="text-[#9AA0AE] text-[15px] leading-relaxed mb-10 max-w-lg mx-auto">
               Start with a free growth assessment. See exactly where your business stands and what to fix first.
               No pitch, no obligation.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/tools/growth-assessment"
-                className="inline-flex items-center justify-center gap-2 bg-white text-black px-8 py-3 text-sm font-medium hover:bg-white/90 transition-colors"
-              >
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link href="/tools/growth-assessment" className="btn-primary">
                 Get free assessment
-                <ArrowRight size={14} />
+                <ArrowRight size={14} strokeWidth={2} />
               </Link>
-              <Link
-                href="/intake"
-                className="inline-flex items-center justify-center gap-2 border border-white/20 text-white px-8 py-3 text-sm font-medium hover:border-white/40 transition-colors"
-              >
+              <Link href="/intake" className="btn-secondary">
                 Talk to a principal
               </Link>
             </div>

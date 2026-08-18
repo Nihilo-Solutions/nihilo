@@ -32,15 +32,17 @@ async function fetchPageSpeedScores(url: string): Promise<AssessmentScores> {
   const params = new URLSearchParams({ url });
   if (apiKey) params.set('key', apiKey);
 
-  const [desktopRes, mobileRes] = await Promise.all([
-    fetch(`${base}?${params}&strategy=desktop`),
-    fetch(`${base}?${params}&strategy=mobile`),
-  ]);
+  // Sequential requests to avoid bursting the unauthenticated rate limit
+  const desktopRes = await fetch(`${base}?${params}&strategy=desktop`);
+  if (!desktopRes.ok) {
+    if (desktopRes.status === 429) throw Object.assign(new Error('rate_limited'), { status: 429 });
+    throw new Error(`PageSpeed API error ${desktopRes.status}`);
+  }
 
-  if (!desktopRes.ok || !mobileRes.ok) {
-    throw new Error(
-      `PageSpeed API error: desktop=${desktopRes.status} mobile=${mobileRes.status}`,
-    );
+  const mobileRes = await fetch(`${base}?${params}&strategy=mobile`);
+  if (!mobileRes.ok) {
+    if (mobileRes.status === 429) throw Object.assign(new Error('rate_limited'), { status: 429 });
+    throw new Error(`PageSpeed API error ${mobileRes.status}`);
   }
 
   const [desktop, mobile]: [PageSpeedResponse, PageSpeedResponse] = await Promise.all([
@@ -72,6 +74,13 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     const scores = await fetchPageSpeedScores(url);
     return NextResponse.json({ scores });
   } catch (err: unknown) {
+    const isRateLimited = err instanceof Error && err.message === 'rate_limited';
+    if (isRateLimited) {
+      return NextResponse.json(
+        { error: "We're getting a lot of requests right now. Please try again in about a minute." },
+        { status: 429 },
+      );
+    }
     const message = err instanceof Error ? err.message : 'Unknown error';
     console.error('[assess] error:', message);
     return NextResponse.json({ error: message }, { status: 500 });

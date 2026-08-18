@@ -1,9 +1,8 @@
 import Link from 'next/link';
-import Logo from './Logo';
 
 const navLinks: { label: string; href: string }[] = [
   { label: 'Services', href: '/#services' },
-  { label: 'Assessment', href: '/assessment' },
+  { label: 'Assessment', href: '/tools/growth-assessment' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
   { label: 'Privacy', href: '/privacy' },
@@ -11,26 +10,38 @@ const navLinks: { label: string; href: string }[] = [
 ];
 
 const Footer: React.FC = () => (
-  <footer className="bg-zinc-950 pt-24 pb-12">
-    <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
+  <footer
+    className="border-t"
+    style={{ background: '#05060A', borderColor: 'rgba(255,255,255,0.07)' }}
+  >
+    <div className="max-w-screen-xl mx-auto px-6 lg:px-16 pt-16 pb-10">
 
-      {/* Top row: three columns */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-16">
+      {/* Top row */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-12">
 
-        {/* Left: logo lockup + tagline */}
+        {/* Left: wordmark + tagline */}
         <div>
-          <Logo className="text-white mb-6" width="180px" />
+          <div className="flex items-center gap-3 mb-5">
+            <span
+              className="text-[13px] font-bold tracking-[0.28em] text-[#F0F1F3] uppercase"
+              style={{ fontFamily: 'var(--font-space-grotesk)' }}
+            >
+              Nihilo
+            </span>
+            <span
+              className="text-[10px] tracking-[0.15em] text-[#3A3F4A] uppercase"
+              style={{ fontFamily: 'var(--font-mono)' }}
+            >
+              Solutions
+            </span>
+          </div>
           <p
-            className="uppercase"
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
-              color: 'var(--n-400)',
-              letterSpacing: '0.28em',
-              lineHeight: 1.8,
-            }}
+            className="text-[10px] tracking-[0.2em] uppercase leading-relaxed"
+            style={{ fontFamily: 'var(--font-mono)', color: '#3A3F4A' }}
           >
-            WEBSITE · SEO · AI AUTOMATION · PRINCIPAL-LED
+            Website · SEO · AI Automation
+            <br />
+            Principal-led delivery
           </p>
         </div>
 
@@ -41,7 +52,7 @@ const Footer: React.FC = () => (
               <li key={href}>
                 <Link
                   href={href}
-                  className="text-sm text-zinc-300 hover:text-white transition-colors"
+                  className="text-[13px] text-[#5A6070] hover:text-[#F0F1F3] transition-colors"
                   style={{ fontFamily: 'var(--font-sans)' }}
                 >
                   {label}
@@ -55,38 +66,27 @@ const Footer: React.FC = () => (
         <div className="space-y-3">
           <a
             href="mailto:sam@nihilosolutions.com"
-            className="block text-sm text-zinc-300 hover:text-white transition-colors"
+            className="block text-[13px] text-[#9AA0AE] hover:text-[#F0F1F3] transition-colors"
             style={{ fontFamily: 'var(--font-sans)' }}
           >
             sam@nihilosolutions.com
           </a>
-          <p
-            className="text-sm"
-            style={{ fontFamily: 'var(--font-sans)', color: 'var(--n-300)' }}
-          >
+          <p className="text-[13px]" style={{ fontFamily: 'var(--font-sans)', color: '#5A6070' }}>
             Microsoft Azure Partner · ISC2 CC
           </p>
-          <p
-            className="text-sm"
-            style={{ fontFamily: 'var(--font-sans)', color: 'var(--n-400)' }}
-          >
+          <p className="text-[13px]" style={{ fontFamily: 'var(--font-sans)', color: '#3A3F4A' }}>
             Connecticut, USA
           </p>
         </div>
       </div>
 
       {/* Bottom rule + copyright */}
-      <div className="pt-8" style={{ borderTop: '1px solid var(--n-700)' }}>
+      <div className="pt-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.07)' }}>
         <p
-          className="uppercase"
-          style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: '9px',
-            color: 'var(--n-600)',
-            letterSpacing: '0.28em',
-          }}
+          className="text-[9px] tracking-[0.28em] uppercase"
+          style={{ fontFamily: 'var(--font-mono)', color: '#3A3F4A' }}
         >
-          &copy; 2026 · NIHILO SOLUTIONS LLC · CONNECTICUT
+          &copy; 2026 · Nihilo Solutions LLC · Connecticut
         </p>
       </div>
     </div>

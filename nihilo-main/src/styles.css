@@ -2,359 +2,189 @@
 @source "./**/*.{js,ts,jsx,tsx}";
 
 /* =============================================================
-   NIHILO SOLUTIONS, DESIGN TOKENS
-   Mirrored from ~/Desktop/nihilo/design/design_system/colors_and_type.css
-   (brand kit v1.0). Today's session brief flips canonical from dark
-   to light; `:root` therefore declares the light defaults inline and
-   `[data-theme="dark"]` overrides for the one dark section (Philosophy).
+   NIHILO SOLUTIONS — DESIGN TOKENS
+   Dark-first. No glows. No blobs. No scale transforms.
+   Reference: Stripe, Linear, Vercel aesthetic.
    ============================================================= */
 
 :root {
-  color-scheme: light;
+  /* Brand */
+  --void:        #05060A;
+  --ink:         #0B0D14;
+  --surface:     #111318;
+  --surface-2:   #1A1D25;
+  --border:      rgba(255, 255, 255, 0.07);
+  --border-2:    rgba(255, 255, 255, 0.13);
 
-  /* Brand core */
-  --brand-void:      #05060A;
-  --brand-ink:       #0B0D14;
-  --brand-azure:     #2D6BFF;
-  --brand-azure-lit: #5B8BFF;
-  --brand-azure-dim: #1E3A8A;
-  --brand-bone:      #F4F5F7;
-  --brand-chalk:     #FFFFFF;
+  /* Text */
+  --text:        #F0F1F3;
+  --text-2:      #9AA0AE;
+  --text-3:      #5A6070;
 
-  /* Neutral scale (cool, tuned to azure) */
-  --n-0:   #FFFFFF;
-  --n-50:  #F4F5F7;
-  --n-100: #E4E6EB;
-  --n-200: #C7CBD4;
-  --n-300: #9AA0AE;
-  --n-400: #6B7280;
-  --n-500: #4B5360;
-  --n-600: #303643;
-  --n-700: #1E222D;
-  --n-800: #14171F;
-  --n-900: #0B0D14;
-  --n-950: #05060A;
+  /* Accent — one blue, used sparingly */
+  --azure:       #2D6BFF;
+  --azure-dim:   rgba(45, 107, 255, 0.12);
 
-  /* Semantic (light defaults) */
-  --bg:          var(--brand-chalk);
-  --bg-sunk:     #EAECF0;
-  --bg-raised:   var(--brand-bone);
-  --bg-elev:     #FFFFFF;
+  /* Status */
+  --ok:          #3FB984;
+  --warn:        #E5A23C;
+  --err:         #E5544A;
 
-  --fg:          var(--n-900);
-  --fg-mute:     var(--n-700);
-  --fg-dim:      var(--n-400);
-  --fg-faint:    var(--n-300);
-
-  --line:        rgba(11, 13, 20, 0.08);
-  --line-strong: rgba(11, 13, 20, 0.16);
-  --line-azure:  rgba(45, 107, 255, 0.28);
-
-  --accent:      var(--brand-azure);
-  --accent-lit:  var(--brand-azure-lit);
-  --accent-ink:  #FFFFFF; /* text on azure fills (light theme) */
-
-  /* Status (muted, never candy-colored) */
-  --ok:   #3FB984;
-  --warn: #E5A23C;
-  --err:  #E5544A;
-  --info: var(--brand-azure);
-
-  /* Radii (minimal, precise, never pill-y except nav) */
+  /* Radii — tight, enterprise */
   --r-0: 0px;
   --r-1: 2px;
   --r-2: 4px;
-  --r-3: 8px;
-  --r-4: 12px;
-  --r-5: 16px;
-  --r-full: 9999px;
+  --r-3: 6px;
 
-  /* Spacing (4px baseline) */
-  --s-0: 0;
-  --s-1: 4px;
-  --s-2: 8px;
-  --s-3: 12px;
-  --s-4: 16px;
-  --s-5: 24px;
-  --s-6: 32px;
-  --s-7: 48px;
-  --s-8: 64px;
-  --s-9: 96px;
-  --s-10: 128px;
-
-  /* Elevation */
-  --shadow-1: 0 1px 2px rgba(11, 13, 20, 0.06);
-  --shadow-2: 0 4px 12px rgba(11, 13, 20, 0.08);
-  --shadow-3: 0 12px 40px rgba(11, 13, 20, 0.12);
-
-  /* Type families.
-     The Next.js next/font instances expose --font-inter, --font-jetbrains-mono,
-     --font-space-grotesk on <html>. The brand-kit semantic names below alias
-     those so component styles can reference --font-display etc. without caring
-     about the underlying loader. */
+  /* Type */
   --font-sans:    var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono:    var(--font-jetbrains-mono), ui-monospace, "SF Mono", Consolas, monospace;
   --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
 
-  /* Type scale */
-  --t-hero:    clamp(56px, 8vw, 112px);
-  --t-h1:      clamp(40px, 5vw, 64px);
-  --t-h2:      clamp(28px, 3.5vw, 44px);
-  --t-h3:      24px;
-  --t-h4:      18px;
+  /* Scale */
+  --t-display: clamp(52px, 7vw, 96px);
+  --t-h1:      clamp(36px, 4.5vw, 60px);
+  --t-h2:      clamp(26px, 3vw, 40px);
+  --t-h3:      22px;
   --t-body:    16px;
   --t-sm:      14px;
   --t-xs:      12px;
-  --t-eyebrow: 11px;
+  --t-label:   11px;
 
   --lh-tight: 1.05;
-  --lh-snug:  1.2;
-  --lh-body:  1.55;
+  --lh-snug:  1.18;
+  --lh-body:  1.6;
 
-  /* Motion */
-  --ease-out:    cubic-bezier(0.2, 0.8, 0.2, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --dur-fast:    150ms;
-  --dur-base:    240ms;
-  --dur-slow:    400ms;
-}
-
-/* Dark mode override for surfaces that opt in via data-theme="dark"
-   (e.g., the Philosophy section). The brand-kit colors_and_type.css uses
-   this same selector pattern. */
-[data-theme="dark"] {
-  color-scheme: dark;
-
-  --bg:          var(--brand-ink);
-  --bg-sunk:     var(--brand-void);
-  --bg-raised:   var(--n-800);
-  --bg-elev:     var(--n-700);
-
-  --fg:          var(--n-0);
-  --fg-mute:     var(--n-200);
-  --fg-dim:      var(--n-300);
-  --fg-faint:    var(--n-500);
-
-  --line:        rgba(255, 255, 255, 0.08);
-  --line-strong: rgba(255, 255, 255, 0.16);
-  --line-azure:  rgba(45, 107, 255, 0.32);
-
-  --accent-ink:  #0A1738; /* text on azure fills (dark theme) */
-
-  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.35);
-  --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.45);
-  --shadow-3: 0 12px 40px rgba(0, 0, 0, 0.55);
-}
-
-body {
-  background-color: var(--bg);
-  color: var(--fg);
-  font-family: var(--font-sans);
+  /* Motion — restrained */
+  --ease:     cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
 }
 
 /* ============================================================
-   Legacy button utility classes from the dark-theme implementation.
-   Branch 3b will revisit these as the site shell goes light-first.
-   Kept here so /solutions, /solutions/[slug], and Navbar don't break
-   during the transition.
+   Base
    ============================================================ */
 
+body {
+  background-color: var(--void);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(45, 107, 255, 0.25);
+}
+
+/* ============================================================
+   Utility classes — no glows, no scale, no blob shadows
+   ============================================================ */
+
+/* Label / eyebrow */
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--t-label);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text-3);
+}
+
+/* Primary CTA — white fill, dark text, sharp */
 .btn-primary {
-  position: relative;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: white;
-  background: #27272a;
-  border: 1px solid #3b82f6;
-  border-radius: 2px;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: #05060A;
+  background: #F0F1F3;
+  border: 1px solid transparent;
+  border-radius: var(--r-1);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background var(--dur-fast) var(--ease),
+              color var(--dur-fast) var(--ease);
+  white-space: nowrap;
+  text-decoration: none;
 }
 
 .btn-primary:hover {
-  background: #3b82f6;
-  color: white;
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+  background: #ffffff;
 }
 
-.btn-primary:hover svg {
-  transform: translateX(4px);
-}
-
+/* Secondary CTA — outlined */
 .btn-secondary {
-  position: relative;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #e4e4e7;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-2);
   background: transparent;
-  border: 1px solid #52525b;
-  border-radius: 2px;
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-1);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease);
+  white-space: nowrap;
+  text-decoration: none;
 }
 
 .btn-secondary:hover {
-  border-color: #3b82f6;
-  background: rgba(59, 130, 246, 0.15);
-  color: white;
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.28);
 }
 
-.btn-secondary:hover svg {
-  transform: translateX(4px);
+/* Ghost — text link with arrow */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-2);
+  transition: color var(--dur-fast) var(--ease);
+  text-decoration: none;
 }
 
+.btn-ghost:hover {
+  color: var(--text);
+}
+
+/* Nav link — clean underline on hover, no glow */
 .nav-link {
   position: relative;
-  color: #f4f4f5;
-  transition: all 0.3s ease;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #3b82f6;
-  box-shadow: 0 0 8px #3b82f6;
-  transition: width 0.3s ease;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-2);
+  transition: color var(--dur-fast) var(--ease);
+  text-decoration: none;
 }
 
 .nav-link:hover {
-  color: #60a5fa;
-  text-shadow: 0 0 12px rgba(96, 165, 250, 0.8);
+  color: var(--text);
 }
 
-.nav-link:hover::after {
+/* Section divider */
+.divider {
   width: 100%;
+  height: 1px;
+  background: var(--border);
 }
 
-.btn-cta {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.5rem 1.25rem;
-  font-family: var(--font-mono);
-  font-size: 0.625rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: white;
-  background: #18181b;
-  border: 2px solid #3b82f6;
-  border-radius: 2px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+/* Card — dark surface, precise border */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color var(--dur-base) var(--ease);
 }
 
-.btn-cta:hover {
-  background: #3b82f6;
-  color: black;
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
-  transform: scale(1.05);
-}
-
-/* ============================================================
-   Table of Contents styles (sticky, dark theme).
-   Still scoped to the dark TOC component; not yet migrated.
-   ============================================================ */
-
-.toc {
-  --toc-bg: rgba(10, 10, 10, 0.85);
-  --toc-border: rgba(255, 255, 255, 0.06);
-  --toc-accent: #3b82f6;
-  --toc-text: #d4d4d8;
-
-  position: sticky;
-  top: 0;
-  z-index: 60;
-  backdrop-filter: blur(6px);
-  background: linear-gradient(180deg, var(--toc-bg), rgba(10, 10, 10, 0.72));
-  border-bottom: 1px solid var(--toc-border);
-  padding: 0.6rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  overflow: hidden;
-}
-
-.toc__toggle {
-  display: none;
-  background: transparent;
-  color: var(--toc-text);
-  border: none;
-  font: inherit;
-  cursor: pointer;
-  align-items: center;
-  gap: .5rem;
-}
-.toc__toggle:focus { outline: 2px solid var(--toc-accent); outline-offset: 2px; border-radius: 6px; }
-
-.toc__list {
-  display: flex;
-  gap: 0.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.toc__list::-webkit-scrollbar { height: 6px; }
-.toc__list::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.06); border-radius: 4px; }
-
-.toc__link {
-  display: inline-block;
-  padding: 0.45rem 0.8rem;
-  border-radius: 999px;
-  color: var(--toc-text);
-  text-decoration: none;
-  font-size: 0.78rem;
-  letter-spacing: .06em;
-  background: transparent;
-  border: 1px solid transparent;
-  transition: all 160ms ease;
-}
-.toc__link:hover,
-.toc__link:focus {
-  transform: translateY(-2px);
-  background: rgba(59, 130, 246, 0.08);
-  border-color: rgba(59, 130, 246, 0.18);
-  color: white;
-  outline: none;
-}
-.toc__link[aria-current="true"] {
-  background: linear-gradient(90deg, rgba(59, 130, 246, 0.14), rgba(147, 197, 253, 0.06));
-  color: white;
-  border: 1px solid rgba(59, 130, 246, 0.32);
-  box-shadow: 0 4px 18px rgba(59, 130, 246, 0.06);
-}
-
-@media (max-width: 768px) {
-  .toc { padding: 0.4rem 0.75rem; gap: 0.5rem; }
-  .toc__toggle { display: inline-flex; }
-  .toc__list { display: none; width: 100%; gap: 0.5rem; }
-  .toc--open .toc__list { display: flex; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .toc__link, .toc__link:hover { transition: none; transform: none; }
+.card:hover {
+  border-color: var(--border-2);
 }

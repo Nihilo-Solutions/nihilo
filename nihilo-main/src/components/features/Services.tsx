@@ -1,147 +1,150 @@
 import Link from 'next/link';
-import { Monitor, TrendingUp, Cpu } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
-interface Service {
-  icon: LucideIcon;
-  iconColor: string;
-  number: string;
-  headline: string;
-  tagline: string;
-  body: string;
-  bullets: string[];
-  ctaHref: string;
-  ctaLabel: string;
-}
-
-const services: Service[] = [
+const services = [
   {
-    icon: Monitor,
-    iconColor: 'text-blue-400',
     number: '01',
     headline: 'Website Modernization',
-    tagline: 'A site that actually converts.',
-    body: 'Most small business websites are slow, hard to find, and impossible to update. We redesign and rebuild on a modern stack, tuned for speed, mobile, and search from day one.',
+    tagline: 'A site that earns its keep.',
+    body: 'Most small business websites are slow, invisible, and impossible to update. We rebuild on a modern stack — performance-first, mobile-first, conversion-first — so your site works as hard as you do.',
     bullets: [
-      'Performance-first build on Next.js (90+ Lighthouse across the board)',
-      'Mobile-first responsive design that works on every screen',
-      'Clean CMS integration so you can update copy without a developer',
-      'On-page SEO baked in: structured data, meta tags, canonical URLs',
+      '90+ Lighthouse score across performance, SEO, and accessibility',
+      'Mobile-first responsive design, tested on real devices',
+      'On-page SEO built in: structured data, meta tags, canonical URLs',
+      'CMS integration so your team can update copy without a developer',
     ],
-    ctaHref: '/assessment',
-    ctaLabel: 'Score my current site',
+    href: '/solutions/website-modernization',
+    cta: 'Learn more',
   },
   {
-    icon: TrendingUp,
-    iconColor: 'text-emerald-400',
     number: '02',
     headline: 'SEO Growth System',
-    tagline: 'Rank for the searches that bring buyers.',
-    body: 'We build a keyword-grounded content and technical SEO program targeting the terms your buyers actually search. Not vanity traffic, not generic articles. Qualified visitors who are ready to spend.',
+    tagline: 'Rank for searches that bring buyers, not browsers.',
+    body: 'We build a keyword-grounded program targeting terms your buyers actually search. Monthly content, technical remediation, and local SEO for businesses that serve a geography.',
     bullets: [
-      'Keyword research tied to buyer intent, not search volume alone',
-      'Technical SEO audit and remediation (Core Web Vitals, indexing, schema)',
-      'Monthly content production targeting high-value, low-competition terms',
-      'Local SEO for businesses that serve a specific geography',
+      'Keyword research anchored to buyer intent, not vanity volume',
+      'Technical SEO audit and remediation — Core Web Vitals, indexing, schema',
+      'Monthly content targeting high-value, low-competition terms',
+      'Local SEO: Google Business Profile, citations, location pages',
     ],
-    ctaHref: '/assessment',
-    ctaLabel: 'See my SEO score',
+    href: '/solutions/seo-growth-system',
+    cta: 'Learn more',
   },
   {
-    icon: Cpu,
-    iconColor: 'text-purple-400',
     number: '03',
     headline: 'AI Automation System',
     tagline: 'Automate the work that eats your week.',
-    body: 'We identify the repetitive manual tasks in your business, lead follow-up, scheduling, reporting, data entry, and replace them with AI-driven workflows that run without you touching them.',
+    body: 'We identify the manual tasks costing your team the most time — lead follow-up, scheduling, reporting, data entry — and replace them with AI-driven workflows that run without you.',
     bullets: [
-      'Process audit to find the highest-leverage automation targets',
+      'Process audit to identify the highest-leverage automation targets',
       'AI-powered lead response and follow-up sequences',
-      'Automated reporting, scheduling, and data pipelines',
-      'Human-in-the-loop for exceptions; fully autonomous on routine work',
+      'Automated scheduling, reporting, and data pipelines',
+      'Human-in-the-loop for exceptions; fully autonomous on routine tasks',
     ],
-    ctaHref: '/intake',
-    ctaLabel: 'Tell us what to automate',
+    href: '/solutions/ai-automation-system',
+    cta: 'Learn more',
   },
 ];
 
-interface ServiceIconProps {
-  icon: LucideIcon;
-  colorClass: string;
-}
-
-const ServiceIcon = ({ icon: Icon, colorClass }: ServiceIconProps) => (
-  <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-zinc-900 border border-zinc-800 mb-6">
-    <Icon size={22} strokeWidth={1.5} className={colorClass} />
-  </div>
-);
-
 const Services: React.FC = () => {
   return (
-    <section id="services" className="py-20 md:py-32 bg-zinc-950 relative border-t border-zinc-900">
-      <div className="max-w-screen-2xl mx-auto px-4 md:px-6 lg:px-12">
+    <section
+      id="services"
+      className="border-t"
+      style={{ borderColor: 'rgba(255,255,255,0.07)', background: '#05060A' }}
+    >
+      <div className="max-w-screen-xl mx-auto px-6 lg:px-16 py-24 md:py-36">
 
-        {/* Header */}
-        <div className="mb-16 md:mb-24 max-w-2xl">
-          <span className="text-[10px] mono uppercase tracking-[0.4em] text-zinc-600 mb-4 block">
-            01 // What we do
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
-            Three ways we grow your business.
-          </h2>
-          <p className="mt-4 text-zinc-400 text-base leading-relaxed">
-            Built for small and mid-size businesses that are done leaving growth on the table.
-            Each service is scoped, priced, and delivered by the principals who design it.
+        {/* Header row */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-20">
+          <div>
+            <p className="label mb-4">What we build</p>
+            <h2
+              className="text-[#F0F1F3] tracking-tight leading-tight"
+              style={{
+                fontFamily: 'var(--font-space-grotesk)',
+                fontSize: 'clamp(28px, 3.5vw, 44px)',
+                fontWeight: 600,
+              }}
+            >
+              Three systems.
+              <br />
+              One outcome: growth.
+            </h2>
+          </div>
+          <p className="text-[#9AA0AE] text-[15px] leading-relaxed max-w-sm">
+            Each service is scoped, priced, and delivered by the principals who design it. No hand-offs to junior staff.
           </p>
         </div>
 
-        {/* Service cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {services.map((service) => {
-            const Icon = service.icon;
-            return (
-              <article
-                key={service.number}
-                className="group p-8 md:p-10 bg-zinc-900/40 border border-zinc-800/50 rounded-xl hover:bg-zinc-900/70 hover:border-zinc-700 transition-all duration-300 flex flex-col"
-              >
-                <ServiceIcon icon={Icon} colorClass={service.iconColor} />
-
+        {/* Service rows */}
+        <div className="space-y-0">
+          {services.map((service, i) => (
+            <div
+              key={service.number}
+              className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 py-16"
+              style={{ borderTop: i > 0 ? '1px solid rgba(255,255,255,0.07)' : undefined }}
+            >
+              {/* Number + headline */}
+              <div className="md:col-span-4">
                 <span
-                  className="text-[10px] mono uppercase tracking-[0.3em] text-zinc-600 mb-3"
+                  className="block font-mono text-[11px] tracking-[0.25em] mb-4"
+                  style={{ color: '#3A3F4A' }}
                 >
                   {service.number}
                 </span>
-
-                <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
+                <h3
+                  className="text-[#F0F1F3] leading-snug mb-3"
+                  style={{
+                    fontFamily: 'var(--font-space-grotesk)',
+                    fontSize: 'clamp(20px, 2vw, 26px)',
+                    fontWeight: 600,
+                  }}
+                >
                   {service.headline}
                 </h3>
-
-                <p className="text-sm text-zinc-400 italic mb-5">
+                <p className="text-[14px] leading-relaxed" style={{ color: '#5A6070' }}>
                   {service.tagline}
                 </p>
+              </div>
 
-                <p className="text-sm text-zinc-300 leading-relaxed mb-6">
+              {/* Body + bullets */}
+              <div className="md:col-span-5">
+                <p className="text-[#9AA0AE] text-[15px] leading-relaxed mb-6">
                   {service.body}
                 </p>
-
-                <ul className="text-zinc-500 text-[13px] space-y-2 mb-8 flex-1">
-                  {service.bullets.map((bullet, i) => (
-                    <li key={i} className="flex gap-2">
-                      <span className="text-zinc-700 mt-0.5 shrink-0">-</span>
-                      <span>{bullet}</span>
+                <ul className="space-y-3">
+                  {service.bullets.map((b) => (
+                    <li key={b} className="flex items-start gap-3">
+                      <span
+                        className="mt-2 shrink-0 w-1 h-1 rounded-full"
+                        style={{ background: '#3A3F4A' }}
+                        aria-hidden="true"
+                      />
+                      <span className="text-[13px] leading-relaxed" style={{ color: '#5A6070' }}>
+                        {b}
+                      </span>
                     </li>
                   ))}
                 </ul>
+              </div>
 
+              {/* CTA */}
+              <div className="md:col-span-3 flex md:justify-end md:items-start">
                 <Link
-                  href={service.ctaHref}
-                  className="inline-block text-[11px] font-mono uppercase tracking-[0.2em] text-blue-400 hover:text-blue-300 border border-blue-500/30 hover:border-blue-400/60 px-4 py-2.5 rounded-sm transition-all duration-200 text-center"
+                  href={service.href}
+                  className="btn-ghost group"
                 >
-                  {service.ctaLabel}
+                  {service.cta}
+                  <ArrowRight
+                    size={14}
+                    strokeWidth={1.5}
+                    className="transition-transform duration-150 group-hover:translate-x-0.5"
+                  />
                 </Link>
-              </article>
-            );
-          })}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
