@@ -1,42 +1,26 @@
-import Link from 'next/link';
-import { Terminal, ArrowLeft, Hash } from 'lucide-react';
+import Link from "next/link";
+import { Button } from "@/components/site/ui/button";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-zinc-950 flex flex-col items-center justify-center px-6 text-center">
-      <div className="absolute inset-0 grid-bg opacity-5 pointer-events-none"></div>
-      
-      <div className="relative">
-        <div className="flex justify-center mb-8">
-          <div className="p-4 bg-zinc-900 border border-zinc-800 rounded-sm">
-            <Terminal size={40} className="text-blue-500" />
-          </div>
-        </div>
-
-        <h1 className="text-8xl font-black text-white italic tracking-tighter mb-4 opacity-20">
-          404
+    <section className="py-24">
+      <div className="mx-auto w-[min(70rem,calc(100%-2.5rem))]">
+        <p className="mb-4 text-xs tracking-[0.16em] text-muted uppercase">404</p>
+        <h1 className="max-w-2xl font-serif text-4xl leading-[1.02] font-normal tracking-[-0.03em] sm:text-6xl">
+          That page is not here.
         </h1>
-        
-        <div className="mb-10">
-          <h2 id="route-not-found" className="text-2xl font-bold text-white uppercase tracking-[0.3em] mb-4">
-            Route_Not_Found
-          </h2>
-          <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest max-w-md mx-auto leading-relaxed">
-            The requested protocol address does not exist on this sovereign tenant. Access has been restricted or the path has been decommissioned.
-          </p>
-        </div>
-
-        <Link 
-          href="/" 
-          className="inline-flex items-center gap-3 px-8 py-4 bg-blue-500 text-black font-black uppercase tracking-widest text-[10px] hover:bg-white transition-all"
-        >
-          <ArrowLeft size={14} /> Return to Home Base
-        </Link>
-        
-        <div className="mt-16 flex items-center justify-center gap-4 text-zinc-800 font-mono text-[10px] tracking-[0.5em]">
-          <Hash size={10} /> <span>SYSTEM_ID: NULL_PTR</span>
+        <p className="mt-3.5 max-w-xl text-lg text-muted">
+          It may have moved. The work we do is on What we build, and the examples are on Use cases.
+        </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Button asChild size="lg">
+            <Link href="/">Go to the homepage</Link>
+          </Button>
+          <Button asChild variant="ghost" size="lg">
+            <Link href="/what-we-build">See what we build</Link>
+          </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,63 +1,82 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import type { Metadata } from "next";
+import { BookingEmbed } from "@/components/site/booking-embed";
+import { PageHero } from "@/components/site/page-hero";
+import { pageMeta } from "@/lib/seo";
+import { SITE_EMAIL } from "@/lib/site";
+import { ContactForm } from "./ContactForm";
 
-export const metadata: Metadata = {
-  title: 'Contact | Nihilo Solutions',
+export const metadata: Metadata = pageMeta({
+  title: "Book a Discovery Call | Nihilo Solutions",
   description:
-    'Get in touch with Nihilo Solutions. Talk to the principals who design and build your website, SEO program, or AI automation system.',
-  alternates: {
-    canonical: 'https://nihilosolutions.com/contact',
-  },
-};
+    "Book a 30-minute discovery call with our team. Bring one repeating operational process. We will tell you if it is worth automating. Connecticut, remote nationwide.",
+  path: "/contact",
+});
 
-export default function ContactPage() {
+export default function Contact() {
   return (
-    <main
-      className="min-h-screen"
-      style={{ background: '#05060A' }}
-    >
-      <div className="max-w-screen-xl mx-auto px-6 lg:px-16 pt-32 pb-24">
+    <>
+      <PageHero
+        kicker="Contact"
+        title="Book a call with our team."
+        lede="We review every inquiry ourselves and reply within one business day. The fastest path is a 30-minute discovery call."
+      />
 
-        <div className="max-w-xl">
-          <p className="label mb-4" style={{ color: '#3A3F4A' }}>Contact</p>
-
-          <h1
-            className="text-[#F0F1F3] tracking-tight leading-tight mb-4"
-            style={{
-              fontFamily: 'var(--font-space-grotesk)',
-              fontSize: 'clamp(32px, 4.5vw, 56px)',
-              fontWeight: 600,
-            }}
-          >
-            Talk to a principal.
-          </h1>
-
-          <p className="text-[#9AA0AE] text-[15px] leading-relaxed mb-10 max-w-md">
-            We review every inquiry personally and respond within 1 business day.
-            Book a call to talk through your situation, or email us directly.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-3 mb-16">
-            <Link href="/intake" className="btn-primary">
-              Book a discovery call
-              <ArrowRight size={14} strokeWidth={2} />
-            </Link>
-            <a href="mailto:sam@nihilosolutions.com" className="btn-secondary">
-              sam@nihilosolutions.com
-            </a>
-          </div>
-
-          <div
-            className="space-y-4 pt-10"
-            style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
-          >
-            <p className="text-[13px]" style={{ color: '#3A3F4A', fontFamily: 'var(--font-mono)', letterSpacing: '0.05em' }}>
-              Microsoft Azure Partner · ISC2 CC · Connecticut, USA
-            </p>
+      <section className="pb-12" id="book">
+        <div className="mx-auto w-[min(70rem,calc(100%-2.5rem))]">
+          <div className="grid gap-8 rounded-[1.25rem] bg-dark p-6 text-on-dark sm:p-10 md:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <h2 className="font-serif text-3xl font-normal tracking-[-0.02em] text-on-dark sm:text-4xl">
+                Book a discovery call
+              </h2>
+              <p className="mt-2.5 text-on-dark-muted">
+                Bring one process: the report, the reading, or the lookup that keeps landing on the
+                same desk. We will tell you whether it is worth automating and what a first build
+                would look like.
+              </p>
+              <ul className="mt-6 space-y-2 text-sm text-on-dark-muted">
+                <li>30 minutes, video</li>
+                <li>With our team, not a sales queue</li>
+                <li>You leave knowing if we should scope it</li>
+              </ul>
+              <p className="mt-6 text-[0.9375rem]">
+                Prefer email?{" "}
+                <a
+                  className="text-on-dark underline decoration-accent"
+                  href={`mailto:${SITE_EMAIL}`}
+                >
+                  {SITE_EMAIL}
+                </a>
+              </p>
+            </div>
+            <div className="rounded-lg border border-dark-line bg-dark-2 p-6">
+              <h3 className="mb-2 text-lg font-medium text-on-dark">Pick a time</h3>
+              <p className="mb-5 text-sm text-on-dark-muted">
+                Live availability on the discovery-call calendar.
+              </p>
+              <BookingEmbed />
+              <p className="mt-4 text-[0.8125rem] text-on-dark-muted">
+                Connecticut &middot; remote nationwide
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </section>
+
+      <section className="pb-20">
+        <div className="mx-auto w-[min(70rem,calc(100%-2.5rem))]">
+          <div className="max-w-2xl rounded-lg border border-border bg-bg-elev p-7 shadow-[var(--shadow-card)]">
+            <p className="text-[0.8125rem] font-semibold tracking-[0.12em] text-accent uppercase">
+              Or write it down first
+            </p>
+            <h2 className="mt-2.5 font-serif text-2xl font-medium">Send us the process.</h2>
+            <p className="mt-2 text-muted">
+              If none of the times work, or you would rather describe the process before talking,
+              send it over. We will come back with a time within one business day.
+            </p>
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

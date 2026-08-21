@@ -1,70 +1,47 @@
 import type { Metadata } from 'next';
-import { Inter, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
+import { IBM_Plex_Sans, Newsreader } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
-import { Navbar } from '@/components/shared';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
+import { JsonLd } from '@/components/site/json-ld';
+import { SiteFooter } from '@/components/site/site-footer';
+import { SiteHeader } from '@/components/site/site-header';
+import { organizationJsonLd } from '@/lib/seo';
+import { SITE_URL } from '@/lib/site';
 import '@/styles.css';
 
-const inter = Inter({
+const plex = IBM_Plex_Sans({
   subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-inter',
+  weight: ['400', '500', '600'],
+  variable: '--font-plex',
   display: 'swap',
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const newsreader = Newsreader({
   subsets: ['latin'],
   weight: ['400', '500'],
-  variable: '--font-jetbrains-mono',
-  display: 'swap',
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['500', '700'],
-  variable: '--font-space-grotesk',
+  style: ['normal', 'italic'],
+  variable: '--font-newsreader',
   display: 'swap',
 });
 
 export const metadata: Metadata = {
   title: {
-    default: 'Website Modernization, SEO & AI Automation for Small Business | Nihilo Solutions',
+    default: 'Custom Operational Automation for Growing Companies | Nihilo Solutions',
     template: '%s | Nihilo Solutions',
   },
   description:
-    'Nihilo Solutions helps small and mid-size businesses grow with modern websites, search-engine SEO programs, and AI automation. Free growth assessment. Principal-led delivery.',
-  keywords: [
-    'website modernization',
-    'SEO for small business',
-    'AI automation',
-    'web design Connecticut',
-    'SEO agency',
-    'business AI automation',
-    'small business website',
-    'local SEO',
-  ],
+    'Nihilo Solutions builds custom operational automations for growing companies. Recurring reports, readings, lookups, and other repeating work. Book a 30-minute discovery call.',
   authors: [{ name: 'Nihilo Solutions' }],
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://nihilosolutions.com',
-    siteName: 'Nihilo Solutions',
-    title: 'Website Modernization, SEO & AI Automation | Nihilo Solutions',
-    description:
-      'Modern websites, SEO growth, and AI automation for small and mid-size businesses. Free growth assessment.',
-    images: [{ url: 'https://nihilosolutions.com/og-image.png' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Website Modernization, SEO & AI Automation | Nihilo Solutions',
-    description:
-      'Modern websites, SEO growth, and AI automation for small and mid-size businesses. Free growth assessment.',
-  },
   icons: {
     icon: '/favicon.svg',
     apple: '/apple-touch-icon.png',
   },
-  metadataBase: new URL('https://nihilosolutions.com'),
+  manifest: '/manifest.json',
+  metadataBase: new URL(SITE_URL),
+};
+
+export const viewport = {
+  themeColor: '#1a1916',
 };
 
 export default function RootLayout({
@@ -73,10 +50,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable}`}>
-      <body className="bg-zinc-950 text-white antialiased font-sans">
-        <Navbar />
-        {children}
+    <html lang="en" className={`${plex.variable} ${newsreader.variable}`}>
+      <body className="flex min-h-dvh flex-col bg-bg font-sans text-fg antialiased">
+        <JsonLd data={organizationJsonLd} />
+        <a
+          href="#main"
+          className="absolute top-[-100px] left-3 z-100 rounded-md bg-fg px-4 py-3 text-sm text-primary-fg transition-[top] focus:top-3"
+        >
+          Skip to content
+        </a>
+        <SiteHeader />
+        <main className="flex-1" id="main">
+          {children}
+        </main>
+        <SiteFooter />
         <Analytics />
         <GoogleAnalytics measurementId="G-HTNV61D4K4" />
       </body>

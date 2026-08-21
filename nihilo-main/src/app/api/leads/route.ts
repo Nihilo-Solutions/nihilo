@@ -7,6 +7,8 @@ interface LeadPayload {
   company?: string;
   phone?: string;
   websiteUrl?: string;
+  /** Free text from the contact form: the process the visitor wants to discuss. */
+  message?: string;
   source?: string;
   scores?: {
     speed?: number;
@@ -37,6 +39,7 @@ async function createHubSpotContact(payload: LeadPayload): Promise<void> {
         ...(payload.company && { company: payload.company }),
         ...(payload.phone && { phone: payload.phone }),
         ...(payload.websiteUrl && { website: payload.websiteUrl }),
+        ...(payload.message && { message: payload.message }),
         hs_lead_source: 'WEBSITE',
         lead_source: payload.source ?? 'Website',
         // Custom number properties — create these in HubSpot before going live:

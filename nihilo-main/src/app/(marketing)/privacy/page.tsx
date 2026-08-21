@@ -1,71 +1,47 @@
-import React from 'react';
+import type { Metadata } from "next";
+import { PageHero } from "@/components/site/page-hero";
+import { pageMeta } from "@/lib/seo";
+import { SITE_EMAIL } from "@/lib/site";
 
-export const metadata = {
-  title: { absolute: 'Privacy Policy | Nihilo Solutions' },
-  description: 'Privacy Policy for Nihilo Solutions LLC',
-  alternates: { canonical: 'https://nihilosolutions.com/privacy' },
-};
+export const metadata: Metadata = pageMeta({
+      title: "Privacy | Nihilo Solutions",
+      description:
+        "How Nihilo Solutions handles information you share when you email us or book a discovery call. We use it to respond and run the engagement. Nothing else.",
+      path: "/privacy",
+    });
 
-export default function PrivacyPolicy() {
+export default function Privacy() {
   return (
-    <main className="min-h-screen bg-zinc-950 pt-32 pb-24 text-zinc-400 font-light">
-      <div className="max-w-4xl mx-auto px-6 lg:px-12">
-        <h1 className="text-4xl font-bold text-white mb-8 tracking-widest uppercase">Privacy Policy</h1>
-        <p className="mb-8 leading-relaxed">
-          Last updated: June 2026
-        </p>
-
-        <div className="space-y-12">
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-4 tracking-wide">Introduction</h2>
-            <p className="leading-relaxed">
-              At Nihilo Solutions LLC ("we", "our", or "us"), we respect your privacy and are committed to protecting it through our compliance with this policy. This policy describes the types of information we may collect from you or that you may provide when you visit our website and our practices for collecting, using, maintaining, protecting, and disclosing that information.
+    <>
+      <PageHero
+        kicker="Privacy"
+        title="How we handle information."
+        lede="This is a short policy for a small firm. If you email us or book a call, we use that information to respond and to run the engagement. Nothing else."
+      />
+      <section className="pb-20">
+        <div className="mx-auto w-[min(70rem,calc(100%-2.5rem))] max-w-3xl">
+          <h2 className="sr-only">The policy</h2>
+          <article className="rounded-lg border border-border bg-bg-elev p-7 shadow-[var(--shadow-card)]">
+            <h3 className="mb-2 font-serif text-xl font-medium">What we collect</h3>
+            <p className="text-muted">
+              Name, company, email, and whatever you choose to tell us about a process on a call or
+              in a message. Booking details are handled by Microsoft Bookings.
             </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-4 tracking-wide">Information We Collect</h2>
-            <p className="leading-relaxed mb-4">
-              We collect several types of information from and about users of our website, including:
+            <h3 className="mt-5 mb-2 font-serif text-xl font-medium">What we do not do</h3>
+            <p className="text-muted">
+              We do not sell contact information. We do not run a marketing list off this site.
+              Project data you share during a build is used only to deliver that build.
             </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Personal Data:</strong> Information by which you may be personally identified, such as name, postal address, e-mail address, telephone number, etc.</li>
-              <li><strong>Usage Data:</strong> Information about your internet connection, the equipment you use to access our website, and usage details.</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-4 tracking-wide">How We Use Your Information</h2>
-            <p className="leading-relaxed mb-4">
-              We use information that we collect about you or that you provide to us, including any personal information:
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>To present our website and its contents to you.</li>
-              <li>To provide you with information, products, or services that you request from us.</li>
-              <li>To fulfill any other purpose for which you provide it.</li>
-              <li>To notify you about changes to our website or any products or services we offer or provide though it.</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-4 tracking-wide">Data Security</h2>
-            <p className="leading-relaxed">
-              We have implemented measures designed to secure your personal information from accidental loss and from unauthorized access, use, alteration, and disclosure. Unfortunately, the transmission of information via the internet is not completely secure. Although we do our best to protect your personal information, we cannot guarantee the security of your personal information transmitted to our website.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-white mb-4 tracking-wide">Contact Information</h2>
-            <p className="leading-relaxed">
-              To ask questions or comment about this privacy policy and our privacy practices, contact us at:
-              <br />
-              <a href="mailto:sam@nihilosolutions.com" className="text-white hover:text-blue-400 transition-colors mt-2 inline-block font-mono">
-                sam@nihilosolutions.com
+            <h3 className="mt-5 mb-2 font-serif text-xl font-medium">How to reach us</h3>
+            <p className="text-muted">
+              Questions:{" "}
+              <a className="text-fg underline decoration-accent" href={`mailto:${SITE_EMAIL}`}>
+                {SITE_EMAIL}
               </a>
             </p>
-          </section>
+          </article>
         </div>
-      </div>
-    </main>
+      </section>
+    </>
   );
 }

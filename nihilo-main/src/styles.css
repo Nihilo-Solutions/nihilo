@@ -1,200 +1,81 @@
 @import "tailwindcss";
 @source "./**/*.{js,ts,jsx,tsx}";
 
-/* =============================================================
-   NIHILO SOLUTIONS — DESIGN TOKENS
-   Light-first. Orange accent. Enterprise-grade readability.
-   Stripe / HubSpot / Cloudflare aesthetic.
-   ============================================================= */
 
-:root {
-  /* Backgrounds */
-  --void:      #FFFFFF;
-  --ink:       #F7F6F4;
-  --surface:   #EFEFEC;
-  --surface-2: #E5E4E0;
-
-  /* Borders */
-  --border:    rgba(0, 0, 0, 0.09);
-  --border-2:  rgba(0, 0, 0, 0.18);
-
-  /* Text */
-  --text:   #0F0F0F;
-  --text-2: #52525B;
-  --text-3: #A1A1AA;
-
-  /* Accent — one orange, used sparingly */
-  --orange:     #E8610A;
-  --orange-dim: rgba(232, 97, 10, 0.08);
-
-  /* Status */
-  --ok:   #16A34A;
-  --warn: #D97706;
-  --err:  #DC2626;
-
-  /* Radii — tight, enterprise */
-  --r-0: 0px;
-  --r-1: 2px;
-  --r-2: 4px;
-  --r-3: 6px;
-
-  /* Type */
-  --font-sans:    var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-mono:    var(--font-jetbrains-mono), ui-monospace, "SF Mono", Consolas, monospace;
-  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
-
-  /* Scale */
-  --t-display: clamp(52px, 7vw, 96px);
-  --t-h1:      clamp(36px, 4.5vw, 60px);
-  --t-h2:      clamp(26px, 3vw, 40px);
-  --t-h3:      22px;
-  --t-body:    16px;
-  --t-sm:      14px;
-  --t-xs:      12px;
-  --t-label:   11px;
-
-  --lh-tight: 1.05;
-  --lh-snug:  1.18;
-  --lh-body:  1.6;
-
-  /* Motion — restrained */
-  --ease:     cubic-bezier(0.2, 0.8, 0.2, 1);
-  --dur-fast: 140ms;
-  --dur-base: 220ms;
+@theme {
+  --color-bg: #f4f3ee;
+  --color-bg-elev: #fffcf7;
+  --color-bg-alt: #eae8e1;
+  --color-fg: #1a1916;
+  --color-muted: #636059;
+  --color-border: #ddd9d0;
+  --color-primary: #1a1916;
+  --color-primary-dark: #0e0d0b;
+  --color-primary-fg: #f4f3ee;
+  --color-accent: #3d5c56;
+  --color-accent-dark: #2d4641;
+  --color-accent-soft: #e4eeea;
+  --color-accent-fg: #f4f3ee;
+  --color-dark: #1a1916;
+  --color-dark-2: #242320;
+  --color-on-dark: #f4f3ee;
+  --color-on-dark-muted: #b3afa6;
+  --color-dark-line: #33322e;
+  --font-sans: var(--font-plex), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), ui-serif, Georgia, serif;
+  --radius-lg: 1.25rem;
+  --radius-md: 0.5rem;
+  --shadow-card: 0 0 0 1px rgb(26 25 22 / 0.08), 0 1px 2px rgb(26 25 22 / 0.04),
+    0 18px 40px -24px rgb(26 25 22 / 0.28);
 }
 
-/* ============================================================
-   Base
-   ============================================================ */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
 
-body {
-  background-color: var(--void);
-  color: var(--text);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-fg);
+  }
 }
 
-::selection {
-  background: rgba(232, 97, 10, 0.18);
-}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 
-/* ============================================================
-   Utility classes
-   ============================================================ */
-
-/* Label / eyebrow */
-.label {
-  font-family: var(--font-mono);
-  font-size: var(--t-label);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--text-3);
-}
-
-/* Primary CTA — orange fill, white text */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 600;
-  color: #ffffff;
-  background: var(--orange);
-  border: 1px solid transparent;
-  border-radius: var(--r-1);
-  cursor: pointer;
-  transition: background var(--dur-fast) var(--ease),
-              color var(--dur-fast) var(--ease);
-  white-space: nowrap;
-  text-decoration: none;
-}
-
-.btn-primary:hover {
-  background: #C9520A;
-}
-
-/* Secondary CTA — outlined */
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-2);
-  background: transparent;
-  border: 1px solid var(--border-2);
-  border-radius: var(--r-1);
-  cursor: pointer;
-  transition: color var(--dur-fast) var(--ease),
-              border-color var(--dur-fast) var(--ease);
-  white-space: nowrap;
-  text-decoration: none;
-}
-
-.btn-secondary:hover {
-  color: var(--text);
-  border-color: rgba(0, 0, 0, 0.35);
-}
-
-/* Ghost — text link with arrow */
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-2);
-  transition: color var(--dur-fast) var(--ease);
-  text-decoration: none;
-}
-
-.btn-ghost:hover {
-  color: var(--text);
-}
-
-/* Nav link */
-.nav-link {
-  position: relative;
-  font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-2);
-  transition: color var(--dur-fast) var(--ease);
-  text-decoration: none;
-}
-
-.nav-link:hover {
-  color: var(--text);
-}
-
-/* Section divider */
-.divider {
-  width: 100%;
-  height: 1px;
-  background: var(--border);
-}
-
-/* Card — light surface */
-.card {
-  background: var(--void);
-  border: 1px solid var(--border);
-  transition: border-color var(--dur-base) var(--ease),
-              box-shadow var(--dur-base) var(--ease);
-}
-
-.card:hover {
-  border-color: var(--border-2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-}
-
-/* Dark section — inverted (footer, final CTA) */
-.section-dark {
-  background: #111111;
-  color: #F5F5F5;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -1,20 +1,26 @@
 {
   "name": "Nihilo Solutions",
   "short_name": "Nihilo",
-  "description": "Enterprise AI & Cloud-Native RAG Engineering",
+  "description": "Custom operational automations for growing companies.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#09090b",
-  "theme_color": "#09090b",
+  "background_color": "#f4f3ee",
+  "theme_color": "#1a1916",
   "icons": [
     {
-      "src": "/logo.png",
+      "src": "/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/logo-maskable.png", 
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo-maskable.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"

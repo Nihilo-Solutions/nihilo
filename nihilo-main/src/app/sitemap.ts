@@ -1,83 +1,26 @@
-import { MetadataRoute } from 'next';
-import { getAllIndustrySlugs } from '@/lib/data/industries';
+import type { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/site';
+
+/** Every live path. Retired paths are 301s in next.config.ts, not entries here. */
+const PAGES: { path: string; changeFrequency: 'weekly' | 'monthly' | 'yearly'; priority: number }[] = [
+  { path: '/', changeFrequency: 'weekly', priority: 1 },
+  { path: '/what-we-build', changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/use-cases', changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/how-we-work', changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/faq', changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/contact', changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/who-we-work-with', changeFrequency: 'monthly', priority: 0.7 },
+  { path: '/about', changeFrequency: 'monthly', priority: 0.7 },
+  { path: '/privacy', changeFrequency: 'yearly', priority: 0.3 },
+  { path: '/terms', changeFrequency: 'yearly', priority: 0.3 },
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://nihilosolutions.com';
-
-  const industryUrls: MetadataRoute.Sitemap = getAllIndustrySlugs().map((slug) => ({
-    url: `${baseUrl}/industries/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
+  const lastModified = new Date();
+  return PAGES.map(({ path, changeFrequency, priority }) => ({
+    url: path === '/' ? SITE_URL : `${SITE_URL}${path}`,
+    lastModified,
+    changeFrequency,
+    priority,
   }));
-
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/tools/growth-assessment`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/solutions/website-modernization`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/solutions/seo-growth-system`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/solutions/ai-automation-system`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/intake`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/security`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/privacy`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/terms`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    ...industryUrls,
-  ];
 }
