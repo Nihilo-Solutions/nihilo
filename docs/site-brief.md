@@ -86,60 +86,84 @@ illustration would occupy space doing.
 ## 5. Design
 
 Warm paper, ink, and a muted green accent. Newsreader for headings, IBM Plex Sans
-for body. Tokens live at the top of `assets/site.css`.
+for body. Tokens live in the `@theme` block at the top of `src/styles.css`.
 
 The primary button is ink on paper, not accent-filled. The accent is reserved for
 kickers, rules, numbers and emphasis, which keeps it meaningful at the density this
 site runs at.
 
-Accessibility: skip link, `aria-current` on the active nav item, a mobile drawer
-with Escape-to-close and `aria-expanded`, visible focus rings, 44px minimum touch
-targets, and `prefers-reduced-motion` support.
+Accessibility: skip link, the active nav item marked, a mobile drawer with
+`aria-expanded`, visible focus rings, 44px minimum touch targets, and
+`prefers-reduced-motion` support.
 
 ## 6. Booking
 
-One config block at the top of `assets/site.js`:
+`BOOKING_URL` in `src/lib/site.ts` is the only value to change:
 
-```js
-var NIHILO = {
-  BOOKING_URL: 'https://outlook.office.com/book/NihiloSolutionsDiscoveryCall@nihilosolutions.com/'
-};
+```ts
+export const BOOKING_URL =
+  "https://outlook.office.com/book/NihiloSolutionsDiscoveryCall@nihilosolutions.com/";
 ```
 
-Nothing else needs editing. `/contact#book` is the single canonical location for
-the embed. Every "Book a call" button site-wide carries `data-book` and points at
-`/contact#book`; on pages that do not host the embed, the script rewrites those to
-open the scheduler directly.
+`/contact#book` is the single canonical location for the embed, rendered by
+`src/components/booking-embed.tsx`. Every "Book a call" button links there.
 
 A Microsoft Bookings page only renders in an iframe when it allows anonymous
-booking. If it requires sign-in the frame comes up blank, because Microsoft's login
-screen refuses to be framed. The embed therefore always renders a "not loading,
-open in a new tab" link beneath it. **Confirm the frame renders on the deployed
-site.** If it does not, enable anonymous booking on the Bookings page or drop the
-embed and link out instead.
+booking. If it requires sign-in the frame comes up blank, because Microsoft's
+login screen refuses to be framed. Two things follow from that, and both are
+deliberate: the embed always renders a "not loading, open in a new tab" link,
+and the contact page keeps a request-a-time form below the card. The form is not
+a leftover. It is the path for someone whose available times do not work, and
+the fallback if the frame ever goes blank.
+
+**Confirm the frame renders on the deployed site.** If it does not, enable
+anonymous booking on the Bookings page, or drop the embed and rely on the link
+and the form.
 
 ## 7. Build notes
 
-Static multi-page site, no build step, deployed on Vercel with `cleanUrls`. Shared
-`assets/site.css` and `assets/site.js`; every page is hand-editable HTML.
+TanStack Start, React 19, Tailwind v4, server-rendered. `npm run build` runs
+`vite build`; the nitro vercel preset emits `.vercel/output` in Build Output API
+v3 format, which Vercel consumes with no deploy step to configure. `vercel.json`
+carries only the retired-URL redirects.
 
-The root `package.json` exists only to pin `engines.node` to `22.x`. Vercel
-disables new builds on Node 20.x from 30 September 2026, and pinning in the repo
-means the setting is not carried in project config alone.
+This is Grok's application, not a rewrite of it. What was removed on the way in
+was the app-builder harness the site never called: better-auth, pglite, kysely,
+the multiplayer P2P layer, the PWA middleware, the auth-popup and app-env Vite
+plugins, and the migration runner. Dependencies went from roughly 60 to 28.
+`src/routes/`, `src/components/` and `src/styles.css` are as Grok wrote them,
+apart from the changes listed below.
 
-SEO per page: title, meta description, extensionless canonical, Open Graph and
-Twitter card tags, and Organization plus ProfessionalService JSON-LD. `/faq`
-additionally carries FAQPage JSON-LD generated from the same question list that
-renders on the page, so the two cannot drift.
+`engines.node` is `22.x` and the function runtime is `nodejs22.x`, ahead of
+Vercel disabling Node 20.x builds on 30 September 2026.
+
+SEO per route comes from `pageHead()` in `src/lib/seo.ts`: title, description,
+canonical, Open Graph and Twitter card. Organization plus ProfessionalService
+JSON-LD is in `site-shell.tsx`; `/faq` adds FAQPage JSON-LD built from the same
+`FAQ_ITEMS` array it renders, so the two cannot drift.
+
+### What was changed in the app source, and why
+
+| Change | Reason |
+| --- | --- |
+| `pageHead()` emits OG and Twitter tags | the redesign shipped none, so every share rendered bare |
+| Skip link and `#main` in `site-shell` | there was no way past the nav by keyboard |
+| Nav links `min-h-11` | they measured about 22px, under the WCAG 2.2 AA 24px minimum |
+| `prefers-reduced-motion` extended to animations and transitions | it only reset `scroll-behavior` |
+| Footer column labels `h4` to `h2` | `/faq` jumped h1 to h4; the classes are explicit, so rendering is identical |
+| `sr-only` `h2` on six pages | a card grid followed the `h1` directly, jumping h1 to h3 |
+| `whitespace-nowrap` on buttons, `shrink-0` on the header logo and actions | "Book a call" wrapped to two lines and spilled out of the 72px header on phones |
+| Wordmark shortens to "NIHILO" below 360px | the full lockup, the CTA and the menu button overflowed a 320px viewport by 41px |
+| Contact page: Bookings embed in the card, form moved below it | see section 6 |
+| `apple-touch-icon.png` and `favicon.svg` cut from the brand mark | the redesign shipped a placeholder serif "N" and no touch icon |
 
 ### Open items
 
-1. Confirm the Bookings iframe renders on the deployed site rather than coming up
-   blank.
-2. `favicon.svg` is the redesign's placeholder mark, a serif N on ink. The logo set
-   in `design/design_system/` is the real identity but is drawn in the retired
-   orange. Cut a proper mark in the current palette, and generate
-   `apple-touch-icon.png` from it. There is currently no apple-touch-icon, so iOS
-   home-screen saves fall back to a screenshot.
-3. Decide whether to publish "from" pricing anywhere. The site currently commits to
-   fixed price per fixed scope, quoted after discovery.
+1. Confirm the Bookings iframe renders on the deployed site rather than coming
+   up blank.
+2. The Vercel project was configured for a no-build static site. It now needs to
+   run `npm run build`; zero-config should detect that, but an explicitly pinned
+   Framework Preset or an empty Build Command in the dashboard would have to be
+   cleared by hand.
+3. Decide whether to publish "from" pricing anywhere. The site currently commits
+   to fixed price per fixed scope, quoted after discovery.

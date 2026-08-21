@@ -10,6 +10,11 @@
 node_modules/
 
 # Build output
+.output/
+.vercel/
+.nitro/
+.tanstack/
+dist/
 .next/
 
 # Logs

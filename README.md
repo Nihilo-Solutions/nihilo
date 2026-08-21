@@ -3,86 +3,104 @@
 Marketing site for Nihilo Solutions, a small Connecticut firm building custom
 operational automations for growing companies.
 
-Static multi-page site. Deploys to Vercel with no build step. `cleanUrls` is on,
-so `what-we-build.html` is served at `/what-we-build`.
+TanStack Start (React 19, Tailwind v4), server-rendered, deployed to Vercel.
+
+## Running it
+
+```sh
+npm install
+npm run dev        # http://127.0.0.1:8080
+```
+
+```sh
+npm run build      # emits .vercel/output
+npm run preview    # serves that build on http://127.0.0.1:8081
+npm run typecheck
+npm run lint
+```
+
+Always check a change against `npm run preview`, not just `npm run dev`. A build
+can pass and still deploy blank if `/assets/*` fail to resolve and the HTML
+fallback is served in their place, and only the built output shows that.
 
 ## Pages
 
-| File | URL | Purpose |
-| --- | --- | --- |
-| `index.html` | `/` | Home. The hero before/after, the three kinds of work, how an engagement runs |
-| `what-we-build.html` | `/what-we-build` | Four classes of system: reporting, meter and usage, lookup, similar workflows |
-| `use-cases.html` | `/use-cases` | Six worked examples, each anchored (`#reports`, `#meters`, `#lookup`, ...) for deep links |
-| `how-we-work.html` | `/how-we-work` | Four steps, what we need from you, time and price and ownership |
-| `who-we-work-with.html` | `/who-we-work-with` | Good fit, explicitly not a fit, where the work shows up |
-| `about.html` | `/about` | The three of us, and how we think about the work |
-| `faq.html` | `/faq` | Eleven questions. Carries FAQPage structured data |
-| `contact.html` | `/contact` | The booking calendar. The embed lives at `/contact#book` |
-| `privacy.html` | `/privacy` | Short policy |
+Routes are files in `src/routes/`. Paths come from the filenames, so
+`what-we-build.tsx` serves `/what-we-build`. `src/routeTree.gen.ts` is generated
+by the router plugin; do not edit it.
 
-Shared assets: `assets/site.css` and `assets/site.js`. Every page links both.
+| Route | Purpose |
+| --- | --- |
+| `index` | Home. The hero before/after, the three kinds of work, how an engagement runs |
+| `what-we-build` | Four classes of system: reporting, meter and usage, lookup, similar workflows |
+| `use-cases` | Six worked examples, each anchored (`#reports`, `#meters`, `#lookup`, ...) for deep links |
+| `how-we-work` | Four steps, what we need from you, time and price and ownership |
+| `who-we-work-with` | Good fit, explicitly not a fit, where the work shows up |
+| `about` | The three of us, and how we think about the work |
+| `faq` | Eleven questions. Carries FAQPage structured data |
+| `contact` | The Bookings calendar at `#book`, with a request-a-time form below it |
+| `privacy` | Short policy |
 
-Retired URLs 301 in `vercel.json`: `/solutions`, `/how-it-works`, `/who-we-help`,
-`/intake`. The reasoning behind the current framing is in `docs/site-brief.md`;
-the previous five-package positioning is archived under `docs/archive/`.
+Shared chrome lives in `src/components/`: `site-shell` (skip link, JSON-LD,
+header, footer), `site-header`, `site-footer`, `page-hero`, `cta-band`,
+`booking-embed`, and `ui/button`.
 
-## Configuring the booking calendar
+Retired URLs 301 in `vercel.json`: `/solutions`, `/how-it-works`,
+`/who-we-help`, `/intake`. The reasoning behind the current framing is in
+`docs/site-brief.md`; the previous five-package positioning is archived under
+`docs/archive/`.
 
-One value, at the top of `assets/site.js`:
+## The booking calendar
 
-```js
-var NIHILO = {
-  BOOKING_URL: 'https://outlook.office.com/book/NihiloSolutionsDiscoveryCall@nihilosolutions.com/'
-};
+One value, `BOOKING_URL` in `src/lib/site.ts`:
+
+```
+https://outlook.office.com/book/NihiloSolutionsDiscoveryCall@nihilosolutions.com/
 ```
 
-`/contact#book` renders it inline. Every "Book a call" button carries `data-book`
-and points at `/contact#book`; on pages without the embed the script rewrites
-those to open the scheduler directly in a new tab.
+`src/components/booking-embed.tsx` renders it at `/contact#book`. The plain
+`/book/` form is deliberate: it is what Microsoft's own embed code takes, and the
+share link's `?ismsaljsauthenabled` parameter is not needed for framing.
 
-The plain `/book/` URL is used rather than the share link's
-`?ismsaljsauthenabled` variant, because that is the form Microsoft's own embed
-code takes. A Bookings page only renders inside an iframe when it allows
-anonymous booking; if it requires sign-in the frame comes up blank, because
-Microsoft's login screen refuses to be framed. The embed therefore always renders
-an "open in a new tab" escape link beneath it. If the frame is blank on the live
-site, either enable anonymous booking in Bookings or drop the embed and link out.
+A Bookings page only renders inside an iframe when it allows anonymous booking.
+If it requires sign-in the frame comes up blank, because Microsoft's login screen
+refuses to be framed. So the embed always renders an "open in a new tab" link
+beneath it, and the contact page keeps a request-a-time form below the card that
+posts by email. If the frame is blank on the live site, either enable anonymous
+booking in Bookings or drop the embed and rely on the link.
 
-While `BOOKING_URL` is left as `REPLACE_ME` the section renders a labelled
-placeholder and an email link rather than a broken frame.
+Setting `BOOKING_URL` to an empty string swaps the iframe for a labelled
+placeholder rather than a broken frame.
 
 ## Conventions
 
-- No build step, no dependencies. Edit HTML and CSS directly.
-- Design tokens are the `:root` block at the top of `assets/site.css`. Change a
-  colour there, not in a page.
+- Design tokens are the `@theme` block at the top of `src/styles.css`. Change a
+  colour there, not in a component.
 - The primary button is ink on paper. The accent green is for kickers, rules,
   numbers and emphasis only.
 - House style avoids em dashes and en dashes in body copy.
 - No invented case studies, client names, logos, or performance metrics.
 - Every page ends with a next step.
-- If you edit a question on `/faq`, edit the matching entry in that page's
-  FAQPage JSON-LD too. Google flags structured data that does not match the
-  visible text.
+- `pageHead()` in `src/lib/seo.ts` emits the title, description, canonical, Open
+  Graph and Twitter tags for a route. Add a page by calling it, not by
+  hand-writing meta tags.
+- `/faq` builds its FAQPage JSON-LD from the same `FAQ_ITEMS` array it renders,
+  so the two cannot drift. Keep it that way: Google flags structured data that
+  does not match the visible text.
+- Card headings are `h3`. Where a card grid is the first thing after the page
+  hero, there is an `sr-only` `h2` above it so heading order never jumps h1 to
+  h3.
 
-## Node version
+## Deployment
 
-The root `package.json` carries nothing but `engines.node: "22.x"`. There is no
-build and there are no dependencies. It exists because Vercel disables new builds
-on Node 20.x from 30 September 2026, and pinning the version in the repo is more
-durable than setting it in project config.
+Vercel, zero-config. `npm run build` runs `vite build`, and the nitro vercel
+preset writes `.vercel/output` in the Build Output API v3 format, which Vercel
+consumes directly. There is no separate deploy step and no output directory to
+configure. `vercel.json` carries only the redirects.
 
-Because that manifest could otherwise make Vercel's zero-config detection
-reconsider the project type, `vercel.json` states the static deploy outright:
-`framework: null`, an empty `buildCommand`, and `outputDirectory: "."`. Nothing
-is built; the repo root is served as-is.
+`engines.node` is pinned to `22.x`, and the generated function runtime is
+`nodejs22.x`. Vercel disables new builds on Node 20.x from 30 September 2026.
 
-## Local preview
-
-```sh
-npx serve .
-```
-
-`serve` resolves extensionless paths to `.html` the way Vercel's `cleanUrls`
-does, so interior links work. With `python3 -m http.server 8080` they will not,
-because it needs the `.html` extension.
+`nihilo-main/` is a separate Next.js project with its own `vercel.json` and its
+own toolchain. It is excluded from this app's eslint config and is not part of
+this build.
