@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/site/json-ld";
 import { PageHero } from "@/components/site/page-hero";
 import { Button } from "@/components/site/ui/button";
 import { faqJsonLd, pageMeta } from "@/lib/seo";
-import { BOOKING_URL } from "@/lib/site";
+import { BookCallLink } from "@/components/site/book-call-link";
 
 export const FAQ_ITEMS = [
   {
@@ -21,7 +21,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "How do you price?",
-    a: "Fixed scope, written down, before we build. You are not buying hours against an open retainer unless you ask for ongoing support after handoff.",
+    a: "Fixed scope and a fixed price for the build, written down before we start. Running it after that is quoted the same way, per project. No hourly billing against an open retainer.",
   },
   {
     q: "How long does a project take?",
@@ -32,12 +32,12 @@ export const FAQ_ITEMS = [
     a: "Our team. Discovery calls go to the people who run the engagement.",
   },
   {
-    q: "Do we own it when you are done?",
-    a: "Yes. That is the point. We hand over the workflow and show your team how to run it.",
+    q: "Who runs it once it is live?",
+    a: "We do. Your team gets the output, not another system to operate. If the process changes, we change the rules.",
   },
   {
     q: "What if our process changes?",
-    a: "Then the automation has to change. We will show you which rules are safe to edit. If you want us to stay on for adjustments, that is a separate, optional agreement.",
+    a: "Then the automation changes with it. Tell us what moved and we adjust the rules. Keeping it current is part of running it, and priced per project like the build.",
   },
   {
     q: "Is everything AI?",
@@ -86,9 +86,7 @@ export default function Faq() {
           </div>
           <div className="mt-8">
             <Button asChild>
-              <a href={BOOKING_URL} target="_blank" rel="noopener">
-                Book a discovery call
-              </a>
+              <BookCallLink placement="faq_end">Book a discovery call</BookCallLink>
             </Button>
           </div>
         </div>

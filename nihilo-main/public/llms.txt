@@ -5,7 +5,7 @@
 > and turn it into a system that runs without them: recurring reports, meter and
 > usage readings, client and record lookups, exception review, and the movement of
 > the same record between tools. Engagements are scoped to one workflow at a time,
-> priced fixed in writing, and handed over on completion. We work across the
+> priced per project in writing, and kept running once live. We work across the
 > Northeast and take remote engagements nationwide.
 
 ## What we build
@@ -33,7 +33,7 @@ A 30-minute discovery call on one concrete workflow, free, with a straight answe
 on fit. A written process map and a fixed-price scope stating what will be
 automated, what will not, and what is needed from the client. A build against the
 client's live data and tools, reviewed early. Then review beside the current
-process, adjust, and hand off.
+process, adjust, then go live and keep it running.
 
 What we need from a client: a real process owner who can walk us through last
 week's run, access to the source the data already lives in, and a specific
@@ -47,9 +47,9 @@ definition of done.
 - No new platform required first. We build against the tools and files a client
   already uses.
 - Fixed scope and a fixed price, in writing, before the build.
-- The client owns the workflow when we are done, and their team is shown how to run
-  it and how to change a rule when the business changes.
-- The people who scope the work stay on it through handoff. No account managers.
+- We keep the workflow running once it is live. The client's team gets the output,
+  not another system to operate. When the process changes, we change the rules.
+- The people who scope the work stay on it after go-live. No account managers.
 - AI is used only where it earns its place. Much of the value is reliable plumbing:
   pull, validate, write, notify.
 - We publish no invented case studies, client names, or performance metrics.

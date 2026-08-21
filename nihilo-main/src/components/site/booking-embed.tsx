@@ -1,4 +1,5 @@
 import { BOOKING_URL, SITE_EMAIL } from "@/lib/site";
+import { BookCallLink } from "@/components/site/book-call-link";
 
 /**
  * The discovery-call scheduler. Always renders a way out of the frame: a
@@ -16,14 +17,9 @@ export function BookingEmbed() {
       />
       <p className="text-center text-[0.8125rem] text-on-dark-muted">
         Not loading?{" "}
-        <a
-          className="text-on-dark underline decoration-accent"
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener"
-        >
+        <BookCallLink placement="embed_escape" className="text-on-dark underline decoration-accent">
           Open the booking page in a new tab
-        </a>
+        </BookCallLink>
         , or email{" "}
         <a className="text-on-dark underline decoration-accent" href={`mailto:${SITE_EMAIL}`}>
           {SITE_EMAIL}

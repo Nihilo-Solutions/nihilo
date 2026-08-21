@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { BOOKING_URL, SITE_EMAIL } from "@/lib/site";
+import { BookCallLink } from "@/components/site/book-call-link";
+import { SITE_EMAIL } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -65,9 +66,12 @@ export function SiteFooter() {
             </h2>
             <ul className="text-sm">
               <li>
-                <a href={BOOKING_URL} target="_blank" rel="noopener" className="flex min-h-11 items-center hover:text-on-dark">
+                <BookCallLink
+                  placement="footer"
+                  className="flex min-h-11 items-center hover:text-on-dark"
+                >
                   Book a call
-                </a>
+                </BookCallLink>
               </li>
               <li>
                 <Link href="/contact" className="flex min-h-11 items-center hover:text-on-dark">

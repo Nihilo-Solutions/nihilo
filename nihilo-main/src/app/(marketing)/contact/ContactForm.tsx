@@ -1,10 +1,29 @@
 "use client";
 
+import { track } from "@vercel/analytics";
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/site/ui/button";
 import { SITE_EMAIL } from "@/lib/site";
 
 type State = "idle" | "sending" | "sent" | "failed";
+
+/**
+ * Neither analytics call should ever be able to break the form. `lead_failed`
+ * matters as much as the success event: without it, a bad HubSpot token looks
+ * exactly like nobody filling the form in.
+ */
+function report(event: string, payload: Record<string, string>) {
+  try {
+    window.gtag?.("event", event, payload);
+  } catch {
+    /* ignore */
+  }
+  try {
+    track(event, payload);
+  } catch {
+    /* custom events need a paid Vercel plan */
+  }
+}
 
 /**
  * Posts to /api/leads, the existing HubSpot route. If that call fails the lead
@@ -40,8 +59,10 @@ export function ContactForm() {
         }),
       });
       if (!res.ok) throw new Error(String(res.status));
+      report("generate_lead", { source_page: "/contact", form: "contact" });
       setState("sent");
     } catch {
+      report("lead_failed", { source_page: "/contact", form: "contact" });
       const subject = encodeURIComponent(`Discovery call: ${company || name}`);
       const body = encodeURIComponent(
         `Name: ${name}\nCompany: ${company}\nEmail: ${email}\n\nProcess to talk about:\n${process}`,

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CtaBand } from "@/components/site/cta-band";
 import { Button } from "@/components/site/ui/button";
 import { pageMeta } from "@/lib/seo";
-import { BOOKING_URL } from "@/lib/site";
+import { BookCallLink } from "@/components/site/book-call-link";
 
 export const metadata: Metadata = pageMeta({
       title: "Custom Operational Automation for Growing Companies | Nihilo Solutions",
@@ -30,16 +30,14 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg">
-                <a href={BOOKING_URL} target="_blank" rel="noopener">
-                  Book a discovery call
-                </a>
+                <BookCallLink placement="hero">Book a discovery call</BookCallLink>
               </Button>
               <Button asChild variant="ghost" size="lg">
                 <Link href="/what-we-build">See what we build</Link>
               </Button>
             </div>
             <p className="mt-5 max-w-md text-sm text-muted">
-              30 minutes. You talk with our team. You own the system when we are done.
+              30 minutes. You talk with our team. Nothing for your team to build or run.
             </p>
           </div>
 
@@ -118,8 +116,8 @@ export default function Home() {
             />
             <Step
               num="04"
-              title="Handoff"
-              body="When we are done, you own the system. We show your team how it works and what to do when the process changes."
+              title="Live"
+              body="We put it live and keep it running. Your team gets the output and a written description of the rules, not another system to operate."
             />
           </ol>
           <div className="mt-7">

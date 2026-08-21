@@ -56,6 +56,23 @@ Everything we do on this site is judged against that goal. Pretty visuals that d
 - Anything that touches the intake form on `intake.nihilosolutions.com` (separate concern).
 - Privacy policy or legal pages without me reviewing the wording.
 
+## Two things the site must never say
+
+These were both live once and had to be corrected. The archived brief in
+`docs/archive/` still contains the old wording, so do not copy from it.
+
+1. **Never say the client owns the system**, or that we hand it over, or that it
+   is theirs when we are done. We build it and we keep it running. What the
+   client's team gets is the output. Wording like "you own it", "yours when we are
+   done", or "no subscription required to keep the lights on" is false.
+2. **Never describe where it runs.** No mention of our environment, our cloud, or
+   any provider name. The site says what the automation does, not where it lives.
+
+Pricing: the build is scoped and priced per project, and running it afterwards is
+priced the same way. No published numbers, and no claim that there is no ongoing
+cost. Also make no claims about data residency, since that is not something the
+site can currently stand behind.
+
 ## Convention quick-reference
 
 The full set is in `docs/positioning.md`. The short version:
@@ -91,11 +108,11 @@ defined yet; adding them is on the to-do list.
   disconnected tools.
 - **Discovery call**: the conversion event, 30 minutes. Our entire site exists to
   produce these. Every CTA opens the Microsoft Bookings calendar.
-- **Principal-led**: the people who scope the work stay on it through handoff. No
+- **Principal-led**: the people who scope the work stay on it after go-live. No
   account managers. CTAs say "Book a call with our team", never "talk to Sam or
   Jake".
-- **Handoff**: the client owns the workflow when we are done. Not a subscription
-  to a black box.
+- **Go-live**: we put the workflow live and keep it running. The client's team
+  gets the output, not a system to operate.
 
 
 ## When in doubt

@@ -39,7 +39,7 @@ it by hand.
 /                     Home
 /what-we-build        Four classes of system we build
 /use-cases            Six worked examples, anchored for deep links
-/how-we-work          Discovery > map and scope > build > handoff
+/how-we-work          Discovery > map and scope > build > go-live
 /who-we-work-with     Good fit, not a fit, where the work shows up
 /about                The three of us, and how we think about the work
 /faq                  Eleven questions, FAQPage schema

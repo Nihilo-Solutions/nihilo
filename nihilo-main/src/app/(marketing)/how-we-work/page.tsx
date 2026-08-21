@@ -6,7 +6,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata: Metadata = pageMeta({
       title: "How We Build Operational Automations | Nihilo Solutions",
       description:
-        "A 30-minute discovery call, a written process map, a fixed-price scope, then a build against your live tools. You own the automation when we are done.",
+        "A 30-minute discovery call, a written process map, a fixed-price scope, then a build against your live tools. Then we keep it running so your team does not have to.",
       path: "/how-we-work",
     });
 
@@ -28,8 +28,8 @@ const STEPS = [
   },
   {
     num: "04",
-    title: "Review, adjust, handoff",
-    body: "We run it beside the current process until you trust it. Then we hand it over. You own it. We show the people who will live with it how to run it and how to change a rule when the business changes.",
+    title: "Review, adjust, go live",
+    body: "We run it beside the current process until you trust it. Then it goes live and we keep it running. The people who depend on the output get told what it does, and what to do when the process changes.",
   },
 ];
 
@@ -38,7 +38,7 @@ export default function HowWeWork() {
     <>
       <PageHero
         kicker="How we work"
-        title="Scoped. Built by our team. Yours when we are done."
+        title="Scoped, built, and kept running by our team."
         lede="No account managers between you and the work. We start with one process, write it down, and only build what that process needs."
       />
       <section className="pb-16">
@@ -95,11 +95,11 @@ export default function HowWeWork() {
             />
             <Need
               title="Fixed price, in writing"
-              body="You get a scope and a number before we build. You are not buying hours against an open retainer unless you ask for support after handoff."
+              body="You get a scope and a number before we build. Running it after that is quoted the same way, per project. No hourly billing against an open retainer."
             />
             <Need
-              title="You own it"
-              body="When we are done, the workflow is yours. We show your team how to run it. No black box subscription required to keep the lights on."
+              title="Nothing new for your team to run"
+              body="Your team does not get another tool to learn or maintain. They get the report, the number, or the record, where they already look for it."
             />
           </div>
         </div>

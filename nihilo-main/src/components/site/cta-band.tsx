@@ -1,5 +1,5 @@
 import { Button } from "@/components/site/ui/button";
-import { BOOKING_URL } from "@/lib/site";
+import { BookCallLink } from "@/components/site/book-call-link";
 
 export function CtaBand({ title, body }: { title: string; body: string }) {
   return (
@@ -10,9 +10,7 @@ export function CtaBand({ title, body }: { title: string; body: string }) {
         </h2>
         <p className="mt-3.5 mb-7 max-w-md text-on-dark-muted">{body}</p>
         <Button asChild size="lg" variant="dark">
-          <a href={BOOKING_URL} target="_blank" rel="noopener">
-            Book a discovery call
-          </a>
+          <BookCallLink placement="cta_band">Book a discovery call</BookCallLink>
         </Button>
       </div>
     </section>

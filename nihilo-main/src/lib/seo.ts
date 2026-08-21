@@ -51,7 +51,7 @@ export const organizationJsonLd = {
   image: OG_IMAGE,
   logo: `${SITE_URL}/favicon.svg`,
   description:
-    "Custom operational automations for growing companies. Recurring reports, readings, lookups, and other repeating work. Built by our team. Yours when we are done.",
+    "Custom operational automations for growing companies. Recurring reports, readings, lookups, and other repeating work. Built by our team, and kept running so yours does not have to.",
   areaServed: [
     { "@type": "AdministrativeArea", name: "Connecticut" },
     { "@type": "Country", name: "United States" },

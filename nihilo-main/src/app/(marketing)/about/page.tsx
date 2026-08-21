@@ -31,7 +31,7 @@ export default function About() {
             initials="JI"
             name="Jake Ice"
             role="Co-founder, Delivery"
-            bio="Owns delivery and the commercial side of each engagement: scope, timeline, and tying the build to a business outcome from the first conversation through handoff."
+            bio="Owns delivery and the commercial side of each engagement: scope, timeline, and tying the build to a business outcome from the first conversation through go-live."
           />
           <Person
             initials="IP"
@@ -52,12 +52,12 @@ export default function About() {
               body="If we cannot watch or reconstruct last week's run, we do not build. Automation without a real process is just another tool."
             />
             <Think
-              title="Keep it yours"
-              body="When the project is done, you own what we built. We are not renting you a black box you cannot operate."
+              title="Nobody has to log in"
+              body="The point is that the work stops landing on someone's desk. Your team should notice the output arriving, not a new system to log into."
             />
             <Think
               title="Stay on the work"
-              body="The people who scoped it stay on it through handoff. That is the whole model."
+              body="The people who scoped it stay on it after it goes live. That is the whole model."
             />
           </div>
           <p className="mt-6 text-[0.8125rem] text-muted">

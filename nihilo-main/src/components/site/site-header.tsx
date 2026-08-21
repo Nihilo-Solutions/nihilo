@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/site/ui/button";
-import { BOOKING_URL } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { BookCallLink } from "@/components/site/book-call-link";
 
 const NAV = [
   { href: "/what-we-build", label: "What we build" },
@@ -62,9 +62,7 @@ export function SiteHeader() {
 
         <div className="flex shrink-0 items-center gap-2.5">
           <Button asChild>
-            <a href={BOOKING_URL} target="_blank" rel="noopener">
-              Book a call
-            </a>
+            <BookCallLink placement="header">Book a call</BookCallLink>
           </Button>
           <button
             type="button"
@@ -98,14 +96,12 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener"
+          <BookCallLink
+            placement="drawer"
             className="flex min-h-11 items-center text-base font-medium text-fg"
           >
             Book a call
-          </a>
+          </BookCallLink>
         </nav>
       ) : null}
     </header>
