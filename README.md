@@ -72,6 +72,11 @@ build and there are no dependencies. It exists because Vercel disables new build
 on Node 20.x from 30 September 2026, and pinning the version in the repo is more
 durable than setting it in project config.
 
+Because that manifest could otherwise make Vercel's zero-config detection
+reconsider the project type, `vercel.json` states the static deploy outright:
+`framework: null`, an empty `buildCommand`, and `outputDirectory: "."`. Nothing
+is built; the repo root is served as-is.
+
 ## Local preview
 
 ```sh
