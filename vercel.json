@@ -4,5 +4,11 @@
   "trailingSlash": false,
   "git": {
     "deploymentEnabled": true
-  }
+  },
+  "redirects": [
+    { "source": "/solutions", "destination": "/what-we-build", "permanent": true },
+    { "source": "/how-it-works", "destination": "/how-we-work", "permanent": true },
+    { "source": "/who-we-help", "destination": "/who-we-work-with", "permanent": true },
+    { "source": "/intake", "destination": "/contact", "permanent": true }
+  ]
 }

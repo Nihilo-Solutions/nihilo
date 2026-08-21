@@ -1,49 +1,101 @@
 # Nihilo Solutions
 
-> Nihilo Solutions is a principal-led studio in Fairfield, Connecticut that builds websites, lead capture and follow-up systems, and operations automation for small and mid-sized businesses, typically 5 to 150 people. Work is sold as fixed-scope packages rather than open-ended consulting. We serve service businesses, retailers, professional services firms, wholesalers and distributors, and light manufacturing and operations teams across Connecticut and nationally.
+> Nihilo Solutions is a small firm in Connecticut that builds custom operational
+> automations for growing companies. We take repeating operational work off a team
+> and turn it into a system that runs without them: recurring reports, meter and
+> usage readings, client and record lookups, exception review, and the movement of
+> the same record between tools. Engagements are scoped to one workflow at a time,
+> priced fixed in writing, and handed over on completion. We work across the
+> Northeast and take remote engagements nationwide.
 
-## What we sell
+## What we build
 
-Five productized packages, each with a fixed scope, a typical timeline, and stated boundaries.
+Types of systems, not a product catalog. Every build is scoped to the client's
+process, their existing tools, and their definition of done.
 
-- **01. Website Rebuild and Conversion System**. A fast, mobile-first site with clear offers, working lead capture, core SEO structure, redirects from old URLs, and conversion tracking. Solves outdated or template-looking sites that fail to convert visitors into inquiries, slow load times, and unclear next steps. Typical timeline 3 to 5 weeks.
-- **02. AI Lead Capture and Follow-up System**. Site chat and forms that respond instantly, qualify the inquiry, route it to the right person, log it to the CRM, and run follow-up sequences. Solves leads going cold because response takes hours or days, after-hours inquiries being lost, and inconsistent follow-up by busy owners and staff. Typical timeline 2 to 3 weeks, and it works on an existing site.
-- **03. Operations Automation Pack**. Two to four high-return workflows built and documented: lead routing, quote and status follow-up, appointment reminders, internal notifications, and reduced manual data entry. Solves owners and small teams spending significant time on repetitive admin instead of sales or delivery, and manual hand-offs that create delays and errors. Typical timeline 3 to 5 weeks.
-- **04. Industry Starter Systems**. Pre-scoped combinations of packages 01 to 03 tuned for service businesses, retail, professional services, and wholesale and distribution. Solves generic tools that do not fit how the business actually works. Typical timeline 4 to 6 weeks.
-- **05. Ongoing Growth and AI Maintenance Retainer**. Monitoring, security and dependency updates, a monthly block of small improvements, content and system upkeep, and a plain-language monthly report. Solves sites and automations that are launched and then left to decay with no one owning continuous improvement. Monthly, month to month after the initial term.
+- **Operational service reporting**. Weekly or monthly packs that today live in a
+  spreadsheet, a shared drive, or someone's head. We connect the sources, apply the
+  same rules every time, and deliver the report in the format the team already uses.
+  Covers service, ticket and job summaries, exception and overdue lists, and
+  scheduled delivery to email or a shared folder.
+- **Meter and usage reading**. Any operation that still depends on a person reading
+  a device, a portal, or a print-out and typing the number in. We capture the
+  reading, validate it, and write it to the system that already bills or tracks
+  usage. Fewer estimated reads and fewer corrections later.
+- **Client and record lookup**. A lookup built against the systems a client already
+  has, so the right customer, job, or account comes back in one step instead of a
+  search across three tools. Covers account lookup, job or ticket retrieval during
+  a call, and less re-keying between dispatch, billing, and support.
+- **Similar operational workflows**. Where the pattern is repeatable, rules-based,
+  and currently done by a person: intake, status updates, data movement between
+  tools, scheduled checks, exception flagging instead of full-list review.
 
 ## How we work
 
-Four steps: Discover (a free 30-minute call, followed by a written recommendation and fixed price), Design and Build (2 to 5 weeks, scope agreed in writing first), Launch (live, documented, handed over, with 30 days of support included), and Optimize (optional monthly retainer).
+Four steps. A 30-minute discovery call on one concrete workflow, free, with a
+straight answer on fit. A written process map and a fixed-price scope stating what
+will be automated, what will not, and what is needed from the client. A build
+against the client's live data and tools, reviewed early. Then review beside the
+current process, adjust, and hand off.
+
+What we need from a client: a real process owner who can walk us through last
+week's run, access to the source the data already lives in, and a specific
+definition of done.
 
 ## How we are different
 
-- Principal-led. The people who scope the work build it and support it. No account managers and no junior delivery team.
-- Fixed scope and fixed price, agreed in writing before work starts. Out-of-scope requests are quoted, not absorbed or silently billed.
-- Clients own everything: domain, hosting, code, data, documentation, and logins. Nothing stops working if the retainer ends.
-- We connect to the CRM, email, and scheduling tools a client already pays for rather than pushing a migration.
+- Custom operational automation, not app-to-app zaps. We build where the work is
+  messy: a spreadsheet plus a portal plus a meter plus a report that has to look a
+  certain way.
+- No new platform required first. We build against the tools and files a client
+  already uses. Required infrastructure is in the scope before work starts.
+- Fixed scope and a fixed price, in writing, before the build. Not hours against an
+  open retainer unless ongoing support is requested after handoff.
+- The client owns the workflow when we are done, and their team is shown how to run
+  it and how to change a rule when the business changes.
+- The people who scope the work stay on it through handoff. No account managers.
+- AI is used only where it earns its place: reading a meter image, matching a messy
+  client name, drafting a summary. Much of the value is reliable plumbing: pull,
+  validate, write, notify.
 - We publish no invented case studies, client names, or performance metrics.
+
+## Who this is for
+
+Operations, service, dispatch, billing, and office teams that still do the same
+work by hand every week, with data already living in sheets, portals, meters, or a
+few disconnected tools, and a willingness to start with one workflow rather than a
+company-wide rebuild.
+
+Not a fit: a generic website chatbot, a full ERP or platform replacement, a process
+nobody can describe, work that is different every time with no rules, or a staffed
+marketing agency engagement.
 
 ## Who we are
 
-- **Sam Oakes**, Principal, Design and Engineering. Builds AI and platform systems for regulated industries. ISC2 Certified in Cybersecurity, B.S. in Cybersecurity, published on emerging-tech risk. https://www.linkedin.com/in/samoakes123/
-- **Jake Ice**, Principal, Delivery and Operations. Scoping, delivery, and client relationships, with a B2B sales and recruiting background. https://www.linkedin.com/in/jake-ice/
-- **Ish Pandhal**, Principal, Growth. Demand, offer framing, and lead capture. https://www.linkedin.com/in/ishpalpandhal/
-
-The studio also builds and runs its own software, including Stowed, an inventory and B2B order app for small wholesalers.
+- **Sam Oakes**, Co-founder, Systems. Builds custom operational automations, with
+  experience shipping this class of work inside live managed-services operations.
+  https://www.linkedin.com/in/samoakes123/
+- **Jake Ice**, Co-founder, Delivery. Owns delivery and the commercial side of each
+  engagement: scope, timeline, and tying the build to a business outcome.
+  https://www.linkedin.com/in/jake-ice/
+- **Ish Pandhal**, Marketing and Client Relations. First point of contact for new
+  conversations, and the relationship once a project is underway.
+  https://www.linkedin.com/in/ishpalpandhal/
 
 ## Key pages
 
 - Home: https://nihilosolutions.com/
-- Solutions and packages: https://nihilosolutions.com/solutions
-- How it works: https://nihilosolutions.com/how-it-works
-- Who we help: https://nihilosolutions.com/who-we-help
+- What we build: https://nihilosolutions.com/what-we-build
+- Use cases: https://nihilosolutions.com/use-cases
+- How we work: https://nihilosolutions.com/how-we-work
+- Who we work with: https://nihilosolutions.com/who-we-work-with
 - About: https://nihilosolutions.com/about
-- Book a call: https://nihilosolutions.com/contact
-- Tell us about your business (intake form): https://nihilosolutions.com/intake
+- FAQ: https://nihilosolutions.com/faq
+- Book a discovery call: https://nihilosolutions.com/contact
+- Privacy: https://nihilosolutions.com/privacy
 
 ## Contact
 
 - Email: sam@nihilosolutions.com
-- Location: Fairfield, Connecticut, United States
+- Location: Connecticut, United States. Remote engagements nationwide.
 - Preferred citation: Nihilo Solutions (nihilosolutions.com)

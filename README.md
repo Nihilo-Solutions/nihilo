@@ -1,76 +1,83 @@
 # Nihilo Solutions
 
-Marketing site for Nihilo Solutions, a principal-led studio building websites,
-lead capture and follow-up systems, and operations automation for small and
-mid-sized businesses.
+Marketing site for Nihilo Solutions, a small Connecticut firm building custom
+operational automations for growing companies.
 
 Static multi-page site. Deploys to Vercel with no build step. `cleanUrls` is on,
-so `solutions.html` is served at `/solutions`.
+so `what-we-build.html` is served at `/what-we-build`.
 
 ## Pages
 
 | File | URL | Purpose |
 | --- | --- | --- |
-| `index.html` | `/` | Home. Pain to solution mapping, the five packages, process, CTAs |
-| `solutions.html` | `/solutions` | The five packages in full, with scope boundaries, timelines, pricing approach, FAQ |
-| `how-it-works.html` | `/how-it-works` | Discover, Design and Build, Launch, Optimize |
-| `who-we-help.html` | `/who-we-help` | SMB categories, fit and non-fit, shared failure modes |
-| `about.html` | `/about` | Principal-led positioning and the three principals |
-| `contact.html` | `/contact` | Two paths to start. Booking calendar embed lives at `/contact#book` |
-| `intake.html` | `/intake` | "Tell us about your business". Microsoft Form embed, with a working fallback form |
+| `index.html` | `/` | Home. The hero before/after, the three kinds of work, how an engagement runs |
+| `what-we-build.html` | `/what-we-build` | Four classes of system: reporting, meter and usage, lookup, similar workflows |
+| `use-cases.html` | `/use-cases` | Six worked examples, each anchored (`#reports`, `#meters`, `#lookup`, ...) for deep links |
+| `how-we-work.html` | `/how-we-work` | Four steps, what we need from you, time and price and ownership |
+| `who-we-work-with.html` | `/who-we-work-with` | Good fit, explicitly not a fit, where the work shows up |
+| `about.html` | `/about` | The three of us, and how we think about the work |
+| `faq.html` | `/faq` | Eleven questions. Carries FAQPage structured data |
+| `contact.html` | `/contact` | The booking calendar. The embed lives at `/contact#book` |
+| `privacy.html` | `/privacy` | Short policy |
 
 Shared assets: `assets/site.css` and `assets/site.js`. Every page links both.
 
-## Configuring the two integrations
+Retired URLs 301 in `vercel.json`: `/solutions`, `/how-it-works`, `/who-we-help`,
+`/intake`. The reasoning behind the current framing is in `docs/site-brief.md`;
+the previous five-package positioning is archived under `docs/archive/`.
 
-Both live at the top of `assets/site.js` and are the only values that need
-changing:
+## Configuring the booking calendar
+
+One value, at the top of `assets/site.js`:
 
 ```js
 var NIHILO = {
-  BOOKING_URL: 'https://outlook.office.com/book/NihiloSolutionsDiscoveryCall@nihilosolutions.com/',
-  MS_FORM_URL: 'REPLACE_ME'    // Microsoft Form for "Tell us about your business"
+  BOOKING_URL: 'https://outlook.office.com/book/NihiloSolutionsDiscoveryCall@nihilosolutions.com/'
 };
 ```
 
-**BOOKING_URL** — set to the Microsoft Bookings page for the Nihilo Solutions
-Discovery Call. The `/contact#book` section renders it inline, and every "Book
-a call" button on a page without the embed opens it in a new tab.
+`/contact#book` renders it inline. Every "Book a call" button carries `data-book`
+and points at `/contact#book`; on pages without the embed the script rewrites
+those to open the scheduler directly in a new tab.
 
 The plain `/book/` URL is used rather than the share link's
 `?ismsaljsauthenabled` variant, because that is the form Microsoft's own embed
-code takes. Note that a Bookings page only renders inside an iframe when it
-allows anonymous booking; if the page requires sign-in, the frame comes up
-blank because Microsoft's login screen refuses to be framed. Every booking
-section also renders an "open in a new tab" escape link for that case. If the
-frame is blank on the live site, either enable anonymous booking in Bookings or
-drop the embed and link out instead.
+code takes. A Bookings page only renders inside an iframe when it allows
+anonymous booking; if it requires sign-in the frame comes up blank, because
+Microsoft's login screen refuses to be framed. The embed therefore always renders
+an "open in a new tab" escape link beneath it. If the frame is blank on the live
+site, either enable anonymous booking in Bookings or drop the embed and link out.
 
-**MS_FORM_URL** — in Microsoft Forms choose *Collect responses > Embed* and copy
-the `src` from the generated iframe. Once set, `/intake` renders the Microsoft
-Form and automatically hides the fallback form.
-
-Until each value is replaced the site stays usable: the booking section offers
-email and the intake form, and `/intake` shows a fully working fallback form
-posting to Formspree that collects the same fields.
-
-The Microsoft Form should collect, in order: business name; website if any;
-industry or type of business; rough company size; main challenge (website /
-leads and follow-up / operations and automation / a combination); current tools;
-anything else; and contact name, email, and phone.
+While `BOOKING_URL` is left as `REPLACE_ME` the section renders a labelled
+placeholder and an email link rather than a broken frame.
 
 ## Conventions
 
 - No build step, no dependencies. Edit HTML and CSS directly.
+- Design tokens are the `:root` block at the top of `assets/site.css`. Change a
+  colour there, not in a page.
+- The primary button is ink on paper. The accent green is for kickers, rules,
+  numbers and emphasis only.
 - House style avoids em dashes and en dashes in body copy.
 - No invented case studies, client names, logos, or performance metrics.
-- Every major section ends with a next step: book a call, or open the intake form.
+- Every page ends with a next step.
+- If you edit a question on `/faq`, edit the matching entry in that page's
+  FAQPage JSON-LD too. Google flags structured data that does not match the
+  visible text.
+
+## Node version
+
+The root `package.json` carries nothing but `engines.node: "22.x"`. There is no
+build and there are no dependencies. It exists because Vercel disables new builds
+on Node 20.x from 30 September 2026, and pinning the version in the repo is more
+durable than setting it in project config.
 
 ## Local preview
 
 ```sh
-python3 -m http.server 8080
+npx serve .
 ```
 
-Then open `http://localhost:8080`. Note that `cleanUrls` is a Vercel feature, so
-locally you need the `.html` extension on interior pages.
+`serve` resolves extensionless paths to `.html` the way Vercel's `cleanUrls`
+does, so interior links work. With `python3 -m http.server 8080` they will not,
+because it needs the `.html` extension.

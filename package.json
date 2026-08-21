@@ -1,0 +1,8 @@
+{
+  "name": "nihilosolutions-com",
+  "private": true,
+  "description": "Static marketing site for nihilosolutions.com. No build step: Vercel serves the repo root with cleanUrls. This manifest exists only to pin the Node version Vercel builds with.",
+  "engines": {
+    "node": "22.x"
+  }
+}

@@ -1,3 +1,9 @@
+> **Superseded, 2026-08-21.** This brief documents the five-package,
+> small-business positioning that the site carried until the operational
+> automation redesign replaced it. The packages, `/solutions`, `/how-it-works`,
+> `/who-we-help` and `/intake` are all retired. Kept as the record of the prior
+> reasoning. The current brief is `docs/site-brief.md`.
+
 # Nihilo Solutions site redesign
 
 Repositioning from "product studio building AI-native websites and platforms"
