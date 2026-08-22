@@ -119,6 +119,8 @@ const LLMS_FULL = join(ROOT, "public", "llms-full.txt");
 const LLMS_PAGES = [
   "/", "/what-we-build", "/use-cases", "/how-we-work", "/who-we-work-with",
   "/about", "/faq", "/contact", "/privacy", "/terms",
+  "/use-cases/reports", "/use-cases/meters", "/use-cases/lookup",
+  "/use-cases/exceptions", "/use-cases/move", "/use-cases/follow-through",
 ];
 try {
   const full = readFileSync(LLMS_FULL, "utf8");
@@ -130,6 +132,22 @@ try {
   }
 } catch {
   problems.push("public/llms-full.txt is missing, run: npm run build && npm run build:llms");
+}
+
+// Every page also has a plain-text twin, and every page links to it. A page
+// added without one would advertise a 404 in its head.
+for (const path of LLMS_PAGES) {
+  const name = path === "/" ? "index.md" : `${path.slice(1)}.md`;
+  const file = join(ROOT, "public", name);
+  try {
+    const md = readFileSync(file, "utf8");
+    const url = path === "/" ? "https://nihilosolutions.com/" : `https://nihilosolutions.com${path}`;
+    if (!md.includes(`Source: ${url}`)) {
+      problems.push(`public/${name} does not name ${url} as its source, run: npm run build:llms`);
+    }
+  } catch {
+    problems.push(`public/${name} is missing, run: npm run build && npm run build:llms`);
+  }
 }
 
 if (problems.length) {

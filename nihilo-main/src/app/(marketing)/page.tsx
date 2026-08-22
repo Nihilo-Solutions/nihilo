@@ -74,19 +74,19 @@ export default function Home() {
               num="01"
               title="Operational reports"
               body="Pull the data, apply the same rules, and send the pack on a schedule. Service reports, status packs, exception lists. No Friday spreadsheet session."
-              href="/use-cases#reports"
+              href="/use-cases/reports"
             />
             <WorkCard
               num="02"
               title="Meter and usage capture"
               body="Collect readings, skip the typing, and push clean numbers into the system that already bills or tracks usage. Fewer errors. Faster close-out."
-              href="/use-cases#meters"
+              href="/use-cases/meters"
             />
             <WorkCard
               num="03"
               title="Client and record lookup"
               body="Find the right customer, job, or account without hunting portals, inboxes, and sheets. One question. The right record."
-              href="/use-cases#lookup"
+              href="/use-cases/lookup"
             />
           </div>
         </div>

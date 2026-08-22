@@ -18,12 +18,18 @@ export function pageMeta({
   path: string;
 }): Metadata {
   const url = path === "/" ? SITE_URL : `${SITE_URL}${path}`;
+  // Plain-text twin of the page, written by scripts/build-llms-full.mjs. An
+  // agent that lands on the HTML can follow this instead of parsing it.
+  const markdown = `${SITE_URL}/${path === "/" ? "index" : path.slice(1)}.md`;
   return {
     // The redesign's titles already carry the brand, so bypass the layout's
     // "%s | Nihilo Solutions" template rather than appending it twice.
     title: { absolute: title },
     description,
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      types: { "text/markdown": markdown },
+    },
     openGraph: {
       type: "website",
       locale: "en_US",

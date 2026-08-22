@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 /**
- * Writes public/llms-full.txt: the readable text of every page in one file.
+ * Writes two things from one extractor, so they can never disagree:
+ *
+ *   public/llms-full.txt   every page's text in one file
+ *   public/<slug>.md       one file per page, for an agent fetching a single URL
  *
  * `llms.txt` is a summary with links, which still asks an agent to crawl ten
  * URLs and run JavaScript to read the site. This gives it everything in a single
@@ -11,8 +14,8 @@
  * from the TSX, so what it publishes is what a visitor actually sees.
  */
 
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
-import { join } from "node:path";
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
+import { dirname, join } from "node:path";
 
 const ROOT = new URL("..", import.meta.url).pathname.replace(/\/$/, "");
 const SERVER_APP = join(ROOT, ".next", "server", "app");
@@ -21,6 +24,12 @@ const PAGES = [
   ["/", "Home"],
   ["/what-we-build", "What we build"],
   ["/use-cases", "Use cases"],
+  ["/use-cases/reports", "Use case: recurring reports"],
+  ["/use-cases/meters", "Use case: collecting numbers"],
+  ["/use-cases/lookup", "Use case: finding the right record"],
+  ["/use-cases/exceptions", "Use case: exceptions, not every row"],
+  ["/use-cases/move", "Use case: moving information"],
+  ["/use-cases/follow-through", "Use case: follow-through"],
   ["/how-we-work", "How we work"],
   ["/who-we-work-with", "Who we work with"],
   ["/about", "About"],
@@ -40,7 +49,11 @@ function extract(html) {
   s = s.replace(/<header[\s\S]*?<\/header>/gi, " ");
   s = s.replace(/<footer[\s\S]*?<\/footer>/gi, " ");
   s = s.replace(/<a[^>]*href="#main"[^>]*>[\s\S]*?<\/a>/gi, " ");
+  // In-page navigation (breadcrumbs) is chrome, not content. The Source line at
+  // the top of each file already says where the page sits.
+  s = s.replace(/<nav[\s\S]*?<\/nav>/gi, " ");
   s = s.replace(/<span[^>]*aria-hidden[^>]*>[\s\S]*?<\/span>/gi, " ");
+  s = s.replace(/<li[^>]*aria-hidden[^>]*>[\s\S]*?<\/li>/gi, " ");
   // sr-only text is for assistive tech, not for a text dump
   s = s.replace(/<h2[^>]*class="[^"]*sr-only[^"]*"[^>]*>[\s\S]*?<\/h2>/gi, " ");
   s = s.replace(/<\/(h[1-6]|p|li|section|article|div|tr|summary|details)>/gi, "\n");
@@ -85,7 +98,28 @@ const parts = [
   "",
 ];
 
+/** `/what-we-build` -> `what-we-build.md`; the homepage gets `index.md`. */
+function mdName(path) {
+  return path === "/" ? "index.md" : `${path.slice(1)}.md`;
+}
+
+const BANNED = [
+  [/\u2014/, "em dash"],
+  [/\u2013/, "en dash"],
+];
+
+function rejectBanned(text, where) {
+  for (const [re, name] of BANNED) {
+    if (re.test(text)) {
+      console.error(`build-llms-full: ${where} contains a ${name}, not writing`);
+      process.exit(1);
+    }
+  }
+}
+
 let missing = 0;
+const written = [];
+
 for (const [path, label] of PAGES) {
   const html = htmlFor(path);
   if (!html) {
@@ -94,7 +128,19 @@ for (const [path, label] of PAGES) {
     continue;
   }
   const url = path === "/" ? "https://nihilosolutions.com/" : `https://nihilosolutions.com${path}`;
-  parts.push("=".repeat(72), `# ${label}`, url, "", extract(html), "");
+  const body = extract(html);
+
+  parts.push("=".repeat(72), `# ${label}`, url, "", body, "");
+
+  // The per-page file leads with its canonical URL so an agent that fetched
+  // only this file still knows where it came from.
+  const page = [`# ${label}`, "", `Source: ${url}`, "Site: https://nihilosolutions.com/llms-full.txt", "", body, ""].join("\n");
+  rejectBanned(page, mdName(path));
+  // Nested paths such as /use-cases/reports.md need their folder first.
+  const target = join(ROOT, "public", mdName(path));
+  mkdirSync(dirname(target), { recursive: true });
+  writeFileSync(target, page.replace(/\n{3,}/g, "\n\n"));
+  written.push(mdName(path));
 }
 
 if (missing) {
@@ -105,14 +151,11 @@ if (missing) {
 const text = parts.join("\n").replace(/\n{3,}/g, "\n\n") + "\n";
 
 // Same house rule as the rest of the copy. If a dash reached a page, it would
-// reach this file too, so fail here rather than publish it.
-for (const [re, name] of [[/\u2014/, "em dash"], [/\u2013/, "en dash"]]) {
-  if (re.test(text)) {
-    console.error(`build-llms-full: extracted text contains a ${name}, not writing`);
-    process.exit(1);
-  }
-}
+// reach these files too, so fail here rather than publish it.
+rejectBanned(text, "llms-full.txt");
 
-const out = join(ROOT, "public", "llms-full.txt");
-writeFileSync(out, text);
-console.log(`build-llms-full: wrote public/llms-full.txt from ${PAGES.length} pages`);
+writeFileSync(join(ROOT, "public", "llms-full.txt"), text);
+console.log(
+  `build-llms-full: wrote public/llms-full.txt and ${written.length} per-page files ` +
+    `(${written.join(", ")})`,
+);

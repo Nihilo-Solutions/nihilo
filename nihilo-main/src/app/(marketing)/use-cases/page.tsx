@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CtaBand } from "@/components/site/cta-band";
 import { PageHero } from "@/components/site/page-hero";
 import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
 import { JsonLd } from "@/components/site/json-ld";
+import { USE_CASES } from "@/lib/use-cases";
 
 export const metadata: Metadata = pageMeta({
       title: "Operational Automation Examples | Nihilo Solutions",
@@ -10,57 +12,6 @@ export const metadata: Metadata = pageMeta({
         "Examples of work we automate: weekly reports, typed readings, record lookup, exception review, and follow-through. If the process repeats, we can look at it.",
       path: "/use-cases",
     });
-
-const CASES = [
-  {
-    id: "reports",
-    kicker: "Recurring reports",
-    title: "The weekly pack someone still builds by hand",
-    problem:
-      "Every week someone exports from one system, pastes into a sheet, applies the same filters, writes a short summary, and emails it. It might be a service report, a job list, a billing recap, or a status pack for leadership. Late files, missing rows, and a process that lives in one person's head.",
-    build: "A scheduled pull, the same rules every time, and a report that lands in the inbox or folder in the format your team already uses.",
-  },
-  {
-    id: "meters",
-    kicker: "Collecting numbers",
-    title: "Readings and counts that still get typed",
-    problem:
-      "A person reads a meter, a portal, a print-out, a counter, or a screen, then types the number into the system that bills, restocks, or tracks usage. Manual entry creates estimates, corrections, and delays. This shows up anywhere a number has to move from the real world into a system.",
-    build: "A capture path for the number, basic validation, and a write-back to the system that already owns billing, inventory, or tracking.",
-  },
-  {
-    id: "lookup",
-    kicker: "Finding the right record",
-    title: "Who is this, and which job is it?",
-    problem:
-      "A name, phone, ID, or ticket comes in. Staff hunt across a booking tool, a sheet, email, and billing to find the right customer, job, or account. Time that should be spent helping is spent searching.",
-    build: "A single lookup against the sources you already have, so the right record comes back without re-keying.",
-  },
-  {
-    id: "exceptions",
-    kicker: "Exceptions, not every row",
-    title: "Review only what needs a person",
-    problem:
-      "The team still scans entire lists to find the late job, the odd reading, the unmatched record, or the item that slipped. Most of the list is fine. The value is in the few rows that broke.",
-    build: "Rules that surface only what needs a person, with enough context to act.",
-  },
-  {
-    id: "move",
-    kicker: "Moving information",
-    title: "The same record, entered twice",
-    problem:
-      "A new job, order, or client is created in one system and then typed into another. That second entry is where errors and delay live. People are acting as the integration between tools.",
-    build: "A one-way or two-way movement of the fields that actually matter. Not an enterprise integration program.",
-  },
-  {
-    id: "follow-through",
-    kicker: "Follow-through",
-    title: "The next step that lives in someone's head",
-    problem:
-      "After a job closes, a form arrives, or a reading comes in, someone has to remember to update a sheet, send a note, or kick off the next step. If they forget, it stalls. The process is real. It just is not written down as a system.",
-    build: "The close-out, intake, or reading triggers the next step automatically, the same way every time.",
-  },
-];
 
 const ALSO = [
   "Intake and handoff",
@@ -83,7 +34,7 @@ export default function UseCases() {
       <section className="pb-16">
         <h2 className="sr-only">Worked examples</h2>
         <div className="mx-auto w-[min(70rem,calc(100%-2.5rem))] space-y-4.5">
-          {CASES.map((c) => (
+          {USE_CASES.map((c) => (
             <article
               key={c.id}
               id={c.id}
@@ -92,7 +43,11 @@ export default function UseCases() {
               <p className="text-[0.8125rem] font-semibold tracking-[0.12em] text-accent">
                 {c.kicker}
               </p>
-              <h3 className="mt-2.5 mb-5 font-serif text-xl font-medium">{c.title}</h3>
+              <h3 className="mt-2.5 mb-5 font-serif text-xl font-medium">
+                <Link href={`/use-cases/${c.id}`} className="hover:underline hover:decoration-accent">
+                  {c.title}
+                </Link>
+              </h3>
               <div className="grid gap-6 md:grid-cols-2">
                 <div>
                   <p className="mb-2 text-xs tracking-[0.14em] text-muted uppercase">Today</p>
@@ -103,6 +58,14 @@ export default function UseCases() {
                   <p className="text-fg">{c.build}</p>
                 </div>
               </div>
+              <p className="mt-5">
+                <Link
+                  href={`/use-cases/${c.id}`}
+                  className="inline-flex min-h-11 items-center text-fg underline decoration-accent"
+                >
+                  Read the full use case
+                </Link>
+              </p>
             </article>
           ))}
 

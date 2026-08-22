@@ -92,15 +92,15 @@ export default function WhatWeBuild() {
             These are types of systems, not a catalog of products. Every build is scoped to your
             process, your tools, and your definition of done. For what each one looks like in
             practice, see the{" "}
-            <Link href="/use-cases#reports" className="text-fg underline decoration-accent">
+            <Link href="/use-cases/reports" className="text-fg underline decoration-accent">
               weekly report
             </Link>
             ,{" "}
-            <Link href="/use-cases#meters" className="text-fg underline decoration-accent">
+            <Link href="/use-cases/meters" className="text-fg underline decoration-accent">
               meter and usage
             </Link>{" "}
             and{" "}
-            <Link href="/use-cases#lookup" className="text-fg underline decoration-accent">
+            <Link href="/use-cases/lookup" className="text-fg underline decoration-accent">
               record lookup
             </Link>{" "}
             examples.

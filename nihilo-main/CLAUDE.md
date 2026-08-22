@@ -112,11 +112,18 @@ Do not add an exception.
 Two artifacts are generated but checked in, because both need to be plain static
 assets and neither can be produced before `next build` runs.
 
-- **`public/llms-full.txt`**: the readable text of all ten pages in one file, for
-  agents that would otherwise crawl ten URLs and execute JavaScript. Regenerate
+- **`public/llms-full.txt`**: the readable text of every page in one file, for
+  agents that would otherwise crawl every URL and execute JavaScript. Regenerate
   after any copy change: `npm run build && npm run build:llms`. `check:copy`
   fails if it is missing a page, but it cannot detect wording drift, so
   regenerating is on you.
+- **`public/<slug>.md`**: the same text, one file per page, for an agent that
+  only wants one. Written by the same script in the same pass, so the two can
+  never disagree. Every page links its own file with
+  `<link rel="alternate" type="text/markdown">`, emitted by `pageMeta()`.
+  Adding a page means adding it to `PAGES` in `scripts/build-llms-full.mjs` and
+  `LLMS_PAGES` in `scripts/check-copy.mjs`; the guard fails the build if a page
+  ships without its text twin.
 - **`public/<32-hex>.txt`**: the IndexNow key. Do not rename or delete it; the
   key inside must match the filename or submissions are rejected. `npm run
   indexnow` submits the ten URLs to Bing and friends. Run it after a content

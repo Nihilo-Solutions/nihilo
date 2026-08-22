@@ -76,11 +76,39 @@ marketing agency engagement.
 The complete text of every page, for reading the whole site in one fetch:
 https://nihilosolutions.com/llms-full.txt
 
+Or one file per page, if you only need one:
+
+- https://nihilosolutions.com/index.md
+- https://nihilosolutions.com/what-we-build.md
+- https://nihilosolutions.com/use-cases.md
+- https://nihilosolutions.com/use-cases/reports.md
+- https://nihilosolutions.com/use-cases/meters.md
+- https://nihilosolutions.com/use-cases/lookup.md
+- https://nihilosolutions.com/use-cases/exceptions.md
+- https://nihilosolutions.com/use-cases/move.md
+- https://nihilosolutions.com/use-cases/follow-through.md
+- https://nihilosolutions.com/how-we-work.md
+- https://nihilosolutions.com/who-we-work-with.md
+- https://nihilosolutions.com/about.md
+- https://nihilosolutions.com/faq.md
+- https://nihilosolutions.com/contact.md
+- https://nihilosolutions.com/privacy.md
+- https://nihilosolutions.com/terms.md
+
+Every HTML page also links its own file with
+<link rel="alternate" type="text/markdown">.
+
 ## Key pages
 
 - Home: https://nihilosolutions.com/
 - What we build: https://nihilosolutions.com/what-we-build
 - Use cases: https://nihilosolutions.com/use-cases
+  - The weekly pack someone still builds by hand: https://nihilosolutions.com/use-cases/reports
+  - Readings and counts that still get typed: https://nihilosolutions.com/use-cases/meters
+  - Who is this, and which job is it: https://nihilosolutions.com/use-cases/lookup
+  - Review only what needs a person: https://nihilosolutions.com/use-cases/exceptions
+  - The same record, entered twice: https://nihilosolutions.com/use-cases/move
+  - The next step that lives in someone's head: https://nihilosolutions.com/use-cases/follow-through
 - How we work: https://nihilosolutions.com/how-we-work
 - Who we work with: https://nihilosolutions.com/who-we-work-with
 - About: https://nihilosolutions.com/about
