@@ -630,8 +630,152 @@ Looking up a client or job while someone is waiting. Moving a booking into the s
 ### Office and back office
 The report that is still assembled by hand. The record entered twice. The exception that only appears after someone scrolls a thousand rows.
 
+## Written up by sector
+Same work, said in the words three sectors actually use for it. If yours is not here, the process still is.
+- Home and field services The paperwork that follows every job home Job close-out, weekly service reports, meter and usage reads, and looking a customer up while they wait. Custom automation for home and field service operations.
+- Professional services The reporting and lookups between the billable work Recurring client reports, matter and account lookup across systems, intake handoff, and exception review. Custom automation for professional services back offices.
+- Retail and ecommerce Counts, orders, and the numbers that move between systems Inventory counts typed into a system, orders entered twice, supplier and channel reporting, and returns that need a person. Custom automation for retail and ecommerce operations.
+
 ## If you recognize the work, book the call.
 We work from Connecticut and take remote engagements nationwide.
+Book a discovery call
+
+========================================================================
+# Industry: home and field services
+https://nihilosolutions.com/industries/home-services
+
+Home and field services
+
+# The paperwork that follows every job home
+The work in the field is not the problem. The problem is everything that has to happen after the van leaves: the close-out, the report, the reading typed into billing, and the customer who calls back asking which job was which.
+
+## Who this is
+HVAC, plumbing, electrical, landscaping, pest control, cleaning, restoration, propane and fuel delivery, equipment service, and anyone else running scheduled or dispatched work with a back office behind it.
+
+## The work that keeps coming back
+
+### Job close-out that stalls
+The tech finishes, the paperwork does not. Someone in the office chases the photo, the reading, the signature, or the note before it can be invoiced. The job is done and the money is not.
+
+### The weekly service report
+Leadership, a property manager, or a commercial account wants the same pack every week. Someone exports, filters, formats and emails it, and it goes out late whenever that person is on a truck or on holiday.
+
+### Readings typed twice
+A meter, a tank level, a run-time counter, or a usage number gets read on site and then typed into the system that bills for it. Estimated readings and corrections follow.
+
+### Which job is this?
+A customer calls about work from six weeks ago. Answering means checking the scheduling tool, the invoice, and someone's inbox while they wait on the phone.
+
+## What we would build first
+Most field operations start with either the weekly report or the close-out, because both have a hard edge: the report either arrives on Monday or it does not, and the job is either invoiceable or it is not. One workflow, scoped and priced on its own, so you can judge it before deciding whether there is a second.
+- Recurring reports The weekly pack someone still builds by hand A scheduled pull, the same rules every time, and a report that lands in the inbox or folder in the format your team already uses.
+- Collecting numbers Readings and counts that still get typed A capture path for the number, basic validation, and a write-back to the system that already owns billing, inventory, or tracking.
+- Finding the right record Who is this, and which job is it? A single lookup against the sources you already have, so the right record comes back without re-keying.
+- Follow-through The next step that lives in someone's head The close-out, intake, or reading triggers the next step automatically, the same way every time.
+
+## When we are the wrong call
+If your scheduling and invoicing already talk to each other cleanly and nobody is retyping anything, there may be nothing here worth paying for. We would rather say that on the call than sell you a project.
+
+## Not your sector?
+The industry matters less than the process. If your team repeats the same steps every week, the work looks the same from where we sit.
+- Professional services
+- Retail and ecommerce
+- Everyone else
+
+## Bring the process, not the industry.
+Book a call. Thirty minutes on one workflow, and a straight answer on whether it is worth automating.
+Book a discovery call
+
+========================================================================
+# Industry: professional services
+https://nihilosolutions.com/industries/professional-services
+
+Professional services
+
+# The reporting and lookups between the billable work
+Nobody bills for assembling the monthly client pack, chasing the intake form, or finding which engagement a document belongs to. It still takes hours, and those hours come out of the ones you can bill.
+
+## Who this is
+Accounting and bookkeeping firms, law practices, insurance agencies, consultancies, marketing and creative agencies, staffing firms, and the operations or office managers who keep them running.
+
+## The work that keeps coming back
+
+### The recurring client pack
+The same report, per client, every month. Export, filter, format, write two lines of commentary, send. Multiply by the client list and it is somebody's week.
+
+### Which client, which matter
+A name, a reference or an email arrives and the answer lives across a practice system, a shared drive, an inbox and a billing tool. The search is the job, and it happens dozens of times a day.
+
+### Intake that hands off by memory
+A form comes in and someone has to remember to open the file, notify the right person, and start the clock. When they are busy, it waits.
+
+### Reviewing whole lists to find a few rows
+Unbilled time, missing documents, engagements past a date, records that never got matched. Most of the list is fine. Someone reads all of it anyway.
+
+## What we would build first
+Usually the recurring pack, because the rules are already written down in whoever's head builds it and the output is easy to compare against last month. Scoped and priced on its own, against the systems you already pay for.
+- Recurring reports The weekly pack someone still builds by hand A scheduled pull, the same rules every time, and a report that lands in the inbox or folder in the format your team already uses.
+- Finding the right record Who is this, and which job is it? A single lookup against the sources you already have, so the right record comes back without re-keying.
+- Follow-through The next step that lives in someone's head The close-out, intake, or reading triggers the next step automatically, the same way every time.
+- Exceptions, not every row Review only what needs a person Rules that surface only what needs a person, with enough context to act.
+
+## When we are the wrong call
+If the report is genuinely different every month because the analysis is the product, automating it will produce something worse. Sometimes we can assemble the parts that never change and leave the judgement to your people, but that is a smaller job and we will say so.
+
+## Not your sector?
+The industry matters less than the process. If your team repeats the same steps every week, the work looks the same from where we sit.
+- Home and field services
+- Retail and ecommerce
+- Everyone else
+
+## Bring the process, not the industry.
+Book a call. Thirty minutes on one workflow, and a straight answer on whether it is worth automating.
+Book a discovery call
+
+========================================================================
+# Industry: retail and ecommerce
+https://nihilosolutions.com/industries/retail-ecommerce
+
+Retail and ecommerce
+
+# Counts, orders, and the numbers that move between systems
+Stock, orders and returns all generate the same kind of work: a number that exists in one place and has to end up in another, and a list somebody scans to find the handful of rows that went wrong.
+
+## Who this is
+Independent retailers, multi-location stores, ecommerce and marketplace sellers, wholesalers and distributors, and the operations people who reconcile what the systems say against what is actually on the shelf.
+
+## The work that keeps coming back
+
+### Counts that get typed
+A cycle count, a receiving sheet, or a stocktake happens on paper or in a notes app and then someone keys it into the system of record. The gap between count and entry is where the discrepancies live.
+
+### The same order, entered twice
+An order lands in one channel and gets rekeyed into the system that actually fulfils it. People are acting as the integration between two tools that were never going to talk.
+
+### Channel and supplier reporting
+Weekly sales by channel, stock on hand for a supplier, a returns summary for a marketplace. Same export, same spreadsheet, same Friday.
+
+### The exceptions in a long list
+The short-shipped line, the return that never got received, the SKU whose count has drifted. A few rows matter and someone reads a thousand to find them.
+
+## What we would build first
+Often the count or the double entry, because both have a number you can check: what the system says versus what is on the shelf, or how many orders got rekeyed last week. One workflow, scoped and priced on its own.
+- Collecting numbers Readings and counts that still get typed A capture path for the number, basic validation, and a write-back to the system that already owns billing, inventory, or tracking.
+- Moving information The same record, entered twice A one-way or two-way movement of the fields that actually matter. Not an enterprise integration program.
+- Recurring reports The weekly pack someone still builds by hand A scheduled pull, the same rules every time, and a report that lands in the inbox or folder in the format your team already uses.
+- Exceptions, not every row Review only what needs a person Rules that surface only what needs a person, with enough context to act.
+
+## When we are the wrong call
+If you are looking for a platform migration, a new ERP, or a storefront rebuild, that is not what we do. We build against the systems you have already chosen.
+
+## Not your sector?
+The industry matters less than the process. If your team repeats the same steps every week, the work looks the same from where we sit.
+- Home and field services
+- Professional services
+- Everyone else
+
+## Bring the process, not the industry.
+Book a call. Thirty minutes on one workflow, and a straight answer on whether it is worth automating.
 Book a discovery call
 
 ========================================================================

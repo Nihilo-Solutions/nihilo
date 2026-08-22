@@ -102,7 +102,9 @@ Local URL: `http://localhost:5000`.
 yet; adding them is on the to-do list.
 
 `npm run check:copy` runs `scripts/check-copy.mjs`, and `prebuild` runs it before
-every build, so it gates the Vercel deploy. It fails on em dashes, en dashes and
+every build, so it gates the Vercel deploy. Note the bootstrap: the guard checks
+artifacts that `next build` produces, so on a first run of a new page use
+`npx next build && npm run build:llms` once, then `npm run build` normally. It fails on em dashes, en dashes and
 non-breaking spaces anywhere in the repo outside `docs/archive/`, and on the
 forbidden ownership wording in `src/` and `public/`. If it fires, rephrase.
 Do not add an exception.
@@ -121,9 +123,9 @@ assets and neither can be produced before `next build` runs.
   only wants one. Written by the same script in the same pass, so the two can
   never disagree. Every page links its own file with
   `<link rel="alternate" type="text/markdown">`, emitted by `pageMeta()`.
-  Adding a page means adding it to `PAGES` in `scripts/build-llms-full.mjs` and
-  `LLMS_PAGES` in `scripts/check-copy.mjs`; the guard fails the build if a page
-  ships without its text twin.
+  Adding a page means adding it to `PAGES` in `scripts/pages.mjs`, which is the
+  one list `build-llms-full`, `check-copy` and `indexnow` all read. The guard
+  fails the build if a page ships without its text twin.
 - **`public/<32-hex>.txt`**: the IndexNow key. Do not rename or delete it; the
   key inside must match the filename or submissions are rejected. `npm run
   indexnow` submits the ten URLs to Bing and friends. Run it after a content
@@ -139,6 +141,14 @@ actually changes.
 - **ICP**: operations, service, dispatch, billing and office teams that still do
   the same work by hand every week, with data already in sheets, portals or a few
   disconnected tools.
+- **Use cases**: the six in `src/lib/use-cases.ts`, each with its own page under
+  `/use-cases/`. That module is the one source for the index and the detail
+  pages, so edit copy there, not in a page.
+- **Industry pages**: three, in `src/lib/industries.ts`, live on the URLs the
+  previous site had indexed. They are not a claim to specialise: each says the
+  same thing in one sector's vocabulary and points at the use cases that fit.
+  The other three old slugs still 301 from `next.config.ts`, listed by name
+  rather than by wildcard so the rebuilt pages are not shadowed.
 - **Discovery call**: the conversion event, 30 minutes. Our entire site exists to
   produce these. Every CTA opens the Microsoft Bookings calendar.
 - **Principal-led**: the people who scope the work stay on it after go-live. No

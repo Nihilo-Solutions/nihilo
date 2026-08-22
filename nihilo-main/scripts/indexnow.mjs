@@ -12,14 +12,12 @@
 
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { PATHS } from "./pages.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname.replace(/\/$/, "");
 const HOST = "nihilosolutions.com";
 
-const PAGES = [
-  "/", "/what-we-build", "/use-cases", "/how-we-work", "/who-we-work-with",
-  "/about", "/faq", "/contact", "/privacy", "/terms",
-];
+const PAGES = PATHS;
 
 const keyFile = readdirSync(join(ROOT, "public")).find((f) => /^[0-9a-f]{32}\.txt$/.test(f));
 if (!keyFile) {

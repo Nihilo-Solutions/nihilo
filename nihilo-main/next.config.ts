@@ -18,8 +18,13 @@ const RETIRED: { from: string; to: string }[] = [
   { from: '/solutions/seo-growth-system', to: '/' },
   { from: '/solutions/:slug*', to: '/what-we-build' },
   { from: '/solutions', to: '/what-we-build' },
-  // Old industry landing pages
-  { from: '/industries/:slug*', to: '/who-we-work-with' },
+  // Old industry landing pages. home-services, professional-services and
+  // retail-ecommerce are live pages again on their original URLs, so they are
+  // listed here by name rather than swept up by a wildcard: a redirect runs
+  // before routing and would shadow the page it points away from.
+  { from: '/industries/healthcare', to: '/who-we-work-with' },
+  { from: '/industries/financial-services', to: '/who-we-work-with' },
+  { from: '/industries/real-estate', to: '/who-we-work-with' },
   { from: '/industries', to: '/who-we-work-with' },
   // Old lead-capture surfaces
   { from: '/tools/growth-assessment', to: '/contact' },

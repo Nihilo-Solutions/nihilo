@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { CtaBand } from "@/components/site/cta-band";
 import { PageHero } from "@/components/site/page-hero";
 import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
+import { INDUSTRIES } from "@/lib/industries";
 import { JsonLd } from "@/components/site/json-ld";
 import Link from "next/link";
 
@@ -71,6 +72,33 @@ export default function WhoWeWorkWith() {
               body="The report that is still assembled by hand. The record entered twice. The exception that only appears after someone scrolls a thousand rows."
             />
           </div>
+        </div>
+      </section>
+      <section className="py-20">
+        <div className="mx-auto w-[min(70rem,calc(100%-2.5rem))]">
+          <h2 className="font-serif text-3xl font-normal tracking-[-0.02em] sm:text-5xl">
+            Written up by sector
+          </h2>
+          <p className="mt-3.5 max-w-xl text-lg text-muted">
+            Same work, said in the words three sectors actually use for it. If yours is not here,
+            the process still is.
+          </p>
+          <ul className="mt-10 grid gap-4.5 md:grid-cols-3">
+            {INDUSTRIES.map((industry) => (
+              <li key={industry.slug}>
+                <Link
+                  href={`/industries/${industry.slug}`}
+                  className="flex h-full flex-col rounded-lg border border-border bg-bg-elev p-7 shadow-[var(--shadow-card)] hover:border-accent"
+                >
+                  <span className="text-[0.8125rem] font-semibold tracking-[0.12em] text-accent">
+                    {industry.kicker}
+                  </span>
+                  <span className="mt-2.5 font-serif text-xl font-medium">{industry.title}</span>
+                  <span className="mt-2.5 text-base text-muted">{industry.metaDescription}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
       <CtaBand

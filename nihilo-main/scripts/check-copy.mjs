@@ -19,6 +19,7 @@
 
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative, sep } from "node:path";
+import { PATHS } from "./pages.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname.replace(/\/$/, "");
 
@@ -116,12 +117,7 @@ for (const file of targets) {
 // llms-full.txt is a committed build artifact (see CLAUDE.md). Catch it going
 // missing or losing a page; content drift is a documented manual step.
 const LLMS_FULL = join(ROOT, "public", "llms-full.txt");
-const LLMS_PAGES = [
-  "/", "/what-we-build", "/use-cases", "/how-we-work", "/who-we-work-with",
-  "/about", "/faq", "/contact", "/privacy", "/terms",
-  "/use-cases/reports", "/use-cases/meters", "/use-cases/lookup",
-  "/use-cases/exceptions", "/use-cases/move", "/use-cases/follow-through",
-];
+const LLMS_PAGES = PATHS;
 try {
   const full = readFileSync(LLMS_FULL, "utf8");
   for (const path of LLMS_PAGES) {

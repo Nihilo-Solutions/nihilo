@@ -89,6 +89,9 @@ Or one file per page, if you only need one:
 - https://nihilosolutions.com/use-cases/follow-through.md
 - https://nihilosolutions.com/how-we-work.md
 - https://nihilosolutions.com/who-we-work-with.md
+- https://nihilosolutions.com/industries/home-services.md
+- https://nihilosolutions.com/industries/professional-services.md
+- https://nihilosolutions.com/industries/retail-ecommerce.md
 - https://nihilosolutions.com/about.md
 - https://nihilosolutions.com/faq.md
 - https://nihilosolutions.com/contact.md
@@ -111,6 +114,9 @@ Every HTML page also links its own file with
   - The next step that lives in someone's head: https://nihilosolutions.com/use-cases/follow-through
 - How we work: https://nihilosolutions.com/how-we-work
 - Who we work with: https://nihilosolutions.com/who-we-work-with
+  - Home and field services: https://nihilosolutions.com/industries/home-services
+  - Professional services: https://nihilosolutions.com/industries/professional-services
+  - Retail and ecommerce: https://nihilosolutions.com/industries/retail-ecommerce
 - About: https://nihilosolutions.com/about
 - FAQ: https://nihilosolutions.com/faq
 - Book a discovery call: https://nihilosolutions.com/contact

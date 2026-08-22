@@ -16,28 +16,11 @@
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { PAGES } from "./pages.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname.replace(/\/$/, "");
 const SERVER_APP = join(ROOT, ".next", "server", "app");
 
-const PAGES = [
-  ["/", "Home"],
-  ["/what-we-build", "What we build"],
-  ["/use-cases", "Use cases"],
-  ["/use-cases/reports", "Use case: recurring reports"],
-  ["/use-cases/meters", "Use case: collecting numbers"],
-  ["/use-cases/lookup", "Use case: finding the right record"],
-  ["/use-cases/exceptions", "Use case: exceptions, not every row"],
-  ["/use-cases/move", "Use case: moving information"],
-  ["/use-cases/follow-through", "Use case: follow-through"],
-  ["/how-we-work", "How we work"],
-  ["/who-we-work-with", "Who we work with"],
-  ["/about", "About"],
-  ["/faq", "FAQ"],
-  ["/contact", "Contact"],
-  ["/privacy", "Privacy"],
-  ["/terms", "Terms of Service"],
-];
 
 /** Turn prerendered HTML into readable text, preserving heading structure. */
 function extract(html) {
