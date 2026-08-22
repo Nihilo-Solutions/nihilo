@@ -15,10 +15,11 @@ const PAGES: {
   changeFrequency: 'weekly' | 'monthly' | 'yearly';
   priority: number;
 }[] = [
-  { path: '/', lastModified: '2026-08-21', changeFrequency: 'weekly', priority: 1 },
-  { path: '/what-we-build', lastModified: '2026-08-21', changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/', lastModified: '2026-08-22', changeFrequency: 'weekly', priority: 1 },
+  { path: '/what-we-build', lastModified: '2026-08-22', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/use-cases', lastModified: '2026-08-22', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/use-cases/reports', lastModified: '2026-08-22', changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/use-cases/data-prep', lastModified: '2026-08-22', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/use-cases/meters', lastModified: '2026-08-22', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/use-cases/lookup', lastModified: '2026-08-22', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/use-cases/exceptions', lastModified: '2026-08-22', changeFrequency: 'monthly', priority: 0.8 },

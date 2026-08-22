@@ -40,7 +40,8 @@ A one-way or two-way movement of the fields that actually matter. Not an enterpr
 If what you actually need is every field in both systems consistent in real time in both directions, that is an integration program and it should be scoped as one. We build the narrow version that removes the typing, and we will tell you when the narrow version is not what you need.
 
 ## Other work we get asked about
-- Recurring reports The weekly pack someone still builds by hand
+- Recurring reports The report someone still assembles by hand
+- Preparing data The cleanup that happens before anything gets loaded
 - Collecting numbers Readings and counts that still get typed
 - Finding the right record Who is this, and which job is it?
 - Exceptions, not every row Review only what needs a person

@@ -11,12 +11,20 @@ We do not sell a product you have to change your process around. We match the pr
 01
 
 ### Operational service reporting
-Weekly or monthly packs that today live in a spreadsheet, a shared drive, or someone's head. We connect the sources, apply the same rules every time, and deliver the report in the format your team already uses.
-- Service, ticket, or job summaries
+Recurring client reports, status packs and summaries that today get assembled by hand from other sources. We connect the sources, apply the same rules every time, and render the output into the template your clients already recognise.
+- Client, service, or job summaries in your own template
 - Exception and overdue lists
-- Scheduled delivery to email or a shared folder
+- Delivery on a cycle, to wherever it goes today
 
 02
+
+### Data preparation and cleanup
+The work that happens to data before it can go into a system: reshaping what arrived into what the system accepts, correcting what is always corrected, and checking it before rather than after it lands.
+- Mapping between the shape it arrives in and the shape you need
+- Validation before the load, not discovery afterwards
+- Only the genuinely broken records put in front of a person
+
+03
 
 ### Meter and usage reading
 Any operation that still depends on a person reading a device, a portal, or a print-out and typing the number in. We capture the reading, validate it, and write it to the system that already bills or tracks usage.
@@ -24,15 +32,15 @@ Any operation that still depends on a person reading a device, a portal, or a pr
 - Usage capture for billing or allocation
 - Fewer estimated reads and fewer corrections later
 
-03
+04
 
 ### Client and record lookup
-Staff should not have to search three tools to answer who this is. We build a lookup against the systems you already have, so the right customer, job, or account comes back in one step.
+Staff should not have to search several systems to answer who this is. We build a lookup against the sources you already have, so the right customer, job, or account comes back in one step.
 - Customer, rider, or account lookup
 - Job or ticket retrieval during a call
-- Less re-keying between dispatch, billing, and support
+- Less re-keying between the systems that hold the answer
 
-04
+05
 
 ### Similar operational workflows
 If the pattern is the same (repeatable, rules-based, and currently done by a person) we will look at it. Intake, status updates, data movement between tools, scheduled checks.
@@ -40,7 +48,7 @@ If the pattern is the same (repeatable, rules-based, and currently done by a per
 - Flagging exceptions instead of reviewing every row
 - Turning a documented process into a running workflow
 
-These are types of systems, not a catalog of products. Every build is scoped to your process, your tools, and your definition of done. For what each one looks like in practice, see the weekly report , meter and usage and record lookup examples.
+These are types of systems, not a catalog of products. Every build is scoped to your process, your tools, and your definition of done. For what each one looks like in practice, see the weekly report , data cleanup and record lookup examples.
 Browse use cases
 
 ## Bring the process that keeps coming back.

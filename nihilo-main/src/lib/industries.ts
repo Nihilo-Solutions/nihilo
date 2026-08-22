@@ -33,7 +33,7 @@ export const INDUSTRIES: Industry[] = [
     title: "The paperwork that follows every job home",
     metaTitle: "Automate Field Service Reporting and Job Close-Out | Nihilo Solutions",
     metaDescription:
-      "Job close-out, weekly service reports, meter and usage reads, and looking a customer up while they wait. Custom automation for home and field service operations.",
+      "Job close-out, recurring service reports, meter and usage reads, and looking a customer up while they wait. Custom automation for home and field service operations.",
     lede:
       "The work in the field is not the problem. The problem is everything that has to happen after the van leaves: the close-out, the report, the reading typed into billing, and the customer who calls back asking which job was which.",
     who:
@@ -44,8 +44,8 @@ export const INDUSTRIES: Industry[] = [
         body: "The tech finishes, the paperwork does not. Someone in the office chases the photo, the reading, the signature, or the note before it can be invoiced. The job is done and the money is not.",
       },
       {
-        title: "The weekly service report",
-        body: "Leadership, a property manager, or a commercial account wants the same pack every week. Someone exports, filters, formats and emails it, and it goes out late whenever that person is on a truck or on holiday.",
+        title: "The recurring service report",
+        body: "Leadership, a property manager, or a commercial account wants the same pack on the same cycle. Someone gathers it, drops it into the template and sends it, and it goes out late whenever that person is on a truck or on holiday.",
       },
       {
         title: "Readings typed twice",
@@ -76,7 +76,7 @@ export const INDUSTRIES: Industry[] = [
     work: [
       {
         title: "The recurring client pack",
-        body: "The same report, per client, every month. Export, filter, format, write two lines of commentary, send. Multiply by the client list and it is somebody's week.",
+        body: "The same report, per client, on the same cycle. Gather it, drop it into the template, write two lines of commentary, send. Multiply by the client list and it is somebody's week.",
       },
       {
         title: "Which client, which matter",
@@ -110,8 +110,8 @@ export const INDUSTRIES: Industry[] = [
       "Independent retailers, multi-location stores, ecommerce and marketplace sellers, wholesalers and distributors, and the operations people who reconcile what the systems say against what is actually on the shelf.",
     work: [
       {
-        title: "Counts that get typed",
-        body: "A cycle count, a receiving sheet, or a stocktake happens on paper or in a notes app and then someone keys it into the system of record. The gap between count and entry is where the discrepancies live.",
+        title: "Counts and supplier data that get keyed in",
+        body: "A count, a receiving sheet, or a supplier file arrives in one shape and has to end up in another. Someone reshapes it, corrects the obvious problems, and keys it in. The gap between what arrived and what landed is where the discrepancies live.",
       },
       {
         title: "The same order, entered twice",
@@ -119,14 +119,14 @@ export const INDUSTRIES: Industry[] = [
       },
       {
         title: "Channel and supplier reporting",
-        body: "Weekly sales by channel, stock on hand for a supplier, a returns summary for a marketplace. Same export, same spreadsheet, same Friday.",
+        body: "Sales by channel, stock on hand for a supplier, a returns summary for a marketplace. Same sources, same template, same person, every cycle.",
       },
       {
         title: "The exceptions in a long list",
         body: "The short-shipped line, the return that never got received, the SKU whose count has drifted. A few rows matter and someone reads a thousand to find them.",
       },
     ],
-    useCases: ["meters", "move", "reports", "exceptions"],
+    useCases: ["data-prep", "move", "reports", "exceptions"],
     firstBuild:
       "Often the count or the double entry, because both have a number you can check: what the system says versus what is on the shelf, or how many orders got rekeyed last week. One workflow, scoped and priced on its own.",
     notFor:

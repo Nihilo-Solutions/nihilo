@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/site/json-ld";
 export const metadata: Metadata = pageMeta({
       title: "Custom Workflow Automation | Nihilo Solutions",
       description:
-        "Custom automations for operational reporting, meter and usage capture, client lookup, and similar repeating workflows. Built against the tools you already use.",
+        "Custom automations for recurring reporting, data preparation and cleanup, record lookup, and similar repeating manual workflows. Built against the tools you already use.",
       path: "/what-we-build",
     });
 
@@ -17,15 +17,25 @@ const ITEMS = [
   {
     num: "01",
     title: "Operational service reporting",
-    body: "Weekly or monthly packs that today live in a spreadsheet, a shared drive, or someone's head. We connect the sources, apply the same rules every time, and deliver the report in the format your team already uses.",
+    body: "Recurring client reports, status packs and summaries that today get assembled by hand from other sources. We connect the sources, apply the same rules every time, and render the output into the template your clients already recognise.",
     bullets: [
-      "Service, ticket, or job summaries",
+      "Client, service, or job summaries in your own template",
       "Exception and overdue lists",
-      "Scheduled delivery to email or a shared folder",
+      "Delivery on a cycle, to wherever it goes today",
     ],
   },
   {
     num: "02",
+    title: "Data preparation and cleanup",
+    body: "The work that happens to data before it can go into a system: reshaping what arrived into what the system accepts, correcting what is always corrected, and checking it before rather than after it lands.",
+    bullets: [
+      "Mapping between the shape it arrives in and the shape you need",
+      "Validation before the load, not discovery afterwards",
+      "Only the genuinely broken records put in front of a person",
+    ],
+  },
+  {
+    num: "03",
     title: "Meter and usage reading",
     body: "Any operation that still depends on a person reading a device, a portal, or a print-out and typing the number in. We capture the reading, validate it, and write it to the system that already bills or tracks usage.",
     bullets: [
@@ -35,17 +45,17 @@ const ITEMS = [
     ],
   },
   {
-    num: "03",
+    num: "04",
     title: "Client and record lookup",
-    body: "Staff should not have to search three tools to answer who this is. We build a lookup against the systems you already have, so the right customer, job, or account comes back in one step.",
+    body: "Staff should not have to search several systems to answer who this is. We build a lookup against the sources you already have, so the right customer, job, or account comes back in one step.",
     bullets: [
       "Customer, rider, or account lookup",
       "Job or ticket retrieval during a call",
-      "Less re-keying between dispatch, billing, and support",
+      "Less re-keying between the systems that hold the answer",
     ],
   },
   {
-    num: "04",
+    num: "05",
     title: "Similar operational workflows",
     body: "If the pattern is the same (repeatable, rules-based, and currently done by a person) we will look at it. Intake, status updates, data movement between tools, scheduled checks.",
     bullets: [
@@ -73,7 +83,9 @@ export default function WhatWeBuild() {
             {ITEMS.map((item) => (
               <article
                 key={item.num}
-                className="rounded-lg border border-border bg-bg-elev p-7 shadow-[var(--shadow-card)]"
+                className={`rounded-lg border border-border bg-bg-elev p-7 shadow-[var(--shadow-card)] ${
+                  item.num === "05" ? "md:col-span-2" : ""
+                }`}
               >
                 <p className="text-[0.8125rem] font-semibold tracking-[0.12em] text-accent">
                   {item.num}
@@ -96,8 +108,8 @@ export default function WhatWeBuild() {
               weekly report
             </Link>
             ,{" "}
-            <Link href="/use-cases/meters" className="text-fg underline decoration-accent">
-              meter and usage
+            <Link href="/use-cases/data-prep" className="text-fg underline decoration-accent">
+              data cleanup
             </Link>{" "}
             and{" "}
             <Link href="/use-cases/lookup" className="text-fg underline decoration-accent">

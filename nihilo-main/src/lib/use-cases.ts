@@ -36,46 +36,93 @@ export const USE_CASES: UseCase[] = [
   {
     id: "reports",
     kicker: "Recurring reports",
-    title: "The weekly pack someone still builds by hand",
-    metaTitle: "Automate a Weekly Report Built by Hand | Nihilo Solutions",
+    title: "The report someone still assembles by hand",
+    metaTitle: "Automate a Recurring Client Report | Nihilo Solutions",
     metaDescription:
-      "The weekly service report, job list, or status pack someone still assembles from an export and a spreadsheet. We build the scheduled version and keep it running.",
+      "The client report, status pack or summary someone still assembles by hand and drops into your template. We build the version that produces itself and keep it running.",
     problem:
-      "Every week someone exports from one system, pastes into a sheet, applies the same filters, writes a short summary, and emails it. It might be a service report, a job list, a billing recap, or a status pack for leadership. Late files, missing rows, and a process that lives in one person's head.",
+      "The same report goes out on the same cycle. Someone gathers the numbers from wherever they live, reads through them, puts the parts that matter into your standard template, writes a short summary, and sends it. It goes out late whenever that person is busy, and it looks slightly different depending on who built it.",
     build:
-      "A scheduled pull, the same rules every time, and a report that lands in the inbox or folder in the format your team already uses.",
+      "The gathering, the formatting and the delivery written down as rules, so the report produces itself in the template your clients already recognise.",
     detail: {
       today: [
-        "Someone exports from the system of record, usually to CSV, usually on the same morning every week.",
-        "The export goes into a spreadsheet that already has the filters, the sort order, and the formatting someone worked out a long time ago.",
-        "They read it, notice the rows that look wrong, and fix or chase them.",
-        "They write two or three sentences at the top saying what changed since last week.",
-        "They send it, or drop it in a shared folder, and answer the replies.",
+        "The inputs come from wherever they live: a system of record, a portal, another report, a shared folder, a mailbox.",
+        "Someone reads through them and picks out the parts that belong in this report.",
+        "Those go into the template your clients already recognise, in the layout somebody worked out a long time ago.",
+        "They write a few lines at the top saying what changed since last time.",
+        "It goes out, and they answer the replies.",
       ],
       cost: [
-        "The hours are the smallest part. A weekly report that takes two hours costs about thirteen working days a year, which is real but survivable.",
-        "The expensive part is that it only exists while that person is available. When they are on holiday it goes out late, in a different format, or not at all.",
-        "The second expensive part is that nobody checks a report that arrives reliably. When the rules live in one person's head, a filter that quietly stops matching can go unnoticed for months.",
+        "The hours are the smallest part of it. A report that takes two hours on a regular cycle is real, but survivable.",
+        "The expensive part is that it only exists while that person is available. When they are away it goes out late, in a different shape, or not at all.",
+        "The second expensive part is that nobody audits a report that arrives reliably. When the rules live in one person's head, a rule that quietly stops being right can go unnoticed for a long time.",
+        "Clients notice inconsistency faster than they notice lateness. A pack that looks different this time invites questions about the numbers rather than about the format.",
       ],
       built: [
-        "A scheduled pull from the same source the export came from, on the same cadence.",
-        "The filters, groupings and calculations written down as rules rather than steps someone repeats.",
-        "The same layout your team already reads, because a report that looks unfamiliar gets ignored.",
-        "Delivery to wherever it goes today: an inbox, a shared folder, a channel.",
-        "A flag when the numbers look unlike last week, so an empty or doubled report announces itself instead of going out quietly.",
+        "The inputs gathered from the same places your person gathers them from now, on the same cycle.",
+        "The selection, the grouping and the calculations written down as rules rather than as steps somebody repeats.",
+        "The output rendered into your template, because a report that looks unfamiliar gets read differently even when the numbers are identical.",
+        "Delivery to wherever it goes today: an inbox, a shared folder, a portal, a client.",
+        "A flag when the figures look unlike last time, so an empty or doubled report announces itself instead of going out quietly.",
       ],
       after: [
-        "The report arrives whether or not the person who used to build it is at work.",
-        "It looks the same every time, so a change in the numbers reads as a change in the business rather than a change in whoever formatted it.",
+        "The report goes out whether or not the person who used to build it is at work.",
+        "It looks the same every time, so a change in the numbers reads as a change in the business rather than a change in who formatted it.",
         "When a rule needs to change, it changes in one place.",
       ],
       needed: [
-        "One person who can walk us through last week's run, including the parts they do without thinking.",
-        "Access to the source the export comes from.",
-        "A copy of the last few reports, so we can match the output rather than invent one.",
+        "One person who can walk us through the last one they produced, including the parts they do without thinking.",
+        "Access to the sources it draws on.",
+        "A copy of the last few reports, so we match the output rather than invent one.",
       ],
       notFor:
-        "If the report is different every week, or the person writing it is making judgement calls that are the actual product, automating it will produce something worse than what you have. What we can sometimes do instead is assemble the parts that never change and leave the judgement to them.",
+        "If the report is genuinely different every time, or the person writing it is making judgement calls that are the actual product, automating it will produce something worse than what you have. What we can sometimes do instead is assemble the parts that never change and leave the judgement to them.",
+    },
+  },
+  {
+    id: "data-prep",
+    kicker: "Preparing data",
+    title: "The cleanup that happens before anything gets loaded",
+    metaTitle: "Automate Data Cleanup Before It Goes Into a System | Nihilo Solutions",
+    metaDescription:
+      "The checking, correcting and reformatting somebody does to data before it can go into a system. We build the version that runs itself and surfaces only what genuinely needs a person.",
+    problem:
+      "Data arrives in the shape whoever sent it uses, and it has to be in the shape your system accepts. Somebody sits between the two, renaming fields, fixing formats, splitting values, mapping codes, chasing blanks, and checking it looks right before it goes in.",
+    build:
+      "The preparation written down as rules that run the same way every time, with only the records that genuinely need a decision put in front of a person.",
+    detail: {
+      today: [
+        "Something arrives from a supplier, a client, a branch, or another system.",
+        "It is close to what your system needs but not the same: different field names, dates written another way, a value that has to be split in two, codes that have to be mapped across.",
+        "Someone works through it, fixing the shape and correcting what is obviously wrong.",
+        "They spot-check it, load it, and find the rest of the problems later.",
+        "The next batch arrives with the same differences and the same person does it again.",
+      ],
+      cost: [
+        "The work is invisible until it is skipped. It reads as a few minutes of tidying rather than as a process anyone owns.",
+        "It looks like judgement but mostly is not. Almost every decision is the same one that was made last time, and the few that are real are buried in the routine ones.",
+        "Bad records that get through cost far more than their number suggests, because they are found downstream by somebody who has no idea where they came from.",
+        "The rules live in one person's habits, so the same data prepared by somebody else comes out slightly different.",
+      ],
+      built: [
+        "The mapping between what arrives and what your system accepts, written down properly: names, formats, units, codes, the value that has to be split.",
+        "The corrections that are always the same applied automatically, because a decision made identically a hundred times is not a decision.",
+        "Validation before anything is written rather than after: required values present, figures in range, references that actually exist, duplicates caught.",
+        "A short list of the records that genuinely need a person, saying what is wrong rather than leaving them to work it out.",
+        "A record of what went in and what was held back, so a missing item can be traced instead of argued about.",
+      ],
+      after: [
+        "The same data gets prepared the same way whoever is handling it.",
+        "Bad records are stopped at the door instead of found weeks later by whoever they broke.",
+        "The person who used to do the cleanup reviews the exceptions instead, which takes a fraction of the time and uses the part of their judgement that is worth paying for.",
+      ],
+      needed: [
+        "A few real examples of the data as it actually arrives, including a bad one. The bad one teaches us more than the clean ones.",
+        "The target: what the system needs, and what it rejects.",
+        "Whoever does the cleanup today, for long enough to talk us through the corrections they make without thinking about them.",
+      ],
+      notFor:
+        "If every batch genuinely arrives in a different shape and the mapping is a fresh puzzle each time, rules will not hold and you would be maintaining an automation on top of the work. This earns its place when the same handful of differences keep recurring.",
     },
   },
   {
@@ -127,15 +174,15 @@ export const USE_CASES: UseCase[] = [
     title: "Who is this, and which job is it?",
     metaTitle: "Look Up a Customer or Job Across Systems | Nihilo Solutions",
     metaDescription:
-      "Staff searching a booking tool, a spreadsheet, email and billing to answer who is calling and which job it is. We build one lookup against the systems you already have.",
+      "Staff searching several systems to answer who is calling and which job or account it is. We build one lookup against the sources you already have.",
     problem:
-      "A name, phone, ID, or ticket comes in. Staff hunt across a booking tool, a sheet, email, and billing to find the right customer, job, or account. Time that should be spent helping is spent searching.",
+      "A name, a number, a reference, or a ticket comes in. Staff hunt across several systems to find the right customer, job, or account. Time that should be spent helping is spent searching.",
     build:
       "A single lookup against the sources you already have, so the right record comes back without re-keying.",
     detail: {
       today: [
         "Something arrives: a phone call, an email, a reference number a customer read out.",
-        "Whoever picked it up checks the booking tool, then the spreadsheet, then their inbox, then billing.",
+        "Whoever picked it up checks one system, then a shared file, then their inbox, then billing.",
         "The name is spelled differently in two of those, so the match is done by eye.",
         "They find it, deal with it, and the next person to get the same call repeats the search from scratch.",
       ],
@@ -176,7 +223,7 @@ export const USE_CASES: UseCase[] = [
     build: "Rules that surface only what needs a person, with enough context to act.",
     detail: {
       today: [
-        "Somebody opens the list, which might be four hundred rows or four thousand.",
+        "Somebody opens the list, which might be a few hundred records or a few thousand.",
         "They scan it looking for the handful that are wrong: overdue, unmatched, missing a field, out of range.",
         "They work through those, and the rest of the list was read for nothing.",
         "The definition of wrong is in their head, and the person who covers for them uses a slightly different one.",
@@ -194,7 +241,7 @@ export const USE_CASES: UseCase[] = [
       ],
       after: [
         "The review takes as long as the exceptions warrant, instead of as long as the list is.",
-        "The same rules apply on a Friday afternoon as on a Monday morning.",
+        "The same rules apply at the end of a long day as at the start of a quiet one.",
         "Growth in volume stops making the review worse.",
       ],
       needed: [

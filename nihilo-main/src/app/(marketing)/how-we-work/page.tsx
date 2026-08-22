@@ -122,7 +122,7 @@ export default function HowWeWork() {
           <div className="mt-10 grid gap-4.5 md:grid-cols-3">
             <Need
               title="What moves the number"
-              body="How many systems the work touches, how clean the data already is, and how many exceptions a person has to handle today. A one-source weekly report is not the same job as a reading that has to reconcile against billing."
+              body="How many systems the work touches, how clean the data already is, and how many exceptions a person has to handle today. A report drawn from one source is not the same job as data that has to be reconciled against another system before it lands."
             />
             <Need
               title="Priced per project, not per hour"

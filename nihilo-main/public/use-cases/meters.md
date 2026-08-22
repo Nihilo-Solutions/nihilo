@@ -40,7 +40,8 @@ A capture path for the number, basic validation, and a write-back to the system 
 If the reading requires someone to make a call about what they are looking at, or the device genuinely cannot be reached by anything but a person, this is not automatable and we will say so on the call. Sometimes the honest answer is a better form on a phone, not an automation.
 
 ## Other work we get asked about
-- Recurring reports The weekly pack someone still builds by hand
+- Recurring reports The report someone still assembles by hand
+- Preparing data The cleanup that happens before anything gets loaded
 - Finding the right record Who is this, and which job is it?
 - Exceptions, not every row Review only what needs a person
 - Moving information The same record, entered twice

@@ -21,12 +21,12 @@ We take repeating operational work off your team and turn it into a system that 
 Book a discovery call See what we build
 30 minutes. You talk with our team. Nothing for your team to build or run.
 
-This Friday, by hand
-- Export the jobs
-- Paste into the sheet
+Still done by hand
+- Gather the numbers
+- Fill in the template
 - Write the summary
-- Email the pack
-One person. Same two hours. Same chance a row is missing.
+- Send it out
+One person. Same steps every time. Same chance something is missing.
 After
 The report lands on its own.
 Same rules. Same format. Nobody assembled it.
@@ -34,21 +34,21 @@ Same rules. Same format. Nobody assembled it.
 If this is still a person
 
 ## The work we take off your team.
-Industry does not matter as much as a process that repeats. If someone does it every week, it is a candidate.
+Industry does not matter as much as a process that repeats. If someone does it on a cycle, it is a candidate.
 01
 
 ### Operational reports
-Pull the data, apply the same rules, and send the pack on a schedule. Service reports, status packs, exception lists. No Friday spreadsheet session.
+Gather the inputs, apply the same rules, and render the pack into your template on a schedule. Client reports, status packs, exception lists. Nobody assembles it.
 See this use case
 02
 
-### Meter and usage capture
-Collect readings, skip the typing, and push clean numbers into the system that already bills or tracks usage. Fewer errors. Faster close-out.
+### Data prep and cleanup
+The checking, correcting and reformatting somebody does before data can go into a system. Rules instead of habits, and only the genuinely broken records reach a person.
 See this use case
 03
 
 ### Client and record lookup
-Find the right customer, job, or account without hunting portals, inboxes, and sheets. One question. The right record.
+Find the right customer, job, or account without searching several systems by hand. One question. The right record.
 See this use case
 
 How an engagement runs
@@ -92,12 +92,20 @@ We do not sell a product you have to change your process around. We match the pr
 01
 
 ### Operational service reporting
-Weekly or monthly packs that today live in a spreadsheet, a shared drive, or someone's head. We connect the sources, apply the same rules every time, and deliver the report in the format your team already uses.
-- Service, ticket, or job summaries
+Recurring client reports, status packs and summaries that today get assembled by hand from other sources. We connect the sources, apply the same rules every time, and render the output into the template your clients already recognise.
+- Client, service, or job summaries in your own template
 - Exception and overdue lists
-- Scheduled delivery to email or a shared folder
+- Delivery on a cycle, to wherever it goes today
 
 02
+
+### Data preparation and cleanup
+The work that happens to data before it can go into a system: reshaping what arrived into what the system accepts, correcting what is always corrected, and checking it before rather than after it lands.
+- Mapping between the shape it arrives in and the shape you need
+- Validation before the load, not discovery afterwards
+- Only the genuinely broken records put in front of a person
+
+03
 
 ### Meter and usage reading
 Any operation that still depends on a person reading a device, a portal, or a print-out and typing the number in. We capture the reading, validate it, and write it to the system that already bills or tracks usage.
@@ -105,15 +113,15 @@ Any operation that still depends on a person reading a device, a portal, or a pr
 - Usage capture for billing or allocation
 - Fewer estimated reads and fewer corrections later
 
-03
+04
 
 ### Client and record lookup
-Staff should not have to search three tools to answer who this is. We build a lookup against the systems you already have, so the right customer, job, or account comes back in one step.
+Staff should not have to search several systems to answer who this is. We build a lookup against the sources you already have, so the right customer, job, or account comes back in one step.
 - Customer, rider, or account lookup
 - Job or ticket retrieval during a call
-- Less re-keying between dispatch, billing, and support
+- Less re-keying between the systems that hold the answer
 
-04
+05
 
 ### Similar operational workflows
 If the pattern is the same (repeatable, rules-based, and currently done by a person) we will look at it. Intake, status updates, data movement between tools, scheduled checks.
@@ -121,7 +129,7 @@ If the pattern is the same (repeatable, rules-based, and currently done by a per
 - Flagging exceptions instead of reviewing every row
 - Turning a documented process into a running workflow
 
-These are types of systems, not a catalog of products. Every build is scoped to your process, your tools, and your definition of done. For what each one looks like in practice, see the weekly report , meter and usage and record lookup examples.
+These are types of systems, not a catalog of products. Every build is scoped to your process, your tools, and your definition of done. For what each one looks like in practice, see the weekly report , data cleanup and record lookup examples.
 Browse use cases
 
 ## Bring the process that keeps coming back.
@@ -139,12 +147,23 @@ These are starting points, not a closed list. If someone on your team still does
 
 Recurring reports
 
-### The weekly pack someone still builds by hand
+### The report someone still assembles by hand
 Today
-Every week someone exports from one system, pastes into a sheet, applies the same filters, writes a short summary, and emails it. It might be a service report, a job list, a billing recap, or a status pack for leadership. Late files, missing rows, and a process that lives in one person's head.
+The same report goes out on the same cycle. Someone gathers the numbers from wherever they live, reads through them, puts the parts that matter into your standard template, writes a short summary, and sends it. It goes out late whenever that person is busy, and it looks slightly different depending on who built it.
 
 What we build
-A scheduled pull, the same rules every time, and a report that lands in the inbox or folder in the format your team already uses.
+The gathering, the formatting and the delivery written down as rules, so the report produces itself in the template your clients already recognise.
+
+Read the full use case
+
+Preparing data
+
+### The cleanup that happens before anything gets loaded
+Today
+Data arrives in the shape whoever sent it uses, and it has to be in the shape your system accepts. Somebody sits between the two, renaming fields, fixing formats, splitting values, mapping codes, chasing blanks, and checking it looks right before it goes in.
+
+What we build
+The preparation written down as rules that run the same way every time, with only the records that genuinely need a decision put in front of a person.
 
 Read the full use case
 
@@ -163,7 +182,7 @@ Finding the right record
 
 ### Who is this, and which job is it?
 Today
-A name, phone, ID, or ticket comes in. Staff hunt across a booking tool, a sheet, email, and billing to find the right customer, job, or account. Time that should be spent helping is spent searching.
+A name, a number, a reference, or a ticket comes in. Staff hunt across several systems to find the right customer, job, or account. Time that should be spent helping is spent searching.
 
 What we build
 A single lookup against the sources you already have, so the right record comes back without re-keying.
@@ -224,43 +243,100 @@ https://nihilosolutions.com/use-cases/reports
 
 Recurring reports
 
-# The weekly pack someone still builds by hand
-Every week someone exports from one system, pastes into a sheet, applies the same filters, writes a short summary, and emails it. It might be a service report, a job list, a billing recap, or a status pack for leadership. Late files, missing rows, and a process that lives in one person's head.
+# The report someone still assembles by hand
+The same report goes out on the same cycle. Someone gathers the numbers from wherever they live, reads through them, puts the parts that matter into your standard template, writes a short summary, and sends it. It goes out late whenever that person is busy, and it looks slightly different depending on who built it.
 
 ## What happens today
-- Someone exports from the system of record, usually to CSV, usually on the same morning every week.
-- The export goes into a spreadsheet that already has the filters, the sort order, and the formatting someone worked out a long time ago.
-- They read it, notice the rows that look wrong, and fix or chase them.
-- They write two or three sentences at the top saying what changed since last week.
-- They send it, or drop it in a shared folder, and answer the replies.
+- The inputs come from wherever they live: a system of record, a portal, another report, a shared folder, a mailbox.
+- Someone reads through them and picks out the parts that belong in this report.
+- Those go into the template your clients already recognise, in the layout somebody worked out a long time ago.
+- They write a few lines at the top saying what changed since last time.
+- It goes out, and they answer the replies.
 
 ## Why it costs more than the hours
-- The hours are the smallest part. A weekly report that takes two hours costs about thirteen working days a year, which is real but survivable.
-- The expensive part is that it only exists while that person is available. When they are on holiday it goes out late, in a different format, or not at all.
-- The second expensive part is that nobody checks a report that arrives reliably. When the rules live in one person's head, a filter that quietly stops matching can go unnoticed for months.
+- The hours are the smallest part of it. A report that takes two hours on a regular cycle is real, but survivable.
+- The expensive part is that it only exists while that person is available. When they are away it goes out late, in a different shape, or not at all.
+- The second expensive part is that nobody audits a report that arrives reliably. When the rules live in one person's head, a rule that quietly stops being right can go unnoticed for a long time.
+- Clients notice inconsistency faster than they notice lateness. A pack that looks different this time invites questions about the numbers rather than about the format.
 
 ## What we build
-A scheduled pull, the same rules every time, and a report that lands in the inbox or folder in the format your team already uses.
-- A scheduled pull from the same source the export came from, on the same cadence.
-- The filters, groupings and calculations written down as rules rather than steps someone repeats.
-- The same layout your team already reads, because a report that looks unfamiliar gets ignored.
-- Delivery to wherever it goes today: an inbox, a shared folder, a channel.
-- A flag when the numbers look unlike last week, so an empty or doubled report announces itself instead of going out quietly.
+The gathering, the formatting and the delivery written down as rules, so the report produces itself in the template your clients already recognise.
+- The inputs gathered from the same places your person gathers them from now, on the same cycle.
+- The selection, the grouping and the calculations written down as rules rather than as steps somebody repeats.
+- The output rendered into your template, because a report that looks unfamiliar gets read differently even when the numbers are identical.
+- Delivery to wherever it goes today: an inbox, a shared folder, a portal, a client.
+- A flag when the figures look unlike last time, so an empty or doubled report announces itself instead of going out quietly.
 
 ## What changes once it runs
-- The report arrives whether or not the person who used to build it is at work.
-- It looks the same every time, so a change in the numbers reads as a change in the business rather than a change in whoever formatted it.
+- The report goes out whether or not the person who used to build it is at work.
+- It looks the same every time, so a change in the numbers reads as a change in the business rather than a change in who formatted it.
 - When a rule needs to change, it changes in one place.
 
 ## What we need from you
-- One person who can walk us through last week's run, including the parts they do without thinking.
-- Access to the source the export comes from.
-- A copy of the last few reports, so we can match the output rather than invent one.
+- One person who can walk us through the last one they produced, including the parts they do without thinking.
+- Access to the sources it draws on.
+- A copy of the last few reports, so we match the output rather than invent one.
 
 ## When this is the wrong build
-If the report is different every week, or the person writing it is making judgement calls that are the actual product, automating it will produce something worse than what you have. What we can sometimes do instead is assemble the parts that never change and leave the judgement to them.
+If the report is genuinely different every time, or the person writing it is making judgement calls that are the actual product, automating it will produce something worse than what you have. What we can sometimes do instead is assemble the parts that never change and leave the judgement to them.
 
 ## Other work we get asked about
+- Preparing data The cleanup that happens before anything gets loaded
+- Collecting numbers Readings and counts that still get typed
+- Finding the right record Who is this, and which job is it?
+- Exceptions, not every row Review only what needs a person
+- Moving information The same record, entered twice
+- Follow-through The next step that lives in someone's head
+
+## Bring us last week's run of it.
+Book a call. Thirty minutes on this one process, and a straight answer on whether it is worth automating.
+Book a discovery call
+
+========================================================================
+# Use case: preparing data
+https://nihilosolutions.com/use-cases/data-prep
+
+Preparing data
+
+# The cleanup that happens before anything gets loaded
+Data arrives in the shape whoever sent it uses, and it has to be in the shape your system accepts. Somebody sits between the two, renaming fields, fixing formats, splitting values, mapping codes, chasing blanks, and checking it looks right before it goes in.
+
+## What happens today
+- Something arrives from a supplier, a client, a branch, or another system.
+- It is close to what your system needs but not the same: different field names, dates written another way, a value that has to be split in two, codes that have to be mapped across.
+- Someone works through it, fixing the shape and correcting what is obviously wrong.
+- They spot-check it, load it, and find the rest of the problems later.
+- The next batch arrives with the same differences and the same person does it again.
+
+## Why it costs more than the hours
+- The work is invisible until it is skipped. It reads as a few minutes of tidying rather than as a process anyone owns.
+- It looks like judgement but mostly is not. Almost every decision is the same one that was made last time, and the few that are real are buried in the routine ones.
+- Bad records that get through cost far more than their number suggests, because they are found downstream by somebody who has no idea where they came from.
+- The rules live in one person's habits, so the same data prepared by somebody else comes out slightly different.
+
+## What we build
+The preparation written down as rules that run the same way every time, with only the records that genuinely need a decision put in front of a person.
+- The mapping between what arrives and what your system accepts, written down properly: names, formats, units, codes, the value that has to be split.
+- The corrections that are always the same applied automatically, because a decision made identically a hundred times is not a decision.
+- Validation before anything is written rather than after: required values present, figures in range, references that actually exist, duplicates caught.
+- A short list of the records that genuinely need a person, saying what is wrong rather than leaving them to work it out.
+- A record of what went in and what was held back, so a missing item can be traced instead of argued about.
+
+## What changes once it runs
+- The same data gets prepared the same way whoever is handling it.
+- Bad records are stopped at the door instead of found weeks later by whoever they broke.
+- The person who used to do the cleanup reviews the exceptions instead, which takes a fraction of the time and uses the part of their judgement that is worth paying for.
+
+## What we need from you
+- A few real examples of the data as it actually arrives, including a bad one. The bad one teaches us more than the clean ones.
+- The target: what the system needs, and what it rejects.
+- Whoever does the cleanup today, for long enough to talk us through the corrections they make without thinking about them.
+
+## When this is the wrong build
+If every batch genuinely arrives in a different shape and the mapping is a fresh puzzle each time, rules will not hold and you would be maintaining an automation on top of the work. This earns its place when the same handful of differences keep recurring.
+
+## Other work we get asked about
+- Recurring reports The report someone still assembles by hand
 - Collecting numbers Readings and counts that still get typed
 - Finding the right record Who is this, and which job is it?
 - Exceptions, not every row Review only what needs a person
@@ -312,7 +388,8 @@ A capture path for the number, basic validation, and a write-back to the system 
 If the reading requires someone to make a call about what they are looking at, or the device genuinely cannot be reached by anything but a person, this is not automatable and we will say so on the call. Sometimes the honest answer is a better form on a phone, not an automation.
 
 ## Other work we get asked about
-- Recurring reports The weekly pack someone still builds by hand
+- Recurring reports The report someone still assembles by hand
+- Preparing data The cleanup that happens before anything gets loaded
 - Finding the right record Who is this, and which job is it?
 - Exceptions, not every row Review only what needs a person
 - Moving information The same record, entered twice
@@ -329,11 +406,11 @@ https://nihilosolutions.com/use-cases/lookup
 Finding the right record
 
 # Who is this, and which job is it?
-A name, phone, ID, or ticket comes in. Staff hunt across a booking tool, a sheet, email, and billing to find the right customer, job, or account. Time that should be spent helping is spent searching.
+A name, a number, a reference, or a ticket comes in. Staff hunt across several systems to find the right customer, job, or account. Time that should be spent helping is spent searching.
 
 ## What happens today
 - Something arrives: a phone call, an email, a reference number a customer read out.
-- Whoever picked it up checks the booking tool, then the spreadsheet, then their inbox, then billing.
+- Whoever picked it up checks one system, then a shared file, then their inbox, then billing.
 - The name is spelled differently in two of those, so the match is done by eye.
 - They find it, deal with it, and the next person to get the same call repeats the search from scratch.
 
@@ -363,7 +440,8 @@ A single lookup against the sources you already have, so the right record comes 
 If the records genuinely have no common thread, no shared identifier, name, phone or address, then matching them is guesswork and guesswork about customer identity is worse than searching. That is a data problem to fix first, and we will tell you if that is what you have.
 
 ## Other work we get asked about
-- Recurring reports The weekly pack someone still builds by hand
+- Recurring reports The report someone still assembles by hand
+- Preparing data The cleanup that happens before anything gets loaded
 - Collecting numbers Readings and counts that still get typed
 - Exceptions, not every row Review only what needs a person
 - Moving information The same record, entered twice
@@ -383,7 +461,7 @@ Exceptions, not every row
 The team still scans entire lists to find the late job, the odd reading, the unmatched record, or the item that slipped. Most of the list is fine. The value is in the few rows that broke.
 
 ## What happens today
-- Somebody opens the list, which might be four hundred rows or four thousand.
+- Somebody opens the list, which might be a few hundred records or a few thousand.
 - They scan it looking for the handful that are wrong: overdue, unmatched, missing a field, out of range.
 - They work through those, and the rest of the list was read for nothing.
 - The definition of wrong is in their head, and the person who covers for them uses a slightly different one.
@@ -402,7 +480,7 @@ Rules that surface only what needs a person, with enough context to act.
 
 ## What changes once it runs
 - The review takes as long as the exceptions warrant, instead of as long as the list is.
-- The same rules apply on a Friday afternoon as on a Monday morning.
+- The same rules apply at the end of a long day as at the start of a quiet one.
 - Growth in volume stops making the review worse.
 
 ## What we need from you
@@ -414,7 +492,8 @@ Rules that surface only what needs a person, with enough context to act.
 If the exceptions are genuinely novel every time, rules will not catch them and you will end up reviewing everything anyway plus maintaining an automation. Rules earn their place when the same few failure modes keep recurring.
 
 ## Other work we get asked about
-- Recurring reports The weekly pack someone still builds by hand
+- Recurring reports The report someone still assembles by hand
+- Preparing data The cleanup that happens before anything gets loaded
 - Collecting numbers Readings and counts that still get typed
 - Finding the right record Who is this, and which job is it?
 - Moving information The same record, entered twice
@@ -465,7 +544,8 @@ A one-way or two-way movement of the fields that actually matter. Not an enterpr
 If what you actually need is every field in both systems consistent in real time in both directions, that is an integration program and it should be scoped as one. We build the narrow version that removes the typing, and we will tell you when the narrow version is not what you need.
 
 ## Other work we get asked about
-- Recurring reports The weekly pack someone still builds by hand
+- Recurring reports The report someone still assembles by hand
+- Preparing data The cleanup that happens before anything gets loaded
 - Collecting numbers Readings and counts that still get typed
 - Finding the right record Who is this, and which job is it?
 - Exceptions, not every row Review only what needs a person
@@ -516,7 +596,8 @@ The close-out, intake, or reading triggers the next step automatically, the same
 If the next step depends on someone reading the situation and deciding what should happen, automating the decision is the wrong move. Automating the reminder, with the context attached, is usually the right one, and that is a smaller build.
 
 ## Other work we get asked about
-- Recurring reports The weekly pack someone still builds by hand
+- Recurring reports The report someone still assembles by hand
+- Preparing data The cleanup that happens before anything gets loaded
 - Collecting numbers Readings and counts that still get typed
 - Finding the right record Who is this, and which job is it?
 - Exceptions, not every row Review only what needs a person
@@ -582,7 +663,7 @@ Your team does not get another tool to learn or maintain. They get the report, t
 There are two numbers, and you see both before anything is built. One for the build, one for running it after go-live. Both are scoped to the workflow in front of us and quoted in writing after the call, so you can decide against a number rather than a feeling.
 
 ### What moves the number
-How many systems the work touches, how clean the data already is, and how many exceptions a person has to handle today. A one-source weekly report is not the same job as a reading that has to reconcile against billing.
+How many systems the work touches, how clean the data already is, and how many exceptions a person has to handle today. A report drawn from one source is not the same job as data that has to be reconciled against another system before it lands.
 
 ### Priced per project, not per hour
 No hourly billing against an open retainer, and no per-seat licence. You are buying a scoped workflow, and the scope says what is in and what is not.
@@ -622,17 +703,17 @@ We stay broad on industry on purpose. The fit is the shape of the work: a proces
 The industries vary. The jobs look familiar. The use cases go through six of them in detail.
 
 ### Service and field operations
-Job close-out, service reports, meter or usage reads, and the status pack leadership asks for every week.
+Job close-out, service reports, meter or usage reads, and the status pack leadership asks for on the same cycle every time.
 
 ### Dispatch, transport, and scheduling
 Looking up a client or job while someone is waiting. Moving a booking into the system that actually runs the day.
 
 ### Office and back office
-The report that is still assembled by hand. The record entered twice. The exception that only appears after someone scrolls a thousand rows.
+The report that is still assembled by hand. The data cleaned up before it can be loaded. The record entered twice. The exception that only appears after someone scrolls a thousand rows.
 
 ## Written up by sector
 Same work, said in the words three sectors actually use for it. If yours is not here, the process still is.
-- Home and field services The paperwork that follows every job home Job close-out, weekly service reports, meter and usage reads, and looking a customer up while they wait. Custom automation for home and field service operations.
+- Home and field services The paperwork that follows every job home Job close-out, recurring service reports, meter and usage reads, and looking a customer up while they wait. Custom automation for home and field service operations.
 - Professional services The reporting and lookups between the billable work Recurring client reports, matter and account lookup across systems, intake handoff, and exception review. Custom automation for professional services back offices.
 - Retail and ecommerce Counts, orders, and the numbers that move between systems Inventory counts typed into a system, orders entered twice, supplier and channel reporting, and returns that need a person. Custom automation for retail and ecommerce operations.
 
@@ -657,8 +738,8 @@ HVAC, plumbing, electrical, landscaping, pest control, cleaning, restoration, pr
 ### Job close-out that stalls
 The tech finishes, the paperwork does not. Someone in the office chases the photo, the reading, the signature, or the note before it can be invoiced. The job is done and the money is not.
 
-### The weekly service report
-Leadership, a property manager, or a commercial account wants the same pack every week. Someone exports, filters, formats and emails it, and it goes out late whenever that person is on a truck or on holiday.
+### The recurring service report
+Leadership, a property manager, or a commercial account wants the same pack on the same cycle. Someone gathers it, drops it into the template and sends it, and it goes out late whenever that person is on a truck or on holiday.
 
 ### Readings typed twice
 A meter, a tank level, a run-time counter, or a usage number gets read on site and then typed into the system that bills for it. Estimated readings and corrections follow.
@@ -668,7 +749,7 @@ A customer calls about work from six weeks ago. Answering means checking the sch
 
 ## What we would build first
 Most field operations start with either the weekly report or the close-out, because both have a hard edge: the report either arrives on Monday or it does not, and the job is either invoiceable or it is not. One workflow, scoped and priced on its own, so you can judge it before deciding whether there is a second.
-- Recurring reports The weekly pack someone still builds by hand A scheduled pull, the same rules every time, and a report that lands in the inbox or folder in the format your team already uses.
+- Recurring reports The report someone still assembles by hand The gathering, the formatting and the delivery written down as rules, so the report produces itself in the template your clients already recognise.
 - Collecting numbers Readings and counts that still get typed A capture path for the number, basic validation, and a write-back to the system that already owns billing, inventory, or tracking.
 - Finding the right record Who is this, and which job is it? A single lookup against the sources you already have, so the right record comes back without re-keying.
 - Follow-through The next step that lives in someone's head The close-out, intake, or reading triggers the next step automatically, the same way every time.
@@ -701,7 +782,7 @@ Accounting and bookkeeping firms, law practices, insurance agencies, consultanci
 ## The work that keeps coming back
 
 ### The recurring client pack
-The same report, per client, every month. Export, filter, format, write two lines of commentary, send. Multiply by the client list and it is somebody's week.
+The same report, per client, on the same cycle. Gather it, drop it into the template, write two lines of commentary, send. Multiply by the client list and it is somebody's week.
 
 ### Which client, which matter
 A name, a reference or an email arrives and the answer lives across a practice system, a shared drive, an inbox and a billing tool. The search is the job, and it happens dozens of times a day.
@@ -714,7 +795,7 @@ Unbilled time, missing documents, engagements past a date, records that never go
 
 ## What we would build first
 Usually the recurring pack, because the rules are already written down in whoever's head builds it and the output is easy to compare against last month. Scoped and priced on its own, against the systems you already pay for.
-- Recurring reports The weekly pack someone still builds by hand A scheduled pull, the same rules every time, and a report that lands in the inbox or folder in the format your team already uses.
+- Recurring reports The report someone still assembles by hand The gathering, the formatting and the delivery written down as rules, so the report produces itself in the template your clients already recognise.
 - Finding the right record Who is this, and which job is it? A single lookup against the sources you already have, so the right record comes back without re-keying.
 - Follow-through The next step that lives in someone's head The close-out, intake, or reading triggers the next step automatically, the same way every time.
 - Exceptions, not every row Review only what needs a person Rules that surface only what needs a person, with enough context to act.
@@ -746,23 +827,23 @@ Independent retailers, multi-location stores, ecommerce and marketplace sellers,
 
 ## The work that keeps coming back
 
-### Counts that get typed
-A cycle count, a receiving sheet, or a stocktake happens on paper or in a notes app and then someone keys it into the system of record. The gap between count and entry is where the discrepancies live.
+### Counts and supplier data that get keyed in
+A count, a receiving sheet, or a supplier file arrives in one shape and has to end up in another. Someone reshapes it, corrects the obvious problems, and keys it in. The gap between what arrived and what landed is where the discrepancies live.
 
 ### The same order, entered twice
 An order lands in one channel and gets rekeyed into the system that actually fulfils it. People are acting as the integration between two tools that were never going to talk.
 
 ### Channel and supplier reporting
-Weekly sales by channel, stock on hand for a supplier, a returns summary for a marketplace. Same export, same spreadsheet, same Friday.
+Sales by channel, stock on hand for a supplier, a returns summary for a marketplace. Same sources, same template, same person, every cycle.
 
 ### The exceptions in a long list
 The short-shipped line, the return that never got received, the SKU whose count has drifted. A few rows matter and someone reads a thousand to find them.
 
 ## What we would build first
 Often the count or the double entry, because both have a number you can check: what the system says versus what is on the shelf, or how many orders got rekeyed last week. One workflow, scoped and priced on its own.
-- Collecting numbers Readings and counts that still get typed A capture path for the number, basic validation, and a write-back to the system that already owns billing, inventory, or tracking.
+- Preparing data The cleanup that happens before anything gets loaded The preparation written down as rules that run the same way every time, with only the records that genuinely need a decision put in front of a person.
 - Moving information The same record, entered twice A one-way or two-way movement of the fields that actually matter. Not an enterprise integration program.
-- Recurring reports The weekly pack someone still builds by hand A scheduled pull, the same rules every time, and a report that lands in the inbox or folder in the format your team already uses.
+- Recurring reports The report someone still assembles by hand The gathering, the formatting and the delivery written down as rules, so the report produces itself in the template your clients already recognise.
 - Exceptions, not every row Review only what needs a person Rules that surface only what needs a person, with enough context to act.
 
 ## When we are the wrong call
@@ -875,7 +956,7 @@ Contact
 Two ways in: book a 30-minute discovery call, or send us the process in writing. We review every inquiry ourselves and reply within one business day.
 
 ## Book a discovery call
-Bring one process: the report, the reading, or the lookup that keeps landing on the same desk. We will tell you whether it is worth automating and what a first build would look like.
+Bring one process: the report, the cleanup, or the lookup that keeps landing on the same desk. We will tell you whether it is worth automating and what a first build would look like.
 - 30 minutes, video
 - With our team, not a sales queue
 - You leave knowing if we should scope it

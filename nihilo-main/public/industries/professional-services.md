@@ -14,7 +14,7 @@ Accounting and bookkeeping firms, law practices, insurance agencies, consultanci
 ## The work that keeps coming back
 
 ### The recurring client pack
-The same report, per client, every month. Export, filter, format, write two lines of commentary, send. Multiply by the client list and it is somebody's week.
+The same report, per client, on the same cycle. Gather it, drop it into the template, write two lines of commentary, send. Multiply by the client list and it is somebody's week.
 
 ### Which client, which matter
 A name, a reference or an email arrives and the answer lives across a practice system, a shared drive, an inbox and a billing tool. The search is the job, and it happens dozens of times a day.
@@ -27,7 +27,7 @@ Unbilled time, missing documents, engagements past a date, records that never go
 
 ## What we would build first
 Usually the recurring pack, because the rules are already written down in whoever's head builds it and the output is easy to compare against last month. Scoped and priced on its own, against the systems you already pay for.
-- Recurring reports The weekly pack someone still builds by hand A scheduled pull, the same rules every time, and a report that lands in the inbox or folder in the format your team already uses.
+- Recurring reports The report someone still assembles by hand The gathering, the formatting and the delivery written down as rules, so the report produces itself in the template your clients already recognise.
 - Finding the right record Who is this, and which job is it? A single lookup against the sources you already have, so the right record comes back without re-keying.
 - Follow-through The next step that lives in someone's head The close-out, intake, or reading triggers the next step automatically, the same way every time.
 - Exceptions, not every row Review only what needs a person Rules that surface only what needs a person, with enough context to act.

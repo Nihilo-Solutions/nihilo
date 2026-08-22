@@ -9,7 +9,7 @@ Exceptions, not every row
 The team still scans entire lists to find the late job, the odd reading, the unmatched record, or the item that slipped. Most of the list is fine. The value is in the few rows that broke.
 
 ## What happens today
-- Somebody opens the list, which might be four hundred rows or four thousand.
+- Somebody opens the list, which might be a few hundred records or a few thousand.
 - They scan it looking for the handful that are wrong: overdue, unmatched, missing a field, out of range.
 - They work through those, and the rest of the list was read for nothing.
 - The definition of wrong is in their head, and the person who covers for them uses a slightly different one.
@@ -28,7 +28,7 @@ Rules that surface only what needs a person, with enough context to act.
 
 ## What changes once it runs
 - The review takes as long as the exceptions warrant, instead of as long as the list is.
-- The same rules apply on a Friday afternoon as on a Monday morning.
+- The same rules apply at the end of a long day as at the start of a quiet one.
 - Growth in volume stops making the review worse.
 
 ## What we need from you
@@ -40,7 +40,8 @@ Rules that surface only what needs a person, with enough context to act.
 If the exceptions are genuinely novel every time, rules will not catch them and you will end up reviewing everything anyway plus maintaining an automation. Rules earn their place when the same few failure modes keep recurring.
 
 ## Other work we get asked about
-- Recurring reports The weekly pack someone still builds by hand
+- Recurring reports The report someone still assembles by hand
+- Preparing data The cleanup that happens before anything gets loaded
 - Collecting numbers Readings and counts that still get typed
 - Finding the right record Who is this, and which job is it?
 - Moving information The same record, entered twice

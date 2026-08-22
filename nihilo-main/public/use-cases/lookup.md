@@ -6,11 +6,11 @@ Site: https://nihilosolutions.com/llms-full.txt
 Finding the right record
 
 # Who is this, and which job is it?
-A name, phone, ID, or ticket comes in. Staff hunt across a booking tool, a sheet, email, and billing to find the right customer, job, or account. Time that should be spent helping is spent searching.
+A name, a number, a reference, or a ticket comes in. Staff hunt across several systems to find the right customer, job, or account. Time that should be spent helping is spent searching.
 
 ## What happens today
 - Something arrives: a phone call, an email, a reference number a customer read out.
-- Whoever picked it up checks the booking tool, then the spreadsheet, then their inbox, then billing.
+- Whoever picked it up checks one system, then a shared file, then their inbox, then billing.
 - The name is spelled differently in two of those, so the match is done by eye.
 - They find it, deal with it, and the next person to get the same call repeats the search from scratch.
 
@@ -40,7 +40,8 @@ A single lookup against the sources you already have, so the right record comes 
 If the records genuinely have no common thread, no shared identifier, name, phone or address, then matching them is guesswork and guesswork about customer identity is worse than searching. That is a data problem to fix first, and we will tell you if that is what you have.
 
 ## Other work we get asked about
-- Recurring reports The weekly pack someone still builds by hand
+- Recurring reports The report someone still assembles by hand
+- Preparing data The cleanup that happens before anything gets loaded
 - Collecting numbers Readings and counts that still get typed
 - Exceptions, not every row Review only what needs a person
 - Moving information The same record, entered twice

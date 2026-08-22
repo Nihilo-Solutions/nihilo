@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: '%s | Nihilo Solutions',
   },
   description:
-    'Nihilo Solutions builds custom operational automations for growing companies. Recurring reports, readings, lookups, and other repeating work. Book a 30-minute discovery call.',
+    'Nihilo Solutions builds custom operational automations for growing companies. Recurring reports, data cleanup, lookups, and other repeating manual work. Book a 30-minute discovery call.',
   authors: [{ name: 'Nihilo Solutions' }],
   icons: {
     icon: '/favicon.svg',

@@ -61,7 +61,7 @@ export default function WhoWeWorkWith() {
           <div className="mt-10 grid gap-4.5 md:grid-cols-3">
             <Place
               title="Service and field operations"
-              body="Job close-out, service reports, meter or usage reads, and the status pack leadership asks for every week."
+              body="Job close-out, service reports, meter or usage reads, and the status pack leadership asks for on the same cycle every time."
             />
             <Place
               title="Dispatch, transport, and scheduling"
@@ -69,7 +69,7 @@ export default function WhoWeWorkWith() {
             />
             <Place
               title="Office and back office"
-              body="The report that is still assembled by hand. The record entered twice. The exception that only appears after someone scrolls a thousand rows."
+              body="The report that is still assembled by hand. The data cleaned up before it can be loaded. The record entered twice. The exception that only appears after someone scrolls a thousand rows."
             />
           </div>
         </div>

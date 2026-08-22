@@ -9,7 +9,7 @@ import { USE_CASES } from "@/lib/use-cases";
 export const metadata: Metadata = pageMeta({
       title: "Operational Automation Examples | Nihilo Solutions",
       description:
-        "Examples of work we automate: weekly reports, typed readings, record lookup, exception review, and follow-through. If the process repeats, we can look at it.",
+        "Examples of work we automate: recurring reports, data cleanup before it goes into a system, record lookup, exception review, and follow-through. If the process repeats, we can look at it.",
       path: "/use-cases",
     });
 

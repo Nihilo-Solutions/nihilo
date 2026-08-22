@@ -13,23 +13,23 @@ Independent retailers, multi-location stores, ecommerce and marketplace sellers,
 
 ## The work that keeps coming back
 
-### Counts that get typed
-A cycle count, a receiving sheet, or a stocktake happens on paper or in a notes app and then someone keys it into the system of record. The gap between count and entry is where the discrepancies live.
+### Counts and supplier data that get keyed in
+A count, a receiving sheet, or a supplier file arrives in one shape and has to end up in another. Someone reshapes it, corrects the obvious problems, and keys it in. The gap between what arrived and what landed is where the discrepancies live.
 
 ### The same order, entered twice
 An order lands in one channel and gets rekeyed into the system that actually fulfils it. People are acting as the integration between two tools that were never going to talk.
 
 ### Channel and supplier reporting
-Weekly sales by channel, stock on hand for a supplier, a returns summary for a marketplace. Same export, same spreadsheet, same Friday.
+Sales by channel, stock on hand for a supplier, a returns summary for a marketplace. Same sources, same template, same person, every cycle.
 
 ### The exceptions in a long list
 The short-shipped line, the return that never got received, the SKU whose count has drifted. A few rows matter and someone reads a thousand to find them.
 
 ## What we would build first
 Often the count or the double entry, because both have a number you can check: what the system says versus what is on the shelf, or how many orders got rekeyed last week. One workflow, scoped and priced on its own.
-- Collecting numbers Readings and counts that still get typed A capture path for the number, basic validation, and a write-back to the system that already owns billing, inventory, or tracking.
+- Preparing data The cleanup that happens before anything gets loaded The preparation written down as rules that run the same way every time, with only the records that genuinely need a decision put in front of a person.
 - Moving information The same record, entered twice A one-way or two-way movement of the fields that actually matter. Not an enterprise integration program.
-- Recurring reports The weekly pack someone still builds by hand A scheduled pull, the same rules every time, and a report that lands in the inbox or folder in the format your team already uses.
+- Recurring reports The report someone still assembles by hand The gathering, the formatting and the delivery written down as rules, so the report produces itself in the template your clients already recognise.
 - Exceptions, not every row Review only what needs a person Rules that surface only what needs a person, with enough context to act.
 
 ## When we are the wrong call

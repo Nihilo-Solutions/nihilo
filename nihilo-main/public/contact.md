@@ -9,7 +9,7 @@ Contact
 Two ways in: book a 30-minute discovery call, or send us the process in writing. We review every inquiry ourselves and reply within one business day.
 
 ## Book a discovery call
-Bring one process: the report, the reading, or the lookup that keeps landing on the same desk. We will tell you whether it is worth automating and what a first build would look like.
+Bring one process: the report, the cleanup, or the lookup that keeps landing on the same desk. We will tell you whether it is worth automating and what a first build would look like.
 - 30 minutes, video
 - With our team, not a sales queue
 - You leave knowing if we should scope it

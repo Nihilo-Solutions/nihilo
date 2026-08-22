@@ -55,7 +55,7 @@ Your team does not get another tool to learn or maintain. They get the report, t
 There are two numbers, and you see both before anything is built. One for the build, one for running it after go-live. Both are scoped to the workflow in front of us and quoted in writing after the call, so you can decide against a number rather than a feeling.
 
 ### What moves the number
-How many systems the work touches, how clean the data already is, and how many exceptions a person has to handle today. A one-source weekly report is not the same job as a reading that has to reconcile against billing.
+How many systems the work touches, how clean the data already is, and how many exceptions a person has to handle today. A report drawn from one source is not the same job as data that has to be reconciled against another system before it lands.
 
 ### Priced per project, not per hour
 No hourly billing against an open retainer, and no per-seat licence. You are buying a scoped workflow, and the scope says what is in and what is not.

@@ -10,12 +10,12 @@ We take repeating operational work off your team and turn it into a system that 
 Book a discovery call See what we build
 30 minutes. You talk with our team. Nothing for your team to build or run.
 
-This Friday, by hand
-- Export the jobs
-- Paste into the sheet
+Still done by hand
+- Gather the numbers
+- Fill in the template
 - Write the summary
-- Email the pack
-One person. Same two hours. Same chance a row is missing.
+- Send it out
+One person. Same steps every time. Same chance something is missing.
 After
 The report lands on its own.
 Same rules. Same format. Nobody assembled it.
@@ -23,21 +23,21 @@ Same rules. Same format. Nobody assembled it.
 If this is still a person
 
 ## The work we take off your team.
-Industry does not matter as much as a process that repeats. If someone does it every week, it is a candidate.
+Industry does not matter as much as a process that repeats. If someone does it on a cycle, it is a candidate.
 01
 
 ### Operational reports
-Pull the data, apply the same rules, and send the pack on a schedule. Service reports, status packs, exception lists. No Friday spreadsheet session.
+Gather the inputs, apply the same rules, and render the pack into your template on a schedule. Client reports, status packs, exception lists. Nobody assembles it.
 See this use case
 02
 
-### Meter and usage capture
-Collect readings, skip the typing, and push clean numbers into the system that already bills or tracks usage. Fewer errors. Faster close-out.
+### Data prep and cleanup
+The checking, correcting and reformatting somebody does before data can go into a system. Rules instead of habits, and only the genuinely broken records reach a person.
 See this use case
 03
 
 ### Client and record lookup
-Find the right customer, job, or account without hunting portals, inboxes, and sheets. One question. The right record.
+Find the right customer, job, or account without searching several systems by hand. One question. The right record.
 See this use case
 
 How an engagement runs

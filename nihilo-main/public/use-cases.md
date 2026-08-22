@@ -10,12 +10,23 @@ These are starting points, not a closed list. If someone on your team still does
 
 Recurring reports
 
-### The weekly pack someone still builds by hand
+### The report someone still assembles by hand
 Today
-Every week someone exports from one system, pastes into a sheet, applies the same filters, writes a short summary, and emails it. It might be a service report, a job list, a billing recap, or a status pack for leadership. Late files, missing rows, and a process that lives in one person's head.
+The same report goes out on the same cycle. Someone gathers the numbers from wherever they live, reads through them, puts the parts that matter into your standard template, writes a short summary, and sends it. It goes out late whenever that person is busy, and it looks slightly different depending on who built it.
 
 What we build
-A scheduled pull, the same rules every time, and a report that lands in the inbox or folder in the format your team already uses.
+The gathering, the formatting and the delivery written down as rules, so the report produces itself in the template your clients already recognise.
+
+Read the full use case
+
+Preparing data
+
+### The cleanup that happens before anything gets loaded
+Today
+Data arrives in the shape whoever sent it uses, and it has to be in the shape your system accepts. Somebody sits between the two, renaming fields, fixing formats, splitting values, mapping codes, chasing blanks, and checking it looks right before it goes in.
+
+What we build
+The preparation written down as rules that run the same way every time, with only the records that genuinely need a decision put in front of a person.
 
 Read the full use case
 
@@ -34,7 +45,7 @@ Finding the right record
 
 ### Who is this, and which job is it?
 Today
-A name, phone, ID, or ticket comes in. Staff hunt across a booking tool, a sheet, email, and billing to find the right customer, job, or account. Time that should be spent helping is spent searching.
+A name, a number, a reference, or a ticket comes in. Staff hunt across several systems to find the right customer, job, or account. Time that should be spent helping is spent searching.
 
 What we build
 A single lookup against the sources you already have, so the right record comes back without re-keying.

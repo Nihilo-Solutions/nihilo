@@ -51,7 +51,7 @@ export default function Contact() {
                 Book a discovery call
               </h2>
               <p className="mt-2.5 text-on-dark-muted">
-                Bring one process: the report, the reading, or the lookup that keeps landing on the
+                Bring one process: the report, the cleanup, or the lookup that keeps landing on the
                 same desk. We will tell you whether it is worth automating and what a first build
                 would look like.
               </p>
