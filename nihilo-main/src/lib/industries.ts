@@ -33,7 +33,7 @@ export const INDUSTRIES: Industry[] = [
     title: "The paperwork that follows every job home",
     metaTitle: "Automate Field Service Reporting and Job Close-Out | Nihilo Solutions",
     metaDescription:
-      "Job close-out, recurring service reports, meter and usage reads, and looking a customer up while they wait. Custom automation for home and field service operations.",
+      "Job close-out, recurring service reports, readings captured on site, and looking a customer up while they wait. Custom automation for home and field service operations.",
     lede:
       "The work in the field is not the problem. The problem is everything that has to happen after the van leaves: the close-out, the report, the reading typed into billing, and the customer who calls back asking which job was which.",
     who:

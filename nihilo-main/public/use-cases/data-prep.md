@@ -44,7 +44,7 @@ If every batch genuinely arrives in a different shape and the mapping is a fresh
 
 ## Other work we get asked about
 - Recurring reports The report someone still assembles by hand
-- Collecting numbers Readings and counts that still get typed
+- Capturing values Numbers that only a person can fetch
 - Finding the right record Who is this, and which job is it?
 - Exceptions, not every row Review only what needs a person
 - Moving information The same record, entered twice

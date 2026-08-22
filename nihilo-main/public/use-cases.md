@@ -30,14 +30,14 @@ The preparation written down as rules that run the same way every time, with onl
 
 Read the full use case
 
-Collecting numbers
+Capturing values
 
-### Readings and counts that still get typed
+### Numbers that only a person can fetch
 Today
-A person reads a meter, a portal, a print-out, a counter, or a screen, then types the number into the system that bills, restocks, or tracks usage. Manual entry creates estimates, corrections, and delays. This shows up anywhere a number has to move from the real world into a system.
+A number exists somewhere your systems cannot reach: a device, a portal with no way out, a document, a photo, a screen someone has to look at. A person reads it and types it into the system that bills, restocks, schedules or reports on it. Every step between the value existing and the value landing is a chance for it to be wrong or late.
 
 What we build
-A capture path for the number, basic validation, and a write-back to the system that already owns billing, inventory, or tracking.
+A capture path that fits how the number is actually obtained today, validation before it is written, and a write into the system that already owns it.
 
 Read the full use case
 

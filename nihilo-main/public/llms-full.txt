@@ -107,11 +107,11 @@ The work that happens to data before it can go into a system: reshaping what arr
 
 03
 
-### Meter and usage reading
-Any operation that still depends on a person reading a device, a portal, or a print-out and typing the number in. We capture the reading, validate it, and write it to the system that already bills or tracks usage.
-- Device or fleet meter collection
-- Usage capture for billing or allocation
-- Fewer estimated reads and fewer corrections later
+### Capturing values from where they live
+Any operation that still depends on a person fetching a number your systems cannot reach and typing it in. A device, a portal with no export, a document, a photo, a screen in another system. We capture it, validate it, and write it where it is acted on.
+- Readings, counts, and figures from sources with no way out
+- Capture for billing, stock, scheduling, or allocation
+- Fewer estimates and fewer corrections after the fact
 
 04
 
@@ -167,14 +167,14 @@ The preparation written down as rules that run the same way every time, with onl
 
 Read the full use case
 
-Collecting numbers
+Capturing values
 
-### Readings and counts that still get typed
+### Numbers that only a person can fetch
 Today
-A person reads a meter, a portal, a print-out, a counter, or a screen, then types the number into the system that bills, restocks, or tracks usage. Manual entry creates estimates, corrections, and delays. This shows up anywhere a number has to move from the real world into a system.
+A number exists somewhere your systems cannot reach: a device, a portal with no way out, a document, a photo, a screen someone has to look at. A person reads it and types it into the system that bills, restocks, schedules or reports on it. Every step between the value existing and the value landing is a chance for it to be wrong or late.
 
 What we build
-A capture path for the number, basic validation, and a write-back to the system that already owns billing, inventory, or tracking.
+A capture path that fits how the number is actually obtained today, validation before it is written, and a write into the system that already owns it.
 
 Read the full use case
 
@@ -282,7 +282,7 @@ If the report is genuinely different every time, or the person writing it is mak
 
 ## Other work we get asked about
 - Preparing data The cleanup that happens before anything gets loaded
-- Collecting numbers Readings and counts that still get typed
+- Capturing values Numbers that only a person can fetch
 - Finding the right record Who is this, and which job is it?
 - Exceptions, not every row Review only what needs a person
 - Moving information The same record, entered twice
@@ -337,7 +337,7 @@ If every batch genuinely arrives in a different shape and the mapping is a fresh
 
 ## Other work we get asked about
 - Recurring reports The report someone still assembles by hand
-- Collecting numbers Readings and counts that still get typed
+- Capturing values Numbers that only a person can fetch
 - Finding the right record Who is this, and which job is it?
 - Exceptions, not every row Review only what needs a person
 - Moving information The same record, entered twice
@@ -348,44 +348,45 @@ Book a call. Thirty minutes on this one process, and a straight answer on whethe
 Book a discovery call
 
 ========================================================================
-# Use case: collecting numbers
+# Use case: capturing values
 https://nihilosolutions.com/use-cases/meters
 
-Collecting numbers
+Capturing values
 
-# Readings and counts that still get typed
-A person reads a meter, a portal, a print-out, a counter, or a screen, then types the number into the system that bills, restocks, or tracks usage. Manual entry creates estimates, corrections, and delays. This shows up anywhere a number has to move from the real world into a system.
+# Numbers that only a person can fetch
+A number exists somewhere your systems cannot reach: a device, a portal with no way out, a document, a photo, a screen someone has to look at. A person reads it and types it into the system that bills, restocks, schedules or reports on it. Every step between the value existing and the value landing is a chance for it to be wrong or late.
 
 ## What happens today
-- The number exists somewhere physical or awkward: a device display, a vendor portal, a print-out, a photo someone took on site.
-- Someone reads it and types it into the system that bills, restocks or reports on it.
-- When a reading is missed, the system takes an estimate, and the estimate gets corrected later.
-- Corrections arrive after invoices, so somebody reconciles the difference by hand.
+- The number exists somewhere awkward: a device display, a portal with no export, a document somebody was sent, a photo taken on site, a screen in another system.
+- Someone reads it and keys it into the system that acts on it.
+- When it is missed, the system falls back to an estimate or a stale figure, and that gets corrected later.
+- Corrections arrive after the decision they should have informed, so somebody reconciles the difference by hand.
 
 ## Why it costs more than the hours
-- Typing a number is fast. Finding out that a number was typed wrong, three weeks later, on an invoice a customer is disputing, is not.
-- Estimates compound. A missed read this month makes next month's true-up larger and harder to explain.
-- The people doing the reading are usually the people you least want doing data entry, because they are on site and paid to be doing something else.
+- Typing a number is fast. Finding out weeks later that it was typed wrong, on something a customer is disputing, is not.
+- Estimates compound. A figure missed this cycle makes the next true-up larger and harder to explain.
+- The people who can obtain the number are usually the people you least want doing data entry, because they are in the middle of the work you are actually paid for.
+- Because each capture is small, nobody counts them. The cost only becomes visible when the person who does them is unavailable.
 
 ## What we build
-A capture path for the number, basic validation, and a write-back to the system that already owns billing, inventory, or tracking.
-- A capture path that fits how the number is actually obtained today, whether that is a portal that can be queried, a device that can be read, or a photo someone already takes.
-- Validation before anything is written: is this plausible against the last reading, is the meter identifier one we recognise, is the jump larger than it should be.
-- A write-back into the system that already owns billing, inventory or usage, so there is no second place to check.
-- An exception list for the readings that failed validation, which is the only part a person still looks at.
+A capture path that fits how the number is actually obtained today, validation before it is written, and a write into the system that already owns it.
+- A capture path that fits how the number is actually obtained today, whether that is a source that can be queried, a device that can be read, a document that can be parsed, or a photo somebody already takes.
+- Validation before anything is written: is this plausible against last time, is the identifier one we recognise, is the change larger than it should be.
+- A write into the system that already owns the billing, the stock, the schedule or the record, so there is no second place to check.
+- An exception list for the values that failed validation, which is the only part a person still looks at.
 
 ## What changes once it runs
-- Fewer estimated reads, because the reading arrives on time more often.
-- Fewer corrections after invoicing, because the implausible values get caught before they are written rather than after.
-- The people on site stop being the bottleneck for a number leaving the field.
+- Fewer estimates and stale figures, because the real number arrives on time more often.
+- Fewer corrections after the fact, because implausible values get caught before they are written rather than after.
+- The people closest to the work stop being the bottleneck for a number leaving it.
 
 ## What we need from you
-- A clear description of where the number comes from and who reads it now.
+- A clear description of where the number comes from and who obtains it now.
 - Access to the system it has to land in, and to whatever the source is.
-- The rules for what counts as an implausible reading. If nobody has written them down, we work them out from the last year of data.
+- The rules for what counts as an implausible value. If nobody has written them down, we work them out from your history.
 
 ## When this is the wrong build
-If the reading requires someone to make a call about what they are looking at, or the device genuinely cannot be reached by anything but a person, this is not automatable and we will say so on the call. Sometimes the honest answer is a better form on a phone, not an automation.
+If obtaining the number requires somebody to make a call about what they are looking at, or the source genuinely cannot be reached by anything but a person standing in front of it, this is not automatable and we will say so on the call. Sometimes the honest answer is a better form on a phone, not an automation.
 
 ## Other work we get asked about
 - Recurring reports The report someone still assembles by hand
@@ -442,7 +443,7 @@ If the records genuinely have no common thread, no shared identifier, name, phon
 ## Other work we get asked about
 - Recurring reports The report someone still assembles by hand
 - Preparing data The cleanup that happens before anything gets loaded
-- Collecting numbers Readings and counts that still get typed
+- Capturing values Numbers that only a person can fetch
 - Exceptions, not every row Review only what needs a person
 - Moving information The same record, entered twice
 - Follow-through The next step that lives in someone's head
@@ -494,7 +495,7 @@ If the exceptions are genuinely novel every time, rules will not catch them and 
 ## Other work we get asked about
 - Recurring reports The report someone still assembles by hand
 - Preparing data The cleanup that happens before anything gets loaded
-- Collecting numbers Readings and counts that still get typed
+- Capturing values Numbers that only a person can fetch
 - Finding the right record Who is this, and which job is it?
 - Moving information The same record, entered twice
 - Follow-through The next step that lives in someone's head
@@ -546,7 +547,7 @@ If what you actually need is every field in both systems consistent in real time
 ## Other work we get asked about
 - Recurring reports The report someone still assembles by hand
 - Preparing data The cleanup that happens before anything gets loaded
-- Collecting numbers Readings and counts that still get typed
+- Capturing values Numbers that only a person can fetch
 - Finding the right record Who is this, and which job is it?
 - Exceptions, not every row Review only what needs a person
 - Follow-through The next step that lives in someone's head
@@ -598,7 +599,7 @@ If the next step depends on someone reading the situation and deciding what shou
 ## Other work we get asked about
 - Recurring reports The report someone still assembles by hand
 - Preparing data The cleanup that happens before anything gets loaded
-- Collecting numbers Readings and counts that still get typed
+- Capturing values Numbers that only a person can fetch
 - Finding the right record Who is this, and which job is it?
 - Exceptions, not every row Review only what needs a person
 - Moving information The same record, entered twice
@@ -629,7 +630,7 @@ We document the current path and the exceptions. Then you get a written scope: w
 - 03
 
 ### Build against live process
-We build on your actual data and tools: spreadsheets, portals, meters, inboxes, the systems you already pay for. You review early. We do not disappear for a month and come back with a surprise.
+We build on your actual data and tools: the files, portals, devices, inboxes and systems you already pay for. You review early. We do not disappear for a month and come back with a surprise.
 
 - 04
 
@@ -642,7 +643,7 @@ We run it beside the current process until you trust it. Then it goes live and w
 Someone who does the work today or sits next to it. Not a committee. One person who can walk us through last week's run.
 
 ### Access to the source
-The sheet, export, portal, mailbox, or meter path the data already lives in. We work with what you have. We do not require a new platform first.
+The file, portal, mailbox, device, or system the data already lives in. We work with what you have. We do not require a new platform first.
 
 ### A definition of done
 The report that has to go out. The number that has to land in billing. The lookup that has to return during a call. Specific beats 'make us more efficient.'
@@ -688,7 +689,7 @@ We stay broad on industry on purpose. The fit is the shape of the work: a proces
 
 ### A good fit
 - An operations, service, dispatch, billing, or office team that repeats the same tasks
-- Data already living in sheets, portals, meters, or a few disconnected tools
+- Data already living in sheets, portals, devices, or a few disconnected tools
 - A process owner who can walk us through last week's run
 - A willingness to start with one workflow, not a company-wide rebuild
 
@@ -703,7 +704,7 @@ We stay broad on industry on purpose. The fit is the shape of the work: a proces
 The industries vary. The jobs look familiar. The use cases go through six of them in detail.
 
 ### Service and field operations
-Job close-out, service reports, meter or usage reads, and the status pack leadership asks for on the same cycle every time.
+Job close-out, service reports, figures captured on site, and the status pack leadership asks for on the same cycle every time.
 
 ### Dispatch, transport, and scheduling
 Looking up a client or job while someone is waiting. Moving a booking into the system that actually runs the day.
@@ -713,7 +714,7 @@ The report that is still assembled by hand. The data cleaned up before it can be
 
 ## Written up by sector
 Same work, said in the words three sectors actually use for it. If yours is not here, the process still is.
-- Home and field services The paperwork that follows every job home Job close-out, recurring service reports, meter and usage reads, and looking a customer up while they wait. Custom automation for home and field service operations.
+- Home and field services The paperwork that follows every job home Job close-out, recurring service reports, readings captured on site, and looking a customer up while they wait. Custom automation for home and field service operations.
 - Professional services The reporting and lookups between the billable work Recurring client reports, matter and account lookup across systems, intake handoff, and exception review. Custom automation for professional services back offices.
 - Retail and ecommerce Counts, orders, and the numbers that move between systems Inventory counts typed into a system, orders entered twice, supplier and channel reporting, and returns that need a person. Custom automation for retail and ecommerce operations.
 
@@ -750,7 +751,7 @@ A customer calls about work from six weeks ago. Answering means checking the sch
 ## What we would build first
 Most field operations start with either the weekly report or the close-out, because both have a hard edge: the report either arrives on Monday or it does not, and the job is either invoiceable or it is not. One workflow, scoped and priced on its own, so you can judge it before deciding whether there is a second.
 - Recurring reports The report someone still assembles by hand The gathering, the formatting and the delivery written down as rules, so the report produces itself in the template your clients already recognise.
-- Collecting numbers Readings and counts that still get typed A capture path for the number, basic validation, and a write-back to the system that already owns billing, inventory, or tracking.
+- Capturing values Numbers that only a person can fetch A capture path that fits how the number is actually obtained today, validation before it is written, and a write into the system that already owns it.
 - Finding the right record Who is this, and which job is it? A single lookup against the sources you already have, so the right record comes back without re-keying.
 - Follow-through The next step that lives in someone's head The close-out, intake, or reading triggers the next step automatically, the same way every time.
 
@@ -872,7 +873,7 @@ SO
 
 ### Sam Oakes
 Co-founder, Systems
-Builds custom operational automations. Experience shipping this class of work inside live managed-services operations, including service reporting, meter and usage capture, and client lookup systems.
+Builds custom operational automations. Experience shipping this class of work inside live managed-services operations, including service reporting, data capture and validation, and client lookup systems.
 
 JI
 
@@ -915,7 +916,7 @@ Who is this for?
 Operations, service, dispatch, billing, and office teams that still do the same work by hand every week. If a person can walk us through last week's run, we can usually tell you on the first call whether it is worth automating.
 
 How is this different from Zapier or Make?
-Those tools are excellent when two products already talk to each other and the process is simple. We build when the work is messier: a spreadsheet plus a portal plus a meter plus a report that has to look a certain way. Custom operational automation, not a catalog of app-to-app zaps.
+Those tools are excellent when two products already talk to each other and the process is simple. We build when the work is messier: a file plus a portal plus a device plus a report that has to look a certain way. Custom operational automation, not a catalog of app-to-app zaps.
 
 Do we need to buy a new platform first?
 No. We build against the tools and files you already use. If a new piece of infrastructure is required, that will be in the scope before we start, not a surprise in week three.
@@ -936,7 +937,7 @@ What if our process changes?
 Then the automation changes with it. Tell us what moved and we adjust the rules. Keeping it current is part of running it, and priced per project like the build.
 
 Is everything AI?
-Only where it earns its place: reading a meter image, matching a messy client name, drafting a summary. A lot of the value is still reliable plumbing: pull, validate, write, notify. We will not bolt a model onto a process that only needs a scheduled export.
+Only where it earns its place: reading a number off an image, matching a messy client name, drafting a summary. A lot of the value is still reliable plumbing: pull, validate, write, notify. We will not bolt a model onto a process that only needs a scheduled job.
 
 Can you start from more than one process?
 We can sequence work. We still want the first build to be one workflow you can judge. That is how you decide whether to do the next one.
@@ -977,7 +978,7 @@ One workflow. Who does it, how often, and what triggers it.
 - 02
 
 ### Where the data lives
-The sheet, portal, inbox, meter, or system it comes out of today.
+The file, portal, inbox, device, or system it comes out of today.
 
 - 03
 

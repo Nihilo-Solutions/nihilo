@@ -12,7 +12,7 @@ export const PAGES = [
   ["/use-cases", "Use cases"],
   ["/use-cases/reports", "Use case: recurring reports"],
   ["/use-cases/data-prep", "Use case: preparing data"],
-  ["/use-cases/meters", "Use case: collecting numbers"],
+  ["/use-cases/meters", "Use case: capturing values"],
   ["/use-cases/lookup", "Use case: finding the right record"],
   ["/use-cases/exceptions", "Use case: exceptions, not every row"],
   ["/use-cases/move", "Use case: moving information"],

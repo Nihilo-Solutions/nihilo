@@ -21,7 +21,7 @@ const FIRST_CALL = [
   },
   {
     title: "Where the data lives",
-    body: "The sheet, portal, inbox, meter, or system it comes out of today.",
+    body: "The file, portal, inbox, device, or system it comes out of today.",
   },
   {
     title: "What goes wrong",

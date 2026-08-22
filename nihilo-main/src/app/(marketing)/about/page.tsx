@@ -27,7 +27,7 @@ export default function About() {
             initials="SO"
             name="Sam Oakes"
             role="Co-founder, Systems"
-            bio="Builds custom operational automations. Experience shipping this class of work inside live managed-services operations, including service reporting, meter and usage capture, and client lookup systems."
+            bio="Builds custom operational automations. Experience shipping this class of work inside live managed-services operations, including service reporting, data capture and validation, and client lookup systems."
           />
           <Person
             initials="JI"

@@ -11,7 +11,7 @@ Who is this for?
 Operations, service, dispatch, billing, and office teams that still do the same work by hand every week. If a person can walk us through last week's run, we can usually tell you on the first call whether it is worth automating.
 
 How is this different from Zapier or Make?
-Those tools are excellent when two products already talk to each other and the process is simple. We build when the work is messier: a spreadsheet plus a portal plus a meter plus a report that has to look a certain way. Custom operational automation, not a catalog of app-to-app zaps.
+Those tools are excellent when two products already talk to each other and the process is simple. We build when the work is messier: a file plus a portal plus a device plus a report that has to look a certain way. Custom operational automation, not a catalog of app-to-app zaps.
 
 Do we need to buy a new platform first?
 No. We build against the tools and files you already use. If a new piece of infrastructure is required, that will be in the scope before we start, not a surprise in week three.
@@ -32,7 +32,7 @@ What if our process changes?
 Then the automation changes with it. Tell us what moved and we adjust the rules. Keeping it current is part of running it, and priced per project like the build.
 
 Is everything AI?
-Only where it earns its place: reading a meter image, matching a messy client name, drafting a summary. A lot of the value is still reliable plumbing: pull, validate, write, notify. We will not bolt a model onto a process that only needs a scheduled export.
+Only where it earns its place: reading a number off an image, matching a messy client name, drafting a summary. A lot of the value is still reliable plumbing: pull, validate, write, notify. We will not bolt a model onto a process that only needs a scheduled job.
 
 Can you start from more than one process?
 We can sequence work. We still want the first build to be one workflow you can judge. That is how you decide whether to do the next one.

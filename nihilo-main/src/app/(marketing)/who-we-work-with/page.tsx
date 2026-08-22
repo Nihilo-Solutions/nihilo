@@ -29,7 +29,7 @@ export default function WhoWeWorkWith() {
             <h3 className="mb-2.5 font-serif text-xl font-medium">A good fit</h3>
             <ul className="ml-4.5 list-disc space-y-2 text-muted">
               <li>An operations, service, dispatch, billing, or office team that repeats the same tasks</li>
-              <li>Data already living in sheets, portals, meters, or a few disconnected tools</li>
+              <li>Data already living in sheets, portals, devices, or a few disconnected tools</li>
               <li>A process owner who can walk us through last week's run</li>
               <li>A willingness to start with one workflow, not a company-wide rebuild</li>
             </ul>
@@ -61,7 +61,7 @@ export default function WhoWeWorkWith() {
           <div className="mt-10 grid gap-4.5 md:grid-cols-3">
             <Place
               title="Service and field operations"
-              body="Job close-out, service reports, meter or usage reads, and the status pack leadership asks for on the same cycle every time."
+              body="Job close-out, service reports, figures captured on site, and the status pack leadership asks for on the same cycle every time."
             />
             <Place
               title="Dispatch, transport, and scheduling"

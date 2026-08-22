@@ -13,7 +13,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "How is this different from Zapier or Make?",
-    a: "Those tools are excellent when two products already talk to each other and the process is simple. We build when the work is messier: a spreadsheet plus a portal plus a meter plus a report that has to look a certain way. Custom operational automation, not a catalog of app-to-app zaps.",
+    a: "Those tools are excellent when two products already talk to each other and the process is simple. We build when the work is messier: a file plus a portal plus a device plus a report that has to look a certain way. Custom operational automation, not a catalog of app-to-app zaps.",
   },
   {
     q: "Do we need to buy a new platform first?",
@@ -41,7 +41,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Is everything AI?",
-    a: "Only where it earns its place: reading a meter image, matching a messy client name, drafting a summary. A lot of the value is still reliable plumbing: pull, validate, write, notify. We will not bolt a model onto a process that only needs a scheduled export.",
+    a: "Only where it earns its place: reading a number off an image, matching a messy client name, drafting a summary. A lot of the value is still reliable plumbing: pull, validate, write, notify. We will not bolt a model onto a process that only needs a scheduled job.",
   },
   {
     q: "Can you start from more than one process?",

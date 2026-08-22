@@ -71,7 +71,8 @@ export const organizationJsonLd = {
     "operational automation",
     "custom workflow automation",
     "service reporting automation",
-    "meter and usage capture",
+    "data preparation and cleanup",
+    "manual data capture and entry",
     "client and record lookup",
   ],
 };

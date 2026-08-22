@@ -36,12 +36,12 @@ const ITEMS = [
   },
   {
     num: "03",
-    title: "Meter and usage reading",
-    body: "Any operation that still depends on a person reading a device, a portal, or a print-out and typing the number in. We capture the reading, validate it, and write it to the system that already bills or tracks usage.",
+    title: "Capturing values from where they live",
+    body: "Any operation that still depends on a person fetching a number your systems cannot reach and typing it in. A device, a portal with no export, a document, a photo, a screen in another system. We capture it, validate it, and write it where it is acted on.",
     bullets: [
-      "Device or fleet meter collection",
-      "Usage capture for billing or allocation",
-      "Fewer estimated reads and fewer corrections later",
+      "Readings, counts, and figures from sources with no way out",
+      "Capture for billing, stock, scheduling, or allocation",
+      "Fewer estimates and fewer corrections after the fact",
     ],
   },
   {

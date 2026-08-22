@@ -17,7 +17,7 @@ The narrowing is deliberate. The previous site sold five packages spanning
 websites, lead capture, operations automation, industry starters and a retainer.
 That range asked a buyer to work out which box they were in before they could tell
 whether we could help. The new framing leads with the work itself, in the words an
-operator would use: the Friday report, the meter reading, the client lookup.
+operator would use: the report assembled by hand, the data cleaned up before it goes in, the client lookup.
 
 Industry is deliberately broad. The qualifier is the shape of the work, not the
 sector: a process that repeats, data that already exists, and a team tired of doing

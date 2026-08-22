@@ -42,7 +42,7 @@ If the next step depends on someone reading the situation and deciding what shou
 ## Other work we get asked about
 - Recurring reports The report someone still assembles by hand
 - Preparing data The cleanup that happens before anything gets loaded
-- Collecting numbers Readings and counts that still get typed
+- Capturing values Numbers that only a person can fetch
 - Finding the right record Who is this, and which job is it?
 - Exceptions, not every row Review only what needs a person
 - Moving information The same record, entered twice

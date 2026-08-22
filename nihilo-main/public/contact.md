@@ -30,7 +30,7 @@ One workflow. Who does it, how often, and what triggers it.
 - 02
 
 ### Where the data lives
-The sheet, portal, inbox, meter, or system it comes out of today.
+The file, portal, inbox, device, or system it comes out of today.
 
 - 03
 

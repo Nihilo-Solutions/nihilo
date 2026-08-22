@@ -21,7 +21,7 @@ We document the current path and the exceptions. Then you get a written scope: w
 - 03
 
 ### Build against live process
-We build on your actual data and tools: spreadsheets, portals, meters, inboxes, the systems you already pay for. You review early. We do not disappear for a month and come back with a surprise.
+We build on your actual data and tools: the files, portals, devices, inboxes and systems you already pay for. You review early. We do not disappear for a month and come back with a surprise.
 
 - 04
 
@@ -34,7 +34,7 @@ We run it beside the current process until you trust it. Then it goes live and w
 Someone who does the work today or sits next to it. Not a committee. One person who can walk us through last week's run.
 
 ### Access to the source
-The sheet, export, portal, mailbox, or meter path the data already lives in. We work with what you have. We do not require a new platform first.
+The file, portal, mailbox, device, or system the data already lives in. We work with what you have. We do not require a new platform first.
 
 ### A definition of done
 The report that has to go out. The number that has to land in billing. The lookup that has to return during a call. Specific beats 'make us more efficient.'

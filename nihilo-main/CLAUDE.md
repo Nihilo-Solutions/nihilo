@@ -21,7 +21,7 @@ Acknowledge in one line that everything is loaded. Then wait.
 
 The Nihilo Solutions marketing website at https://nihilosolutions.com. It exists for one purpose: convert visitors into discovery calls. Not for traffic, not for brand, not for awards. Discovery calls.
 
-What Nihilo sells is **custom operational automations for growing companies**: recurring reports, meter and usage capture, client and record lookup, and similar repeating operational work, built against the tools the client already uses. It does not sell SEO, website modernization, chatbots as a product, ERP replacement, or staffed marketing. The site was fully replaced in August 2026; if you find copy pointing the other way, it is a leftover and should go.
+What Nihilo sells is **custom operational automations for growing companies**: recurring reports rendered into the client's own template, data preparation and cleanup before it goes into a system, capture of values a person still fetches by hand, client and record lookup, and similar repeating manual work, built against the tools the client already uses. Name the pattern, not one company's mechanics: no named weekday, no file format, no assumption about which tool it came out of. It does not sell SEO, website modernization, chatbots as a product, ERP replacement, or staffed marketing. The site was fully replaced in August 2026; if you find copy pointing the other way, it is a leftover and should go.
 
 Everything we do on this site is judged against that goal. Pretty visuals that don't move that needle are decoration. SEO content that doesn't bring buyers in is busywork. Features that don't shorten time-to-discovery-call are noise.
 

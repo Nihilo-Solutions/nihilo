@@ -42,7 +42,7 @@ If the records genuinely have no common thread, no shared identifier, name, phon
 ## Other work we get asked about
 - Recurring reports The report someone still assembles by hand
 - Preparing data The cleanup that happens before anything gets loaded
-- Collecting numbers Readings and counts that still get typed
+- Capturing values Numbers that only a person can fetch
 - Exceptions, not every row Review only what needs a person
 - Moving information The same record, entered twice
 - Follow-through The next step that lives in someone's head

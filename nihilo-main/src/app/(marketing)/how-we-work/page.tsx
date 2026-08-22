@@ -26,7 +26,7 @@ const STEPS = [
   {
     num: "03",
     title: "Build against live process",
-    body: "We build on your actual data and tools: spreadsheets, portals, meters, inboxes, the systems you already pay for. You review early. We do not disappear for a month and come back with a surprise.",
+    body: "We build on your actual data and tools: the files, portals, devices, inboxes and systems you already pay for. You review early. We do not disappear for a month and come back with a surprise.",
   },
   {
     num: "04",
@@ -77,7 +77,7 @@ export default function HowWeWork() {
             />
             <Need
               title="Access to the source"
-              body="The sheet, export, portal, mailbox, or meter path the data already lives in. We work with what you have. We do not require a new platform first."
+              body="The file, portal, mailbox, device, or system the data already lives in. We work with what you have. We do not require a new platform first."
             />
             <Need
               title="A definition of done"

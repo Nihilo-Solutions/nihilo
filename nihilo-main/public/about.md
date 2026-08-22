@@ -12,7 +12,7 @@ SO
 
 ### Sam Oakes
 Co-founder, Systems
-Builds custom operational automations. Experience shipping this class of work inside live managed-services operations, including service reporting, meter and usage capture, and client lookup systems.
+Builds custom operational automations. Experience shipping this class of work inside live managed-services operations, including service reporting, data capture and validation, and client lookup systems.
 
 JI
 
