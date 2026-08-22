@@ -20,7 +20,7 @@ const PAGES: {
   { path: '/use-cases', lastModified: '2026-08-22', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/use-cases/reports', lastModified: '2026-08-22', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/use-cases/data-prep', lastModified: '2026-08-22', changeFrequency: 'monthly', priority: 0.8 },
-  { path: '/use-cases/meters', lastModified: '2026-08-22', changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/use-cases/capture', lastModified: '2026-08-23', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/use-cases/lookup', lastModified: '2026-08-22', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/use-cases/exceptions', lastModified: '2026-08-22', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/use-cases/move', lastModified: '2026-08-22', changeFrequency: 'monthly', priority: 0.8 },

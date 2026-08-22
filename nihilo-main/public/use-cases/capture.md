@@ -1,6 +1,6 @@
 # Use case: capturing values
 
-Source: https://nihilosolutions.com/use-cases/meters
+Source: https://nihilosolutions.com/use-cases/capture
 Site: https://nihilosolutions.com/llms-full.txt
 
 Capturing values

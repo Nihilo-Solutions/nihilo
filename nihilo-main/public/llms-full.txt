@@ -349,7 +349,7 @@ Book a discovery call
 
 ========================================================================
 # Use case: capturing values
-https://nihilosolutions.com/use-cases/meters
+https://nihilosolutions.com/use-cases/capture
 
 Capturing values
 

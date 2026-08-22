@@ -126,7 +126,7 @@ export const USE_CASES: UseCase[] = [
     },
   },
   {
-    id: "meters",
+    id: "capture",
     kicker: "Capturing values",
     title: "Numbers that only a person can fetch",
     metaTitle: "Automate Manual Data Capture and Entry | Nihilo Solutions",

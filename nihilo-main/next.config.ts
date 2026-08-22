@@ -32,6 +32,9 @@ const RETIRED: { from: string; to: string }[] = [
   { from: '/assessment', to: '/contact' },
   { from: '/intake', to: '/contact' },
   { from: '/book', to: '/contact' },
+  // Renamed live page, not a dead one. The use case outgrew the meter framing
+  // and the slug went with it.
+  { from: '/use-cases/meters', to: '/use-cases/capture' },
   // Old enterprise-platform pages
   { from: '/security', to: '/what-we-build' },
   { from: '/platforms', to: '/what-we-build' },

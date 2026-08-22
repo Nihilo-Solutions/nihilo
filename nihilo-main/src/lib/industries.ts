@@ -56,7 +56,7 @@ export const INDUSTRIES: Industry[] = [
         body: "A customer calls about work from six weeks ago. Answering means checking the scheduling tool, the invoice, and someone's inbox while they wait on the phone.",
       },
     ],
-    useCases: ["reports", "meters", "lookup", "follow-through"],
+    useCases: ["reports", "capture", "lookup", "follow-through"],
     firstBuild:
       "Most field operations start with either the weekly report or the close-out, because both have a hard edge: the report either arrives on Monday or it does not, and the job is either invoiceable or it is not. One workflow, scoped and priced on its own, so you can judge it before deciding whether there is a second.",
     notFor:

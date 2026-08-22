@@ -88,7 +88,7 @@ Or one file per page, if you only need one:
 - https://nihilosolutions.com/use-cases.md
 - https://nihilosolutions.com/use-cases/reports.md
 - https://nihilosolutions.com/use-cases/data-prep.md
-- https://nihilosolutions.com/use-cases/meters.md
+- https://nihilosolutions.com/use-cases/capture.md
 - https://nihilosolutions.com/use-cases/lookup.md
 - https://nihilosolutions.com/use-cases/exceptions.md
 - https://nihilosolutions.com/use-cases/move.md
@@ -114,7 +114,7 @@ Every HTML page also links its own file with
 - Use cases: https://nihilosolutions.com/use-cases
   - The report someone still assembles by hand: https://nihilosolutions.com/use-cases/reports
   - The cleanup that happens before anything gets loaded: https://nihilosolutions.com/use-cases/data-prep
-  - Numbers that only a person can fetch: https://nihilosolutions.com/use-cases/meters
+  - Numbers that only a person can fetch: https://nihilosolutions.com/use-cases/capture
   - Who is this, and which job is it: https://nihilosolutions.com/use-cases/lookup
   - Review only what needs a person: https://nihilosolutions.com/use-cases/exceptions
   - The same record, entered twice: https://nihilosolutions.com/use-cases/move
