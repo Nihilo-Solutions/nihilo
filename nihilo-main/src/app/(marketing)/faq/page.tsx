@@ -56,7 +56,7 @@ export const FAQ_ITEMS = [
 export const metadata: Metadata = pageMeta({
       title: "Operational Automation FAQ | Nihilo Solutions",
       description:
-        "Answers on pricing, timeline, ownership, Zapier vs custom automation, and whether you need a new platform before automating operational work.",
+        "Answers on pricing, timeline, what your team has to run, Zapier vs custom automation, and whether you need a new platform before automating operational work.",
       path: "/faq",
     });
 

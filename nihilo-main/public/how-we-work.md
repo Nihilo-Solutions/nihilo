@@ -39,7 +39,7 @@ The sheet, export, portal, mailbox, or meter path the data already lives in. We 
 ### A definition of done
 The report that has to go out. The number that has to land in billing. The lookup that has to return during a call. Specific beats 'make us more efficient.'
 
-## Time, price, and ownership
+## Time, price, and what your team gets
 
 ### The call is free
 Thirty minutes. If it is not a fit, we say so. You are not buying a discovery workshop.
@@ -50,6 +50,20 @@ More on how we price
 
 ### Nothing new for your team to run
 Your team does not get another tool to learn or maintain. They get the report, the number, or the record, where they already look for it.
+
+## How we price it
+There are two numbers, and you see both before anything is built. One for the build, one for running it after go-live. Both are scoped to the workflow in front of us and quoted in writing after the call, so you can decide against a number rather than a feeling.
+
+### What moves the number
+How many systems the work touches, how clean the data already is, and how many exceptions a person has to handle today. A one-source weekly report is not the same job as a reading that has to reconcile against billing.
+
+### Priced per project, not per hour
+No hourly billing against an open retainer, and no per-seat licence. You are buying a scoped workflow, and the scope says what is in and what is not.
+
+### When the process changes
+Operations change. Adjusting the rules to keep up is part of running it, not a new invoice. A genuinely different workflow is scoped and quoted like any other build.
+
+We do not publish rates, because a number without a scope is a guess. What we will do is give you the real one after 30 minutes on your process.
 
 ## Bring one process to the call.
 If we cannot see a clean path to automate it, we will tell you. If we can, you leave with a sense of scope, not a forty-page proposal.

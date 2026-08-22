@@ -89,7 +89,7 @@ export default function HowWeWork() {
       <section className="py-20">
         <div className="mx-auto w-[min(70rem,calc(100%-2.5rem))]">
           <h2 className="font-serif text-3xl font-normal tracking-[-0.02em] sm:text-5xl">
-            Time, price, and ownership
+            Time, price, and what your team gets
           </h2>
           <div className="mt-10 grid gap-4.5 md:grid-cols-3">
             <Need
@@ -106,6 +106,37 @@ export default function HowWeWork() {
               body="Your team does not get another tool to learn or maintain. They get the report, the number, or the record, where they already look for it."
             />
           </div>
+        </div>
+      </section>
+      <section className="border-t border-border py-20">
+        <div className="mx-auto w-[min(70rem,calc(100%-2.5rem))]">
+          <h2 className="font-serif text-3xl font-normal tracking-[-0.02em] sm:text-5xl">
+            How we price it
+          </h2>
+          <p className="mt-3.5 max-w-2xl text-lg text-muted">
+            There are two numbers, and you see both before anything is built. One for the build,
+            one for running it after go-live. Both are scoped to the workflow in front of us and
+            quoted in writing after the call, so you can decide against a number rather than a
+            feeling.
+          </p>
+          <div className="mt-10 grid gap-4.5 md:grid-cols-3">
+            <Need
+              title="What moves the number"
+              body="How many systems the work touches, how clean the data already is, and how many exceptions a person has to handle today. A one-source weekly report is not the same job as a reading that has to reconcile against billing."
+            />
+            <Need
+              title="Priced per project, not per hour"
+              body="No hourly billing against an open retainer, and no per-seat licence. You are buying a scoped workflow, and the scope says what is in and what is not."
+            />
+            <Need
+              title="When the process changes"
+              body="Operations change. Adjusting the rules to keep up is part of running it, not a new invoice. A genuinely different workflow is scoped and quoted like any other build."
+            />
+          </div>
+          <p className="mt-7 max-w-2xl text-sm text-muted">
+            We do not publish rates, because a number without a scope is a guess. What we will do
+            is give you the real one after 30 minutes on your process.
+          </p>
         </div>
       </section>
       <CtaBand
