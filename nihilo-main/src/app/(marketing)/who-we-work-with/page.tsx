@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { CtaBand } from "@/components/site/cta-band";
 import { PageHero } from "@/components/site/page-hero";
-import { pageMeta } from "@/lib/seo";
+import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
+import { JsonLd } from "@/components/site/json-ld";
+import Link from "next/link";
 
 export const metadata: Metadata = pageMeta({
       title: "Who Custom Operational Automation Is For | Nihilo Solutions",
@@ -13,6 +15,7 @@ export const metadata: Metadata = pageMeta({
 export default function WhoWeWorkWith() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd([{ name: "Who we work with", path: "/who-we-work-with" }])} />
       <PageHero
         kicker="Who we work with"
         title="If the work looks like this, we should talk."
@@ -48,7 +51,11 @@ export default function WhoWeWorkWith() {
             Where this work shows up
           </h2>
           <p className="mt-3.5 max-w-xl text-lg text-muted">
-            The industries vary. The jobs look familiar.
+            The industries vary. The jobs look familiar. The{" "}
+            <Link href="/use-cases" className="text-fg underline decoration-accent">
+              use cases
+            </Link>{" "}
+            go through six of them in detail.
           </p>
           <div className="mt-10 grid gap-4.5 md:grid-cols-3">
             <Place

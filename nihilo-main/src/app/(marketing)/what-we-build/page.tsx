@@ -3,7 +3,8 @@ import Link from "next/link";
 import { CtaBand } from "@/components/site/cta-band";
 import { PageHero } from "@/components/site/page-hero";
 import { Button } from "@/components/site/ui/button";
-import { pageMeta } from "@/lib/seo";
+import { breadcrumbJsonLd, pageMeta, serviceJsonLd } from "@/lib/seo";
+import { JsonLd } from "@/components/site/json-ld";
 
 export const metadata: Metadata = pageMeta({
       title: "Custom Workflow Automation | Nihilo Solutions",
@@ -58,6 +59,8 @@ const ITEMS = [
 export default function WhatWeBuild() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd([{ name: "What we build", path: "/what-we-build" }])} />
+      <JsonLd data={serviceJsonLd(ITEMS.map(({ title, body }) => ({ name: title, description: body })))} />
       <PageHero
         kicker="What we build"
         title="Automations for the work your team already does."
@@ -87,7 +90,20 @@ export default function WhatWeBuild() {
           </div>
           <p className="mt-7 text-[0.8125rem] text-muted">
             These are types of systems, not a catalog of products. Every build is scoped to your
-            process, your tools, and your definition of done.
+            process, your tools, and your definition of done. For what each one looks like in
+            practice, see the{" "}
+            <Link href="/use-cases#reports" className="text-fg underline decoration-accent">
+              weekly report
+            </Link>
+            ,{" "}
+            <Link href="/use-cases#meters" className="text-fg underline decoration-accent">
+              meter and usage
+            </Link>{" "}
+            and{" "}
+            <Link href="/use-cases#lookup" className="text-fg underline decoration-accent">
+              record lookup
+            </Link>{" "}
+            examples.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button asChild variant="ghost">

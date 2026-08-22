@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { CtaBand } from "@/components/site/cta-band";
 import { PageHero } from "@/components/site/page-hero";
-import { pageMeta } from "@/lib/seo";
+import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
+import { JsonLd } from "@/components/site/json-ld";
+import Link from "next/link";
 
 export const metadata: Metadata = pageMeta({
       title: "How We Build Operational Automations | Nihilo Solutions",
@@ -36,6 +38,7 @@ const STEPS = [
 export default function HowWeWork() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd([{ name: "How we work", path: "/how-we-work" }])} />
       <PageHero
         kicker="How we work"
         title="Scoped, built, and kept running by our team."
@@ -96,6 +99,7 @@ export default function HowWeWork() {
             <Need
               title="Fixed price, in writing"
               body="You get a scope and a number before we build. Running it after that is quoted the same way, per project. No hourly billing against an open retainer."
+              link={{ href: "/faq", label: "More on how we price" }}
             />
             <Need
               title="Nothing new for your team to run"
@@ -112,11 +116,27 @@ export default function HowWeWork() {
   );
 }
 
-function Need({ title, body }: { title: string; body: string }) {
+function Need({
+  title,
+  body,
+  link,
+}: {
+  title: string;
+  body: string;
+  link?: { href: string; label: string };
+}) {
   return (
     <article className="rounded-lg border border-border bg-bg-elev p-7 shadow-[var(--shadow-card)]">
       <h3 className="mb-2.5 font-serif text-xl font-medium">{title}</h3>
       <p className="text-base text-muted">{body}</p>
+      {link ? (
+        <Link
+          href={link.href}
+          className="mt-4 inline-block border-b border-accent text-sm font-medium text-fg"
+        >
+          {link.label}
+        </Link>
+      ) : null}
     </article>
   );
 }

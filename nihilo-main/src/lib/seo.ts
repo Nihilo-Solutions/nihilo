@@ -81,3 +81,50 @@ export function faqJsonLd(items: { q: string; a: string }[]) {
     })),
   };
 }
+
+/**
+ * Breadcrumb trail for an inner page. This is what makes search results show
+ * "nihilosolutions.com > Use cases" instead of a bare URL, and it gives an agent
+ * an explicit statement of where a page sits in the site.
+ *
+ * Home needs none: a single-item trail is noise.
+ */
+export function breadcrumbJsonLd(trail: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [{ name: "Home", path: "/" }, ...trail].map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: item.path === "/" ? SITE_URL : `${SITE_URL}${item.path}`,
+    })),
+  };
+}
+
+/**
+ * The classes of system we build, stated as machine-readable services rather
+ * than left implicit in the prose.
+ */
+export function serviceJsonLd(services: { name: string; description: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "What Nihilo Solutions builds",
+    itemListElement: services.map((service, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Service",
+        name: service.name,
+        description: service.description,
+        serviceType: "Custom operational automation",
+        provider: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+        areaServed: [
+          { "@type": "AdministrativeArea", name: "Connecticut" },
+          { "@type": "Country", name: "United States" },
+        ],
+      },
+    })),
+  };
+}

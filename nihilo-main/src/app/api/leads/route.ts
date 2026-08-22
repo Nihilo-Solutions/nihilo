@@ -21,7 +21,7 @@ interface LeadPayload {
 async function createHubSpotContact(payload: LeadPayload): Promise<void> {
   const token = process.env.HUBSPOT_ACCESS_TOKEN;
   if (!token) {
-    console.warn('HUBSPOT_ACCESS_TOKEN not set — skipping HubSpot sync');
+    console.warn('HUBSPOT_ACCESS_TOKEN not set, skipping HubSpot sync');
     return;
   }
 
@@ -42,7 +42,7 @@ async function createHubSpotContact(payload: LeadPayload): Promise<void> {
         ...(payload.message && { message: payload.message }),
         hs_lead_source: 'WEBSITE',
         lead_source: payload.source ?? 'Website',
-        // Custom number properties — create these in HubSpot before going live:
+        // Custom number properties. Create these in HubSpot before going live:
         // nihilo_speed_score, nihilo_seo_score, nihilo_mobile_score (Number type)
         ...(payload.scores?.speed != null && { nihilo_speed_score: payload.scores.speed }),
         ...(payload.scores?.seo != null && { nihilo_seo_score: payload.scores.seo }),

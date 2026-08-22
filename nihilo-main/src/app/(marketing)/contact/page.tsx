@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { BookingEmbed } from "@/components/site/booking-embed";
 import { PageHero } from "@/components/site/page-hero";
-import { pageMeta } from "@/lib/seo";
+import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
 import { SITE_EMAIL } from "@/lib/site";
 import { ContactForm } from "./ContactForm";
+import { JsonLd } from "@/components/site/json-ld";
 
 export const metadata: Metadata = pageMeta({
   title: "Book a Discovery Call | Nihilo Solutions",
@@ -15,6 +16,7 @@ export const metadata: Metadata = pageMeta({
 export default function Contact() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd([{ name: "Contact", path: "/contact" }])} />
       <PageHero
         kicker="Contact"
         title="Book a call with our team."

@@ -5,9 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "next dev -p 5173 -H 0.0.0.0",
+    "prebuild": "node scripts/check-copy.mjs",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check:copy": "node scripts/check-copy.mjs",
+    "build:llms": "node scripts/build-llms-full.mjs",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "engines": {
     "node": "22.x"

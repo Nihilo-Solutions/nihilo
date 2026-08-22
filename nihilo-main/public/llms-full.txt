@@ -1,0 +1,475 @@
+# Nihilo Solutions: full site text
+
+Every page of https://nihilosolutions.com as plain text, so an agent can read
+the whole site in one fetch. See /llms.txt for the summary version.
+
+Nihilo Solutions builds custom operational automations for growing companies:
+recurring reports, meter and usage capture, client and record lookup, and
+similar repeating operational work. Built against the tools a client already
+uses, and kept running once live. Connecticut, remote nationwide.
+
+Contact: sam@nihilosolutions.com
+
+========================================================================
+# Home
+https://nihilosolutions.com/
+
+Operational automation
+
+# Give your team their week back.
+We take repeating operational work off your team and turn it into a system that runs without them.
+Book a discovery call See what we build
+30 minutes. You talk with our team. Nothing for your team to build or run.
+
+This Friday, by hand
+- Export the jobs
+- Paste into the sheet
+- Write the summary
+- Email the pack
+One person. Same two hours. Same chance a row is missing.
+After
+The report lands on its own.
+Same rules. Same format. Nobody assembled it.
+
+If this is still a person
+
+## The work we take off your team.
+Industry does not matter as much as a process that repeats. If someone does it every week, it is a candidate.
+01
+
+### Operational reports
+Pull the data, apply the same rules, and send the pack on a schedule. Service reports, status packs, exception lists. No Friday spreadsheet session.
+See this use case
+02
+
+### Meter and usage capture
+Collect readings, skip the typing, and push clean numbers into the system that already bills or tracks usage. Fewer errors. Faster close-out.
+See this use case
+03
+
+### Client and record lookup
+Find the right customer, job, or account without hunting portals, inboxes, and sheets. One question. The right record.
+See this use case
+
+How an engagement runs
+
+## You work with the people who will build it.
+- 01
+
+### Discovery call
+Thirty minutes on the process that is costing you time. What happens today, who does it, where the data lives, what done looks like.
+
+- 02
+
+### Map the process
+We write the workflow down: inputs, exceptions, systems, and the output your team actually needs. Then a scoped build, not a platform overhaul.
+
+- 03
+
+### Build the automation
+We construct it against your real process. You review it on your data. We adjust until it runs the way your operation runs.
+
+- 04
+
+### Live
+We put it live and keep it running. Your team gets the output and a written description of the rules, not another system to operate.
+
+Read the full process
+
+## If the same task keeps showing up on the calendar, we should talk.
+Book a discovery call. Bring one process. We will tell you whether it is worth automating.
+Book a discovery call
+
+========================================================================
+# What we build
+https://nihilosolutions.com/what-we-build
+
+What we build
+
+# Automations for the work your team already does.
+We do not sell a product you have to change your process around. We match the process you run today, then take the manual steps out.
+
+01
+
+### Operational service reporting
+Weekly or monthly packs that today live in a spreadsheet, a shared drive, or someone's head. We connect the sources, apply the same rules every time, and deliver the report in the format your team already uses.
+- Service, ticket, or job summaries
+- Exception and overdue lists
+- Scheduled delivery to email or a shared folder
+
+02
+
+### Meter and usage reading
+Any operation that still depends on a person reading a device, a portal, or a print-out and typing the number in. We capture the reading, validate it, and write it to the system that already bills or tracks usage.
+- Device or fleet meter collection
+- Usage capture for billing or allocation
+- Fewer estimated reads and fewer corrections later
+
+03
+
+### Client and record lookup
+Staff should not have to search three tools to answer who this is. We build a lookup against the systems you already have, so the right customer, job, or account comes back in one step.
+- Customer, rider, or account lookup
+- Job or ticket retrieval during a call
+- Less re-keying between dispatch, billing, and support
+
+04
+
+### Similar operational workflows
+If the pattern is the same (repeatable, rules-based, and currently done by a person) we will look at it. Intake, status updates, data movement between tools, scheduled checks.
+- Moving the same record from one system to another
+- Flagging exceptions instead of reviewing every row
+- Turning a documented process into a running workflow
+
+These are types of systems, not a catalog of products. Every build is scoped to your process, your tools, and your definition of done. For what each one looks like in practice, see the weekly report , meter and usage and record lookup examples.
+Browse use cases
+
+## Bring the process that keeps coming back.
+A discovery call is thirty minutes. You leave knowing whether it is worth automating.
+Book a discovery call
+
+========================================================================
+# Use cases
+https://nihilosolutions.com/use-cases
+
+Use cases
+
+# Examples of work we automate.
+These are starting points, not a closed list. If someone on your team still does the same steps every week, we can look at it, even if it is not on this page.
+
+Recurring reports
+
+### The weekly pack someone still builds by hand
+Today
+Every week someone exports from one system, pastes into a sheet, applies the same filters, writes a short summary, and emails it. It might be a service report, a job list, a billing recap, or a status pack for leadership. Late files, missing rows, and a process that lives in one person's head.
+
+What we build
+A scheduled pull, the same rules every time, and a report that lands in the inbox or folder in the format your team already uses.
+
+Collecting numbers
+
+### Readings and counts that still get typed
+Today
+A person reads a meter, a portal, a print-out, a counter, or a screen, then types the number into the system that bills, restocks, or tracks usage. Manual entry creates estimates, corrections, and delays. This shows up anywhere a number has to move from the real world into a system.
+
+What we build
+A capture path for the number, basic validation, and a write-back to the system that already owns billing, inventory, or tracking.
+
+Finding the right record
+
+### Who is this, and which job is it?
+Today
+A name, phone, ID, or ticket comes in. Staff hunt across a booking tool, a sheet, email, and billing to find the right customer, job, or account. Time that should be spent helping is spent searching.
+
+What we build
+A single lookup against the sources you already have, so the right record comes back without re-keying.
+
+Exceptions, not every row
+
+### Review only what needs a person
+Today
+The team still scans entire lists to find the late job, the odd reading, the unmatched record, or the item that slipped. Most of the list is fine. The value is in the few rows that broke.
+
+What we build
+Rules that surface only what needs a person, with enough context to act.
+
+Moving information
+
+### The same record, entered twice
+Today
+A new job, order, or client is created in one system and then typed into another. That second entry is where errors and delay live. People are acting as the integration between tools.
+
+What we build
+A one-way or two-way movement of the fields that actually matter. Not an enterprise integration program.
+
+Follow-through
+
+### The next step that lives in someone's head
+Today
+After a job closes, a form arrives, or a reading comes in, someone has to remember to update a sheet, send a note, or kick off the next step. If they forget, it stalls. The process is real. It just is not written down as a system.
+
+What we build
+The close-out, intake, or reading triggers the next step automatically, the same way every time.
+
+And similar work
+
+### If the pattern repeats, it belongs here.
+Other examples we look at include intake, status updates, scheduled checks, invoice backups, inventory counts, and file routing. If it is rules-based, currently done by a person, and you can walk us through last week's run, bring it.
+- Intake and handoff
+- Status updates
+- Scheduled checks
+- Invoice backups
+- Inventory counts
+- File and folder routing
+
+## Your process does not have to match an example.
+Book a call. Bring the work that keeps coming back. We will tell you if it is worth automating.
+Book a discovery call
+
+========================================================================
+# How we work
+https://nihilosolutions.com/how-we-work
+
+How we work
+
+# Scoped, built, and kept running by our team.
+No account managers between you and the work. We start with one process, write it down, and only build what that process needs.
+
+- 01
+
+### Discovery call
+Book time. We want one concrete workflow: who does it, how often, which systems, what goes wrong, and what a good output looks like. If it is not a fit, we will say so on the call.
+
+- 02
+
+### Process map and scope
+We document the current path and the exceptions. Then you get a written scope: what we will automate, what we will not, what we need from you, and a fixed price for that build.
+
+- 03
+
+### Build against live process
+We build on your actual data and tools: spreadsheets, portals, meters, inboxes, the systems you already pay for. You review early. We do not disappear for a month and come back with a surprise.
+
+- 04
+
+### Review, adjust, go live
+We run it beside the current process until you trust it. Then it goes live and we keep it running. The people who depend on the output get told what it does, and what to do when the process changes.
+
+## What we need from you
+
+### A real process owner
+Someone who does the work today or sits next to it. Not a committee. One person who can walk us through last week's run.
+
+### Access to the source
+The sheet, export, portal, mailbox, or meter path the data already lives in. We work with what you have. We do not require a new platform first.
+
+### A definition of done
+The report that has to go out. The number that has to land in billing. The lookup that has to return during a call. Specific beats 'make us more efficient.'
+
+## Time, price, and ownership
+
+### The call is free
+Thirty minutes. If it is not a fit, we say so. You are not buying a discovery workshop.
+
+### Fixed price, in writing
+You get a scope and a number before we build. Running it after that is quoted the same way, per project. No hourly billing against an open retainer.
+More on how we price
+
+### Nothing new for your team to run
+Your team does not get another tool to learn or maintain. They get the report, the number, or the record, where they already look for it.
+
+## Bring one process to the call.
+If we cannot see a clean path to automate it, we will tell you. If we can, you leave with a sense of scope, not a forty-page proposal.
+Book a discovery call
+
+========================================================================
+# Who we work with
+https://nihilosolutions.com/who-we-work-with
+
+Who we work with
+
+# If the work looks like this, we should talk.
+We stay broad on industry on purpose. The fit is the shape of the work: a process that repeats, data that already exists, and a team tired of doing it by hand.
+
+### A good fit
+- An operations, service, dispatch, billing, or office team that repeats the same tasks
+- Data already living in sheets, portals, meters, or a few disconnected tools
+- A process owner who can walk us through last week's run
+- A willingness to start with one workflow, not a company-wide rebuild
+
+### Not a fit
+- You want a generic chatbot on the website
+- You need a full ERP or platform replacement
+- Nobody can describe the current process
+- The work is different every single time, with no rules
+- You are shopping for a staffed agency to run marketing
+
+## Where this work shows up
+The industries vary. The jobs look familiar. The use cases go through six of them in detail.
+
+### Service and field operations
+Job close-out, service reports, meter or usage reads, and the status pack leadership asks for every week.
+
+### Dispatch, transport, and scheduling
+Looking up a client or job while someone is waiting. Moving a booking into the system that actually runs the day.
+
+### Office and back office
+The report that is still assembled by hand. The record entered twice. The exception that only appears after someone scrolls a thousand rows.
+
+## If you recognize the work, book the call.
+We work from Connecticut and take remote engagements nationwide.
+Book a discovery call
+
+========================================================================
+# About
+https://nihilosolutions.com/about
+
+About
+
+# A small firm that builds the system, then gets out of the way.
+Nihilo Solutions is a small team. We design and ship operational automations for companies that have outgrown doing everything by hand.
+
+SO
+
+### Sam Oakes
+Co-founder, Systems
+Builds custom operational automations. Experience shipping this class of work inside live managed-services operations, including service reporting, meter and usage capture, and client lookup systems.
+
+JI
+
+### Jake Ice
+Co-founder, Delivery
+Owns delivery and the commercial side of each engagement: scope, timeline, and tying the build to a business outcome from the first conversation through go-live.
+
+IP
+
+### Ish Pandhal
+Marketing and Client Relations
+Leads marketing and client relations. First point of contact for new conversations, and the relationship once a project is underway.
+
+## How we think about the work
+
+### Start from the process
+If we cannot watch or reconstruct last week's run, we do not build. Automation without a real process is just another tool.
+
+### Nobody has to log in
+The point is that the work stops landing on someone's desk. Your team should notice the output arriving, not a new system to log into.
+
+### Stay on the work
+The people who scoped it stay on it after it goes live. That is the whole model.
+
+Based in Connecticut. We work across the Northeast and take remote engagements nationwide.
+
+## Book a call with our team.
+A discovery call is thirty minutes. Bring one process.
+Book a discovery call
+
+========================================================================
+# FAQ
+https://nihilosolutions.com/faq
+
+FAQ
+
+# Straight answers before you book.
+
+Who is this for?
+Operations, service, dispatch, billing, and office teams that still do the same work by hand every week. If a person can walk us through last week's run, we can usually tell you on the first call whether it is worth automating.
+
+How is this different from Zapier or Make?
+Those tools are excellent when two products already talk to each other and the process is simple. We build when the work is messier: a spreadsheet plus a portal plus a meter plus a report that has to look a certain way. Custom operational automation, not a catalog of app-to-app zaps.
+
+Do we need to buy a new platform first?
+No. We build against the tools and files you already use. If a new piece of infrastructure is required, that will be in the scope before we start, not a surprise in week three.
+
+How do you price?
+Fixed scope and a fixed price for the build, written down before we start. Running it after that is quoted the same way, per project. No hourly billing against an open retainer.
+
+How long does a project take?
+It depends on the process, the number of exceptions, and how quickly we can get access to the source. Many single-workflow builds land in a few weeks once scope is agreed. We will give you a range after the discovery call, not a generic promise on this page.
+
+Who do we work with?
+Our team. Discovery calls go to the people who run the engagement.
+
+Who runs it once it is live?
+We do. Your team gets the output, not another system to operate. If the process changes, we change the rules.
+
+What if our process changes?
+Then the automation changes with it. Tell us what moved and we adjust the rules. Keeping it current is part of running it, and priced per project like the build.
+
+Is everything AI?
+Only where it earns its place: reading a meter image, matching a messy client name, drafting a summary. A lot of the value is still reliable plumbing: pull, validate, write, notify. We will not bolt a model onto a process that only needs a scheduled export.
+
+Can you start from more than one process?
+We can sequence work. We still want the first build to be one workflow you can judge. That is how you decide whether to do the next one.
+
+Where are you based?
+Connecticut. We work across the Northeast and take remote engagements nationwide.
+
+Book a discovery call
+
+========================================================================
+# Contact
+https://nihilosolutions.com/contact
+
+Contact
+
+# Book a call with our team.
+We review every inquiry ourselves and reply within one business day. The fastest path is a 30-minute discovery call.
+
+## Book a discovery call
+Bring one process: the report, the reading, or the lookup that keeps landing on the same desk. We will tell you whether it is worth automating and what a first build would look like.
+- 30 minutes, video
+- With our team, not a sales queue
+- You leave knowing if we should scope it
+Prefer email? sam@nihilosolutions.com
+
+### Pick a time
+Live availability on the discovery-call calendar.
+Not loading? Open the booking page in a new tab , or email sam@nihilosolutions.com .
+
+Connecticut · remote nationwide
+
+Or write it down first
+
+## Send us the process.
+If none of the times work, or you would rather describe the process before talking, send it over. We will come back with a time within one business day.
+Name Company Email The process to talk about Send it over Or email us
+
+========================================================================
+# Privacy
+https://nihilosolutions.com/privacy
+
+Privacy
+
+# How we handle information.
+This is a short policy for a small firm. If you email us or book a call, we use that information to respond and to run the engagement. Nothing else.
+
+### What we collect
+Name, company, email, and whatever you choose to tell us about a process on a call or in a message. Booking details are handled by Microsoft Bookings.
+
+### What we do not do
+We do not sell contact information. We do not run a marketing list off this site. Project data you share during a build is used only to deliver that build.
+
+### How to reach us
+Questions: sam@nihilosolutions.com
+
+========================================================================
+# Terms of Service
+https://nihilosolutions.com/terms
+
+# Terms of Service
+Last updated: August 22, 2026
+
+## Acceptance of Terms
+These Terms of Service ("Terms") govern your access to and use of the website operated by Nihilo Solutions LLC ("we", "our", or "us") at nihilosolutions.com (the "Website"). By accessing or using the Website, you agree to be bound by these Terms. If you do not agree, do not use the Website.
+
+## Use of the Website
+You may use the Website only for lawful purposes and in accordance with these Terms. You agree not to:
+- Use the Website in any way that violates applicable law or regulation.
+- Attempt to gain unauthorized access to, interfere with, or disrupt the Website or its underlying infrastructure.
+- Use any automated means to access the Website in a manner that imposes an unreasonable load on our systems.
+
+## Intellectual Property
+The Website and its contents, including text, graphics, logos, and software, are the property of Nihilo Solutions LLC or its licensors and are protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works from this content without our prior written permission.
+
+## No Professional Advice; Services Governed Separately
+Content on the Website is provided for general informational purposes only and does not constitute professional, technical, legal, or security advice. Any engagement for consulting or implementation services is governed by a separate written agreement between you and Nihilo Solutions LLC, not by these Terms.
+
+## Disclaimer of Warranties
+The Website is provided on an "as is" and "as available" basis without warranties of any kind, whether express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not warrant that the Website will be uninterrupted, error-free, or free of harmful components.
+
+## Limitation of Liability
+To the fullest extent permitted by law, Nihilo Solutions LLC will not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or relating to your use of, or inability to use, the Website.
+
+## Third-Party Links
+The Website may contain links to third-party websites or services that we do not control. We are not responsible for the content, policies, or practices of any third-party sites. Accessing them is at your own risk.
+
+## Changes to These Terms
+We may revise these Terms from time to time. The most current version will always be posted on this page with an updated "Last updated" date. Your continued use of the Website after changes take effect constitutes acceptance of the revised Terms.
+
+## Governing Law
+These Terms are governed by and construed in accordance with the laws of the State of Connecticut, without regard to its conflict of law principles.
+
+## Contact Information
+Questions about these Terms can be directed to: sam@nihilosolutions.com
+

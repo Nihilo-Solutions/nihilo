@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/site/page-hero";
-import { pageMeta } from "@/lib/seo";
+import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
 import { SITE_EMAIL } from "@/lib/site";
+import { JsonLd } from "@/components/site/json-ld";
 
 export const metadata: Metadata = pageMeta({
       title: "Privacy | Nihilo Solutions",
@@ -13,6 +14,7 @@ export const metadata: Metadata = pageMeta({
 export default function Privacy() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd([{ name: "Privacy", path: "/privacy" }])} />
       <PageHero
         kicker="Privacy"
         title="How we handle information."

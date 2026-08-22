@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { pageMeta } from '@/lib/seo';
+import { breadcrumbJsonLd, pageMeta } from '@/lib/seo';
+import { JsonLd } from '@/components/site/json-ld';
 
 // NOTE: This is standard website Terms of Use boilerplate, not a services
 // contract. The wording is AI-drafted and must be reviewed by Sam / counsel
@@ -15,6 +16,7 @@ export const metadata: Metadata = pageMeta({
 export default function TermsOfService() {
   return (
     <div className="pt-16 pb-20 text-muted">
+      <JsonLd data={breadcrumbJsonLd([{ name: 'Terms of Service', path: '/terms' }])} />
       <div className="mx-auto w-[min(48rem,calc(100%-2.5rem))]">
         <h1 className="mb-8 font-serif text-4xl font-normal tracking-[-0.03em] text-fg sm:text-5xl">Terms of Service</h1>
         <p className="mb-8 leading-relaxed">

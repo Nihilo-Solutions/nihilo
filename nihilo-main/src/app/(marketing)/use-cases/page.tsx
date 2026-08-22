@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { CtaBand } from "@/components/site/cta-band";
 import { PageHero } from "@/components/site/page-hero";
-import { pageMeta } from "@/lib/seo";
+import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
+import { JsonLd } from "@/components/site/json-ld";
 
 export const metadata: Metadata = pageMeta({
       title: "Operational Automation Examples | Nihilo Solutions",
@@ -73,6 +74,7 @@ const ALSO = [
 export default function UseCases() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd([{ name: "Use cases", path: "/use-cases" }])} />
       <PageHero
         kicker="Use cases"
         title="Examples of work we automate."

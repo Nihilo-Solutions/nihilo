@@ -1,4 +1,4 @@
-# Nihilo Solutions — Claude Code instructions
+# Nihilo Solutions: Claude Code instructions
 
 Project-level instructions for the Nihilo marketing site repo. Layers on top of `~/.claude/CLAUDE.md` and the `~/context/sam-*.md` library. If anything here conflicts with the global rules, this file wins for this repo, but flag the conflict so I know.
 
@@ -8,8 +8,8 @@ In this order, before touching anything:
 
 1. Global rules: already loaded via `~/.claude/CLAUDE.md`. Confirm you've loaded the sam-* library.
 2. **This file** (you're reading it).
-3. **`~/context/nihilo.md`** — what Nihilo is, who buys it, the offer, the voice.
-4. **`./docs/positioning.md`** in this repo — the locked positioning, IA, tokens, and build notes.
+3. **`~/context/nihilo.md`**: what Nihilo is, who buys it, the offer, the voice.
+4. **`./docs/positioning.md`** in this repo: the locked positioning, IA, tokens, and build notes.
 5. **`./README.md`** if it has content beyond a one-liner.
 
 `docs/archive/` holds superseded briefs. Read them only for history; they are not
@@ -98,8 +98,34 @@ npm run start    # next start
 
 Local URL: `http://localhost:5000`.
 
-`npm run typecheck` runs `tsc --noEmit`. No `lint`, `test`, or `format` scripts are
-defined yet; adding them is on the to-do list.
+`npm run typecheck` runs `tsc --noEmit`. No `lint` or `test` scripts are defined
+yet; adding them is on the to-do list.
+
+`npm run check:copy` runs `scripts/check-copy.mjs`, and `prebuild` runs it before
+every build, so it gates the Vercel deploy. It fails on em dashes, en dashes and
+non-breaking spaces anywhere in the repo outside `docs/archive/`, and on the
+forbidden ownership wording in `src/` and `public/`. If it fires, rephrase.
+Do not add an exception.
+
+## Generated files that are committed
+
+Two artifacts are generated but checked in, because both need to be plain static
+assets and neither can be produced before `next build` runs.
+
+- **`public/llms-full.txt`**: the readable text of all ten pages in one file, for
+  agents that would otherwise crawl ten URLs and execute JavaScript. Regenerate
+  after any copy change: `npm run build && npm run build:llms`. `check:copy`
+  fails if it is missing a page, but it cannot detect wording drift, so
+  regenerating is on you.
+- **`public/<32-hex>.txt`**: the IndexNow key. Do not rename or delete it; the
+  key inside must match the filename or submissions are rejected. `npm run
+  indexnow` submits the ten URLs to Bing and friends. Run it after a content
+  deploy, not before, or the key file will not be reachable yet.
+
+Sitemap `lastModified` dates in `src/app/sitemap.ts` are also hand-maintained on
+purpose. Stamping build time on every page told Google all ten changed on every
+deploy, which gets lastmod ignored. Update a page's date when its content
+actually changes.
 
 ## Domain glossary
 
@@ -124,7 +150,7 @@ Re-read `docs/positioning.md`. If the answer isn't there, ask me before guessing
 Claude Code has access to the personal Obsidian vault via the `obsidian-nihilo` MCP server.
 
 - **Vault path**: `/Users/samoakes/Desktop/knowledge-vault-project/knowledge-vault`
-- **Nihilo subfolder**: `/nihilo` — read and write only within this folder
+- **Nihilo subfolder**: `/nihilo`, read and write only within this folder
 - **Do not read or write outside `/nihilo`** unless explicitly instructed
 - At session start, after loading required docs, check `/nihilo` for any planning notes or open decisions relevant to the current task
 - If you find notes that conflict with `docs/positioning.md`, flag the conflict before acting
@@ -145,7 +171,7 @@ At the end of every session, write a session log to:
 /Users/samoakes/Desktop/knowledge-vault-project/knowledge-vault/nihilo/sessions/YYYY-MM-DD-[topic].md
 
 Use the obsidian-nihilo MCP if available. If not, write directly 
-to the filesystem path above — Obsidian watches the filesystem 
+to the filesystem path above. Obsidian watches the filesystem 
 and picks up new files automatically.
 
 Log format:

@@ -40,6 +40,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
 };
 
+/**
+ * Set NEXT_PUBLIC_GA_MEASUREMENT_ID in Vercel to point at a different GA4
+ * property without a code change. The literal is the property the site has been
+ * reporting to; if it is ever cleared, GoogleAnalytics renders nothing rather
+ * than injecting a broken tag.
+ */
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? 'G-HTNV61D4K4';
+
 export const viewport = {
   themeColor: '#1a1916',
 };
@@ -65,7 +73,7 @@ export default function RootLayout({
         </main>
         <SiteFooter />
         <Analytics />
-        <GoogleAnalytics measurementId="G-HTNV61D4K4" />
+        <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} />
       </body>
     </html>
   );

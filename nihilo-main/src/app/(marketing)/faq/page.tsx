@@ -3,7 +3,7 @@ import Link from "next/link";
 import { JsonLd } from "@/components/site/json-ld";
 import { PageHero } from "@/components/site/page-hero";
 import { Button } from "@/components/site/ui/button";
-import { faqJsonLd, pageMeta } from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd, pageMeta } from "@/lib/seo";
 import { BookCallLink } from "@/components/site/book-call-link";
 
 export const FAQ_ITEMS = [
@@ -63,6 +63,7 @@ export const metadata: Metadata = pageMeta({
 export default function Faq() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd([{ name: "FAQ", path: "/faq" }])} />
       <JsonLd data={faqJsonLd(FAQ_ITEMS)} />
       <PageHero kicker="FAQ" title="Straight answers before you book." />
       <section className="pb-20">

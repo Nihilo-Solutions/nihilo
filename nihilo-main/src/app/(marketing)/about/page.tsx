@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { CtaBand } from "@/components/site/cta-band";
 import { PageHero } from "@/components/site/page-hero";
-import { pageMeta } from "@/lib/seo";
+import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
+import { JsonLd } from "@/components/site/json-ld";
 
 export const metadata: Metadata = pageMeta({
       title: "About Nihilo Solutions | Custom Automation Team in Connecticut",
@@ -13,6 +14,7 @@ export const metadata: Metadata = pageMeta({
 export default function About() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd([{ name: "About", path: "/about" }])} />
       <PageHero
         kicker="About"
         title="A small firm that builds the system, then gets out of the way."

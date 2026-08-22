@@ -27,8 +27,20 @@ export function GoogleAnalytics({ measurementId }: GoogleAnalyticsProps) {
       isInitialLoad.current = false;
       return;
     }
-    window.gtag?.('event', 'page_view', { page_path: pathname });
+    // page_location is what GA4 keys the page dimension off. Sending page_path
+    // alone left every client-side navigation attributed to whichever URL the
+    // visitor first landed on, which undercounts inner pages and overcounts the
+    // entry page. window.location.href also carries the query string, so UTM
+    // parameters survive a client-side nav without needing useSearchParams and
+    // the Suspense boundary that would force.
+    window.gtag?.('event', 'page_view', {
+      page_path: pathname,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
   }, [pathname]);
+
+  if (!measurementId) return null;
 
   return (
     <>
