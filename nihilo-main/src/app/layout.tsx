@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { IBM_Plex_Sans, Newsreader } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
+import { HubSpot } from '@/components/analytics/HubSpot';
 import { JsonLd } from '@/components/site/json-ld';
 import { SiteFooter } from '@/components/site/site-footer';
 import { SiteHeader } from '@/components/site/site-header';
@@ -48,6 +49,13 @@ export const metadata: Metadata = {
  */
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? 'G-HTNV61D4K4';
 
+/**
+ * Same arrangement for HubSpot: NEXT_PUBLIC_HUBSPOT_PORTAL_ID repoints the site
+ * at a different portal without a code change, and clearing it renders nothing
+ * rather than a loader for a portal that does not exist.
+ */
+const HUBSPOT_PORTAL_ID = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID ?? '246987281';
+
 export const viewport = {
   themeColor: '#1a1916',
 };
@@ -74,6 +82,7 @@ export default function RootLayout({
         <SiteFooter />
         <Analytics />
         <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} />
+        <HubSpot portalId={HUBSPOT_PORTAL_ID} />
       </body>
     </html>
   );
