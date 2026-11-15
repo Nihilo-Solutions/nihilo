@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nihilo — Brand Kit · LOCKED</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--brand-void);color:var(--fg);font-family:var(--font-sans);padding:40px;position:relative;overflow:hidden;min-height:620px}
+  .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 80%)}
+  .halo{position:absolute;top:-20%;right:-10%;width:500px;height:500px;border-radius:999px;background:rgba(45,107,255,.18);filter:blur(120px)}
+  .head{display:flex;justify-content:space-between;align-items:flex-start;position:relative;margin-bottom:28px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand img{height:36px;filter:invert(1) brightness(2)}
+  .brand .div{width:1px;height:24px;background:var(--line)}
+  .brand .eb{font-family:var(--font-mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--fg-faint)}
+
+  .stamp{position:relative;display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+  .stamp .tag{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid var(--accent);color:var(--accent-lit);font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;background:rgba(45,107,255,.08);border-radius:2px}
+  .stamp .tag .dot{width:8px;height:8px;border-radius:99px;background:var(--accent-lit);box-shadow:0 0 10px var(--accent-lit)}
+  .stamp .date{font-family:var(--font-mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--fg-faint)}
+
+  .body{position:relative;margin-top:20px}
+  .body h2{font-family:var(--font-display);font-weight:600;font-size:72px;line-height:.98;letter-spacing:-0.035em;margin:0 0 16px;color:#fff}
+  .body h2 em{font-style:italic;color:var(--accent-lit)}
+  .body .sub{font-family:var(--font-mono);font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--fg-dim);max-width:720px}
+
+  .locks{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:36px;position:relative}
+  .lock{background:var(--brand-void);padding:20px 24px;display:flex;flex-direction:column;gap:8px}
+  .lock .lab{font-family:var(--font-mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--fg-faint)}
+  .lock .val{font-family:var(--font-mono);font-size:14px;color:#fff;font-weight:600;letter-spacing:.02em}
+  .lock .val em{color:var(--accent-lit);font-style:normal}
+  .lock .swatch{width:20px;height:20px;background:var(--accent);border:1px solid var(--line-strong);border-radius:2px;display:inline-block;vertical-align:middle;margin-right:8px}
+
+  .foot{position:absolute;bottom:28px;left:40px;right:40px;display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--fg-faint);border-top:1px solid var(--line);padding-top:14px}
+</style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="halo"></div>
+
+  <div class="head">
+    <div class="brand">
+      <img src="../assets/logo/nihilo-primary-lockup.svg" alt="Nihilo"/>
+      <span class="div"></span>
+      <span class="eb">Brand Kit v1.0</span>
+    </div>
+    <div class="stamp">
+      <div class="tag"><span class="dot"></span>Official · Locked</div>
+      <div class="date">Sealed MMXXVI · Ex Nihilo</div>
+    </div>
+  </div>
+
+  <div class="body">
+    <h2>Brand Kit <em>locked.</em></h2>
+    <p class="sub">Concept 03 · N-Aperture Lockup · Space Grotesk display · Azure #2D6BFF as-is. All downstream surfaces derive from this version.</p>
+  </div>
+
+  <div class="locks">
+    <div class="lock">
+      <div class="lab">Logo direction</div>
+      <div class="val">Concept 03 <em>· N-Aperture</em></div>
+    </div>
+    <div class="lock">
+      <div class="lab">Display type</div>
+      <div class="val">Space Grotesk <em>600</em></div>
+    </div>
+    <div class="lock">
+      <div class="lab">Signature</div>
+      <div class="val"><span class="swatch"></span>#2D6BFF</div>
+    </div>
+    <div class="lock">
+      <div class="lab">Version</div>
+      <div class="val">v1.0 <em>· Sealed</em></div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>nihilosolutions.com</span>
+    <span>BlackPenguin · Nihilo Solutions</span>
+    <span>Official / Locked</span>
+  </div>
+</body>
+</html>

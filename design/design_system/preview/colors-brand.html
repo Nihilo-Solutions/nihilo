@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans)}
+  .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .sw{background:var(--bg);padding:20px 18px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;gap:12px}
+  .chip{width:100%;height:54px;border-radius:2px;border:1px solid var(--line)}
+  .n{font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg-dim)}
+  .hex{font-family:var(--font-mono);font-size:11px;color:var(--fg)}
+  .role{font-family:var(--font-sans);font-size:11px;color:var(--fg-faint);line-height:1.4}
+</style>
+</head>
+<body>
+<div class="grid">
+  <div class="sw"><div class="chip" style="background:#05060A"></div><div><div class="n">Void</div><div class="hex">#05060A</div></div><div class="role">Deepest canvas · pure nothing</div></div>
+  <div class="sw"><div class="chip" style="background:#0B0D14"></div><div><div class="n">Ink</div><div class="hex">#0B0D14</div></div><div class="role">Primary dark surface</div></div>
+  <div class="sw"><div class="chip" style="background:#2D6BFF"></div><div><div class="n">Azure</div><div class="hex">#2D6BFF</div></div><div class="role">Signature accent · emergence</div></div>
+  <div class="sw"><div class="chip" style="background:#5B8BFF"></div><div><div class="n">Azure Lit</div><div class="hex">#5B8BFF</div></div><div class="role">Hover · glow · focus</div></div>
+  <div class="sw"><div class="chip" style="background:#F4F5F7"></div><div><div class="n">Bone</div><div class="hex">#F4F5F7</div></div><div class="role">Light-mode surface</div></div>
+  <div class="sw"><div class="chip" style="background:#FFFFFF"></div><div><div class="n">Chalk</div><div class="hex">#FFFFFF</div></div><div class="role">Pure white · marks on dark</div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans)}
+  .wrap{padding:22px;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:center;min-height:150px}
+  .col{display:flex;flex-direction:column;align-items:center;gap:10px}
+  .box{width:100%;height:72px;background:linear-gradient(135deg,#14171F,#0B0D14);border:1px solid var(--line)}
+  .lab{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg-dim)}
+  .px{font-family:var(--font-mono);font-size:10px;color:var(--fg-faint)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="col"><div class="box" style="border-radius:0"></div><div class="lab">r-0</div><div class="px">0px · edge</div></div>
+  <div class="col"><div class="box" style="border-radius:2px"></div><div class="lab">r-1</div><div class="px">2px · buttons</div></div>
+  <div class="col"><div class="box" style="border-radius:4px"></div><div class="lab">r-2</div><div class="px">4px</div></div>
+  <div class="col"><div class="box" style="border-radius:8px"></div><div class="lab">r-3</div><div class="px">8px · wells</div></div>
+  <div class="col"><div class="box" style="border-radius:12px"></div><div class="lab">r-4</div><div class="px">12px · cards</div></div>
+</div>
+</body>
+</html>

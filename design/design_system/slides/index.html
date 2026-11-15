@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nihilo Solutions — Pitch Deck Master</title>
+<link rel="icon" href="../assets/logo/nihilo-favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #000; color: var(--fg); font-family: var(--font-sans); }
+  deck-stage { --deck-bg: #000; }
+  section { background: var(--bg); color: var(--fg); position: relative; overflow: hidden; padding: 80px 96px; display: flex; flex-direction: column; }
+  .eb { font-family: var(--font-mono); font-size: 14px; letter-spacing: .36em; text-transform: uppercase; color: var(--fg-faint); }
+  .eb-a { color: var(--accent-lit); }
+  h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 600; letter-spacing: -0.03em; color: #fff; }
+  .kicker { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+  .kicker .dot { width: 10px; height: 10px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 12px var(--accent); }
+  .foot { position: absolute; bottom: 36px; left: 96px; right: 96px; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 13px; letter-spacing: .28em; text-transform: uppercase; color: var(--fg-faint); border-top: 1px solid var(--line); padding-top: 18px; }
+  .foot .brand { display: flex; align-items: center; gap: 10px; }
+  .foot .brand img { height: 22px; filter: invert(1) brightness(2); }
+  .grid-bg { position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%); }
+  .halo { position: absolute; border-radius: 999px; filter: blur(160px); pointer-events: none; }
+
+  /* Slide 1 — Title */
+  .s-title { justify-content: center; align-items: center; text-align: center; background: var(--brand-void); }
+  .s-title .mark { margin-bottom: 40px; }
+  .s-title .mark img { height: 180px; }
+  .s-title h1 { font-size: 88px; line-height: 1.02; margin-bottom: 24px; max-width: 1400px; }
+  .s-title h1 em { color: var(--accent-lit); font-style: italic; }
+  .s-title .sub { font-size: 22px; color: var(--fg-dim); font-weight: 300; max-width: 800px; line-height: 1.5; }
+  .s-title .meta { position: absolute; bottom: 40px; left: 96px; right: 96px; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 13px; letter-spacing: .32em; text-transform: uppercase; color: var(--fg-faint); }
+
+  /* Slide 2 — Section divider */
+  .s-section { justify-content: center; background: var(--brand-void); }
+  .s-section .num { font-family: var(--font-mono); font-size: 18px; letter-spacing: .4em; color: var(--fg-faint); margin-bottom: 24px; }
+  .s-section h2 { font-size: 120px; line-height: .98; max-width: 1400px; font-style: italic; }
+  .s-section h2 em { color: var(--accent-lit); font-style: italic; }
+
+  /* Slide 3 — Two-column content */
+  .s-two { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr auto; gap: 80px; padding-top: 96px; column-gap: 80px; row-gap: 0; }
+  .s-two > .foot { grid-column: 1 / -1; }
+  .s-two h2 { font-size: 64px; line-height: 1.05; margin-bottom: 24px; }
+  .s-two p { font-size: 20px; line-height: 1.6; color: var(--fg-dim); font-weight: 300; }
+  .s-two .bullets { list-style: none; padding: 0; margin: 32px 0 0; display: flex; flex-direction: column; gap: 18px; }
+  .s-two .bullets li { font-size: 17px; line-height: 1.55; color: var(--fg-mute); padding-left: 24px; position: relative; }
+  .s-two .bullets li::before { content: ''; position: absolute; left: 0; top: 12px; width: 12px; height: 1px; background: var(--accent); }
+  .s-two .visual { display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.02); border: 1px solid var(--line); border-radius: 12px; padding: 40px; position: relative; }
+  .s-two .visual img { max-width: 320px; opacity: 0.9; }
+
+  /* Slide 4 — Stats / numbers */
+  .s-stats { justify-content: center; background: var(--brand-void); }
+  .s-stats .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--line); border: 1px solid var(--line); }
+  .s-stats .sc { background: var(--brand-void); padding: 56px 40px; display: flex; flex-direction: column; gap: 14px; }
+  .s-stats .sc .num { font-family: var(--font-display); font-weight: 600; font-size: 96px; letter-spacing: -0.035em; line-height: 1; color: #fff; }
+  .s-stats .sc .num em { color: var(--accent-lit); font-style: normal; }
+  .s-stats .sc .lab { font-family: var(--font-mono); font-size: 13px; letter-spacing: .28em; text-transform: uppercase; color: var(--fg-dim); }
+  .s-stats .sc .note { font-size: 14px; color: var(--fg-faint); line-height: 1.5; }
+  .s-stats h2 { font-size: 56px; margin-bottom: 56px; max-width: 1100px; }
+
+  /* Slide 5 — Big quote */
+  .s-quote { justify-content: center; background: var(--brand-void); }
+  .s-quote h2 { font-size: 88px; line-height: 1.08; max-width: 1500px; margin-bottom: 40px; font-weight: 500; }
+  .s-quote h2 em { font-style: italic; color: var(--accent-lit); }
+  .s-quote .cite { font-family: var(--font-mono); font-size: 14px; letter-spacing: .32em; text-transform: uppercase; color: var(--fg-faint); }
+
+  /* Slide 6 — Services comparison */
+  .s-services .head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; }
+  .s-services .head h2 { font-size: 52px; max-width: 700px; font-style: italic; text-transform: uppercase; }
+  .s-services .head p { font-family: var(--font-mono); font-size: 14px; color: var(--fg-dim); max-width: 400px; line-height: 1.6; }
+  .s-services .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .s-services .card { padding: 32px; background: rgba(255,255,255,0.02); border: 1px solid var(--line); border-radius: 12px; }
+  .s-services .card .well { width: 56px; height: 56px; background: #14171F; border: 1px solid var(--line); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; color: var(--accent-lit); }
+  .s-services .card h3 { font-family: var(--font-sans); font-weight: 700; font-size: 22px; text-transform: uppercase; font-style: italic; letter-spacing: -0.01em; margin-bottom: 12px; }
+  .s-services .card p { font-size: 14px; line-height: 1.6; color: var(--fg-dim); font-weight: 300; }
+
+  /* Slide 7 — Closing */
+  .s-close { justify-content: center; align-items: center; text-align: center; background: var(--brand-void); }
+  .s-close .halo-x { top: 50%; left: 50%; width: 900px; height: 700px; transform: translate(-50%,-50%); background: rgba(45,107,255,.22); }
+  .s-close h1 { font-size: 104px; line-height: 1.04; margin-bottom: 28px; max-width: 1500px; }
+  .s-close h1 em { color: var(--accent-lit); font-style: italic; }
+  .s-close .sub { font-size: 20px; color: var(--fg-dim); margin-bottom: 56px; max-width: 700px; line-height: 1.55; }
+  .s-close .ctas { display: flex; gap: 16px; justify-content: center; }
+  .s-close .btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .22em; padding: 16px 28px; border-radius: 2px; border: 1px solid transparent; }
+  .s-close .btn-p { background: #1E222D; border-color: var(--accent); color: #fff; }
+  .s-close .btn-s { background: transparent; border-color: var(--n-500); color: #e4e4e7; }
+  .s-close .contact { position: absolute; bottom: 40px; left: 96px; right: 96px; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 13px; letter-spacing: .3em; text-transform: uppercase; color: var(--fg-faint); border-top: 1px solid var(--line); padding-top: 18px; }
+</style>
+</head>
+<body>
+
+<deck-stage>
+
+<!-- 01 TITLE -->
+<section class="s-title" data-screen-label="01 Title">
+  <div class="grid-bg"></div>
+  <div class="halo" style="top:-10%;left:-10%;width:700px;height:700px;background:rgba(45,107,255,.18)"></div>
+  <div class="halo" style="bottom:-10%;right:-10%;width:600px;height:600px;background:rgba(91,139,255,.12)"></div>
+  <div class="mark"><img src="../assets/logo/nihilo-deck-stacked.svg" style="filter:invert(1) brightness(2)"/></div>
+  <h1>Enterprise AI, <em>from nothing.</em></h1>
+  <p class="sub">Secure, tenant-local RAG pipelines and agentic automation on Azure &amp; AWS. Production in 4–6 weeks.</p>
+  <div class="meta">
+    <span>Ex · Nihilo · MMXXVI</span>
+    <span>Confidential</span>
+  </div>
+</section>
+
+<!-- 02 SECTION DIVIDER -->
+<section class="s-section" data-screen-label="02 Section">
+  <div class="grid-bg"></div>
+  <div class="halo" style="top:30%;left:-5%;width:500px;height:500px;background:rgba(45,107,255,.2)"></div>
+  <div class="num">01 // The Problem</div>
+  <h2>Manual ops. <em>Siloed data.</em><br/>Brittle integrations.</h2>
+  <div class="foot">
+    <div class="brand"><img src="../assets/logo/nihilo-primary-lockup.svg"/></div>
+    <span>Slide 02 / 07</span>
+  </div>
+</section>
+
+<!-- 03 TWO COLUMN -->
+<section class="s-two" data-screen-label="03 Problem">
+  <div>
+    <div class="kicker"><span class="dot"></span><span class="eb eb-a">02 // Thesis</span></div>
+    <h2>Your data<br/>never leaves<br/>your tenancy.</h2>
+    <p>We build production-grade RAG that keeps embeddings, vector indexes, and retrieval logic inside your cloud. No external egress. BYOK KMS. SOC 2 evidence by construction.</p>
+    <ul class="bullets">
+      <li>Secure ingestion — PII redaction before indexing</li>
+      <li>Tenant-local vector stores in your VPC / VNet</li>
+      <li>Hybrid retrieval with reranking for factuality</li>
+      <li>Median retrieval latency &lt;200ms</li>
+    </ul>
+  </div>
+  <div class="visual">
+    <div class="halo" style="top:20%;left:20%;width:400px;height:400px;background:rgba(45,107,255,.18)"></div>
+    <img src="../assets/logo/nihilo-icon.svg" style="filter:invert(1) brightness(2);opacity:.85"/>
+  </div>
+  <div class="foot">
+    <div class="brand"><img src="../assets/logo/nihilo-primary-lockup.svg"/></div>
+    <span>Slide 03 / 07</span>
+  </div>
+</section>
+
+<!-- 04 STATS -->
+<section class="s-stats" data-screen-label="04 Proof">
+  <div class="kicker"><span class="dot"></span><span class="eb eb-a">03 // Proof</span></div>
+  <h2>Measurable outcomes, not marketing.</h2>
+  <div class="stat-grid">
+    <div class="sc"><div class="num"><em>30–60%</em></div><div class="lab">Ops cost reduction</div><div class="note">Typical Azure deployment</div></div>
+    <div class="sc"><div class="num">&lt;200ms</div><div class="lab">Retrieval latency</div><div class="note">Median across enterprise document stores</div></div>
+    <div class="sc"><div class="num">4–6 wk</div><div class="lab">Time to production</div><div class="note">From kickoff to deployed SLA</div></div>
+    <div class="sc"><div class="num">&gt;95%</div><div class="lab">Egress reduction</div><div class="note">Sensitive data stays tenant-local</div></div>
+  </div>
+  <div class="foot">
+    <div class="brand"><img src="../assets/logo/nihilo-primary-lockup.svg"/></div>
+    <span>Slide 04 / 07</span>
+  </div>
+</section>
+
+<!-- 05 QUOTE -->
+<section class="s-quote" data-screen-label="05 Quote">
+  <div class="grid-bg"></div>
+  <div class="kicker"><span class="dot"></span><span class="eb eb-a">04 // Voice</span></div>
+  <h2>“We stopped renting our data to public models. Nihilo deployed a tenant-local system in our Azure subscription in <em>six weeks</em>.”</h2>
+  <div class="cite">— VP Engineering · Fortune 500 Financial Services</div>
+  <div class="foot">
+    <div class="brand"><img src="../assets/logo/nihilo-primary-lockup.svg"/></div>
+    <span>Slide 05 / 07</span>
+  </div>
+</section>
+
+<!-- 06 SERVICES -->
+<section class="s-services" data-screen-label="06 Services">
+  <div class="head">
+    <div>
+      <div class="kicker"><span class="dot"></span><span class="eb eb-a">05 // Capabilities</span></div>
+      <h2>Foundational Expertise</h2>
+    </div>
+    <p>We operate at the intersection of high-fidelity design and deep system architecture.</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="well"><img src="../assets/icons/rag.svg" width="26" height="26"/></div>
+      <h3>Enterprise RAG</h3>
+      <p>Tenant-local vector stores, hybrid retrieval, reranking. PII-filtered ingestion, BYOK KMS.</p>
+    </div>
+    <div class="card">
+      <div class="well"><img src="../assets/icons/agentic.svg" width="26" height="26"/></div>
+      <h3>Agentic Automation</h3>
+      <p>Policy-sandboxed LLM agents with full action trails. Human-in-the-loop for exceptions.</p>
+    </div>
+    <div class="card">
+      <div class="well"><img src="../assets/icons/azure.svg" width="26" height="26"/></div>
+      <h3>Cloud-Native AI</h3>
+      <p>IaC modules, autoscaling inference, request batching. Multi-zone failover for enterprise RTO/RPO.</p>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="brand"><img src="../assets/logo/nihilo-primary-lockup.svg"/></div>
+    <span>Slide 06 / 07</span>
+  </div>
+</section>
+
+<!-- 07 CLOSE -->
+<section class="s-close" data-screen-label="07 Close">
+  <div class="halo halo-x"></div>
+  <h1>From nothing, <em>a system.</em></h1>
+  <p class="sub">Book a discovery call or run the readiness protocol to see where AI pays back fastest.</p>
+  <div class="ctas">
+    <button class="btn btn-p">Start Readiness Protocol →</button>
+    <button class="btn btn-s">Book Discovery Call ›</button>
+  </div>
+  <div class="contact">
+    <span>nihilosolutions.com</span>
+    <span>Azure-Native · BlackPenguin · 2026</span>
+  </div>
+</section>
+
+</deck-stage>
+
+<script src="deck-stage.js"></script>
+</body>
+</html>

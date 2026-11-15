@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nihilo — Email Signature</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#17171A;color:#fff;font-family:'Inter',sans-serif;padding:48px}
+  h1.page{font-family:'Space Grotesk';font-size:28px;font-weight:600;letter-spacing:-0.02em;margin:0 0 8px}
+  p.page{font-family:'JetBrains Mono';font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#9AA0AE;margin:0 0 40px}
+  .section{margin-bottom:48px}
+  .section-title{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#71717A;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:12px;margin-bottom:24px;display:flex;justify-content:space-between}
+
+  /* Email-client render: compressed inline style, table-based */
+  .mail-frame{background:#fff;padding:36px 40px;border-radius:6px;max-width:640px;box-shadow:0 20px 50px -20px rgba(0,0,0,.5)}
+  .mail-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,sans-serif;color:#0B0C0F;font-size:14px;line-height:1.55}
+  .mail-body p{margin:0 0 14px}
+
+  /* SIGNATURE — this is the block users copy */
+  .sig{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,sans-serif;font-size:13px;line-height:1.45;color:#0B0C0F;border-top:2px solid #0B0C0F;padding-top:16px;margin-top:8px;width:520px}
+  .sig table{border-collapse:collapse;width:100%}
+  .sig td{vertical-align:top;padding:0}
+  .sig .col-l{padding-right:20px;border-right:1px solid #E5E5E4;width:160px}
+  .sig .col-r{padding-left:20px}
+  .sig .name{font-family:'Space Grotesk',Inter,sans-serif;font-weight:600;font-size:17px;letter-spacing:-0.01em;color:#0B0C0F;margin-bottom:2px}
+  .sig .title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#71717A;margin-bottom:14px}
+  .sig .logo img{width:110px;display:block}
+  .sig .company{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#2D6BFF;margin-top:10px;font-weight:700}
+  .sig .contact{font-size:12px;color:#3F3F46}
+  .sig .contact a{color:#2D6BFF;text-decoration:none}
+  .sig .contact .row{margin-bottom:3px}
+  .sig .contact .lab{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#A1A1AA;display:inline-block;width:36px}
+  .sig .footline{margin-top:12px;padding-top:10px;border-top:1px solid #E5E5E4;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:#71717A;font-style:italic}
+
+  /* Compact variant */
+  .sig-c{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,sans-serif;font-size:12px;line-height:1.5;color:#0B0C0F;padding-left:14px;border-left:2px solid #2D6BFF}
+  .sig-c .name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;color:#0B0C0F;margin-bottom:2px}
+  .sig-c .title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#71717A;margin-bottom:8px}
+  .sig-c .line{color:#3F3F46;font-size:12px}
+  .sig-c .line a{color:#2D6BFF;text-decoration:none}
+
+  .spec{margin-top:16px;padding:16px 20px;background:#0B0D14;border:1px solid rgba(255,255,255,.08);border-radius:4px;font-family:'JetBrains Mono';font-size:11px;color:#9AA0AE;line-height:1.7;max-width:680px}
+  .spec strong{color:#fff}
+  .spec code{color:#5B8BFF;background:rgba(45,107,255,.1);padding:2px 5px;border-radius:2px}
+</style>
+</head>
+<body>
+
+<h1 class="page">Email Signatures</h1>
+<p class="page">Two variants · Gmail / Outlook / Apple Mail safe · No external images required (hosted SVG)</p>
+
+<div class="section">
+  <div class="section-title"><span>01 · Standard (recommended)</span><span>Two-column · 520px max</span></div>
+  <div class="mail-frame">
+    <div class="mail-body">
+      <p>Hi Jordan —</p>
+      <p>Nice meeting you yesterday. Attaching the architecture note and readiness template we discussed. Happy to walk through the Azure-tenant-local deployment pattern on a call next week.</p>
+      <p>Best,<br/>Marcus</p>
+
+      <div class="sig">
+        <table>
+          <tr>
+            <td class="col-l">
+              <div class="logo"><img src="../assets/logo/nihilo-primary-lockup.svg" alt="Nihilo Solutions"/></div>
+              <div class="company">Azure-Native AI</div>
+            </td>
+            <td class="col-r">
+              <div class="name">Marcus Hale</div>
+              <div class="title">Principal · Enterprise AI</div>
+              <div class="contact">
+                <div class="row"><span class="lab">M</span><a href="mailto:marcus@nihilosolutions.com">marcus@nihilosolutions.com</a></div>
+                <div class="row"><span class="lab">P</span>+1 (415) 555-0134</div>
+                <div class="row"><span class="lab">W</span><a href="https://nihilosolutions.com">nihilosolutions.com</a></div>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <div class="footline">— Ex nihilo, a system. Tenant-local RAG · SOC 2 · Production in 4–6 weeks.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span>02 · Compact (reply chain)</span><span>Single column · minimalist</span></div>
+  <div class="mail-frame">
+    <div class="mail-body">
+      <p>Thanks, looks great.</p>
+      <p>— M</p>
+      <div class="sig-c">
+        <div class="name">Marcus Hale</div>
+        <div class="title">Principal · Nihilo Solutions</div>
+        <div class="line"><a href="mailto:marcus@nihilosolutions.com">marcus@nihilosolutions.com</a> · <a href="https://nihilosolutions.com">nihilosolutions.com</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="spec">
+  <strong>Install —</strong> Paste the signature block into Gmail Settings → Signature, or Outlook → File → Options → Mail → Signatures. Host the logo SVG at <code>https://nihilosolutions.com/brand/sig-logo.svg</code> and swap the local path in the <code>&lt;img src&gt;</code> before installing. Azure link color is <code>#2D6BFF</code>. Max width 520px renders cleanly on mobile.
+</div>
+
+</body>
+</html>

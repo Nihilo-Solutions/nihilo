@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 72" fill="none">
+  
+  <g transform="translate(32 36)">
+    <circle r="20" stroke="currentColor" stroke-width="1" opacity="0.25" fill="none"></circle>
+    <circle r="14" stroke="currentColor" stroke-width="1" opacity="0.5" fill="none"></circle>
+    <circle r="8" stroke="#2D6BFF" stroke-width="1.5" fill="none"></circle>
+    <circle r="2.5" fill="#2D6BFF"></circle>
+  </g>
+  <text x="62" y="47" font-family="Space Grotesk, sans-serif" font-size="30" font-weight="600" letter-spacing="-0.04em" fill="currentColor">nihilo</text>
+</svg>

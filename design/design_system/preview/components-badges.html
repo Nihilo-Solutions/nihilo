@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans)}
+  .wrap{padding:20px 24px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;min-height:150px}
+  .b{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;border-radius:2px;border:1px solid transparent}
+  .ok{background:rgba(63,185,132,.12);border-color:rgba(63,185,132,.4);color:#3FB984}
+  .warn{background:rgba(229,162,60,.12);border-color:rgba(229,162,60,.4);color:#E5A23C}
+  .err{background:rgba(229,84,74,.12);border-color:rgba(229,84,74,.4);color:#E5544A}
+  .info{background:rgba(45,107,255,.12);border-color:var(--line-azure);color:var(--accent-lit)}
+  .neutral{background:var(--n-800);border-color:var(--line);color:var(--fg-mute)}
+  .dot{width:6px;height:6px;border-radius:999px;background:currentColor}
+  .lab{font-family:var(--font-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--fg-faint);margin-right:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="lab">Status</span>
+  <span class="b ok"><span class="dot"></span>Deployed</span>
+  <span class="b info"><span class="dot"></span>In Review</span>
+  <span class="b warn"><span class="dot"></span>Degraded</span>
+  <span class="b err"><span class="dot"></span>Blocked</span>
+  <span class="b neutral">SOC 2 Type II</span>
+  <span class="b neutral">BYOK KMS</span>
+  <span class="b info">Azure-Native</span>
+  <span class="b info">Tenant-Local</span>
+</div>
+</body>
+</html>

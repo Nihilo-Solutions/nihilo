@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans)}
+  .wrap{padding:22px 24px;display:grid;grid-template-columns:repeat(8,1fr);gap:12px;align-items:end;min-height:150px}
+  .col{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .box{background:var(--n-700);border:1px solid var(--line);border-radius:2px;width:100%}
+  .lab{font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg-faint)}
+  .px{font-family:var(--font-mono);font-size:10px;color:var(--fg-mute)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="col"><div class="box" style="height:4px"></div><div class="lab">s-1</div><div class="px">4</div></div>
+  <div class="col"><div class="box" style="height:8px"></div><div class="lab">s-2</div><div class="px">8</div></div>
+  <div class="col"><div class="box" style="height:12px"></div><div class="lab">s-3</div><div class="px">12</div></div>
+  <div class="col"><div class="box" style="height:16px"></div><div class="lab">s-4</div><div class="px">16</div></div>
+  <div class="col"><div class="box" style="height:24px"></div><div class="lab">s-5</div><div class="px">24</div></div>
+  <div class="col"><div class="box" style="height:32px"></div><div class="lab">s-6</div><div class="px">32</div></div>
+  <div class="col"><div class="box" style="height:48px"></div><div class="lab">s-7</div><div class="px">48</div></div>
+  <div class="col"><div class="box" style="height:64px"></div><div class="lab">s-8</div><div class="px">64</div></div>
+</div>
+</body>
+</html>

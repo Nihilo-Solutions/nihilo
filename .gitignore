@@ -1,4 +1,21 @@
+# Env
+.env
+.env.local
+.env.*.local
+
+# OS
 .DS_Store
+
+# Dependencies
 node_modules/
+
+# Build output
+.output/
+.vercel/
+.nitro/
+.tanstack/
+dist/
 .next/
+
+# Logs
 *.log

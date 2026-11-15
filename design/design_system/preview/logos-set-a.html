@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<title>Nihilo — Logo Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: var(--font-sans); }
+  .wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .cell { background: var(--bg); padding: 28px 24px 22px; display: flex; flex-direction: column; gap: 10px; min-height: 150px; }
+  .cell.light { background: var(--brand-bone); color: var(--brand-ink); }
+  .cell .label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--fg-dim); }
+  .cell.light .label { color: #6B7280; }
+  .logo { flex: 1; display: flex; align-items: center; }
+  .logo svg { height: 44px; width: auto; }
+  .concept { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fg-faint); }
+  .cell.light .concept { color: #9AA0AE; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cell">
+    <span class="label">01 · Dot + Wordmark</span>
+    <div class="logo"><img src="../assets/logo-01-dot-wordmark.svg" style="filter: invert(1) brightness(2);" /></div>
+    <span class="concept">Primary mark · dark</span>
+  </div>
+  <div class="cell">
+    <span class="label">02 · Ring Aperture</span>
+    <div class="logo"><img src="../assets/logo-02-ring-wordmark.svg" style="filter: invert(1) brightness(2);" /></div>
+    <span class="concept">Emergence</span>
+  </div>
+  <div class="cell">
+    <span class="label">03 · N-Aperture Lockup</span>
+    <div class="logo"><img src="../assets/logo-03-aperture-lockup.svg" style="filter: invert(1) brightness(2);" /></div>
+    <span class="concept">Full lockup</span>
+  </div>
+  <div class="cell light">
+    <span class="label">01 · Dot + Wordmark</span>
+    <div class="logo"><img src="../assets/logo-01-dot-wordmark.svg" /></div>
+    <span class="concept">Primary mark · light</span>
+  </div>
+  <div class="cell light">
+    <span class="label">02 · Ring Aperture</span>
+    <div class="logo"><img src="../assets/logo-02-ring-wordmark.svg" /></div>
+    <span class="concept">Emergence</span>
+  </div>
+  <div class="cell light">
+    <span class="label">03 · N-Aperture Lockup</span>
+    <div class="logo"><img src="../assets/logo-03-aperture-lockup.svg" /></div>
+    <span class="concept">Full lockup</span>
+  </div>
+</div>
+</body>
+</html>

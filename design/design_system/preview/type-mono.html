@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans)}
+  .wrap{padding:24px 32px;display:flex;flex-direction:column;gap:14px;min-height:150px}
+  .row{display:flex;align-items:center;gap:18px;border-bottom:1px solid var(--line);padding-bottom:12px}
+  .row:last-child{border-bottom:0}
+  .tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--fg-faint);min-width:120px}
+  .eb{font-family:var(--font-mono);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--fg-dim)}
+  .eb-accent{color:var(--accent)}
+  code.t-code{font-family:var(--font-mono);font-size:13px;color:var(--accent-lit);background:rgba(45,107,255,.10);border:1px solid var(--line-azure);padding:2px 6px;border-radius:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="row"><span class="tag">Eyebrow · 11/500</span><span class="eb">01 // Capabilities</span></div>
+  <div class="row"><span class="tag">Eyebrow · accent</span><span class="eb eb-accent">Production-Ready</span></div>
+  <div class="row"><span class="tag">Mono body · 13/500</span><span class="t-mono">tenant_local_rag.deploy()</span></div>
+  <div class="row"><span class="tag">Inline code</span><code class="t-code">BYOK KMS</code><span class="t-sm">— integrated with VPC/VNet controls.</span></div>
+</div>
+</body>
+</html>
